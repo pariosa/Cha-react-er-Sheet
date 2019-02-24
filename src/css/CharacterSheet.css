@@ -1,0 +1,43 @@
+.pathfinder-logo{
+	margin-top:30px;
+	width:28%;
+	height:70px;
+}
+.CharacterSheet{
+	margin:0 auto;
+	padding:20px;
+}
+.charinfo > .input > input {
+	height:37px;
+	padding-left:26px!important; 
+	padding-right:4px!important; 
+}
+.charinfo > .input{
+	margin-left:0px;
+	padding-left:0px;
+	padding-right:0px;
+
+}
+.charinfo{
+	top:20px;
+} 
+.charinfo > .labeled > .label{
+	height:0px; 
+	display:block;
+}
+
+.Stats{
+	left:20px;
+}
+
+.Stats > .button > .button{
+	min-width:70px;
+	max-width:70px;
+}
+.Stats > .button > .temp{
+	min-width:40px;
+	max-width:40px;
+}
+.HealthPoints{
+	margin-top:20px;
+}
