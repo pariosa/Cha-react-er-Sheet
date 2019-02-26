@@ -1,3 +1,19 @@
 export const ADD_ARTICLE = "ADD_ARTICLE";
 export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
+export const UPDATE_NAME = "UPDATE_NAME";
+export const UPDATE_ALIGNMENT = "UPDATE_ALIGNMENT";
+export const UPDATE_PLAYER_NAME = "UPDATE_PLAYER_NAME";
+export const UPDATE_CLASS = "UPDATE_CLASS";
+export const UPDATE_LEVEL = "UPDATE_LEVEL";
+export const UPDATE_DIETY = "UPDATE_DIETY";
+export const UPDATE_HOMELAND = "UPDATE_HOMELAND";
+export const UPDATE_RACE = "UPDATE_RACE";
+export const UPDATE_SIZE = "UPDATE_SIZE";
+export const UPDATE_GENDER = "UPDATE_GENDER";
+export const UPDATE_AGE = "UPDATE_AGE";
+export const UPDATE_HEIGHT = "UPDATE_HEIGHT";
+export const UPDATE_WEIGHT = "UPDATE_WEIGHT";
+export const UPDATE_HAIR = "UPDATE_HAIR";
+export const UPDATE_EYES = "UPDATE_EYES";
+

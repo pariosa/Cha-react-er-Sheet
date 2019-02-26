@@ -4,7 +4,7 @@ class HealthPoints extends Component{
 	render(){
 		return (
 			<div className="HealthPoints ui four wide">
-				<div className=" ui  labeled button small " tabindex="0">
+				<div className=" ui  labeled button small " tabIndex="0">
 				  	<div className="ui black button small">
 				   		<strong>Hit Points</strong>
 				  	</div>
@@ -22,21 +22,21 @@ class HealthPoints extends Component{
 				 	</div>
 				 	<br/>
 				</div>
-				<div class="ui form">
+				<div className="ui form">
 				 	<div className="field">
 				 	    <label>Wounds/Current HP</label>
     					<textarea rows="1">
     					</textarea>
 					</div>
 				</div>
-				<div class="ui form">
+				<div className="ui form">
 				 	<div className="field">
 				 	    <label>Nonlethal Damage</label>
     					<textarea rows="1">
     					</textarea>
 					</div>
 				</div>
-				<div className=" ui  labeled button small" tabindex="0">
+				<div className=" ui  labeled button small" tabIndex="0">
 				  	<div className="ui black button small">
 				   		<strong>Initiative</strong>
 				  	</div>

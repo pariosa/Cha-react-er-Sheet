@@ -4,8 +4,12 @@
 	height:70px;
 }
 .CharacterSheet{
-	margin:0 auto;
+	margin:0 auto; 
 	padding:20px;
+}
+.characterTitle{
+	min-width:300px;
+	text-shadow: 10px 10px #fff;
 }
 .charinfo > .input > input {
 	height:37px;
@@ -18,6 +22,14 @@
 	padding-right:0px;
 
 }
+h2{
+ text-shadow: 1px 1px 0 #c0c0c0, 2px 2px 0 #c0c0c0, 3px 3px 0 #c0c0c0, 4px 4px 0 #c0c0c0, 5px 5px 0 #c0c0c0, 6px 6px 0 #c0c0c0, 3px 3px 10px #000000;
+  font-size: 28px;
+  line-height: 138px;
+  margin:0;
+  text-align: center;
+  
+}
 .charinfo{
 	top:20px;
 } 
@@ -28,7 +40,7 @@
 
 .Stats{
 	left:20px;
-}
+} 
 
 .Stats > .button > .button{
 	min-width:70px;

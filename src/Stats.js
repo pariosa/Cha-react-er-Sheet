@@ -15,7 +15,7 @@ class Stats extends Component{
 	render(){
 		return(
 			<div className="Stats ui six wide stackable grid column">
-				<div className="strength ui labeled button" tabindex="0">
+				<div className="strength ui labeled button" tabIndex="0">
 				  <div className="ui one wide red button">
 				    <strong>STR</strong>
 				  </div>
@@ -33,7 +33,7 @@ class Stats extends Component{
 				  	</a>
 				</div> 
 
-				<div className="strength ui twelve wide labeled button" tabindex="0">
+				<div className="strength ui twelve wide labeled button" tabIndex="0">
 				  <div className="ui one wide teal button">
 				    <strong>DEX</strong>
 				  </div>
@@ -51,7 +51,7 @@ class Stats extends Component{
 				  </a>	
 				</div>
 
-				<div className="strength ui twelve wide labeled button" tabindex="0">
+				<div className="strength ui twelve wide labeled button" tabIndex="0">
 				  <div className="ui orange button">
 				    <strong>CON</strong>
 				  </div>
@@ -70,7 +70,7 @@ class Stats extends Component{
 				</div>
 
 
-				<div className="strength ui twelve wide labeled button" tabindex="0">
+				<div className="strength ui twelve wide labeled button" tabIndex="0">
 				  <div className="ui  blue button">
 				    <strong>INT</strong>
 				  </div>
@@ -87,10 +87,7 @@ class Stats extends Component{
 				  +0
 				  </a>	
 				</div>
-
-
-
-				<div className="wisdom ui twelve purple wide labeled button" tabindex="0">
+				<div className="wisdom ui twelve purple wide labeled button" tabIndex="0">
 				  <div className="ui button violet">
 				    <strong>WIS</strong>
 				  </div>
@@ -108,7 +105,7 @@ class Stats extends Component{
 				  </a>	
 				</div>
 				
-				<div className="charisma ui twelve pink wide labeled button" tabindex="0">
+				<div className="charisma ui twelve pink wide labeled button" tabIndex="0">
 				  <div className="ui button pink">
 				    <strong>CHA</strong>
 				  </div>
