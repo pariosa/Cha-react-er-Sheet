@@ -37,19 +37,48 @@ h2{
 	height:0px; 
 	display:block;
 }
-
 .Stats{
 	left:20px;
 } 
-
 .Stats > .button > .button{
 	min-width:70px;
 	max-width:70px;
 }
 .Stats > .button > .temp{
-	min-width:40px;
-	max-width:40px;
+	min-width:70px;
+	max-width:70px;
 }
 .HealthPoints{
 	margin-top:20px;
+}
+.Stats > div{
+	max-height:40px;
+}
+.statButtons{
+	left:0px;
+	anchor:left;
+	visibility:hidden;
+}
+.statPos{
+	width:17px;
+	height:20px;
+	left:30px;
+	top:-25px;
+	font-size:14px;
+	padding:0px 0px 0px 0px;
+	position:relative;
+ 	display:block;
+}
+.statNeg{
+	left:30px;
+	font-size:14px;
+	top:-25px;
+	height:20px;
+	padding:0px 0px 0px 0px;
+	width:17px; 
+	position:relative;
+	display:block;
+}
+.abilityScore:hover .statButtons{
+	visibility:visible;
 }

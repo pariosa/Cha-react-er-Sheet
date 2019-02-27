@@ -1,4 +1,6 @@
 import { ADD_ARTICLE, INCREMENT, DECREMENT,UPDATE_NAME, UPDATE_ALIGNMENT, UPDATE_PLAYER_NAME, UPDATE_CLASS, UPDATE_LEVEL, UPDATE_DIETY, UPDATE_HOMELAND, UPDATE_RACE, UPDATE_SIZE, UPDATE_GENDER, UPDATE_AGE, UPDATE_HEIGHT, UPDATE_WEIGHT,UPDATE_HAIR, UPDATE_EYES } from "../constants/actionTypes";
+import { UPDATE_MAX_HP, UPDATE_CURRENT_HP, UPDATE_NONLETHAL, UPDATE_INITIATIVE_MOD } from '../constants/actionTypes';
+import { INCREMENT_STR, INCREMENT_DEX, INCREMENT_CON, INCREMENT_INT, INCREMENT_WIS, INCREMENT_CHA, DECREMENT_STR, DECREMENT_DEX, DECREMENT_CON, DECREMENT_INT, DECREMENT_WIS, DECREMENT_CHA,INCREMENT_STR_TEMP, INCREMENT_DEX_TEMP, INCREMENT_CON_TEMP, INCREMENT_INT_TEMP, INCREMENT_WIS_TEMP, INCREMENT_CHA_TEMP, DECREMENT_STR_TEMP, DECREMENT_DEX_TEMP, DECREMENT_CON_TEMP, DECREMENT_INT_TEMP, DECREMENT_WIS_TEMP, DECREMENT_CHA_TEMP } from '../constants/actionTypes';
 
 const initialState = {
 	articles: [],
@@ -6,13 +8,43 @@ const initialState = {
 	character:{
 		stats:{
 			intelligence:10,
+			intMod:0,
 			dexterity:10,
+			dexMod:0,
 			strength:10,
+			strMod:0,
 			dexterity:10,
+			dexMod:0,
 			wisdom:10,
+			wisMod:0,
 			charisma:10,
-			constitution:10
+			chaMod:0,
+			constitution:10,
+			conMod:0
 		},
+		statsTemporary:{
+			intelligence:10,
+			intMod:0,
+			dexterity:10,
+			dexMod:0,
+			strength:10,
+			strMod:0,
+			dexterity:10,
+			dexMod:0,
+			wisdom:10,
+			wisMod:0,
+			charisma:10,
+			chaMod:0,
+			constitution:10,
+			conMod:0
+		},
+		health:{
+			current: 24,
+			max: 35,
+			DR:'4, fire',
+			nonlethal:'',
+		},
+		initiativeModifier: 0,
 		name: 'Horvath',
 		alignment:'N/E',
 		playerName:'Peter a.',
@@ -69,6 +101,54 @@ const actionReducer = (state = initialState, action) => {
 			return {...state, character:{ ...state.character, hair: action.payload.target.value}};
 		case UPDATE_EYES:
 			return {...state, character:{ ...state.character, eyes: action.payload.target.value}};
+		case INCREMENT_STR:
+			return {...state, character:{...state.character, stats: {...state.character.stats, strength: state.character.stats.strength + 1, strMod: Math.floor((state.character.stats.strength - 9 ) /2) }}};
+		case DECREMENT_STR: 
+			return {...state, character:{ ...state.character, stats: { ...state.character.stats, strength: state.character.stats.strength - 1, strMod: Math.floor((state.character.stats.strength - 11) /2) }}};
+		case INCREMENT_STR_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, strength: state.character.statsTemporary.strength + 1, strMod: Math.floor((state.character.statsTemporary.strength - 9) /2) }}};
+		case DECREMENT_STR_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, strength: state.character.statsTemporary.strength - 1, strMod: Math.floor((state.character.statsTemporary.strength - 11) /2) }}};
+		case INCREMENT_DEX:
+			return {...state, character:{...state.character, stats: {...state.character.stats, dexterity: state.character.stats.dexterity + 1, dexMod: Math.floor((state.character.stats.dexterity - 9 ) /2) }}};
+		case DECREMENT_DEX: 
+			return {...state, character:{ ...state.character, stats: { ...state.character.stats, dexterity: state.character.stats.dexterity - 1, dexMod: Math.floor((state.character.stats.dexterity - 11) /2) }}};
+		case INCREMENT_DEX_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, dexterity: state.character.statsTemporary.dexterity + 1, dexMod: Math.floor((state.character.statsTemporary.dexterity - 9) /2) }}};
+		case DECREMENT_DEX_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, dexterity: state.character.statsTemporary.dexterity - 1, dexMod: Math.floor((state.character.statsTemporary.dexterity - 11) /2) }}};
+		case INCREMENT_CON:
+			return {...state, character:{...state.character, stats: {...state.character.stats, constitution: state.character.stats.constitution + 1, conMod: Math.floor((state.character.stats.constitution - 9 ) /2) }}};
+		case DECREMENT_CON: 
+			return {...state, character:{ ...state.character, stats: { ...state.character.stats, constitution: state.character.stats.constitution - 1, conMod: Math.floor((state.character.stats.constitution - 11) /2) }}};
+		case INCREMENT_CON_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, constitution: state.character.statsTemporary.constitution + 1, conMod: Math.floor((state.character.statsTemporary.constitution - 9) /2) }}};
+		case DECREMENT_CON_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, constitution: state.character.statsTemporary.constitution - 1, conMod: Math.floor((state.character.statsTemporary.constitution - 11) /2) }}};
+		case INCREMENT_INT:
+			return {...state, character:{...state.character, stats: {...state.character.stats, intelligence: state.character.stats.intelligence + 1, intMod: Math.floor((state.character.stats.intelligence - 9 ) /2) }}};
+		case DECREMENT_INT: 
+			return {...state, character:{ ...state.character, stats: { ...state.character.stats, intelligence: state.character.stats.intelligence - 1, intMod: Math.floor((state.character.stats.intelligence - 11) /2) }}};
+		case INCREMENT_INT_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, intelligence: state.character.statsTemporary.intelligence + 1, intMod: Math.floor((state.character.statsTemporary.intelligence - 9) /2) }}};
+		case DECREMENT_INT_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, intelligence: state.character.statsTemporary.intelligence - 1, intMod: Math.floor((state.character.statsTemporary.intelligence - 11) /2) }}};
+		case INCREMENT_WIS:
+			return {...state, character:{...state.character, stats: {...state.character.stats, wisdom: state.character.stats.wisdom + 1, wisMod: Math.floor((state.character.stats.wisdom - 9 ) /2) }}};
+		case DECREMENT_WIS: 
+			return {...state, character:{ ...state.character, stats: { ...state.character.stats, wisdom: state.character.stats.wisdom - 1, wisMod: Math.floor((state.character.stats.wisdom - 11) /2) }}};
+		case INCREMENT_WIS_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, wisdom: state.character.statsTemporary.wisdom + 1, wisMod: Math.floor((state.character.statsTemporary.wisdom - 9) /2) }}};
+		case DECREMENT_WIS_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, wisdom: state.character.statsTemporary.wisdom - 1, wisMod: Math.floor((state.character.statsTemporary.wisdom - 11) /2) }}};
+		case INCREMENT_CHA:
+			return {...state, character:{...state.character, stats: {...state.character.stats, charisma: state.character.stats.charisma + 1, chaMod: Math.floor((state.character.stats.charisma - 9 ) /2) }}};
+		case DECREMENT_CHA: 
+			return {...state, character:{ ...state.character, stats: { ...state.character.stats, charisma: state.character.stats.charisma - 1, chaMod: Math.floor((state.character.stats.charisma - 11) /2) }}};
+		case INCREMENT_CHA_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, charisma: state.character.statsTemporary.charisma + 1, chaMod: Math.floor((state.character.statsTemporary.charisma - 9) /2) }}};
+		case DECREMENT_CHA_TEMP:
+			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, charisma: state.character.statsTemporary.charisma - 1, chaMod: Math.floor((state.character.statsTemporary.charisma - 11) /2) }}};
 		default:
 			return state;
 	}
