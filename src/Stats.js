@@ -125,7 +125,7 @@ class Stats extends Component{
 						</div>
 				  	</div>
 					<a className="ui basic inverted teal label">
-						{this.props.dexTempMod < 0 ? (<span></span>) : (<span>+</span>)}{this.props.dexterityTempMod}
+						{this.props.dexterityTempMod < 0 ? (<span></span>) : (<span>+</span>)}{this.props.dexterityTempMod}
 				  	</a>	
 				</div>
 
