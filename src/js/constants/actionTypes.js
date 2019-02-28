@@ -23,6 +23,7 @@ export const UPDATE_MAX_HP = "UPDATE_MAX_HP";
 export const UPDATE_CURRENT_HP = "UPDATE_CURRENT_HP";
 export const UPDATE_NONLETHAL = "UPDATE_NONLETHAL";
 export const UPDATE_INITIATIVE_MOD = "UPDATE_INITIATIVE_MOD";
+export const UPDATE_DR = "UPDATE_DR";
 //stat point actions
 export const INCREMENT_STR = "INCREMENT_STR";
 export const INCREMENT_DEX = "INCREMENT_DEX";

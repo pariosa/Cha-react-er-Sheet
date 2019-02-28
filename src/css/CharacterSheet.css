@@ -82,3 +82,9 @@ h2{
 .abilityScore:hover .statButtons{
 	visibility:visible;
 }
+
+.HealthPoints > .ui > .input > input{
+	height:37px;
+	padding-left:26px!important; 
+	padding-right:4px!important; 
+}

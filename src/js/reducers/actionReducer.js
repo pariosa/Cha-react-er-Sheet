@@ -1,5 +1,5 @@
 import { ADD_ARTICLE, INCREMENT, DECREMENT,UPDATE_NAME, UPDATE_ALIGNMENT, UPDATE_PLAYER_NAME, UPDATE_CLASS, UPDATE_LEVEL, UPDATE_DIETY, UPDATE_HOMELAND, UPDATE_RACE, UPDATE_SIZE, UPDATE_GENDER, UPDATE_AGE, UPDATE_HEIGHT, UPDATE_WEIGHT,UPDATE_HAIR, UPDATE_EYES } from "../constants/actionTypes";
-import { UPDATE_MAX_HP, UPDATE_CURRENT_HP, UPDATE_NONLETHAL, UPDATE_INITIATIVE_MOD } from '../constants/actionTypes';
+import { UPDATE_MAX_HP, UPDATE_CURRENT_HP, UPDATE_NONLETHAL, UPDATE_DR ,  UPDATE_INITIATIVE_MOD } from '../constants/actionTypes';
 import { INCREMENT_STR, INCREMENT_DEX, INCREMENT_CON, INCREMENT_INT, INCREMENT_WIS, INCREMENT_CHA, DECREMENT_STR, DECREMENT_DEX, DECREMENT_CON, DECREMENT_INT, DECREMENT_WIS, DECREMENT_CHA,INCREMENT_STR_TEMP, INCREMENT_DEX_TEMP, INCREMENT_CON_TEMP, INCREMENT_INT_TEMP, INCREMENT_WIS_TEMP, INCREMENT_CHA_TEMP, DECREMENT_STR_TEMP, DECREMENT_DEX_TEMP, DECREMENT_CON_TEMP, DECREMENT_INT_TEMP, DECREMENT_WIS_TEMP, DECREMENT_CHA_TEMP } from '../constants/actionTypes';
 
 const initialState = {
@@ -41,25 +41,25 @@ const initialState = {
 		health:{
 			current: 24,
 			max: 35,
-			DR:'4, fire',
-			nonlethal:'',
+			DR:'4 - fire',
+			nonLethal:'none',
 		},
 		initiativeModifier: 0,
-		name: 'Horvath',
+		name: 'Eggy',
 		alignment:'N/E',
 		playerName:'Peter a.',
 		level:7,
 		diety:'Nethys',
-		homeland:'the Wastes',
-		race:'dwarf',
+		homeland:'the Skillet',
+		race:'egg',
 		playerClass:'cleric',
 		size: 's',
 		gender:'F',
 		age: 28,
-		height: '6\'1',
-		weight:'230lbs',
-		hair:'brown',
-		eyes:'green'
+		height: '2\'1',
+		weight:'1lbs',
+		hair:'eggshell',
+		eyes:'eggshell'
 	}
 };
 
@@ -149,6 +149,16 @@ const actionReducer = (state = initialState, action) => {
 			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, charisma: state.character.statsTemporary.charisma + 1, chaMod: Math.floor((state.character.statsTemporary.charisma - 9) /2) }}};
 		case DECREMENT_CHA_TEMP:
 			return {...state, character:{...state.character, statsTemporary: {...state.character.statsTemporary, charisma: state.character.statsTemporary.charisma - 1, chaMod: Math.floor((state.character.statsTemporary.charisma - 11) /2) }}};
+		case UPDATE_MAX_HP: 
+			return {...state, character:{...state.character, health: {...state.character.health, max: action.payload.target.value}}}
+		case UPDATE_CURRENT_HP:
+			return {...state, character:{...state.character, health: {...state.character.health, current:action.payload.target.value}}}
+		case UPDATE_NONLETHAL:
+			return {...state, character:{...state.character, health: {...state.character.health, nonLethal: action.payload.target.value}}}
+		case UPDATE_DR:
+			return {...state, character:{...state.character, health: {...state.character.health, DR: action.payload.target.value}}}
+		case UPDATE_INITIATIVE_MOD:
+			return {...state, character:{...state.character, initiativeModifier: action.payload.target.value}}
 		default:
 			return state;
 	}
