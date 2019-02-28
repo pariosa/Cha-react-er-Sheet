@@ -50,4 +50,6 @@ export const DECREMENT_INT_TEMP = "DECREMENT_INT_TEMP";
 export const DECREMENT_WIS_TEMP = "DECREMENT_WIS_TEMP";
 export const DECREMENT_CHA_TEMP = "DECREMENT_CHA_TEMP";
 
+//skill actions
+export const UPDATE_SKILL_RANK = "UPDATE_SKILL_RANK";
 

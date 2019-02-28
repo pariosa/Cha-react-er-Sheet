@@ -1,6 +1,7 @@
 import React, {Component} from 'React';
 import CharacterInfo from './CharInfo';
 import Stats from './Stats';
+import Skills from './Skills';
 import { connect } from 'react-redux';
 import HealthPoints from './HealthPoints';
 import css from './css/CharacterSheet.css'
@@ -29,6 +30,7 @@ class CharacterSheet extends Component{
 					<CharacterInfo />
 					<Stats />
 					<HealthPoints />
+					<Skills />
 				</div>
 				
 			</div>

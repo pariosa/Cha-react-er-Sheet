@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { updateMaxHp, updateCurrentHp, updateNonLethal, updateInitiativeMod, updateDr} from './js/actions/hpActions'
 
 const MapStateToProps = (state) =>{ 
-	return{
+	return{ 
 		max: state.action.character.health.max,
 		current:state.action.character.health.current,
 		nonLethal:state.action.character.health.nonLethal,
