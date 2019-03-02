@@ -1,3 +1,19 @@
+.statName{
+	min-width:200px;
+	display:inline-block;
+}
+.skillDescription{
+	margin-left:20px;
+}
+.total{
+	display:inline-block;
+}
+.ranks{
+	display:inline-block;
+}
+.miscMod{
+	display:inline-block;
+}
 .pathfinder-logo{
 	margin-top:30px;
 	width:28%;
@@ -39,7 +55,24 @@ h2{
 }
 .Stats{
 	left:20px;
-} 
+	max-width:400px;
+	min-width:350px;
+}
+.statHeader{
+	display:inline-block;
+	min-width:70px;
+	margin-left:15px;
+}
+.skillHeader{
+	display:inline-block;
+	width:28px;
+	float:left; 
+	font-size:9px;
+}
+ .firstSkillHeader{
+	width:195px;
+	font-size:12px;
+}
 .Stats > .button > .button{
 	min-width:70px;
 	max-width:70px;

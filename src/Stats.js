@@ -66,14 +66,14 @@ class Stats extends Component{
 	render(){
 		return(
 			<div className="Stats ui six wide stackable grid column ">
-				<div className="ui stackable column four wide">
-				stat
+				<div className="statHeader">
+				Stat
 				</div>
-				<div className="ui stackable column four wide">
-				current
+				<div className="statHeader">
+				Current
 				</div>
-				<div className="ui stackable column four wide">
-				temporary
+				<div className="statHeader">
+				Temporary
 				</div>
 
 				<div className="strength ui labeled button " tabIndex="0">

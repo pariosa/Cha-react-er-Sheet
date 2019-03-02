@@ -1,7 +1,8 @@
 import { ADD_ARTICLE, INCREMENT, DECREMENT,UPDATE_NAME, UPDATE_ALIGNMENT, UPDATE_PLAYER_NAME, UPDATE_CLASS, UPDATE_LEVEL, UPDATE_DIETY, UPDATE_HOMELAND, UPDATE_RACE, UPDATE_SIZE, UPDATE_GENDER, UPDATE_AGE, UPDATE_HEIGHT, UPDATE_WEIGHT,UPDATE_HAIR, UPDATE_EYES } from "../constants/actionTypes";
 import { UPDATE_MAX_HP, UPDATE_CURRENT_HP, UPDATE_NONLETHAL, UPDATE_DR ,  UPDATE_INITIATIVE_MOD } from '../constants/actionTypes';
 import { INCREMENT_STR, INCREMENT_DEX, INCREMENT_CON, INCREMENT_INT, INCREMENT_WIS, INCREMENT_CHA, DECREMENT_STR, DECREMENT_DEX, DECREMENT_CON, DECREMENT_INT, DECREMENT_WIS, DECREMENT_CHA,INCREMENT_STR_TEMP, INCREMENT_DEX_TEMP, INCREMENT_CON_TEMP, INCREMENT_INT_TEMP, INCREMENT_WIS_TEMP, INCREMENT_CHA_TEMP, DECREMENT_STR_TEMP, DECREMENT_DEX_TEMP, DECREMENT_CON_TEMP, DECREMENT_INT_TEMP, DECREMENT_WIS_TEMP, DECREMENT_CHA_TEMP } from '../constants/actionTypes';
-import { UPDATE_SKILL_RANK } from '../constants/actionTypes'
+import { UPDATE_SKILL_RANK, UPDATE_SKILL_DESCRIPTION, UPDATE_SKILL_MISC_MOD} from '../constants/actionTypes';
+
 const initialState = {
 	articles: [],
 	count: 0,
@@ -46,19 +47,309 @@ const initialState = {
 		},
 		skills:[
 			{
-				title:'acrobatics',
+				id:0,
+				isClass:false,
+				title:'Acrobatics',
+				stat:'dexterity',
+				ranks:2,
+				miscMod:1
+			},
+			{
+
+				id:1,
+				isClass:false,
+				title:'Appraise',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+
+				id:2,
+				isClass:false,
+				title:'Bluff',
+				stat:'charisma',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:3,
+				isClass:false,
+				title:'Climb',
+				stat:'strength',
+				ranks:0,
+				miscMod:0
+			},
+			{
+
+				id:4,
+				isClass:false,
+				title:'Craft',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0,
+				skillDescription:'weapon'
+
+			},
+			{
+				id:5,
+				isClass:false,
+				title:'Craft',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0,
+				skillDescription:'ammunition'
+			},
+			{
+				id:6,
+				isClass:false,
+				title:'Craft',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0,
+				skillDescription:''
+			},
+			{
+				id:7,
+				isClass:false,
+				title:'Diplomacy',
+				stat:'charisma',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:8,
+				isClass:false,
+				title:'Disable Device',
 				stat:'dexterity',
 				ranks:0,
 				miscMod:0
 			},
 			{
-				title:'appraise',
+				id:9,
+				isClass:false,
+				title:'Disguise',
+				stat:'charisma',
+				ranks:0,
+				miscMod:0
+			},
+			{
+
+				id:10,
+				isClass:false,
+				title:'Escape Artist',
+				stat:'dexterity',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:11,
+				isClass:false,
+				title:'Fly',
+				stat:'dexterity',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:12,
+				isClass:false,
+				title:'Intimidate',
+				stat:'charisma',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:13,
+				isClass:false,
+				title:'Knowledge (Arcana)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:14,
+				isClass:false,
+				title:'Knowledge (Dungeonerering)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:15,
+				isClass:false,
+				title:'Knowledge (Engineering)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:16,
+				isClass:false,
+				title:'Knowledge (Geography)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:17,
+				isClass:false,
+				title:'Knowledge (History)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:18,
+				isClass:false,
+				title:'Knowledge (Local)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:19,
+				isClass:false,
+				title:'Knowledge (Nature)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:20,
+				isClass:false,
+				title:'Knowledge (Nobility)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:21,
+				isClass:false,
+				title:'Knowledge (Planes)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:22,
+				isClass:false,
+				title:'Knowledge (Religion)',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:23,
+				isClass:false,
+				title:'Linguistics',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:24,
+				isClass:false,
+				title:'Perception',
+				stat:'wisdom',
+				ranks:0,
+				miscMod:0
+			}, 
+			{
+				id:25,
+				isClass:false,
+				title:'Perform',
+				stat:'charisma',
+				ranks:0,
+				miscMod:0,
+				skillDescription:''
+			},
+			{
+				id:26,
+				isClass:false,
+				title:'Perform',
+				stat:'charisma',
+				ranks:0,
+				miscMod:0,
+				skillDescription:''
+			},
+			{
+				id:27,
+				isClass:false,
+				title:'Profession',
+				stat:'wisdom',
+				ranks:0,
+				miscMod:0,
+				skillDescription:'hunting'
+			},
+			{
+				id:28,
+				isClass:false,
+				title:'Profession',
+				stat:'wisdom',
+				ranks:0,
+				miscMod:0,
+				skillDescription:'fishing',
+			},
+			{
+				id:29,
+				isClass:false,
+				title:'Ride',
+				stat:'dexterity',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:30,
+				isClass:false,
+				title:'Sense Motive',
 				stat:'wisdom',
 				ranks:0,
 				miscMod:0
 			},
 			{
-				title:'bluff',
+				id:31,
+				isClass:false,
+				title:'Sleight of Hand',
+				stat:'dexterity',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:32,
+				isClass:false,
+				title:'Spellcraft',
+				stat:'intelligence',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:33,
+				isClass:false,
+				title:'Stealth',
+				stat:'dexterity',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:34,
+				isClass:false,
+				title:'Survival',
+				stat:'wisdom',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:35,
+				isClass:false,
+				title:'Swim',
+				stat:'strength',
+				ranks:0,
+				miscMod:0
+			},
+			{
+				id:36,
+				isClass:false,
+				title:'Use Magic Device',
 				stat:'charisma',
 				ranks:0,
 				miscMod:0
@@ -179,9 +470,45 @@ const actionReducer = (state = initialState, action) => {
 			return {...state, character:{...state.character, health: {...state.character.health, DR: action.payload.target.value}}}
 		case UPDATE_INITIATIVE_MOD:
 			return {...state, character:{...state.character, initiativeModifier: action.payload.target.value}}
-		case UPDATE_SKILL_RANK:
-			debugger;
-			return {...state}
+		case UPDATE_SKILL_RANK: 
+		    let skillArray = state.character.skills;
+		    let skillIndex = skillArray.indexOf(skillInState);
+		    let skillInState = state.character.skills.find( skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id))
+		    skillInState.ranks = action.payload.target.value;
+			return{
+				...state,
+				character:{
+					...state.character,
+					skills: state.character.skills.map((item, index) => index === skillInState.id ? skillInState : item)
+				}  
+			} 
+			break; 
+		case UPDATE_SKILL_MISC_MOD: 
+		    let skillArrayMiscMod = state.character.skills;
+		    let skillInStateMiscMod = state.character.skills.find( skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id))
+		    let skillIndexMiscMod = skillArrayMiscMod.indexOf(skillInStateMiscMod);
+		    skillInStateMiscMod.miscMod = action.payload.target.value;
+			return{
+				...state,
+				character:{
+					...state.character,
+					skills: state.character.skills.map((item, index) => index === skillInStateMiscMod.id ? skillInStateMiscMod : item)
+				}  
+			} 
+			break; 
+		case UPDATE_SKILL_DESCRIPTION: 
+		    let skillArrayDescription = state.character.skills;
+		    let skillInStateDescription = state.character.skills.find( skill => skill.id === parseInt(action.payload.nativeEvent.path[2].id))
+		    let skillIndexDescription = skillArrayDescription.indexOf(skillInStateDescription);
+		    skillInStateDescription.skillDescription = action.payload.target.value;
+			return{
+				...state,
+				character:{
+					...state.character,
+					skills: state.character.skills.map((item, index) => index === skillInStateDescription.id ? skillInStateDescription : item)
+				}  
+			} 
+			break; 
 		default:
 			return state;
 	}

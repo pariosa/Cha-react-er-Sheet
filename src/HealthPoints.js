@@ -68,14 +68,14 @@ class HealthPoints extends Component{
 						<div className="ui left corner label">
 							total
 						</div>
-					 	<input size="4" type="text" value={parseInt(this.props.dexterityMod) + parseInt(this.props.initiativeModifier)} />
+					 	<input size="4" readOnly  type="text" value={parseInt(this.props.dexterityMod) + parseInt(this.props.initiativeModifier)} />
 				 	</div>
 				 	=
 				 	<div className="ui three wide left labeled input">
 						<div className="ui left corner label">
 						Dex mod
 						</div>
-					 	<input size="4" type="text" value={this.props.dexterityMod} />
+					 	<input readOnly size="4" type="text" value={this.props.dexterityMod} />
 				 	</div> 
 					+
 				 	<div className="input ui three wide left labeled input">
