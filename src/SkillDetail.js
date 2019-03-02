@@ -82,12 +82,12 @@ class SkillDetail extends Component{
 	} 
 	render(){ 
 		return(
-			<div id={this.props.id}>
+			<div className="skillCapsule" id={this.props.id}>
 				<div className="statName" >
 					{this.props.title} 
 					{this.skillDescription()} 
 				</div>
-				<input readOnly className="total" size="2" type="text" value={parseInt(this.props.ranks) + parseInt(this.props.miscMod) + parseInt(this.statModifierOnly())} />
+				<input readOnly className="total" size="4" type="text" value={'+' + (parseInt(this.props.ranks) + parseInt(this.props.miscMod) + parseInt(this.statModifierOnly()))} />
 				{this.statModifier()}
 				<input className="ranks"  size="2" type="text" value={this.props.ranks} onChange={this.props.updateSkillRank} />
 				<input className="miscMod" size="2" type="text" value={this.props.miscMod} onChange={this.props.updateSkillMiscMod} />

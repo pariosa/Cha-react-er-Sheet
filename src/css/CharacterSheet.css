@@ -69,9 +69,12 @@ h2{
 	float:left; 
 	font-size:9px;
 }
- .firstSkillHeader{
-	width:195px;
+.firstSkillHeader{
+	width:200px;
 	font-size:12px;
+}
+.secondSkillHeader{
+	width:35px;
 }
 .Stats > .button > .button{
 	min-width:70px;
@@ -87,10 +90,17 @@ h2{
 .Stats > div{
 	max-height:40px;
 }
+.skillCapsule{
+	border-bottom:1px solid lightgrey;
+		border-left:1px solid lightgrey;
+}
 .statButtons{
 	left:0px;
 	anchor:left;
 	visibility:hidden;
+}
+.total{
+	border:none;
 }
 .statPos{
 	width:17px;
