@@ -92,7 +92,7 @@ h2{
 }
 .skillCapsule{
 	border-bottom:1px solid lightgrey;
-		border-left:1px solid lightgrey;
+	border-left:1px solid lightgrey;
 }
 .statButtons{
 	left:0px;
@@ -130,4 +130,52 @@ h2{
 	height:37px;
 	padding-left:26px!important; 
 	padding-right:4px!important; 
+}
+.strength{
+	background-color:#ffa0a0;
+	border:none;
+	border-radius:10px;
+	text-align:center;
+	min-width:14px;
+	margin-right:5px;
+}
+.dexterity{
+	background-color:#b4ffe3;
+	border:none;
+	border-radius:10px;
+	text-align:center;
+	min-width:14px;
+	margin-right:5px;
+}
+.constitution{
+	background-color:#ffcf99;
+	border:none;
+	border-radius:10px;
+	text-align:center;
+	min-width:14px;
+	margin-right:5px;
+}
+.intelligence{
+	background-color:#8cb8ff;
+	border:none;
+	border-radius:10px;
+	text-align:center;
+	min-width:14px;
+	margin-right:5px;
+}
+.wisdom{
+	background-color:#cf87ff;
+	border:none;
+	border-radius:10px;
+	text-align:center;
+	min-width:14px;
+	margin-right:5px;
+}
+.charisma{
+	background-color:#f7aae2;
+	border:none;
+	border-radius:10px;
+	text-align:center;
+	min-width:14px;
+	margin-right:5px;
 }

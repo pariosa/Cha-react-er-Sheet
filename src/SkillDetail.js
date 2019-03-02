@@ -47,7 +47,7 @@ class SkillDetail extends Component{
 			default:
 				break;
 		}
-		return <input readOnly className={stat} size="2" value={stat} />;
+		return <input readOnly className={this.props.stat} size="2" value={stat} />;
 	} 
 	statModifierOnly = () => {
 				let stat; 
