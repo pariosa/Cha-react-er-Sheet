@@ -52,10 +52,12 @@ import {
   DECREMENT_CHA_TEMP
 } from "../constants/actionTypes";
 import {
+  UPDATE_SKILL_IS_CLASS,
   UPDATE_SKILL_RANK,
   UPDATE_SKILL_DESCRIPTION,
   UPDATE_SKILL_MISC_MOD
-} from "../constants/actionTypes";
+} from "../constants/actionTypes"; 
+
 import {
   UPDATE_BASE_SPEED,
   UPDATE_BASE_SPEED_ARMORED,
@@ -63,7 +65,47 @@ import {
   UPDATE_FLY_MANEUVERABILITY,
   UPDATE_SWIM_SPEED,
   UPDATE_CLIMB_SPEED,
-  UPDATE_BURROW_SPEED
+  UPDATE_BURROW_SPEED,
+} from "../constants/actionTypes";
+
+import {
+  UPDATE_ARMOR_BONUS,
+  UPDATE_SHIELD_BONUS,
+  UPDATE_SIZE_MODIFIER,
+  UPDATE_NATURAL_ARMOR,
+  UPDATE_DEFLECTION_MODIFIER,
+  UPDATE_ARMOR_MISC_MODIFIER,
+  UPDATE_TOUCH_ARMOR_CLASS,
+  UPDATE_FLAT_FOOTED_ARMOR_CLASS,
+  UPDATE_AC_MODIFIERS_FIELD,
+} from "../constants/actionTypes";
+
+import { 
+  UPDATE_BASE_SAVE,
+  UPDATE_MAGIC_SAVE_MODIFIER,
+  UPDATE_MISC_SAVE_MODIFIER,
+  UPDATE_TEMP_SAVE_MODIFIER,
+} from "../constants/actionTypes";
+
+import {
+  UPDATE_BASE_ATTACK_BONUS,
+  UPDATE_SPELL_RESISTANCE,
+} from "../constants/actionTypes";
+
+import {
+  UPDATE_CMB_SIZE_MODIFIER,
+  UPDATE_CMB_MODIFIERS_FIELD,
+  UPDATE_CMD_SIZE_MODIFIER,
+} from "../constants/actionTypes";
+
+import {
+  UPDATE_WEAPON_NAME,
+  UPDATE_WEAPON_ATTACK_BONUS,
+  UPDATE_WEAPON_CRITICAL,
+  UPDATE_WEAPON_TYPE,
+  UPDATE_WEAPON_RANGE,
+  UPDATE_WEAPON_AMMUNITION,
+  UPDATE_WEAPON_DAMAGE,
 } from "../constants/actionTypes";
 
 const initialState = {
@@ -111,7 +153,7 @@ const initialState = {
     skills: [
       {
         id: 0,
-        isClass: false,
+        isClass: true,
         title: "Acrobatics",
         stat: "dexterity",
         ranks: 2,
@@ -119,7 +161,7 @@ const initialState = {
       },
       {
         id: 1,
-        isClass: false,
+        isClass: true,
         title: "Appraise",
         stat: "intelligence",
         ranks: 0,
@@ -127,7 +169,7 @@ const initialState = {
       },
       {
         id: 2,
-        isClass: false,
+        isClass: true,
         title: "Bluff",
         stat: "charisma",
         ranks: 0,
@@ -412,6 +454,42 @@ const initialState = {
         ranks: 0,
         miscMod: 0
       }
+    ],
+    saves: [
+      {
+      	id:0,
+      	save:"Fortitude",
+      	stat:"constitution",
+      	base:1,
+      	magicMod:0,
+      	miscMod:0,
+      	tempMod:0,
+      },
+      {      	
+      	id:1,
+      	save:"Reflex",
+      	stat:"dexterity",
+      	base:1,
+      	magicMod:0,
+      	miscMod:0,
+      	tempMod:0,
+      },
+      {      	
+      	id:2,
+      	save:"Will",
+      	stat:"wisdom",
+      	base:1,
+      	magicMod:0,
+      	miscMod:0,
+      	tempMod:0,
+      }
+    ],
+    armor:{
+
+
+    },
+    weapons:[
+
     ],
     initiativeModifier: 0,
     name: "Eggy",
@@ -936,6 +1014,28 @@ const actionReducer = (state = initialState, action) => {
         }
       };
       break;
+    case UPDATE_SKILL_IS_CLASS:
+      const skillArrayIsClass = state.character.skills;
+      const skillInStateIsClass = state.character.skills.find(
+        skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id)
+      );
+      const skillIndexIsClass = skillArrayIsClass.indexOf(
+        skillInStateIsClass
+      ); 
+      skillInStateIsClass.isClass = action.payload.target.checked;
+      return {
+        ...state,
+        character: {
+          ...state.character,
+          skills: state.character.skills.map((item, index) =>
+            index === skillInStateIsClass.id
+              ? skillInStateIsClass
+              : item
+          )
+        }
+      }; 
+      break;
+
     default:
       return state;
   }

@@ -1,7 +1,8 @@
 import {
   UPDATE_SKILL_RANK,
   UPDATE_SKILL_DESCRIPTION,
-  UPDATE_SKILL_MISC_MOD
+  UPDATE_SKILL_MISC_MOD,
+  UPDATE_SKILL_IS_CLASS,
 } from "../constants/actionTypes";
 
 export const updateSkillRank = rank => ({
@@ -15,4 +16,8 @@ export const updateSkillDescription = description => ({
 export const updateSkillMiscMod = miscMod => ({
   type: "UPDATE_SKILL_MISC_MOD",
   payload: miscMod
+});
+export const updateSkillIsClass = isClass =>({
+  type: "UPDATE_SKILL_IS_CLASS",
+  payload:isClass
 });

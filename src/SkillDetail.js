@@ -3,10 +3,12 @@ import { connect } from "react-redux";
 import {
   updateSkillRank,
   updateSkillDescription,
-  updateSkillMiscMod
+  updateSkillMiscMod,
+  updateSkillIsClass
 } from "./js/actions/skillActions";
 const mapStateToProps = (state, ownProps) => {
   return {
+    isClassSkill: state.action.character.skills[ownProps.id].isClass,
     title: state.action.character.skills[ownProps.id].title,
     stat: state.action.character.skills[ownProps.id].stat,
     ranks: state.action.character.skills[ownProps.id].ranks,
@@ -20,6 +22,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     updateSkillRank: skill => dispatch(updateSkillRank(skill)),
+    updateSkillIsClass: isClass => dispatch(updateSkillIsClass(isClass)),
     updateSkillDescription: skillDescription =>
       dispatch(updateSkillDescription(skillDescription)),
     updateSkillMiscMod: skillMiscMod =>
@@ -94,9 +97,30 @@ class SkillDetail extends Component {
       );
     }
   };
+  skillIsClassCheck = () =>{
+    if(this.props.isClassSkill === true){  
+      return (
+        <input type="checkbox" 
+          value={this.props.isClassSkill}  
+          onChange={this.props.updateSkillIsClass} 
+          defaultChecked={this.props.isClass}
+          checked
+        />
+      );
+    }else{
+      return (
+        <input type="checkbox" 
+          value={this.props.isClassSkill}  
+          onChange={this.props.updateSkillIsClass} 
+          defaultChecked={this.props.isClass} 
+        />
+      );
+    }
+  }
   render() {
     return (
       <div className="skillCapsule" id={this.props.id}>
+        {this.skillIsClassCheck()} 
         <div className="statName">
           {this.props.title}
           {this.skillDescription()}
