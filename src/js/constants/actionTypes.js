@@ -2,7 +2,7 @@ export const ADD_ARTICLE = "ADD_ARTICLE";
 export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
 
-//character actions
+// character actions
 export const UPDATE_NAME = "UPDATE_NAME";
 export const UPDATE_ALIGNMENT = "UPDATE_ALIGNMENT";
 export const UPDATE_PLAYER_NAME = "UPDATE_PLAYER_NAME";
@@ -18,13 +18,13 @@ export const UPDATE_HEIGHT = "UPDATE_HEIGHT";
 export const UPDATE_WEIGHT = "UPDATE_WEIGHT";
 export const UPDATE_HAIR = "UPDATE_HAIR";
 export const UPDATE_EYES = "UPDATE_EYES";
-//health point actions
+// health point actions
 export const UPDATE_MAX_HP = "UPDATE_MAX_HP";
 export const UPDATE_CURRENT_HP = "UPDATE_CURRENT_HP";
 export const UPDATE_NONLETHAL = "UPDATE_NONLETHAL";
 export const UPDATE_INITIATIVE_MOD = "UPDATE_INITIATIVE_MOD";
 export const UPDATE_DR = "UPDATE_DR";
-//stat point actions
+// stat point actions
 export const INCREMENT_STR = "INCREMENT_STR";
 export const INCREMENT_DEX = "INCREMENT_DEX";
 export const INCREMENT_CON = "INCREMENT_CON";
@@ -50,8 +50,16 @@ export const DECREMENT_INT_TEMP = "DECREMENT_INT_TEMP";
 export const DECREMENT_WIS_TEMP = "DECREMENT_WIS_TEMP";
 export const DECREMENT_CHA_TEMP = "DECREMENT_CHA_TEMP";
 
-//skill actions
+// skill actions
 export const UPDATE_SKILL_RANK = "UPDATE_SKILL_RANK";
 export const UPDATE_SKILL_DESCRIPTION = "UPDATE_SKILL_DESCRIPTION";
 export const UPDATE_SKILL_MISC_MOD = "UPDATE_SKILL_MISC_MOD";
 
+// movement actions
+export const UPDATE_BASE_SPEED = "UPDATE_BASE_SPEED";
+export const UPDATE_BASE_SPEED_ARMORED = "UPDATE_BASE_SPEED_ARMORED";
+export const UPDATE_FLY_SPEED = "UPDATE_FLY_SPEED";
+export const UPDATE_FLY_MANEUVERABILITY = "UPDATE_FLY_MANEUVERABILITY";
+export const UPDATE_SWIM_SPEED = "UPDATE_SWIM_SPEED";
+export const UPDATE_CLIMB_SPEED = "UPDATE_CLIMB_SPEED";
+export const UPDATE_BURROW_SPEED = "UPDATE_BURROW_SPEED";

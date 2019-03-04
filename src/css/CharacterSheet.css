@@ -1,181 +1,177 @@
-.statName{
-	min-width:200px;
-	display:inline-block;
+.statName {
+  min-width: 200px;
+  display: inline-block;
 }
-.skillDescription{
-	margin-left:20px;
+.skillDescription {
+  margin-left: 20px;
 }
-.total{
-	display:inline-block;
+.total {
+  display: inline-block;
 }
-.ranks{
-	display:inline-block;
+.ranks {
+  display: inline-block;
 }
-.miscMod{
-	display:inline-block;
+.miscMod {
+  display: inline-block;
 }
-.pathfinder-logo{
-	margin-top:30px;
-	width:28%;
-	height:70px;
+.CharacterSheet {
+  margin: 0 auto;
+  padding: 20px;
 }
-.CharacterSheet{
-	margin:0 auto; 
-	padding:20px;
-}
-.characterTitle{
-	min-width:300px;
-	text-shadow: 10px 10px #fff;
+.characterTitle {
+  min-width: 300px;
+  text-shadow: 10px 10px #fff;
 }
 .charinfo > .input > input {
-	height:37px;
-	padding-left:26px!important; 
-	padding-right:4px!important; 
+  height: 37px;
+  padding-left: 26px !important;
+  padding-right: 4px !important;
 }
-.charinfo > .input{
-	margin-left:0px;
-	padding-left:0px;
-	padding-right:0px;
-
+.charinfo > .input {
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
-h2{
- text-shadow: 1px 1px 0 #c0c0c0, 2px 2px 0 #c0c0c0, 3px 3px 0 #c0c0c0, 4px 4px 0 #c0c0c0, 5px 5px 0 #c0c0c0, 6px 6px 0 #c0c0c0, 3px 3px 10px #000000;
+h2 {
+  text-shadow: 1px 1px 0 #c0c0c0, 2px 2px 0 #c0c0c0, 3px 3px 0 #c0c0c0,
+    4px 4px 0 #c0c0c0, 5px 5px 0 #c0c0c0, 6px 6px 0 #c0c0c0,
+    3px 3px 10px #000000;
   font-size: 28px;
   line-height: 138px;
-  margin:0;
+  margin: 0;
   text-align: center;
-  
 }
-.charinfo{
-	top:20px;
-} 
-.charinfo > .labeled > .label{
-	height:0px; 
-	display:block;
+.charinfo {
+  top: 20px;
 }
-.Stats{
-	left:20px;
-	max-width:400px;
-	min-width:350px;
+.charinfo > .labeled > .label {
+  height: 0px;
+  display: block;
 }
-.statHeader{
-	display:inline-block;
-	min-width:70px;
-	margin-left:15px;
+.Stats {
+  left: 20px;
+  max-width: 400px;
+  min-width: 350px;
 }
-.skillHeader{
-	display:inline-block;
-	width:28px;
-	float:left; 
-	font-size:9px;
+.statHeader {
+  display: inline-block;
+  min-width: 70px;
+  margin-left: 15px;
 }
-.firstSkillHeader{
-	width:200px;
-	font-size:12px;
+.skillHeader {
+  display: inline-block;
+  width: 28px;
+  float: left;
+  font-size: 9px;
 }
-.secondSkillHeader{
-	width:35px;
+.firstSkillHeader {
+  width: 200px;
+  font-size: 12px;
 }
-.Stats > .button > .button{
-	min-width:70px;
-	max-width:70px;
+.secondSkillHeader {
+  width: 35px;
 }
-.Stats > .button > .temp{
-	min-width:70px;
-	max-width:70px;
+.Stats > .button > .button {
+  min-width: 70px;
+  max-width: 70px;
 }
-.HealthPoints{
-	margin-top:20px;
+.Stats > .button > .temp {
+  min-width: 70px;
+  max-width: 70px;
 }
-.Stats > div{
-	max-height:40px;
+.HealthPoints {
+  margin-top: 20px;
 }
-.skillCapsule{
-	border-bottom:1px solid lightgrey;
-	border-left:1px solid lightgrey;
+.Stats > div {
+  max-height: 40px;
 }
-.statButtons{
-	left:0px;
-	anchor:left;
-	visibility:hidden;
+.skillCapsule {
+  border-bottom: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
 }
-.total{
-	border:none;
+.statButtons {
+  left: 0px;
+  anchor: left;
+  visibility: hidden;
 }
-.statPos{
-	width:17px;
-	height:20px;
-	left:30px;
-	top:-25px;
-	font-size:14px;
-	padding:0px 0px 0px 0px;
-	position:relative;
- 	display:block;
+.total {
+  border: none;
 }
-.statNeg{
-	left:30px;
-	font-size:14px;
-	top:-25px;
-	height:20px;
-	padding:0px 0px 0px 0px;
-	width:17px; 
-	position:relative;
-	display:block;
+.statPos {
+  width: 17px;
+  height: 20px;
+  left: 30px;
+  top: -25px;
+  font-size: 14px;
+  padding: 0px 0px 0px 0px;
+  position: relative;
+  display: block;
 }
-.abilityScore:hover .statButtons{
-	visibility:visible;
+.statNeg {
+  left: 30px;
+  font-size: 14px;
+  top: -25px;
+  height: 20px;
+  padding: 0px 0px 0px 0px;
+  width: 17px;
+  position: relative;
+  display: block;
+}
+.abilityScore:hover .statButtons {
+  visibility: visible;
 }
 
-.HealthPoints > .ui > .input > input{
-	height:37px;
-	padding-left:26px!important; 
-	padding-right:4px!important; 
+.HealthPoints > .ui > .input > input {
+  height: 37px;
+  padding-left: 26px !important;
+  padding-right: 4px !important;
 }
-.strength{
-	background-color:#ffa0a0;
-	border:none;
-	border-radius:10px;
-	text-align:center;
-	min-width:14px;
-	margin-right:5px;
+
+.strength {
+  background-color: #ffa0a0;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 14px;
+  margin-right: 5px;
 }
-.dexterity{
-	background-color:#b4ffe3;
-	border:none;
-	border-radius:10px;
-	text-align:center;
-	min-width:14px;
-	margin-right:5px;
+.dexterity {
+  background-color: #b4ffe3;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 14px;
+  margin-right: 5px;
 }
-.constitution{
-	background-color:#ffcf99;
-	border:none;
-	border-radius:10px;
-	text-align:center;
-	min-width:14px;
-	margin-right:5px;
+.constitution {
+  background-color: #ffcf99;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 14px;
+  margin-right: 5px;
 }
-.intelligence{
-	background-color:#8cb8ff;
-	border:none;
-	border-radius:10px;
-	text-align:center;
-	min-width:14px;
-	margin-right:5px;
+.intelligence {
+  background-color: #8cb8ff;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 14px;
+  margin-right: 5px;
 }
-.wisdom{
-	background-color:#cf87ff;
-	border:none;
-	border-radius:10px;
-	text-align:center;
-	min-width:14px;
-	margin-right:5px;
+.wisdom {
+  background-color: #cf87ff;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 14px;
+  margin-right: 5px;
 }
-.charisma{
-	background-color:#f7aae2;
-	border:none;
-	border-radius:10px;
-	text-align:center;
-	min-width:14px;
-	margin-right:5px;
+.charisma {
+  background-color: #f7aae2;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 14px;
+  margin-right: 5px;
 }

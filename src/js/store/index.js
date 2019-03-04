@@ -1,6 +1,5 @@
-import rootReducer from '../reducers/RootReducer';
-
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from "redux";
+import rootReducer from "../reducers/RootReducer";
 
 const store = createStore(rootReducer);
 
