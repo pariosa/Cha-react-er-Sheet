@@ -484,13 +484,31 @@ const initialState = {
       	tempMod:0,
       }
     ],
+    speed:{
+      baseSpeed:"25ft",
+      baseSpeedArmored:"",
+      flySpeed:"",
+      flyManeuverability:"",
+      swimSpeed:"",
+      climbSpeed:"10ft",
+      burrowSpeed:""
+    },
     armor:{
-
-
+      armorBonus:"",
+      shieldBonus:"",
+      sizeModifier:"",
+      naturalArmor:"",
+      deflectionModifier:"",
+      armorMiscModifier:"",
+      touchArmorClass:"",
+      flatFootedArmorClass:"",
+      acModifiersField:""
     },
     weapons:[
 
     ],
+    baseAttackBonus:3,
+    spellResistance:"none",
     initiativeModifier: 0,
     name: "Eggy",
     alignment: "N/E",

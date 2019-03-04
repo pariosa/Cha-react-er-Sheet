@@ -100,19 +100,15 @@ class SkillDetail extends Component {
   skillIsClassCheck = () =>{
     if(this.props.isClassSkill === true){  
       return (
-        <input type="checkbox" 
-          value={this.props.isClassSkill}  
+        <input type="checkbox"   
           onChange={this.props.updateSkillIsClass} 
-          defaultChecked={this.props.isClass}
           checked
         />
       );
     }else{
       return (
-        <input type="checkbox" 
-          value={this.props.isClassSkill}  
-          onChange={this.props.updateSkillIsClass} 
-          defaultChecked={this.props.isClass} 
+        <input type="checkbox"   
+          onChange={this.props.updateSkillIsClass}  
         />
       );
     }

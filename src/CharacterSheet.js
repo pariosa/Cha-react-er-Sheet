@@ -3,6 +3,11 @@ import { connect } from "react-redux";
 import CharacterInfo from "./CharInfo";
 import Stats from "./Stats";
 import Skills from "./Skills";
+import Saves from "./Saves";
+import Speed from './Speed';
+import Bab from "./Bab";
+import ArmorClass from "./ArmorClass";
+import Weapons from "./Weapons";
 import HealthPoints from "./HealthPoints";
 import css from "./css/CharacterSheet.css";
 
@@ -33,6 +38,10 @@ class CharacterSheet extends Component {
           <CharacterInfo />
           <Stats />
           <HealthPoints />
+          <Speed />
+          <Saves />
+          <Bab />
+          <ArmorClass />
           <Skills />
         </div>
       </div>
