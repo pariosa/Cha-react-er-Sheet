@@ -57,6 +57,7 @@ class Skills extends Component {
             <u>Misc.</u>
           </div>
         </div>
+        <br />
         {this.classSkills()}
       </div>
     );

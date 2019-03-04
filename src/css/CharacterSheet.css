@@ -175,3 +175,42 @@ h2 {
   min-width: 14px;
   margin-right: 5px;
 }
+
+.Saves{
+padding:5px;
+}
+.SaveTitle{
+display:inline-block;
+min-width:80px;
+font-size:13px;
+font-weight:bold;
+text-align:center;
+margin-top:10px;
+border-radius:8px;
+background-color:darkgray;
+}
+.SaveSubtitle{
+font-size:9px;
+text-align:center;
+margin-top:-10px;
+}
+.SaveModifiers{
+display:inline-block;
+}
+.SaveModifiers >input{
+height:25px;
+top:-2px;
+border:1px solid darkgray;
+border-radius:6px;
+text-align: center;
+position:relative;
+}
+.TotalSave{
+  border:1px solid darkgrey;
+  margin-left:10px;
+  margin-right:5px;
+  text-align:center;
+  font-weight:bold;
+  border-radius:10px;
+}
+
