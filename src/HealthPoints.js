@@ -15,7 +15,7 @@ const MapStateToProps = state => {
     nonLethal: state.action.character.health.nonLethal,
     DR: state.action.character.health.DR,
     initiativeModifier: state.action.character.initiativeModifier,
-    dexterityMod: state.action.character.stats.dexMod
+    dexterityMod: state.stat.stats.dexMod
   };
 };
 

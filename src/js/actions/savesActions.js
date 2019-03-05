@@ -13,9 +13,9 @@ export const updateMagicSaveModifier = magicMod => ({
   type: "UPDATE_MAGIC_SAVE_MODIFIER",
   payload: magicMod
 });
-export const updateMiscSaveMod = miscMod => ({
-  type: "UPDATE_MISC_SAVE_MOD",
-  payload: miscMod
+export const updateMiscSaveMod = miscSaveMod => ({
+  type: "UPDATE_MISC_SAVE_MODIFIER",
+  payload: miscSaveMod
 });
 export const updateTempSaveMod = tempMod =>({
   type: "UPDATE_TEMP_SAVE_MODIFIER",

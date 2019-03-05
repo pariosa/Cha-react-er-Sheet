@@ -25,32 +25,7 @@ import {
   UPDATE_DR,
   UPDATE_INITIATIVE_MOD
 } from "../constants/actionTypes";
-import {
-  INCREMENT_STR,
-  INCREMENT_DEX,
-  INCREMENT_CON,
-  INCREMENT_INT,
-  INCREMENT_WIS,
-  INCREMENT_CHA,
-  DECREMENT_STR,
-  DECREMENT_DEX,
-  DECREMENT_CON,
-  DECREMENT_INT,
-  DECREMENT_WIS,
-  DECREMENT_CHA,
-  INCREMENT_STR_TEMP,
-  INCREMENT_DEX_TEMP,
-  INCREMENT_CON_TEMP,
-  INCREMENT_INT_TEMP,
-  INCREMENT_WIS_TEMP,
-  INCREMENT_CHA_TEMP,
-  DECREMENT_STR_TEMP,
-  DECREMENT_DEX_TEMP,
-  DECREMENT_CON_TEMP,
-  DECREMENT_INT_TEMP,
-  DECREMENT_WIS_TEMP,
-  DECREMENT_CHA_TEMP
-} from "../constants/actionTypes";
+
 import {
   UPDATE_SKILL_IS_CLASS,
   UPDATE_SKILL_RANK,
@@ -108,11 +83,11 @@ import {
   UPDATE_WEAPON_DAMAGE,
 } from "../constants/actionTypes";
 
-const initialState = {
+export const initialState = {
   articles: [],
   count: 0,
   character: {
-    stats: {
+  /*  stats: {
       intelligence: 10,
       intMod: 0,
       dexterity: 10,
@@ -143,7 +118,7 @@ const initialState = {
       chaMod: 0,
       constitution: 10,
       conMod: 0
-    },
+    },*/
     health: {
       current: 24,
       max: 35,
@@ -460,28 +435,28 @@ const initialState = {
       	id:0,
       	save:"Fortitude",
       	stat:"constitution",
-      	base:1,
-      	magicMod:0,
-      	miscMod:0,
-      	tempMod:0,
+      	base:"1",
+      	magicMod:"0",
+      	miscMod:"0",
+      	tempMod:"0",
       },
       {      	
       	id:1,
       	save:"Reflex",
       	stat:"dexterity",
       	base:1,
-      	magicMod:0,
-      	miscMod:0,
-      	tempMod:0,
+      	magicMod:"0",
+      	miscMod:"0",
+      	tempMod:"0",
       },
       {      	
       	id:2,
       	save:"Will",
       	stat:"wisdom",
       	base:1,
-      	magicMod:0,
-      	miscMod:0,
-      	tempMod:0,
+      	magicMod:"0",
+      	miscMod:"0",
+      	tempMod:"0",
       }
     ],
     speed:{
@@ -528,7 +503,7 @@ const initialState = {
   }
 };
 
-const actionReducer = (state = initialState, action) => {
+const actionReducer = (state = initialState, action) => { 
   switch (action.type) {
     case ADD_ARTICLE:
       return { ...state, articles: [...state.articles, action.payload] };
@@ -619,314 +594,6 @@ const actionReducer = (state = initialState, action) => {
       return {
         ...state,
         character: { ...state.character, eyes: action.payload.target.value }
-      };
-    case INCREMENT_STR:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            strength: state.character.stats.strength + 1,
-            strMod: Math.floor((state.character.stats.strength - 9) / 2)
-          }
-        }
-      };
-    case DECREMENT_STR:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            strength: state.character.stats.strength - 1,
-            strMod: Math.floor((state.character.stats.strength - 11) / 2)
-          }
-        }
-      };
-    case INCREMENT_STR_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            strength: state.character.statsTemporary.strength + 1,
-            strMod: Math.floor(
-              (state.character.statsTemporary.strength - 9) / 2
-            )
-          }
-        }
-      };
-    case DECREMENT_STR_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            strength: state.character.statsTemporary.strength - 1,
-            strMod: Math.floor(
-              (state.character.statsTemporary.strength - 11) / 2
-            )
-          }
-        }
-      };
-    case INCREMENT_DEX:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            dexterity: state.character.stats.dexterity + 1,
-            dexMod: Math.floor((state.character.stats.dexterity - 9) / 2)
-          }
-        }
-      };
-    case DECREMENT_DEX:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            dexterity: state.character.stats.dexterity - 1,
-            dexMod: Math.floor((state.character.stats.dexterity - 11) / 2)
-          }
-        }
-      };
-    case INCREMENT_DEX_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            dexterity: state.character.statsTemporary.dexterity + 1,
-            dexMod: Math.floor(
-              (state.character.statsTemporary.dexterity - 9) / 2
-            )
-          }
-        }
-      };
-    case DECREMENT_DEX_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            dexterity: state.character.statsTemporary.dexterity - 1,
-            dexMod: Math.floor(
-              (state.character.statsTemporary.dexterity - 11) / 2
-            )
-          }
-        }
-      };
-    case INCREMENT_CON:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            constitution: state.character.stats.constitution + 1,
-            conMod: Math.floor((state.character.stats.constitution - 9) / 2)
-          }
-        }
-      };
-    case DECREMENT_CON:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            constitution: state.character.stats.constitution - 1,
-            conMod: Math.floor((state.character.stats.constitution - 11) / 2)
-          }
-        }
-      };
-    case INCREMENT_CON_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            constitution: state.character.statsTemporary.constitution + 1,
-            conMod: Math.floor(
-              (state.character.statsTemporary.constitution - 9) / 2
-            )
-          }
-        }
-      };
-    case DECREMENT_CON_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            constitution: state.character.statsTemporary.constitution - 1,
-            conMod: Math.floor(
-              (state.character.statsTemporary.constitution - 11) / 2
-            )
-          }
-        }
-      };
-    case INCREMENT_INT:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            intelligence: state.character.stats.intelligence + 1,
-            intMod: Math.floor((state.character.stats.intelligence - 9) / 2)
-          }
-        }
-      };
-    case DECREMENT_INT:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            intelligence: state.character.stats.intelligence - 1,
-            intMod: Math.floor((state.character.stats.intelligence - 11) / 2)
-          }
-        }
-      };
-    case INCREMENT_INT_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            intelligence: state.character.statsTemporary.intelligence + 1,
-            intMod: Math.floor(
-              (state.character.statsTemporary.intelligence - 9) / 2
-            )
-          }
-        }
-      };
-    case DECREMENT_INT_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            intelligence: state.character.statsTemporary.intelligence - 1,
-            intMod: Math.floor(
-              (state.character.statsTemporary.intelligence - 11) / 2
-            )
-          }
-        }
-      };
-    case INCREMENT_WIS:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            wisdom: state.character.stats.wisdom + 1,
-            wisMod: Math.floor((state.character.stats.wisdom - 9) / 2)
-          }
-        }
-      };
-    case DECREMENT_WIS:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            wisdom: state.character.stats.wisdom - 1,
-            wisMod: Math.floor((state.character.stats.wisdom - 11) / 2)
-          }
-        }
-      };
-    case INCREMENT_WIS_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            wisdom: state.character.statsTemporary.wisdom + 1,
-            wisMod: Math.floor((state.character.statsTemporary.wisdom - 9) / 2)
-          }
-        }
-      };
-    case DECREMENT_WIS_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            wisdom: state.character.statsTemporary.wisdom - 1,
-            wisMod: Math.floor((state.character.statsTemporary.wisdom - 11) / 2)
-          }
-        }
-      };
-    case INCREMENT_CHA:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            charisma: state.character.stats.charisma + 1,
-            chaMod: Math.floor((state.character.stats.charisma - 9) / 2)
-          }
-        }
-      };
-    case DECREMENT_CHA:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          stats: {
-            ...state.character.stats,
-            charisma: state.character.stats.charisma - 1,
-            chaMod: Math.floor((state.character.stats.charisma - 11) / 2)
-          }
-        }
-      };
-    case INCREMENT_CHA_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            charisma: state.character.statsTemporary.charisma + 1,
-            chaMod: Math.floor(
-              (state.character.statsTemporary.charisma - 9) / 2
-            )
-          }
-        }
-      };
-    case DECREMENT_CHA_TEMP:
-      return {
-        ...state,
-        character: {
-          ...state.character,
-          statsTemporary: {
-            ...state.character.statsTemporary,
-            charisma: state.character.statsTemporary.charisma - 1,
-            chaMod: Math.floor(
-              (state.character.statsTemporary.charisma - 11) / 2
-            )
-          }
-        }
       };
     case UPDATE_MAX_HP:
       return {
@@ -1051,9 +718,91 @@ const actionReducer = (state = initialState, action) => {
               : item
           )
         }
-      }; 
-      break;
+      };
+    case UPDATE_BASE_SAVE:
+      const saveArrayBase = state.character.saves;
+      const saveInStateBase = state.character.saves.find(
+        save => save.id === parseInt(action.payload.nativeEvent.path[2].id)
+      );
+      const saveIndexBase = saveArrayBase.indexOf(
+        saveInStateBase
+      );
 
+      saveInStateBase.base = action.payload.target.value;
+      return {
+        ...state,
+        character:{
+          ...state.character,
+          saves:state.character.saves.map((item, index)=>
+            index === saveInStateBase.id
+              ? saveInStateBase
+              : item
+          )
+        }
+      }
+    case UPDATE_MAGIC_SAVE_MODIFIER:      
+      const saveArrayMagicMod = state.character.saves;
+      const saveInStateMagicMod = state.character.saves.find(
+        save => save.id === parseInt(action.payload.nativeEvent.path[2].id)
+      );
+      const saveIndexMagicMod = saveArrayMagicMod.indexOf(
+        saveInStateMagicMod
+      );
+      saveInStateMagicMod.magicMod = action.payload.target.value;
+      return {
+        ...state,
+        character:{
+          ...state.character,
+          saves:state.character.saves.map((item, index)=>
+            index === saveInStateMagicMod.id
+              ? saveInStateMagicMod
+              : item
+          )
+        }
+      }
+      break;
+    case UPDATE_MISC_SAVE_MODIFIER: 
+      const saveArrayMiscMod = state.character.saves;
+      const saveInStateMiscMod = state.character.saves.find(
+        save => save.id === parseInt(action.payload.nativeEvent.path[2].id)
+      );
+      const saveIndexMiscMod = saveArrayMiscMod.indexOf(
+        saveInStateMiscMod
+      );   
+      saveInStateMiscMod.miscMod = action.payload.target.value;
+      return {
+        ...state,
+        character:{
+          ...state.character,
+          saves:state.character.saves.map((item, index)=>
+            index === saveInStateMiscMod.id
+              ? saveInStateMiscMod
+              : item
+          )
+        }
+      }    
+      break;
+    case UPDATE_TEMP_SAVE_MODIFIER:
+      const saveArrayTempMod = state.character.saves;
+      const saveInStateTempMod = state.character.saves.find(
+        save => save.id === parseInt(action.payload.nativeEvent.path[2].id)
+      );
+      const saveIndexTempMod = saveArrayTempMod.indexOf(
+        saveInStateTempMod
+      );
+      saveInStateTempMod.tempMod = action.payload.target.value;
+      return {
+        ...state,
+        character:{
+          ...state.character,
+          saves:state.character.saves.map((item, index)=>
+            index === saveInStateTempMod.id
+              ? saveInStateTempMod
+              : item
+          )
+        }
+      }
+      break;
     default:
       return state;
   }

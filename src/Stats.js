@@ -1,86 +1,42 @@
 import React, { Component } from "React";
 import { connect } from "react-redux";
 import {
-  incrementStr,
-  incrementStrTemp,
-  decrementStr,
-  decrementStrTemp,
-  incrementDex,
-  incrementDexTemp,
-  decrementDex,
-  decrementDexTemp,
-  incrementCon,
-  incrementConTemp,
-  decrementCon,
-  decrementConTemp,
-  incrementInt,
-  incrementIntTemp,
-  decrementInt,
-  decrementIntTemp,
-  incrementWis,
-  incrementWisTemp,
-  decrementWis,
-  decrementWisTemp,
-  incrementCha,
-  incrementChaTemp,
-  decrementCha,
-  decrementChaTemp
+  updateStat,
+  updateTempStat
 } from "./js/actions/statsActions";
 
 const mapStateToProps = state => {
   return {
-    strength: state.action.character.stats.strength,
-    dexterity: state.action.character.stats.dexterity,
-    constitution: state.action.character.stats.constitution,
-    wisdom: state.action.character.stats.wisdom,
-    intelligence: state.action.character.stats.intelligence,
-    charisma: state.action.character.stats.charisma,
-    strengthTemp: state.action.character.statsTemporary.strength,
-    dexterityTemp: state.action.character.statsTemporary.dexterity,
-    constitutionTemp: state.action.character.statsTemporary.constitution,
-    wisdomTemp: state.action.character.statsTemporary.wisdom,
-    intelligenceTemp: state.action.character.statsTemporary.intelligence,
-    charismaTemp: state.action.character.statsTemporary.charisma,
-    strengthMod: state.action.character.stats.strMod,
-    dexterityMod: state.action.character.stats.dexMod,
-    constitutionMod: state.action.character.stats.conMod,
-    wisdomMod: state.action.character.stats.wisMod,
-    intelligenceMod: state.action.character.stats.intMod,
-    charismaMod: state.action.character.stats.chaMod,
-    strengthTempMod: state.action.character.statsTemporary.strMod,
-    dexterityTempMod: state.action.character.statsTemporary.dexMod,
-    constitutionTempMod: state.action.character.statsTemporary.conMod,
-    wisdomTempMod: state.action.character.statsTemporary.wisMod,
-    intelligenceTempMod: state.action.character.statsTemporary.intMod,
-    charismaTempMod: state.action.character.statsTemporary.chaMod
+    strength: state.stat.stats.strength,
+    dexterity: state.stat.stats.dexterity,
+    constitution: state.stat.stats.constitution,
+    wisdom: state.stat.stats.wisdom,
+    intelligence: state.stat.stats.intelligence,
+    charisma: state.stat.stats.charisma,
+    strengthTemp: state.stat.statsTemporary.strength,
+    dexterityTemp: state.stat.statsTemporary.dexterity,
+    constitutionTemp: state.stat.statsTemporary.constitution,
+    wisdomTemp: state.stat.statsTemporary.wisdom,
+    intelligenceTemp: state.stat.statsTemporary.intelligence,
+    charismaTemp: state.stat.statsTemporary.charisma,
+    strengthMod: state.stat.stats.strMod,
+    dexterityMod: state.stat.stats.dexMod,
+    constitutionMod: state.stat.stats.conMod,
+    wisdomMod: state.stat.stats.wisMod,
+    intelligenceMod: state.stat.stats.intMod,
+    charismaMod: state.stat.stats.chaMod,
+    strengthTempMod: state.stat.statsTemporary.strMod,
+    dexterityTempMod: state.stat.statsTemporary.dexMod,
+    constitutionTempMod: state.stat.statsTemporary.conMod,
+    wisdomTempMod: state.stat.statsTemporary.wisMod,
+    intelligenceTempMod: state.stat.statsTemporary.intMod,
+    charismaTempMod: state.stat.statsTemporary.chaMod
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    incrementStr: stat => dispatch(incrementStr(stat)),
-    incrementStrTemp: stat => dispatch(incrementStrTemp(stat)),
-    incrementDex: stat => dispatch(incrementDex(stat)),
-    incrementDexTemp: stat => dispatch(incrementDexTemp(stat)),
-    incrementCon: stat => dispatch(incrementCon(stat)),
-    incrementConTemp: stat => dispatch(incrementConTemp(stat)),
-    incrementWis: stat => dispatch(incrementWis(stat)),
-    incrementWisTemp: stat => dispatch(incrementWisTemp(stat)),
-    incrementInt: stat => dispatch(incrementInt(stat)),
-    incrementIntTemp: stat => dispatch(incrementIntTemp(stat)),
-    incrementCha: stat => dispatch(incrementCha(stat)),
-    incrementChaTemp: stat => dispatch(incrementChaTemp(stat)),
-    decrementStr: stat => dispatch(decrementStr(stat)),
-    decrementStrTemp: stat => dispatch(decrementStrTemp(stat)),
-    decrementDex: stat => dispatch(decrementDex(stat)),
-    decrementDexTemp: stat => dispatch(decrementDexTemp(stat)),
-    decrementCon: stat => dispatch(decrementCon(stat)),
-    decrementConTemp: stat => dispatch(decrementConTemp(stat)),
-    decrementWis: stat => dispatch(decrementWis(stat)),
-    decrementWisTemp: stat => dispatch(decrementWisTemp(stat)),
-    decrementInt: stat => dispatch(decrementInt(stat)),
-    decrementIntTemp: stat => dispatch(decrementIntTemp(stat)),
-    decrementCha: stat => dispatch(decrementCha(stat)),
-    decrementChaTemp: stat => dispatch(decrementChaTemp(stat))
+    updateStat: stat => dispatch(updateStat(stat)), 
+    updateTempStat: tempStat => dispatch(updateTempStat(tempStat)), 
   };
 };
 
@@ -105,13 +61,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="strPos statPos"
-                onClick={this.props.incrementStr}
+                onClick={this.props.updateStat}
               >
                 +
               </button>
               <button
                 className="strNeg statNeg"
-                onClick={this.props.decrementStr}
+                onClick={this.props.updateStat}
               >
                 -
               </button>
@@ -126,13 +82,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="strPos statPos"
-                onClick={this.props.incrementStrTemp}
+                onClick={this.props.updateTempStat}
               >
                 +
               </button>
               <button
                 className="strNeg statNeg"
-                onClick={this.props.decrementStrTemp}
+                onClick={this.props.updateTempStat}
               >
                 -
               </button>
@@ -153,13 +109,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="dexPos statPos"
-                onClick={this.props.incrementDex}
+                onClick={this.props.updateStat}
               >
                 +
               </button>
               <button
                 className="dexNeg statNeg"
-                onClick={this.props.decrementDex}
+                onClick={this.props.updateStat}
               >
                 -
               </button>
@@ -174,13 +130,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="dexPos statPos"
-                onClick={this.props.incrementDexTemp}
+                onClick={this.props.updateTempStat}
               >
                 +
               </button>
               <button
                 className="dexNeg statNeg"
-                onClick={this.props.decrementDexTemp}
+                onClick={this.props.updateTempStat}
               >
                 -
               </button>
@@ -201,13 +157,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="conPos statPos"
-                onClick={this.props.incrementCon}
+                onClick={this.props.updateStat}
               >
                 +
               </button>
               <button
                 className="conNeg statNeg"
-                onClick={this.props.decrementCon}
+                onClick={this.props.updateStat}
               >
                 -
               </button>
@@ -222,13 +178,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="conPos statPos"
-                onClick={this.props.incrementConTemp}
+                onClick={this.props.updateTempStat}
               >
                 +
               </button>
               <button
                 className="conNeg statNeg"
-                onClick={this.props.decrementConTemp}
+                onClick={this.props.updateTempStat}
               >
                 -
               </button>
@@ -249,13 +205,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="intPos statPos"
-                onClick={this.props.incrementInt}
+                onClick={this.props.updateStat}
               >
                 +
               </button>
               <button
                 className="intNeg statNeg"
-                onClick={this.props.decrementInt}
+                onClick={this.props.updateStat}
               >
                 -
               </button>
@@ -270,13 +226,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="intPos statPos"
-                onClick={this.props.incrementIntTemp}
+                onClick={this.props.updateTempStat}
               >
                 +
               </button>
               <button
                 className="intNeg statNeg"
-                onClick={this.props.decrementIntTemp}
+                onClick={this.props.updateTempStat}
               >
                 -
               </button>
@@ -300,13 +256,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="wisPos statPos"
-                onClick={this.props.incrementWis}
+                onClick={this.props.updateStat}
               >
                 +
               </button>
               <button
                 className="wisNeg statNeg"
-                onClick={this.props.decrementWis}
+                onClick={this.props.updateStat}
               >
                 -
               </button>
@@ -321,13 +277,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="wisPos statPos"
-                onClick={this.props.incrementWisTemp}
+                onClick={this.props.updateTempStat}
               >
                 +
               </button>
               <button
                 className="wisNeg statNeg"
-                onClick={this.props.decrementWisTemp}
+                onClick={this.props.updateTempStat}
               >
                 -
               </button>
@@ -351,13 +307,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="chaPos statPos"
-                onClick={this.props.incrementCha}
+                onClick={this.props.updateStat}
               >
                 +
               </button>
               <button
                 className="chaNeg statNeg"
-                onClick={this.props.decrementCha}
+                onClick={this.props.updateStat}
               >
                 -
               </button>
@@ -372,13 +328,13 @@ class Stats extends Component {
             <div className="statButtons">
               <button
                 className="chaPos statPos"
-                onClick={this.props.incrementChaTemp}
+                onClick={this.props.updateTempStat}
               >
                 +
               </button>
               <button
                 className="chaNeg statNeg"
-                onClick={this.props.decrementChaTemp}
+                onClick={this.props.updateTempStat}
               >
                 -
               </button>

@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
     miscMod: state.action.character.skills[ownProps.id].miscMod,
     skillDescription:
       state.action.character.skills[ownProps.id].skillDescription,
-    stats: state.action.character.stats,
+    stats: state.stat.stats,
     id: state.action.character.skills[ownProps.id].id
   };
 };

@@ -39,10 +39,11 @@ class CharacterSheet extends Component {
           <Stats />
           <HealthPoints />
           <Speed />
-          <Saves />
-          <Bab />
-          <ArmorClass />
           <Skills />
+          <Bab />
+          <Saves />
+          <ArmorClass />
+
         </div>
       </div>
     );

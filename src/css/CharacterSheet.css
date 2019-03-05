@@ -67,6 +67,7 @@ h2 {
 .firstSkillHeader {
   width: 200px;
   font-size: 12px;
+  margin-left:15px;
 }
 .secondSkillHeader {
   width: 35px;
@@ -177,33 +178,33 @@ h2 {
 }
 
 .Saves{
-padding:5px;
+  padding:5px;
 }
 .SaveTitle{
-display:inline-block;
-min-width:80px;
-font-size:13px;
-font-weight:bold;
-text-align:center;
-margin-top:10px;
-border-radius:8px;
-background-color:darkgray;
+  display:inline-block;
+  min-width:80px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  margin-top:10px;
+  border-radius:8px;
+  background-color:darkgray;
 }
 .SaveSubtitle{
-font-size:9px;
-text-align:center;
-margin-top:-10px;
+  font-size:9px;
+  text-align:center;
+  margin-top:-10px;
 }
 .SaveModifiers{
-display:inline-block;
+  display:inline-block;
 }
 .SaveModifiers >input{
-height:25px;
-top:-2px;
-border:1px solid darkgray;
-border-radius:6px;
-text-align: center;
-position:relative;
+  height:25px;
+  top:-2px;
+  border:1px solid darkgray;
+  border-radius:6px;
+  text-align: center;
+  position:relative;
 }
 .TotalSave{
   border:1px solid darkgrey;
