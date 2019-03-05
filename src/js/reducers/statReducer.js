@@ -40,7 +40,7 @@ const initialState =
   };
 const statReducer = (state = initialState, action) => { 
   switch (action.type) {
-    case UPDATE_STAT: 
+    case UPDATE_STAT:  
       let stat, value, statName;
       let returnObj = new Object;
       stat = action.payload.currentTarget.attributes[0].value.split(" ")[0].substring(0,3);

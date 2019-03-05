@@ -1,23 +1,13 @@
-.statName {
-  min-width: 200px;
-  display: inline-block;
-}
-.skillDescription {
-  margin-left: 20px;
-}
-.total {
-  display: inline-block;
-}
-.ranks {
-  display: inline-block;
-}
-.miscMod {
-  display: inline-block;
-}
 .CharacterSheet {
   margin: 0 auto;
   padding: 20px;
-}
+} 
+.total {
+  border: none;
+} 
+
+
+/* character Info Css */
 .characterTitle {
   min-width: 300px;
   text-shadow: 10px 10px #fff;
@@ -48,15 +38,11 @@ h2 {
   height: 0px;
   display: block;
 }
-.Stats {
-  left: 20px;
-  max-width: 400px;
-  min-width: 350px;
-}
-.statHeader {
-  display: inline-block;
-  min-width: 70px;
-  margin-left: 15px;
+
+/* Skills CSS */
+.skillCapsule {
+  border-bottom: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
 }
 .skillHeader {
   display: inline-block;
@@ -72,31 +58,96 @@ h2 {
 .secondSkillHeader {
   width: 35px;
 }
-.Stats > .button > .button {
-  min-width: 70px;
-  max-width: 70px;
+.skillDescription {
+  margin-left: 20px;
 }
-.Stats > .button > .temp {
-  min-width: 70px;
-  max-width: 70px;
+.total {
+  display: inline-block;
 }
-.HealthPoints {
-  margin-top: 20px;
+.ranks {
+  display: inline-block;
 }
-.Stats > div {
-  max-height: 40px;
+.miscMod {
+  display: inline-block;
 }
-.skillCapsule {
-  border-bottom: 1px solid lightgrey;
-  border-left: 1px solid lightgrey;
+
+/* Saves Css */
+.Saves{
+  padding:5px;
 }
+.SaveTitle{
+  display:inline-block;
+  min-width:80px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  margin-top:10px;
+  border-radius:8px;
+  background-color:darkgray;
+}
+.SaveSubtitle{
+  font-size:9px;
+  text-align:center;
+  margin-top:-10px;
+}
+.SaveModifiers{
+  display:inline-block;
+}
+.SaveModifiers >input{
+  height:25px;
+  top:-2px;
+  border:1px solid darkgray;
+  border-radius:6px;
+  text-align: center;
+  position:relative;
+}
+.TotalSave{
+  border:1px solid darkgrey;
+  margin-left:10px;
+  margin-right:5px;
+  text-align:center;
+  font-weight:bold;
+  border-radius:10px;
+}
+
+/* Stats CSS*/
 .statButtons {
   left: 0px;
   anchor: left;
   visibility: hidden;
 }
-.total {
-  border: none;
+.abilityScore:hover .statButtons {
+  visibility: visible;
+}
+.Stats > div > .button > .button {
+  min-width: 70px;
+  max-width: 70px;
+}
+.Stats > div >  .button > .temp {
+  min-width: 70px;
+  max-width: 70px;
+} 
+.Stats {
+  max-height:120px;
+  min-height:300px;
+  left: 20px;
+  max-width: 400px;
+  min-width: 350px;
+}
+.statHeader {
+  display: inline-block;
+  min-width: 70px;
+  margin-left: 15px;
+} 
+.statName {
+  min-width: 200px;
+  display: inline-block;
+}
+.abilityScore{
+  max-height:40px;
+  margin-top:40px;
+  display:inline-block;
+  position:relative;
 }
 .statPos {
   width: 17px;
@@ -117,17 +168,9 @@ h2 {
   width: 17px;
   position: relative;
   display: block;
-}
-.abilityScore:hover .statButtons {
-  visibility: visible;
-}
+} 
 
-.HealthPoints > .ui > .input > input {
-  height: 37px;
-  padding-left: 26px !important;
-  padding-right: 4px !important;
-}
-
+/* Colors CSS */
 .strength {
   background-color: #ffa0a0;
   border: none;
@@ -177,41 +220,12 @@ h2 {
   margin-right: 5px;
 }
 
-.Saves{
-  padding:5px;
+/*healthpoints Css*/
+.HealthPoints {
+  margin-top: 20px;
 }
-.SaveTitle{
-  display:inline-block;
-  min-width:80px;
-  font-size:13px;
-  font-weight:bold;
-  text-align:center;
-  margin-top:10px;
-  border-radius:8px;
-  background-color:darkgray;
+.HealthPoints > .ui > .input > input {
+  height: 37px;
+  padding-left: 26px !important;
+  padding-right: 4px !important;
 }
-.SaveSubtitle{
-  font-size:9px;
-  text-align:center;
-  margin-top:-10px;
-}
-.SaveModifiers{
-  display:inline-block;
-}
-.SaveModifiers >input{
-  height:25px;
-  top:-2px;
-  border:1px solid darkgray;
-  border-radius:6px;
-  text-align: center;
-  position:relative;
-}
-.TotalSave{
-  border:1px solid darkgrey;
-  margin-left:10px;
-  margin-right:5px;
-  text-align:center;
-  font-weight:bold;
-  border-radius:10px;
-}
-
