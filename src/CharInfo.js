@@ -39,21 +39,21 @@ const mapDispatchToProps = dispatch => {
 };
 const mapStateToProps = state => {
   return {
-    name: state.action.character.name,
-    alignment: state.action.character.alignment,
-    playerName: state.action.character.playerName,
-    playerClass: state.action.character.playerClass,
-    level: state.action.character.level,
-    diety: state.action.character.diety,
-    homeland: state.action.character.homeland,
-    race: state.action.character.race,
-    size: state.action.character.size,
-    gender: state.action.character.gender,
-    age: state.action.character.age,
-    height: state.action.character.height,
-    weight: state.action.character.weight,
-    hair: state.action.character.hair,
-    eyes: state.action.character.eyes
+    name: state.character.name,
+    alignment: state.character.alignment,
+    playerName: state.character.playerName,
+    playerClass: state.character.playerClass,
+    level: state.character.level,
+    diety: state.character.diety,
+    homeland: state.character.homeland,
+    race: state.character.race,
+    size: state.character.size,
+    gender: state.character.gender,
+    age: state.character.age,
+    height: state.character.height,
+    weight: state.character.weight,
+    hair: state.character.hair,
+    eyes: state.character.eyes
   };
 };
 class CharacterInfo extends Component {

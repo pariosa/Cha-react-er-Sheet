@@ -8,15 +8,15 @@ import {
 } from "./js/actions/skillActions";
 const mapStateToProps = (state, ownProps) => {
   return {
-    isClassSkill: state.action.character.skills[ownProps.id].isClass,
-    title: state.action.character.skills[ownProps.id].title,
-    stat: state.action.character.skills[ownProps.id].stat,
-    ranks: state.action.character.skills[ownProps.id].ranks,
-    miscMod: state.action.character.skills[ownProps.id].miscMod,
+    isClassSkill: state.skills[ownProps.id].isClass,
+    title: state.skills[ownProps.id].title,
+    stat: state.skills[ownProps.id].stat,
+    ranks: state.skills[ownProps.id].ranks,
+    miscMod: state.skills[ownProps.id].miscMod,
     skillDescription:
-      state.action.character.skills[ownProps.id].skillDescription,
+      state.skills[ownProps.id].skillDescription,
     stats: state.stat.stats,
-    id: state.action.character.skills[ownProps.id].id
+    id: state.skills[ownProps.id].id
   };
 };
 const mapDispatchToProps = dispatch => {

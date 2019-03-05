@@ -10,11 +10,11 @@ import {
 
 const MapStateToProps = state => {
   return {
-    max: state.action.character.health.max,
-    current: state.action.character.health.current,
-    nonLethal: state.action.character.health.nonLethal,
-    DR: state.action.character.health.DR,
-    initiativeModifier: state.action.character.initiativeModifier,
+    max: state.health.max,
+    current: state.health.current,
+    nonLethal: state.health.nonLethal,
+    DR: state.health.DR,
+    initiativeModifier: state.health.initiativeModifier,
     dexterityMod: state.stat.stats.dexMod
   };
 };

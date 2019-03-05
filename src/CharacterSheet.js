@@ -13,8 +13,8 @@ import css from "./css/CharacterSheet.css";
 
 const mapStateToProps = state => {
   return {
-    name: state.action.character.name,
-    homeland: state.action.character.homeland
+    name: state.character.name,
+    homeland: state.character.homeland
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -26,8 +26,7 @@ const mapDispatchToProps = dispatch => {
 class CharacterSheet extends Component {
   constructor(props) {
     super(props);
-  }
-
+  } 
   render() {
     return (
       <div className="CharacterSheet">
@@ -42,8 +41,7 @@ class CharacterSheet extends Component {
           <Skills />
           <Bab />
           <Saves />
-          <ArmorClass />
-
+          <ArmorClass /> 
         </div>
       </div>
     );

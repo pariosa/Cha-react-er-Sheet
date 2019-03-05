@@ -18,13 +18,13 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state, ownProps) => {
   return {
     stats: state.stat.stats,
-    title: state.action.character.saves[ownProps.id].save,
-    stat: state.action.character.saves[ownProps.id].stat,
-    base: state.action.character.saves[ownProps.id].base,
-    miscMod: state.action.character.saves[ownProps.id].miscMod,
-    magicMod: state.action.character.saves[ownProps.id].magicMod,
-    tempMod: state.action.character.saves[ownProps.id].tempMod,
-    id: state.action.character.saves[ownProps.id].id
+    title: state.saves[ownProps.id].save,
+    stat: state.saves[ownProps.id].stat,
+    base: state.saves[ownProps.id].base,
+    miscMod: state.saves[ownProps.id].miscMod,
+    magicMod: state.saves[ownProps.id].magicMod,
+    tempMod: state.saves[ownProps.id].tempMod,
+    id: state.saves[ownProps.id].id
   };
 };
 class Save extends Component {

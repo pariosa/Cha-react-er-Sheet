@@ -4,8 +4,7 @@ import { updateSkillRank } from "./js/actions/skillActions";
 import SkillDetail from "./SkillDetail";
 const mapStateToProps = state => {
   return {
-    skills: state.action.character.skills,
-    stats: state.action.character.stats
+    skills: state.skills
   };
 };
 const mapDispatchToProps = dispatch => {

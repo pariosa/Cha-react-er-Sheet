@@ -12,8 +12,8 @@ const mapDispatchToProps = dispatch => {
 };
 const mapStateToProps = state => {
   return {
-    skills: state.action.character.skills,
-    saves: state.action.character.saves
+    skills: state.skills,
+    saves: state.saves
   };
 };
 class Saves extends Component {
@@ -21,7 +21,7 @@ class Saves extends Component {
     super(props);
   }
   Saves = () => {
-    let saves = [];
+    let saves = []; 
     this.props.saves.forEach((save, i) => {
       saves.push(
         <Save

@@ -13,8 +13,8 @@ const mapDispatchToProps = dispatch => {
 };
 const mapStateToProps = state => {
   return {
-    baseAttackBonus:state.action.character.baseAttackBonus,
-    spellResistance:state.action.character.spellResistance
+    baseAttackBonus:state.character.baseAttackBonus,
+    spellResistance:state.character.spellResistance
   };
 };
 class Bab extends Component {

@@ -23,13 +23,13 @@ const mapDispatchToProps = dispatch => {
 };
 const mapStateToProps = state => {
   return {
-    baseSpeed: state.action.character.speed.baseSpeed,
-    baseSpeedArmored: state.action.character.speed.baseSpeedArmored,
-    flySpeed: state.action.character.speed.flySpeed,
-    flyManeuverability: state.action.character.speed.flyManeuverability,
-    swimSpeed: state.action.character.speed.swimSpeed,
-    climbSpeed: state.action.character.speed.climbSpeed,
-    burrowSpeed: state.action.character.speed.burrowSpeed
+    baseSpeed: state.speed.baseSpeed,
+    baseSpeedArmored: state.speed.baseSpeedArmored,
+    flySpeed: state.speed.flySpeed,
+    flyManeuverability: state.speed.flyManeuverability,
+    swimSpeed: state.speed.swimSpeed,
+    climbSpeed: state.speed.climbSpeed,
+    burrowSpeed: state.speed.burrowSpeed
   };
 };
 class Speed extends Component {
