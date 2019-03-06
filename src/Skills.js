@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateSkillRank } from "./js/actions/skillActions";
-import SkillDetail from "./SkillDetail";
+import Skill from "./SkillDetail";
 const mapStateToProps = state => {
   return {
     skills: state.skills
@@ -21,7 +21,7 @@ class Skills extends Component {
     let skills = [];
     this.props.skills.forEach((skill, i) => {
       skills.push(
-        <SkillDetail
+        <Skill 
           key={i}
           id={i}
           title={skill.title}
@@ -38,7 +38,7 @@ class Skills extends Component {
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className="Skills">
         <div className="skillHeaders">
           <div className="firstSkillHeader skillHeader">
             <u>Skill Name</u>

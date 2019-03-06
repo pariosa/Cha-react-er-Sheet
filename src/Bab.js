@@ -24,7 +24,8 @@ class Bab extends Component {
 
   render() {
     return (
-      <div>
+      <div className="ui stackable grid row">
+
         Bab goes here
       </div>
     );

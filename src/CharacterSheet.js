@@ -35,13 +35,18 @@ class CharacterSheet extends Component {
             {this.props.name} of {this.props.homeland}
           </h2>
           <CharacterInfo />
+
           <Stats />
           <HealthPoints />
-          <Speed />
-          <Skills />
-          <Bab />
-          <Saves />
-          <ArmorClass /> 
+
+          <Speed /> 
+
+          <div className="ui stackable grid row">
+            <Bab />
+            <Saves />   
+            <ArmorClass />                
+            <Skills />
+          </div>
         </div>
       </div>
     );

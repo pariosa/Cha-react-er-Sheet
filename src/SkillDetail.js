@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(updateSkillMiscMod(skillMiscMod))
   };
 };
-class SkillDetail extends Component {
+class Skill extends Component {
   constructor(props) {
     super(props);
   }
@@ -89,7 +89,7 @@ class SkillDetail extends Component {
     if (this.props.skillDescription !== undefined) {
       return (
         <input
-          size="12"
+          size="9"
           className="skillDescription"
           value={this.props.skillDescription}
           onChange={this.props.updateSkillDescription}
@@ -155,4 +155,4 @@ class SkillDetail extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SkillDetail);
+)(Skill);

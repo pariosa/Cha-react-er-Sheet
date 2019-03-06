@@ -4,8 +4,17 @@
 } 
 .total {
   border: none;
-} 
-
+}
+.inline-block{
+  display:inline-block;
+}
+.block{
+  display:block;
+}
+.ui.grid>*{
+  padding-left:0px;
+  padding-right:0px;
+}
 
 /* character Info Css */
 .characterTitle {
@@ -33,6 +42,8 @@ h2 {
 }
 .charinfo {
   top: 20px;
+  max-height:150px;
+  min-width:685px;
 }
 .charinfo > .labeled > .label {
   height: 0px;
@@ -40,6 +51,10 @@ h2 {
 }
 
 /* Skills CSS */
+.Skills{
+  position:relative;
+  right:0px;
+}
 .skillCapsule {
   border-bottom: 1px solid lightgrey;
   border-left: 1px solid lightgrey;
@@ -222,10 +237,124 @@ h2 {
 
 /*healthpoints Css*/
 .HealthPoints {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .HealthPoints > .ui > .input > input {
   height: 37px;
   padding-left: 26px !important;
   padding-right: 4px !important;
+}
+
+
+/* speed Css */
+.Speed{
+  padding:0px;
+  max-height:150px;
+  max-width:400px;
+}
+.speedFieldFt{
+  border-right:none;
+  margin-left:5px;
+  border-top-left-radius:6px;
+  padding-left:6px;
+  margin-right:2px;
+}
+.speedFieldSq{
+  margin-left:0px;
+  margin-right:0px;
+  border-top-right-radius:5px;
+  padding-left:12px;
+  border-left:none;
+}
+.speedDescriptor{
+  max-height:34px;
+  width:70px;
+}
+.subscript{
+  text-align:center;
+  font-size:8px;
+}
+.subtext{
+  font-size:9px;
+  margin-left:-23px;
+  padding-left:10px;
+  top:11px;
+}
+.baseSpeed{
+  margin-left:108px;
+  top:-18px;
+  position:relative;
+}
+.withArmor{
+  position:relative;
+  top:-18px;
+  margin-left:64px;
+}
+.speedGroup{
+  position:relative;
+  top:-10px;
+  width:100px;
+  display:inline-block;
+}
+.speedSecondRow{
+  position:relative;
+  top:-20px;
+  min-width:340px;
+  max-width:350px;
+}
+.speedGroupFly{
+  width:140px;
+  display:inline-block;
+}
+.speedGroupThree{
+  display:inline-block;
+  width:160px;
+  margin-left:-20px;
+}
+.speedGroupThree > input{
+  margin-right:16px;
+  margin-left:-2px;
+  padding-left:8px;
+  border-radius:5px;
+  max-width:200px;
+}
+.subtext3{
+  font-size:9px;
+  padding-right:10px;
+  margin-left:-33px;
+  padding-left:0px;
+  top:11px;
+}
+.speedTempModifierHeadline{
+  font-size:8px;
+}
+.speedGroupTemp{
+  display:inline-block; 
+  position:relative;
+  margin-top:-45px;
+}
+.fly{
+  position:relative;
+  top:-6px;
+  margin-left:20px;
+}
+.maneuverability{
+  position:relative;
+  top:-6px;
+  margin-left:20px;
+}
+.swim{
+  position:relative;
+  top:-6px;
+  margin-left:30px;
+}
+.climb{
+  position:relative;
+  top:-6px;
+  margin-left:25px;
+}
+.burrow{
+  position:relative;
+  top:-6px;
+  margin-left:25px;
 }
