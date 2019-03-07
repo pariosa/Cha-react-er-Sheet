@@ -30,24 +30,25 @@ class CharacterSheet extends Component {
   render() {
     return (
       <div className="CharacterSheet">
-        <div className="ui stackable grid column">
-          <h2 className="characterTitle">
-            {this.props.name} of {this.props.homeland}
-          </h2>
-          <CharacterInfo />
-
-          <Stats />
-          <HealthPoints />
-
-          <Speed /> 
-
-          <div className="ui stackable grid row">
-            <Bab />
-            <Saves />   
-            <ArmorClass />                
-            <Skills />
-          </div>
-        </div>
+        <div className="ui stackable grid column six wide">
+            <h2 className="characterTitle">
+              {this.props.name} of {this.props.homeland}
+            </h2>
+            <CharacterInfo />   
+            <div className="ui stackable grid column six wide">  
+              <Stats />
+              <ArmorClass />
+              <Saves />  
+              <Bab />
+            </div>
+            <div className="ui stackable grid column five wide">
+              <HealthPoints />
+            </div>
+            <div className="ui stackable grid column six wide">
+              <Speed />
+              <Skills /> 
+            </div> 
+        </div>    
       </div>
     );
   }

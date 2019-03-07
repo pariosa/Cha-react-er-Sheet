@@ -53,7 +53,7 @@ class Stats extends Component {
   }
   render() {
     return (
-      <div className="Stats ui six wide stackable grid column "> 
+      <div className="Stats"> 
         <div className="statHeader">Stat</div>
         <div className="statHeader">Current</div>
         <div className="statHeader">Temporary</div>

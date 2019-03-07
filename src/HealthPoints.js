@@ -33,7 +33,7 @@ const MapDispatchToProps = dispatch => {
 class HealthPoints extends Component {
   render() {
     return (
-      <div className="HealthPoints ui four wide">
+      <div className="HealthPoints">
         <div className="ui labeled button small " tabIndex="0">
           <div className="ui black button small">
             <strong>Hit Points</strong>
@@ -63,6 +63,7 @@ class HealthPoints extends Component {
             <label>Wounds/Current HP</label>
             <textarea
               rows="1"
+              cols="20"
               value={this.props.current}
               onChange={this.props.updateCurrentHp}
             />
@@ -74,7 +75,8 @@ class HealthPoints extends Component {
             <textarea
               value={this.props.nonLethal}
               onChange={this.props.updateNonLethal}
-              rows="1"
+              rows="1" 
+              cols="20"
             />
           </div>
         </div>

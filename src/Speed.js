@@ -48,7 +48,7 @@ class Speed extends Component {
 
   render() {
     return (
-      <div className="Speed ui six wide stackable grid column">
+      <div className="Speed stackable grid row">
        <div className="ui black two wide button small speedDescriptor">
           <strong>Speed</strong>
           <div className="subscript">land</div>

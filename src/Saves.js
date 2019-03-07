@@ -39,7 +39,7 @@ class Saves extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Saves ui stackable grid row">
       {this.Saves()}
       </div>
     );

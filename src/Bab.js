@@ -24,9 +24,16 @@ class Bab extends Component {
 
   render() {
     return (
-      <div className="ui stackable grid row">
-
-        Bab goes here
+      <div className="Bab ui twelve wide stackable grid row">
+        <div className="ui black button medium baseAttackBonus">
+          Base Attack Bonus 
+        </div>  
+        <input className="babInput" size="6" value={this.props.baseAttackBonus} onChange={this.props.updateBaseAttackBonus} />
+      
+        <div className="ui black button medium spellResistance">
+          Spell Resistance 
+        </div> 
+        <input className="babInput" size="6" value={this.props.spellResistance} onChange={this.props.updateSpellResistance} />
       </div>
     );
   }

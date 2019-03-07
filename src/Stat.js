@@ -45,8 +45,8 @@ class Stat extends Component {
   			return "pink";
   	}
   }
-  getTopClassName = () =>{
-    return `${this.stat} ui labeled button`;
+  getTopClassName = () =>{ 
+    return `${this.props.stat} ui labeled button`;
   }
   getOverClassName = () =>{
   	return `ui one wide ${this.getColor()} button`;

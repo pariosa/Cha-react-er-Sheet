@@ -53,6 +53,7 @@ h2 {
 /* Skills CSS */
 .Skills{
   position:relative;
+  min-width:350px;
   right:0px;
 }
 .skillCapsule {
@@ -89,6 +90,8 @@ h2 {
 /* Saves Css */
 .Saves{
   padding:5px;
+  position:relative;
+  left:20px;
 }
 .SaveTitle{
   display:inline-block;
@@ -143,8 +146,10 @@ h2 {
   max-width: 70px;
 } 
 .Stats {
+
   max-height:120px;
   min-height:300px;
+  position:relative;
   left: 20px;
   max-width: 400px;
   min-width: 350px;
@@ -250,9 +255,11 @@ h2 {
 .Speed{
   padding:0px;
   max-height:150px;
+  min-width:300px;
   max-width:400px;
 }
 .speedFieldFt{
+  width:45px;
   border-right:none;
   margin-left:5px;
   border-top-left-radius:6px;
@@ -260,6 +267,7 @@ h2 {
   margin-right:2px;
 }
 .speedFieldSq{
+  width:45px;
   margin-left:0px;
   margin-right:0px;
   border-top-right-radius:5px;
@@ -268,9 +276,13 @@ h2 {
 }
 .speedDescriptor{
   max-height:34px;
-  width:70px;
+  width:80px;
+  position:relative;
+  top:-15px;
+  padding-top:6px!important;
 }
 .subscript{
+  position:relative; 
   text-align:center;
   font-size:8px;
 }
@@ -282,12 +294,12 @@ h2 {
 }
 .baseSpeed{
   margin-left:108px;
-  top:-18px;
+  top:-28px;
   position:relative;
 }
 .withArmor{
   position:relative;
-  top:-18px;
+  top:-28px;
   margin-left:64px;
 }
 .speedGroup{
@@ -299,6 +311,7 @@ h2 {
 .speedSecondRow{
   position:relative;
   top:-20px;
+  padding-left:4px;
   min-width:340px;
   max-width:350px;
 }
@@ -315,6 +328,7 @@ h2 {
   margin-right:16px;
   margin-left:-2px;
   padding-left:8px;
+  width:45px;
   border-radius:5px;
   max-width:200px;
 }
@@ -357,4 +371,85 @@ h2 {
   position:relative;
   top:-6px;
   margin-left:25px;
+}
+
+/* armor css */
+.Armor{ 
+  position:relative;
+  left:20px;
+  max-height:120px;
+  min-width:440px;
+}
+.armorLabel{
+  font-size:8px;
+  display:inline-block;
+  max-width:40px;
+  text-align:center;
+  line-height:7px;
+}
+.armorLabelBlank{
+  font-size:8px;
+  display:inline-block;
+  min-width:40px;
+  text-align:center;
+  line-height:7px;
+}
+.ArmorDescriptor{
+ max-height:30px;
+ padding-top:4px!important;
+ width:54px;
+ margin-top:3px;
+}
+.subscript{
+  height:10px;
+}
+.TouchDescriptor{
+ max-height:28px;
+ padding-top:3px!important;
+}
+.FlatDescriptor{
+ max-height:28px;
+ padding-top:3px!important;
+}
+.ArmorFirstRow{
+  display:inline-block; 
+}
+.ArmorFirstRow > input{
+  text-align:center;
+}
+.ArmorSecondRow{
+position:relative;
+top:-8px;
+left:60px;
+}
+.modifierText{
+  width:0px;
+  top:-13px;
+  font-size:8px;
+  display:inline-block;
+  position:relative;
+  left:-30px;
+}
+.ArmorThirdRow > input{
+position:relative;
+top:-6px;
+margin-left:6px;
+margin-right:6px;
+}
+
+/* Bab Css */
+.Bab{
+  min-width:400px;
+}
+.Bab > .button{
+  position:relative;
+  margin-left:15px;
+  padding-left:8px;
+  padding-top:8px;
+  padding-bottom:8px;
+  padding-right:8px;
+}
+.babInput{
+  text-align:center;
+  border-radius:4px;
 }
