@@ -6,36 +6,33 @@ import {
 const initialState =  
   {
     stats: {
+      strength: 10,
+      strMod: 0, 
+      dexterity: 10,
+      dexMod: 0,
+      constitution: 10,
+      conMod: 0,
       intelligence: 10,
       intMod: 0,
-      dexterity: 10,
-      dexMod: 0,
-      strength: 10,
-      strMod: 0,
-      dexterity: 10,
-      dexMod: 0,
       wisdom: 10,
       wisMod: 0,
       charisma: 10,
-      chaMod: 0,
-      constitution: 10,
-      conMod: 0
+      chaMod: 0
+      
     },
     statsTemporary: {
+      strength: 10,
+      strMod: 0, 
+      dexterity: 10,
+      dexMod: 0,
+      constitution: 10,
+      conMod: 0,
       intelligence: 10,
       intMod: 0,
-      dexterity: 10,
-      dexMod: 0,
-      strength: 10,
-      strMod: 0,
-      dexterity: 10,
-      dexMod: 0,
       wisdom: 10,
       wisMod: 0,
       charisma: 10,
-      chaMod: 0,
-      constitution: 10,
-      conMod: 0
+      chaMod: 0
     },
   };
 const statReducer = (state = initialState, action) => { 

@@ -30,7 +30,7 @@ class CharacterSheet extends Component {
   render() {
     return (
       <div className="CharacterSheet">
-        <div className="ui stackable grid column six wide">
+        <div className="ui stackable grid column twelve wide">
             <h2 className="characterTitle">
               {this.props.name} of {this.props.homeland}
             </h2>
@@ -41,7 +41,7 @@ class CharacterSheet extends Component {
               <Saves />  
               <Bab />
             </div>
-            <div className="ui stackable grid column five wide">
+            <div className="ui stackable grid column four wide">
               <HealthPoints />
             </div>
             <div className="ui stackable grid column six wide">
