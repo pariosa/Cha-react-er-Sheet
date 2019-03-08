@@ -8,6 +8,8 @@ import healthReducer from "./healthReducer";
 import characterReducer from "./characterReducer";
 import statReducer from "./statReducer";
 import savesReducer from "./savesReducer";
+import { firestoreReducer } from 'redux-firestore'; 
+import { firebaseReducer } from 'react-redux-firebase';
 
 const reducers = {
   character: characterReducer,

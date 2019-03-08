@@ -4,6 +4,8 @@ import "semantic-ui-css/semantic.min.css";
 import { Provider } from "react-redux";
 import CharacterSheet from "./CharacterSheet";
 import store from "./js/store/index";
+import Header from './Header';
+
 
 window.store = store;
 class Layout extends Component {
@@ -11,6 +13,7 @@ class Layout extends Component {
     return (
       <Provider store={store}>
         <div className="Layout">
+          <Header />
           <CharacterSheet />
         </div>
       </Provider>
