@@ -8,6 +8,7 @@ import healthReducer from "./healthReducer";
 import characterReducer from "./characterReducer";
 import statReducer from "./statReducer";
 import savesReducer from "./savesReducer";
+import uiReducer from "./uiReducer";
 import { firestoreReducer } from 'redux-firestore'; 
 import { firebaseReducer } from 'react-redux-firebase';
 
@@ -21,7 +22,8 @@ const reducers = {
   health: healthReducer, 
   saves: savesReducer,
   stat: statReducer, 
-  form: formReducer
+  form: formReducer,
+  ui: uiReducer
 };
  
 const reducer = combineReducers(reducers);

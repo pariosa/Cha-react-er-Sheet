@@ -81,4 +81,12 @@ export const UPDATE_WEAPON_RANGE = "UPDATE_WEAPON_RANGE";
 export const UPDATE_WEAPON_AMMUNITION = "UPDATE_WEAPON_AMMUNITION";
 export const UPDATE_WEAPON_DAMAGE = "UPDATE_WEAPON_DAMAGE";
 
+//login actions
+export const REGISTER = "REGISTER";
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
+
+//ui actions 
+export const TOGGLE_LOGIN_MODAL = "TOGGLE_LOGIN_MODAL";
+export const TOGGLE_REGISTER_MODAL = "TOGGLE_REGISTER_MODAL";
 

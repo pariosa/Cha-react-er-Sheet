@@ -8,13 +8,14 @@ import Speed from './Speed';
 import Bab from "./Bab";
 import ArmorClass from "./ArmorClass";
 import Weapons from "./Weapons";
+import LoginModal from './LoginModal'
 import HealthPoints from "./HealthPoints";
-import css from "./css/CharacterSheet.css";
-
+import css from "./css/CharacterSheet.css"; 
 const mapStateToProps = state => {
   return {
     name: state.character.name,
-    homeland: state.character.homeland
+    homeland: state.character.homeland,
+    loginModalVisible: state.ui.loginModalVisible
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -30,7 +31,10 @@ class CharacterSheet extends Component {
   render() {
     return (
       <div className="CharacterSheet">
+
         <div className="ui stackable grid column twelve wide">
+        
+        <LoginModal show={this.props.loginModalVisible} />
             <h2 className="characterTitle">
               {this.props.name} of {this.props.homeland}
             </h2>

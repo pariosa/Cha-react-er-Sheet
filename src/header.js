@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-
+import LoginButton from './LoginButton';
+import Backdrop from './Backdrop';
 
 class Header extends Component {
 	render(){
+
 		return(
 			<div>
 				<div className="ui secondary pointing menu">
 					<a className="active item">
 				    	<span className="gray">Cha</span>react <span className="gray">er</span> &nbsp;Sheet 🧙
 				  	</a> 
-				  	<div classaName="right menu">
-				   		<a className="ui item">
-				      		Login
-				    	</a>
-				  	</div>
+					<LoginButton />
 				</div> 
 			</div>
 		)

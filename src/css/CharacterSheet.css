@@ -458,6 +458,36 @@ margin-right:6px;
   border-radius:4px;
 }
 
+/* backdrop classes */
+
+.Backdrop{
+  position:fixed;
+  overflow:hidden;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background-color:rgba(100, 100, 100, 0.5);
+  z-index:2;
+}
+
 .gray{
   color:#d3d3d3;
+}
+
+.loginModal{
+  left: 50%;
+  top: 50%; 
+  position:fixed;
+  background-color:#fff;
+  border-radius: 5px;
+  height:200px;
+  width:500px;
+  margin-left: -250px;
+  margin-top: -200px;
+  max-width: 500px;
+  max-height: 300px;
+  margins:0 auto;
+  padding: 30px;
+  z-index:3;
 }
