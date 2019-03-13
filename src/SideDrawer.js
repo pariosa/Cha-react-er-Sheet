@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
+import { compose } from 'redux';
 import Backdrop from './Backdrop'; 
 import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import CharacterList from './CharacterList';
 const Fragment = React.Fragment;
 const mapStateToProps = (state) =>{
     return{ 
-       isVisible: state.ui.sideDrawerVisible
+        isVisible: state.ui.sideDrawerVisible,
+        characters: state.firestore.ordered.characters
     }
 } 
 class SideDrawer extends Component {
     render(){
+        const { characters, auth } = this.props;
         if(!this.props.isVisible){
             return null;
         } 
         return (
-            <div>
+            <Fragment>
                 <Backdrop type="sideDrawer" />
                 <div className="SideDrawer"> 
-                     Characters will go here
+                    <CharacterList characters={characters} />
                 </div>
-            </div> 
+            </Fragment> 
         );
     }   
 };
 
-export default connect(mapStateToProps)(SideDrawer);
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        {collection: 'characters'}
+    ])
+)(SideDrawer)
+//export default connect(mapStateToProps)(SideDrawer);

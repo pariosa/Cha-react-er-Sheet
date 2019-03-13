@@ -12,8 +12,11 @@ import LoginModal from './LoginModal'
 import RegisterModal from './RegisterModal'
 import HealthPoints from "./HealthPoints";
 import css from "./css/CharacterSheet.css"; 
+import SideDrawer from './SideDrawer';
+
 const mapStateToProps = state => {
   return {
+    auth: state.auth,
     name: state.character.name,
     homeland: state.character.homeland,
     loginModalVisible: state.ui.loginModalVisible,
@@ -32,8 +35,9 @@ class CharacterSheet extends Component {
     super(props);
   } 
   render() {
+    const sideDrawer = this.props.auth.uid ? null : <SideDrawer />;
     return (
-      <div className="CharacterSheet">
+      <div className="CharacterSheet"> 
         <div className="ui stackable grid column twelve wide">
         <LoginModal show={this.props.loginModalVisible} />
         <RegisterModal show={this.props.registerModalVisible} />
@@ -54,7 +58,8 @@ class CharacterSheet extends Component {
               <Speed />
               <Skills /> 
             </div> 
-        </div>    
+        </div> 
+                 { sideDrawer }   
       </div>
     );
   }

@@ -4,19 +4,17 @@ import "semantic-ui-css/semantic.min.css";
 import { Provider } from "react-redux";
 import CharacterSheet from "./CharacterSheet";
 import store from "./js/store/index";
-import Header from './Header';
-import SideDrawer from './SideDrawer';
+import Header from './Header'; 
 
 
 window.store = store;
-class Layout extends Component {
-  render() {
+class Layout extends Component { 
+  render() { 
     return (
       <Provider store={store}>
         <div className="Layout">
           <Header />
-          <CharacterSheet />
-          <SideDrawer />
+          <CharacterSheet /> 
         </div>
       </Provider>
     );

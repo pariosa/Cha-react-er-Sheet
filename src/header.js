@@ -14,16 +14,16 @@ const mapStateToProps = ( state ) => {
 
 class Header extends Component {
 	render(){
-
 	const link1 = this.props.auth.uid ?  <LogoutButton /> : <LoginButton /> ;
 	const link2 = this.props.auth.uid ? null :  <RegisterButton />;
+	const drawerToggle = this.props.auth.uid ? <DrawerToggle /> : null;
 		return(
 			<div>
 				<div className="ui secondary pointing menu">
 					<a className="active item">
 				    	<span className="gray">Cha</span>react <span className="gray">er</span> &nbsp;Sheet 🧙
 				  	</a> 
-				  	<DrawerToggle /> 
+				  	{drawerToggle}
 					{link1}
 					{link2}
 				</div> 
