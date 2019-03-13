@@ -18,7 +18,7 @@ import {
   UPDATE_SPELL_RESISTANCE,
   UPDATE_CMB_SIZE_MODIFIER,
   UPDATE_CMB_MODIFIERS_FIELD,
-  UPDATE_CMD_SIZE_MODIFIER,
+  UPDATE_CMD_SIZE_MODIFIER
 } from "../constants/actionTypes";
 
 export const initialState = { 
@@ -34,7 +34,7 @@ export const initialState = {
     playerClass: "cleric",
     size: "s",
     gender: "F",
-    age: 28,
+    age: 28, 
     height: "2'1",
     weight: "1lbs",
     hair: "eggshell",
@@ -82,6 +82,8 @@ const characterReducer = (state = initialState, action) => {
       return {...state, cmbModifiersField: action.payload.target.value}; 
     case UPDATE_CMD_SIZE_MODIFIER:
       return {...state, cmdSizeModifier: action.payload.target.value}; 
+    case UPDATE_BASE_ATTACK_BONUS:
+      return {...state, baseAttackBonus: action.payload.target.value}; 
     default:
       return state;
   }

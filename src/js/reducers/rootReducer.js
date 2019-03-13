@@ -9,21 +9,26 @@ import characterReducer from "./characterReducer";
 import statReducer from "./statReducer";
 import savesReducer from "./savesReducer";
 import uiReducer from "./uiReducer";
+import authReducer from './authReducer';
 import { firestoreReducer } from 'redux-firestore'; 
 import { firebaseReducer } from 'react-redux-firebase';
 
+
 const reducers = {
-  character: characterReducer,
+  character: characterReducer, 
   skills: skillReducer,
   weapon: weaponReducer,
   speed: speedReducer,
+  auth: authReducer,
   armor: armorReducer,
   speed: speedReducer,
   health: healthReducer, 
   saves: savesReducer,
   stat: statReducer, 
   form: formReducer,
-  ui: uiReducer
+  ui: uiReducer,
+  firebase: firebaseReducer,
+  firestore: firestoreReducer
 };
  
 const reducer = combineReducers(reducers);

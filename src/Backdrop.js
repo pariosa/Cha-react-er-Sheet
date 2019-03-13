@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { toggleLoginModal } from './js/actions/uiActions';
+import { toggleRegisterModal, toggleLoginModal, toggleSideDrawer } from './js/actions/uiActions';
 
 const mapDispatchToProps = dispatch => {
   return { 
-    toggleLoginModal: bool => dispatch(toggleLoginModal(bool))
+    toggleLoginModal: bool => dispatch(toggleLoginModal(bool)),
+    toggleRegisterModal: bool => dispatch(toggleRegisterModal(bool)),
+    toggleSideDrawer: bool => dispatch(toggleSideDrawer(bool))
+
   };
 };
-const mapStateToProps = state =>{
-	return{
 
+const mapStateToProps = (state, initialState) =>{ 
+	return{
+		type: initialState.type
 	}
 }
 
-class Backdrop extends Component{
-
+class Backdrop extends Component{ 
 	render(){
-		return(
-			<div className="Backdrop" onClick={this.props.toggleLoginModal}>
-			</div>
-		)
+		if(this.props.type === "registerModal"){
+			return( 
+				<div className="Backdrop" onClick={this.props.toggleRegisterModal}>
+				</div>
+			)
+		}else if(this.props.type === "loginModal"){
+			return( 
+				<div className="Backdrop" onClick={this.props.toggleLoginModal}>
+				</div>	
+			)
+		}else if(this.props.type === "sideDrawer"){
+			return( 
+				<div className="Backdrop" onClick={this.props.toggleSideDrawer}>
+				</div>	
+			)
+		}
 	}
 }
 

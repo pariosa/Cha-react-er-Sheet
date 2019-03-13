@@ -11,3 +11,7 @@ export const toggleRegisterModal = bool => ({
   type: "TOGGLE_REGISTER_MODAL",
   payload: bool
 });
+export const toggleSideDrawer = bool => ({
+  type: "TOGGLE_SIDE_DRAWER",
+  payload: bool
+});

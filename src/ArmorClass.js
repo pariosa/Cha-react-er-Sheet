@@ -63,7 +63,7 @@ class ArmorClass extends Component {
        <div className="subscript">Armor Class</div>
        </div> 
        <div className="ArmorFirstRow">
-        <input size="2" value={this.getTotalArmor()} />
+        <input size="2" value={this.getTotalArmor()} readOnly />
           <span className="plus"> = </span>
 
           <span className="plus"> 10 </span>

@@ -474,14 +474,14 @@ margin-right:6px;
 .gray{
   color:#d3d3d3;
 }
-
+/*login and register modal css */
 .loginModal{
   left: 50%;
   top: 50%; 
   position:fixed;
   background-color:#fff;
   border-radius: 5px;
-  height:200px;
+  height:300px;
   width:500px;
   margin-left: -250px;
   margin-top: -200px;
@@ -490,4 +490,109 @@ margin-right:6px;
   margins:0 auto;
   padding: 30px;
   z-index:3;
+}
+.modal > .header{
+  position:relative;
+  top:-13px;
+  font-size:20px;
+
+}
+.modal > .description{
+
+}
+.modal > form > .field{
+  padding:4px;
+   margin-left:60px;
+}
+.modal > form > .field > .input > input{
+ width:300px;
+}
+.modal > form > .footer > button{
+  margin-left:30px;
+  margin-right:10px;
+}
+.Spacer{
+  width:300px;
+  height:90px;
+}
+.registerModal{
+  left: 50%;
+  top: 50%; 
+  position:fixed;
+  background-color:#fff;
+  border-radius: 5px;
+  height:400px;
+  width:500px;
+  margin-left: -250px;
+  margin-top: -200px;
+  max-width: 500px;
+  max-height: 450px;
+  margins:0 auto;
+  padding: 30px;
+  z-index:3;
+}
+
+
+
+/* SideDrawer and drawerToggle css (hamberger menu) */
+
+.DrawerToggle {
+    width: 40px;
+    height:40px; 
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.DrawerToggleItem {
+    width: 90%;
+    height: 5px;
+    background-color: #888;
+}
+
+@media (min-width: 500px) {
+    .DrawerToggle {
+
+    }
+}
+.SideDrawer {
+    position: fixed;
+    width: 280px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color: white;
+    padding: 32px 16px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+    background-color:#f7e5ff;
+}
+.NavigationDrawer > NavigationItems > NavigationItem {
+    display:block;
+    width:100%;
+}
+
+@media (min-width: 500px) {
+    .SideDrawer {
+         
+    }
+}
+
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(-100%);
+}
+
+.Logo {
+    height: 11%;
+    margin-bottom: 32px;
 }

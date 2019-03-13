@@ -9,15 +9,18 @@ import Bab from "./Bab";
 import ArmorClass from "./ArmorClass";
 import Weapons from "./Weapons";
 import LoginModal from './LoginModal'
+import RegisterModal from './RegisterModal'
 import HealthPoints from "./HealthPoints";
 import css from "./css/CharacterSheet.css"; 
 const mapStateToProps = state => {
   return {
     name: state.character.name,
     homeland: state.character.homeland,
-    loginModalVisible: state.ui.loginModalVisible
+    loginModalVisible: state.ui.loginModalVisible,
+    registerModalVisible: state.ui.registerModalVisible
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
     updatePlayerName: playerName => dispatch(updatePlayerName(playerName))
@@ -31,10 +34,9 @@ class CharacterSheet extends Component {
   render() {
     return (
       <div className="CharacterSheet">
-
         <div className="ui stackable grid column twelve wide">
-        
         <LoginModal show={this.props.loginModalVisible} />
+        <RegisterModal show={this.props.registerModalVisible} />
             <h2 className="characterTitle">
               {this.props.name} of {this.props.homeland}
             </h2>

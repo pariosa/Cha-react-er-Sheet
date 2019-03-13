@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { toggleLoginModal } from './js/actions/uiActions';
-import { Login } from './js/actions/authActions';
+import { login } from './js/actions/authActions';
 
 import Backdrop from './Backdrop';
 
 const mapStateToProps = state => {
   return { 
-  	showLoginModal: state.ui.loginModalVisible
+  	showLoginModal: state.ui.loginModalVisible,
+  	authError: state.auth.authError,
+  	auth: state.firebase.auth
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
   	login: auth => dispatch(login(auth)),
@@ -18,72 +21,76 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class LoginModal extends Component { 
-	 
-	render(){
-		//Do not render if the 'show' prop is false
+class LoginModal extends Component {  
+	state = { 
+		email:'',
+		password:''
+	}
+	handleChange = (e) =>{ 
+			this.setState({
+				[e.target.id]: e.target.value
+			});
+			console.log('input changed');
+		}
+		handleSubmit = (e) =>{
+			e.preventDefault(); 
+			this.props.login(this.state); 
+			console.log(this.state);
+			console.log('input submitted');
+		}
+	render(){ 
+		const { authError, auth } = this.props;
 		if(!this.props.showLoginModal){
 			return null;
-		}
-
-		//the gray background
-		const backdropStyle = {
-			position: 'fixed',
-			top: 0,
-			bottom: 0,
-			left: 0,
-			height:'100%',
-			width:'100%',
-			right: 0,
-			backgroundColor: 'rgba(0,0,0,0.3)',
-			padding: 50,
-		};
-
-		const modalStyle = {
-			backgroundColor: '#fff',
-			borderRadius: 5,
-			height:300,
-			width:300,
-			maxWidth: 500,
-			maxHeight: 300,
-			margin: '0 auto',
-			padding: 30,
-		};
-
+		} 
 		return( 
-				<div >
-					<Backdrop />
-					<div className="loginModal"  >
 
-
-						Hello, Welcome back~! 
-						<div>
-						Username: <input />
+			<div >
+				<Backdrop type="loginModal" />
+				<div className="loginModal modal"  >  
+					<div className="header">
+				    	Login
+				  	</div>
+					<form onSubmit={this.handleSubmit}>
+						<div className="description">
+							Hello, Welcome back~! 
 						</div>
-						<div>
-						Password: <input />
+						<div className="field">
+							<div class="ui left icon input">
+								<input id="email" type="email"  onChange={this.handleChange}  placeholder="Email Address" />
+								<i className="at icon"></i>
+							</div>
 						</div>
-						<div className="footer">
-
-							<button onClick={this.props.Login} >
-
-								Log me in!
-
+						<div className="field">
+							<div class="ui left icon input"> 
+								<input type="password" id="password" name="password" className="" onChange={this.handleChange} placeholder="Password" />
+								<i className="key icon"></i>
+							</div>
+						</div>
+							{ authError ? 
+								<div className="ui error message">
+								    <div className="header">Error!</div>
+								     <p>{authError}</p>
+								</div>
+							: 
+								<div className="ui Spacer">
+								</div>	 
+							} 
+						<div className="footer"> 
+							<button type="submit" className="ui button green" onClick={this.props.login} > 
+								Log me in! 
 							</button>
-							<button onClick={this.props.toggleLoginModal} >
-
-								Oops! didn't mean to click this
-
+							<button type="submit" className="ui button red" onClick={this.props.toggleLoginModal} >  
+								Oops! didn't mean to click this 
 							</button>
 						</div>
-					</div> 
-				</div> 	
+
+					</form>
+
+				</div> 
+			</div> 	
 		)
 	}
 }
-LoginModal.propTypes = {
-	onClose: PropTypes.func.isRequired,
-	show: PropTypes.bool,
-	children: PropTypes.node
-}
+
 export default connect(mapStateToProps, mapDispatchToProps) (LoginModal)

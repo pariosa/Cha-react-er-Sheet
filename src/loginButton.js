@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import LoginModal from "./LoginModal";
+import { connect } from 'react-redux'; 
 import { toggleLoginModal } from './js/actions/uiActions';
 
 const mapStateToProps = state => {
@@ -8,20 +7,14 @@ const mapStateToProps = state => {
   	isOpen: false
   }
 };
+
 const mapDispatchToProps = dispatch => {
   return {
     toggleLoginModal: bool => dispatch(toggleLoginModal(bool))
   };
-};
+}; 
 
-
-class LoginButton extends Component{
-	/*addLoginPrompt = () => {
-		console.log("login button pressed!");
-		this.setState({
-			isOpen: !this.props.isOpen
-		});
-	}*/
+class LoginButton extends Component{ 
 	render(){ 
 		return( 
 			<div className="loginButton right menu" > 
@@ -32,4 +25,5 @@ class LoginButton extends Component{
 		)
 	}
 }
+
 export default connect(mapStateToProps, mapDispatchToProps) (LoginButton);

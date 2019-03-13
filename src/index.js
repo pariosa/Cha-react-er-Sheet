@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import CharacterSheet from "./CharacterSheet";
 import store from "./js/store/index";
 import Header from './Header';
+import SideDrawer from './SideDrawer';
 
 
 window.store = store;
@@ -15,6 +16,7 @@ class Layout extends Component {
         <div className="Layout">
           <Header />
           <CharacterSheet />
+          <SideDrawer />
         </div>
       </Provider>
     );
