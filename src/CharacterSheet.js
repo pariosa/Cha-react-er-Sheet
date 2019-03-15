@@ -45,15 +45,21 @@ class CharacterSheet extends Component {
               {this.props.name} of {this.props.homeland}
             </h2>
             <CharacterInfo />   
-            <div className="ui stackable grid column six wide">  
-              <Stats />
+
+
+            <div className="ui stackable grid column eight wide">
+              
+            <Stats />  
+              <div className="ui stackable grid column nine wide">
+                <HealthPoints />
+              </div>
               <ArmorClass />
               <Saves />  
               <Bab />
+              <Weapons />
+
             </div>
-            <div className="ui stackable grid column four wide">
-              <HealthPoints />
-            </div>
+
             <div className="ui stackable grid column six wide">
               <Speed />
               <Skills /> 

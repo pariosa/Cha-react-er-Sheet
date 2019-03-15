@@ -18,6 +18,15 @@ const initialState =[
       range:'close',
       ammunition:'none',
       damage:'1d6'
+    },
+    {
+      name:'short bow',
+      attackBonus:1,
+      critical:20,
+      type:'piercing',
+      range:'50ft',
+      ammunition:'24',
+      damage:'1d6'
     }
 ]; 
 

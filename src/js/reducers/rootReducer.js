@@ -18,7 +18,7 @@ const reducers = {
   loadCharacter: loadCharacterReducer,
   character: characterReducer, 
   skills: skillReducer,
-  weapon: weaponReducer,
+  weapons: weaponReducer,
   speed: speedReducer,
   auth: authReducer,
   armor: armorReducer,

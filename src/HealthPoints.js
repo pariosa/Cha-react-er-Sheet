@@ -59,24 +59,24 @@ class HealthPoints extends Component {
           <br />
         </div>
         <div className="ui form">
-          <div className="field">
+          <div className="">
             <label>Wounds/Current HP</label>
             <textarea
               rows="1"
-              cols="20"
+              cols="6"
               value={this.props.current}
               onChange={this.props.updateCurrentHp}
             />
           </div>
         </div>
         <div className="ui form">
-          <div className="field">
+          <div className="">
             <label>Nonlethal Damage</label>
             <textarea
               value={this.props.nonLethal}
               onChange={this.props.updateNonLethal}
               rows="1" 
-              cols="20"
+              cols="6"
             />
           </div>
         </div>
