@@ -33,7 +33,7 @@ const initialState =[
 const weaponReducer = (state = initialState, action) => { 
   switch (action.type) { 
     case  LOAD_ENTIRE_CHARACTER:
-      return {... action.payload.weapons}
+      return [... action.payload.weapons]
   	default:
   	 return state;
   }

@@ -1,7 +1,13 @@
 import React, { Component } from "React";
 import { connect } from "react-redux";
 import {
-
+  updateWeaponName,
+  updateWeaponAttackBonus,
+  updateWeaponCritical,
+  updateWeaponType,
+  updateWeaponRange,
+  updateWeaponAmmunition,
+  updateWeaponDamage, 
 } from "./js/actions/weaponActions";
 
 const mapDispatchToProps = dispatch => {
@@ -27,27 +33,44 @@ class Weapon extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-        {this.props.name}
+      <div className="Weapon">
+        <div className="weaponRowZero">
+          <div className="weaponHeader inline">Weapon</div>
+          <div className="attackBonusHeader inline">Attack Bonus</div>
+          <div className="criticalHeader inline"> Critical</div>
         </div>
-        <div>
-        {this.props.attackBonus}
+
+        <div className="ui weaponRowOne">
+          <div className="ui input weaponName">
+            <input type="text" size="16" value={this.props.name} onChange={this.props.updateWeaponName} />
+          </div>
+          <div className="ui input weaponAttackBonus">
+            <input type="text" size="13" value={this.props.attackBonus} onChange={this.props.updateWeaponAttackBonus} />
+          </div>
+          <div className="ui input weaponCritical">
+            <input type="text" size="13" value={this.props.critical} onChange={this.props.updateWeaponCritical} />
+          </div>
         </div>
-        <div>
-        {this.props.critical}
+        <div className="weaponRowTwo">
+          <div className="typeHeader inline">Type</div>
+          <div className="rangeHeader inline">Range</div>
+          <div className="ammunitionHeader inline">Ammunition</div>
+          <div className="damageHeader inline">Damage</div>
+
         </div>
-        <div>
-        {this.props.type}
-        </div>
-        <div>
-        {this.props.range}
-        </div>
-        <div>
-        {this.props.ammunition}
-        </div>
-        <div>
-        {this.props.damage}
+        <div className="ui weaponRowThree">
+          <div className="ui input weaponType">
+            <input type="text" size="12" value={this.props.type} onChange={this.props.updateWeaponType} />
+          </div>
+          <div className="ui input weaponRange">
+            <input type="text" size="6" value={this.props.range} onChange={this.props.updateWeaponRange} />
+          </div>
+          <div className="ui input weaponAmmunition">
+            <input type="text" size="10" value={this.props.ammunition} onChange={this.props.updateWeaponAmmunition} />
+          </div>
+          <div className="ui input weaponDamage">
+            <input type="text" size="9" value={this.props.damage} onChange={this.props.updateWeaponDamage} />
+          </div>
         </div>
       </div>
     );

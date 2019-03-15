@@ -381,6 +381,7 @@ h2 {
   left:20px;
   max-height:120px;
   min-width:440px;
+  max-width:450px;
 }
 .armorLabel{
   font-size:8px;
@@ -595,4 +596,110 @@ margin-right:6px;
 .Logo {
     height: 11%;
     margin-bottom: 32px;
+}
+
+
+/* Weapon css */
+.Weapon{
+  max-width:409px;
+  min-width:408px;
+  border-radius:6px;
+  border:1px solid #000;
+  margin:6px;
+}
+.weaponRowZero{
+  border-bottom:1px solid #000;
+  width:100%;
+  display:inline-block;
+  color:white;
+  margin-top:-2px;
+  min-height:24px;
+  background-color:#000;
+  border-top-right-radius:6px;
+  border-top-left-radius:6px;
+
+}
+.weaponHeader{
+  padding-left:20px;
+  padding-right:20px;
+  margin-left:20px;
+  display:inline-block;
+  position:relative;
+  bottom:-3px;
+  margin-top:-2px;
+  font-size:22px;
+  background-color:#000;
+}
+.attackBonusHeader{
+  display:inline-block;
+  margin-left:20px;
+  padding-left:10px;
+  padding-right:10px;
+  background-color:#000;
+}
+.criticalHeader{
+  margin-left:43px;
+  display:inline-block;
+  margin-right:20px;
+  padding-left:10px;
+  padding-right:10px;
+  background-color:#000;
+}
+.weaponRowOne{
+  display:block;
+}
+.weaponRowOne > .input > input{
+  max-height:30px;
+  text-align:center;
+}
+.weaponRowTwo{
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
+  display:inline-block;
+  color:white;
+  max-height:20px;
+  display:block;
+
+  background-color:#000;
+}
+.typeHeader{
+  display:inline-block;
+  margin-left:40px; 
+  font-size:14px;
+  padding-left:10px;
+  padding-right:10px;
+  background-color:#000;
+}
+.rangeHeader{
+  display:inline-block;
+  margin-left:40px; 
+  font-size:14px;
+  padding-left:10px;
+  padding-right:10px;
+  background-color:#000;
+
+}
+.ammunitionHeader{
+  display:inline-block;
+  margin-left:20px;
+  font-size:14px;
+  padding-left:10px;
+  padding-right:10px;
+  background-color:#000;
+
+}
+.damageHeader{
+  display:inline-block;
+  margin-left:20px; 
+  font-size:14px;
+  padding-left:10px;
+  padding-right:10px;
+  background-color:#000;
+}
+.weaponRowThree{
+  display:block;
+}
+.weaponRowThree > .input > input{
+  max-height:30px;
+  text-align:center;
 }
