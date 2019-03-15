@@ -8,7 +8,8 @@ import {
   UPDATE_SWIM_SPEED,
   UPDATE_CLIMB_SPEED,
   UPDATE_BURROW_SPEED,
-  UPDATE_SPEED_TEMP_MOD
+  UPDATE_SPEED_TEMP_MOD,
+  LOAD_ENTIRE_CHARACTER
 } from "../constants/actionTypes";
 const initialState = {
   baseSpeed:"25",
@@ -44,6 +45,8 @@ const speedReducer = (state = initialState, action) => {
       return {...state, burrowSpeed: action.payload.target.value};
     case UPDATE_SPEED_TEMP_MOD:  
       return {...state, tempMod: action.payload.target.value};
+    case  LOAD_ENTIRE_CHARACTER:
+      return {... action.payload.speed}
   	default: 
   	 return state;
   }

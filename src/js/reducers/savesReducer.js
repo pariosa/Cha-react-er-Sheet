@@ -3,6 +3,7 @@ import {
   UPDATE_MAGIC_SAVE_MODIFIER,
   UPDATE_MISC_SAVE_MODIFIER,
   UPDATE_TEMP_SAVE_MODIFIER,
+  LOAD_ENTIRE_CHARACTER,
 } from "../constants/actionTypes";
 
 const initialState = [
@@ -44,11 +45,16 @@ const savesReducer = (state = initialState, action) => {
       const saveIndexBase = state.indexOf(
         saveInStateBase
       ); 
-      saveInStateBase.base = action.payload.target.value;
+      let keys;
+      let saveInStateBaseObj = new Object;
+      for(keys in saveInStateBase){
+        saveInStateBaseObj[keys] = saveInStateBase[keys];
+      }
+      saveInStateBaseObj.base = action.payload.target.value;
       return[ 
         ...state.map((item, index)=>
-            index === saveInStateBase.id
-              ? saveInStateBase
+            index === saveIndexBase
+              ? saveInStateBaseObj
               : item
         )
       ]
@@ -60,11 +66,15 @@ const savesReducer = (state = initialState, action) => {
       const saveIndexMagicMod = state.indexOf(
         saveInStateMagicMod
       );
-      saveInStateMagicMod.magicMod = action.payload.target.value;
+      let saveInStateMagicModObj = new Object;
+      for(keys in saveInStateMagicMod){
+        saveInStateMagicModObj[keys] = saveInStateMagicMod[keys];
+      }
+      saveInStateMagicModObj.magicMod = action.payload.target.value;
       return[ 
         ...state.map((item, index)=>
-            index === saveInStateMagicMod.id
-              ? saveInStateMagicMod
+            index === saveIndexMagicMod
+              ? saveInStateMagicModObj
               : item
         ) 
       ]
@@ -76,11 +86,15 @@ const savesReducer = (state = initialState, action) => {
       const saveIndexMiscMod = state.indexOf(
         saveInStateMiscMod
       );   
-      saveInStateMiscMod.miscMod = action.payload.target.value;
+      let saveInStateMiscModObj = new Object;
+      for(keys in saveInStateMiscMod){
+        saveInStateMiscModObj[keys] = saveInStateMiscMod[keys];
+      }
+      saveInStateMiscModObj.miscMod = action.payload.target.value;
       return [ 
         ...state.map((item, index)=>
-            index === saveInStateMiscMod.id
-              ? saveInStateMiscMod
+            index === saveIndexMiscMod
+              ? saveInStateMiscModObj
               : item
         ) 
       ]    
@@ -92,15 +106,21 @@ const savesReducer = (state = initialState, action) => {
       const saveIndexTempMod = state.indexOf(
         saveInStateTempMod
       );
-      saveInStateTempMod.tempMod = action.payload.target.value;
+      let saveInStateTempModObj = new Object;
+      for(keys in saveInStateTempMod){
+        saveInStateTempModObj[keys] = saveInStateTempMod[keys];
+      }
+      saveInStateTempModObj.tempMod = action.payload.target.value;
       return [ 
        	...state.map((item, index)=>
-            index === saveInStateTempMod.id
-              ? saveInStateTempMod
+            index === saveIndexTempMod
+              ? saveInStateTempModObj
               : item
         ) 
       ]
       break;
+  case  LOAD_ENTIRE_CHARACTER:
+      return [... action.payload.saves]
  	default:
  		return state;
   }

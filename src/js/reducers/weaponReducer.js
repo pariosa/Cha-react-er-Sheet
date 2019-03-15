@@ -6,6 +6,7 @@ import {
   UPDATE_WEAPON_RANGE,
   UPDATE_WEAPON_AMMUNITION,
   UPDATE_WEAPON_DAMAGE,
+  LOAD_ENTIRE_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState =[
@@ -22,6 +23,8 @@ const initialState =[
 
 const weaponReducer = (state = initialState, action) => { 
   switch (action.type) { 
+    case  LOAD_ENTIRE_CHARACTER:
+      return {... action.payload.weapons}
   	default:
   	 return state;
   }

@@ -34,4 +34,3 @@ export default compose(
         {collection: 'characters'}
     ])
 )(SideDrawer)
-//export default connect(mapStateToProps)(SideDrawer);

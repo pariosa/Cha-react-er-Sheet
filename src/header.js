@@ -5,6 +5,7 @@ import LogoutButton from './LogoutButton';
 import RegisterButton from './RegisterButton';
 import Backdrop from './Backdrop';
 import DrawerToggle from './DrawerToggle';
+import SaveCharacterButton from './SaveCharacterButton';
 
 const mapStateToProps = ( state ) => {
 	return {
@@ -14,8 +15,8 @@ const mapStateToProps = ( state ) => {
 
 class Header extends Component {
 	render(){
-	const link1 = this.props.auth.uid ?  <LogoutButton /> : <LoginButton /> ;
-	const link2 = this.props.auth.uid ? null :  <RegisterButton />;
+	const link1 = this.props.auth.uid ?  <SaveCharacterButton/> : <LoginButton /> ;
+	const link2 = this.props.auth.uid ? <LogoutButton /> :  <RegisterButton />;
 	const drawerToggle = this.props.auth.uid ? <DrawerToggle /> : null;
 		return(
 			<div>

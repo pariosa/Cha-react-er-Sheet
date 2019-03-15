@@ -56,7 +56,7 @@ class LoginModal extends Component {
 							Hello, Welcome back~! 
 						</div>
 						<div className="field">
-							<div class="ui left icon input">
+							<div className="ui left icon input">
 								<input id="email" type="email"  onChange={this.handleChange}  placeholder="Email Address" />
 								<i className="at icon"></i>
 							</div>

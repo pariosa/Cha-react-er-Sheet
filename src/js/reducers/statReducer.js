@@ -1,6 +1,7 @@
 import {
   UPDATE_STAT,
-  UPDATE_TEMP_STAT
+  UPDATE_TEMP_STAT,
+  LOAD_ENTIRE_CHARACTER
 } from "../constants/actionTypes";
  
 const initialState =  
@@ -267,6 +268,23 @@ const statReducer = (state = initialState, action) => {
         default:
           break;
       }
+    case  LOAD_ENTIRE_CHARACTER: 
+      return {...state, stats:{
+                  ...state.stats,
+                  strength: action.payload.stats.stats.strength,
+                  strMod: action.payload.stats.stats.strMod, 
+                  dexterity: action.payload.stats.stats.dexterity,
+                  dexMod: action.payload.stats.stats.dexMod,
+                  constitution: action.payload.stats.stats.constitution,
+                  conMod: action.payload.stats.stats.conMod,
+                  intelligence: action.payload.stats.stats.intelligence,
+                  intMod: action.payload.stats.stats.intMod,
+                  wisdom: action.payload.stats.stats.wisdom,
+                  wisMod: action.payload.stats.stats.wisMod,
+                  charisma: action.payload.stats.stats.charisma,
+                  chaMod: action.payload.stats.stats.chaMod
+                }
+      , statsTemporary: action.payload.stats.statsTemporary}
     default:
       return state;
      

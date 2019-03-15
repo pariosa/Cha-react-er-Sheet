@@ -2,7 +2,8 @@ import {
   UPDATE_SKILL_IS_CLASS,
   UPDATE_SKILL_RANK,
   UPDATE_SKILL_DESCRIPTION,
-  UPDATE_SKILL_MISC_MOD
+  UPDATE_SKILL_MISC_MOD,
+  LOAD_ENTIRE_CHARACTER
 } from "../constants/actionTypes"; 
 const initialState = 
   [
@@ -313,14 +314,19 @@ const initialState =
 const skillReducer = (state = initialState, action) => { 
   switch (action.type) {  
     case UPDATE_SKILL_RANK: 
-      const skillIndex = state.indexOf(skillInState);
-      let skillInState = state.find(
+      let skillInStateRank = state.find(
         skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id)
       );
-      skillInState.ranks = action.payload.target.value;
+      const skillIndex = state.indexOf(skillInStateRank); 
+      let keys;
+      let skillInStateRankObj = new Object; 
+      for(keys in skillInStateRank){ 
+        skillInStateRankObj[keys] = skillInStateRank[keys];
+      }
+      skillInStateRankObj.ranks = action.payload.target.value;
       return [
         ...state.map((item, index) =>
-            index === skillInState.id ? skillInState : item
+            index === skillIndex ? skillInStateRankObj : item
           )
       ]
       break;
@@ -329,10 +335,14 @@ const skillReducer = (state = initialState, action) => {
         skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id)
       );
       const skillIndexMiscMod = state.indexOf(skillInStateMiscMod);
-      skillInStateMiscMod.miscMod = action.payload.target.value;
+      let skillInStateMiscModObj = new Object; 
+      for(keys in skillInStateMiscMod){ 
+        skillInStateMiscModObj[keys] = skillInStateMiscMod[keys];
+      }
+      skillInStateMiscModObj.miscMod = action.payload.target.value;
       return [
         ...state.map((item, index) =>
-            index === skillInStateMiscMod.id ? skillInStateMiscMod : item
+            index === skillIndexMiscMod ? skillInStateMiscModObj : item
         )
       ]
       break;
@@ -343,11 +353,17 @@ const skillReducer = (state = initialState, action) => {
       const skillIndexDescription = state.indexOf(
         skillInStateDescription
       );
-      skillInStateDescription.skillDescription = action.payload.target.value;
+      let skillInStateDescriptionObj = new Object;
+
+      for(keys in skillInStateDescription){ 
+        skillInStateDescriptionObj[keys] = skillInStateDescription[keys];
+      }
+      skillInStateDescriptionObj.skillDescription = action.payload.target.value;
+ 
       return [
         ...state.map((item, index) =>
-            index === skillInStateDescription.id
-              ? skillInStateDescription
+            index === skillIndexDescription
+              ? skillInStateDescriptionObj
               : item
         )
       ];
@@ -359,14 +375,19 @@ const skillReducer = (state = initialState, action) => {
       const skillIndexIsClass = state.indexOf(
         skillInStateIsClass
       ); 
-      skillInStateIsClass.isClass = action.payload.target.checked;
+      let skillInStateIsClassObj = new Object; 
+      for(keys in skillInStateIsClass){ 
+        skillInStateIsClassObj[keys] = skillInStateIsClass[keys];
+      }
       return [
         ...state.map((item, index) =>
-            index === skillInStateIsClass.id
-              ? skillInStateIsClass
+            index === skillIndexIsClass
+              ? skillInStateIsClassObj
               : item
         )
-      ]
+      ];
+    case  LOAD_ENTIRE_CHARACTER:
+      return [... action.payload.skills]
     default:
       return state;
   }

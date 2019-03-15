@@ -12,9 +12,10 @@ import uiReducer from "./uiReducer";
 import authReducer from './authReducer';
 import { firestoreReducer } from 'redux-firestore'; 
 import { firebaseReducer } from 'react-redux-firebase';
-
+import loadCharacterReducer from './loadCharacterReducer';
 
 const reducers = {
+  loadCharacter: loadCharacterReducer,
   character: characterReducer, 
   skills: skillReducer,
   weapon: weaponReducer,

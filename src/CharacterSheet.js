@@ -59,7 +59,7 @@ class CharacterSheet extends Component {
               <Skills /> 
             </div> 
         </div> 
-                 { sideDrawer }   
+        { sideDrawer }   
       </div>
     );
   }

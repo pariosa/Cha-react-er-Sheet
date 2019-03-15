@@ -18,7 +18,8 @@ import {
   UPDATE_SPELL_RESISTANCE,
   UPDATE_CMB_SIZE_MODIFIER,
   UPDATE_CMB_MODIFIERS_FIELD,
-  UPDATE_CMD_SIZE_MODIFIER
+  UPDATE_CMD_SIZE_MODIFIER,
+  LOAD_ENTIRE_CHARACTER
 } from "../constants/actionTypes";
 
 export const initialState = { 
@@ -44,8 +45,8 @@ export const initialState = {
     cmdSizeModifier:'0',
 };
 
-const characterReducer = (state = initialState, action) => { 
-  switch (action.type) {  
+const characterReducer = (state = initialState, action) => {  
+  switch (action.type) {   
     case UPDATE_NAME:
       return {...state, name: action.payload.target.value};
     case UPDATE_ALIGNMENT:
@@ -83,7 +84,11 @@ const characterReducer = (state = initialState, action) => {
     case UPDATE_CMD_SIZE_MODIFIER:
       return {...state, cmdSizeModifier: action.payload.target.value}; 
     case UPDATE_BASE_ATTACK_BONUS:
-      return {...state, baseAttackBonus: action.payload.target.value}; 
+      return {...state, baseAttackBonus: action.payload.target.value};
+    case UPDATE_SPELL_RESISTANCE:
+      return {...state, spellResistance: action.payload.target.value};  
+    case  LOAD_ENTIRE_CHARACTER:
+      return {... action.payload.character}  
     default:
       return state;
   }

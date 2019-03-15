@@ -1,4 +1,4 @@
-import {
+import { 
   UPDATE_ARMOR_BONUS,
   UPDATE_SHIELD_BONUS,
   UPDATE_SIZE_MODIFIER,
@@ -8,6 +8,7 @@ import {
   UPDATE_TOUCH_ARMOR_CLASS,
   UPDATE_FLAT_FOOTED_ARMOR_CLASS,
   UPDATE_AC_MODIFIERS_FIELD,
+  LOAD_ENTIRE_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = {
@@ -21,11 +22,11 @@ const initialState = {
   flatFootedArmorClass:"0",
   acModifiersField:"none"
 }
-const armorReducer = (state = initialState, action) => { 
+const armorReducer = (state = initialState, action) => {  
   switch (action.type) {  
     case UPDATE_ARMOR_BONUS:
       return {...state, armorBonus: action.payload.target.value}
-    case UPDATE_SHIELD_BONUS:
+    case UPDATE_SHIELD_BONUS: 
       return {...state, shieldBonus: action.payload.target.value}
     case UPDATE_SIZE_MODIFIER:
       return {...state, sizeModifier: action.payload.target.value}
@@ -40,7 +41,9 @@ const armorReducer = (state = initialState, action) => {
     case UPDATE_FLAT_FOOTED_ARMOR_CLASS:
       return {...state, flatFootedArmorClass: action.payload.target.value}
     case UPDATE_AC_MODIFIERS_FIELD:
-      return {...state, acModifiersField: action.payload.target.value}
+      return {...state, acModifiersField: action.payload.target.value} 
+    case  LOAD_ENTIRE_CHARACTER:
+      return {... action.payload.armor}
     default:
       return state;
   }

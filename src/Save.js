@@ -59,11 +59,11 @@ class Save extends Component {
           </div>
         </div>
         <div className="SaveModifiers">
-          <input type="text" size="3" className="TotalSave" value={"+" + this.getTotalSave()} />
+          <input type="text" size="3" className="TotalSave" value={"+" + this.getTotalSave()} readOnly />
            =&nbsp;  
           <input type="text" size="2" className="BaseSave" value={this.props.base}  onChange={this.props.updateBaseSave} />
           &nbsp; + &nbsp;   
-          <input type="text" size="2" className={"SaveStat " + this.props.stat} value={this.statModifierOnly()} />
+          <input type="text" size="2" className={"SaveStat " + this.props.stat} value={this.statModifierOnly()} readOnly />
           + &nbsp;  
           <input type="text" size="2" className="" value={this.props.magicMod}  onChange={this.props.updateMagicSaveModifier} />
           +              
