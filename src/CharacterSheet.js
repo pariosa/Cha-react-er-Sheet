@@ -6,6 +6,7 @@ import Skills from "./Skills";
 import Saves from "./Saves";
 import Speed from './Speed';
 import Bab from "./Bab";
+import Languages from "./Languages"
 import ArmorClass from "./ArmorClass";
 import Weapons from "./Weapons";
 import LoginModal from './LoginModal'
@@ -63,6 +64,7 @@ class CharacterSheet extends Component {
             <div className="ui stackable grid column six wide">
               <Speed />
               <Skills /> 
+              <Languages />
             </div> 
         </div> 
         { sideDrawer }   

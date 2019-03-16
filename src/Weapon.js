@@ -8,15 +8,24 @@ import {
   updateWeaponRange,
   updateWeaponAmmunition,
   updateWeaponDamage, 
+  removeWeapon
 } from "./js/actions/weaponActions";
 
 const mapDispatchToProps = dispatch => {
   return {
-  
+    updateWeaponName: name => dispatch(updateWeaponName(name)),
+    updateWeaponAttackBonus:attackBonus => dispatch(updateWeaponAttackBonus(attackBonus)),
+    updateWeaponCritical: critical => dispatch(updateWeaponCritical(critical)),
+    updateWeaponType:type => dispatch(updateWeaponType(type)),
+    updateWeaponRange: range => dispatch(updateWeaponRange(range)),
+    updateWeaponAmmunition: ammunition => dispatch(updateWeaponAmmunition(ammunition)),
+    updateWeaponDamage: damage => dispatch(updateWeaponDamage(damage)),
+    removeWeapon: weapon => dispatch(removeWeapon(weapon)) 
   };
 };
 const mapStateToProps = (state, ownProps) => {
   return {
+      id: ownProps.id,
       name:ownProps.name,
       attackBonus:ownProps.attackBonus,
       critical:ownProps.critical,
@@ -33,11 +42,13 @@ class Weapon extends Component {
 
   render() {
     return (
-      <div className="Weapon">
+      <div className="Weapon" id={this.props.id} >
         <div className="weaponRowZero">
           <div className="weaponHeader inline">Weapon</div>
           <div className="attackBonusHeader inline">Attack Bonus</div>
           <div className="criticalHeader inline"> Critical</div>
+                  <button className="red deleteWeapon" onClick={this.props.removeWeapon} >x</button>
+
         </div>
 
         <div className="ui weaponRowOne">

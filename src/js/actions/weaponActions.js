@@ -1,11 +1,7 @@
-
-
-
-export const updateWeaponName = name => ({
+ export const updateWeaponName = name => ({
   type:"UPDATE_WEAPON_NAME",
   payload:name
 })
-
 export const updateWeaponAttackBonus = bonus => ({
   type:"UPDATE_WEAPON_ATTACK_BONUS",
   payload:bonus
@@ -29,4 +25,12 @@ export const updateWeaponAmmunition = ammunition => ({
 export const updateWeaponDamage = damage => ({
   type:"UPDATE_WEAPON_DAMAGE",
   payload:damage
+})
+export const addWeapon = weapon => ({
+  type:"ADD_WEAPON",
+  payload:weapon
+})
+export const removeWeapon = weapon => ({
+  type:"REMOVE_WEAPON",
+  payload:weapon
 })

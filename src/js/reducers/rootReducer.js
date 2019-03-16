@@ -8,6 +8,7 @@ import healthReducer from "./healthReducer";
 import characterReducer from "./characterReducer";
 import statReducer from "./statReducer";
 import savesReducer from "./savesReducer";
+import languagesReducer from "./languagesReducer";
 import uiReducer from "./uiReducer";
 import authReducer from './authReducer';
 import { firestoreReducer } from 'redux-firestore'; 
@@ -19,6 +20,7 @@ const reducers = {
   character: characterReducer, 
   skills: skillReducer,
   weapons: weaponReducer,
+  languages: languagesReducer,
   speed: speedReducer,
   auth: authReducer,
   armor: armorReducer,

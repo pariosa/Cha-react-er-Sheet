@@ -1,7 +1,3 @@
-export const ADD_ARTICLE = "ADD_ARTICLE";
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
-
 // character actions
 export const UPDATE_NAME = "UPDATE_NAME";
 export const UPDATE_ALIGNMENT = "UPDATE_ALIGNMENT";
@@ -18,12 +14,14 @@ export const UPDATE_HEIGHT = "UPDATE_HEIGHT";
 export const UPDATE_WEIGHT = "UPDATE_WEIGHT";
 export const UPDATE_HAIR = "UPDATE_HAIR";
 export const UPDATE_EYES = "UPDATE_EYES";
+
 // health point actions
 export const UPDATE_MAX_HP = "UPDATE_MAX_HP";
 export const UPDATE_CURRENT_HP = "UPDATE_CURRENT_HP";
 export const UPDATE_NONLETHAL = "UPDATE_NONLETHAL";
 export const UPDATE_INITIATIVE_MOD = "UPDATE_INITIATIVE_MOD";
 export const UPDATE_DR = "UPDATE_DR";
+
 // stat point actions
 export const UPDATE_STAT = "UPDATE_STAT"
 export const UPDATE_TEMP_STAT = "UPDATE_TEMP_STAT";
@@ -80,6 +78,8 @@ export const UPDATE_WEAPON_TYPE = "UPDATE_WEAPON_TYPE";
 export const UPDATE_WEAPON_RANGE = "UPDATE_WEAPON_RANGE";
 export const UPDATE_WEAPON_AMMUNITION = "UPDATE_WEAPON_AMMUNITION";
 export const UPDATE_WEAPON_DAMAGE = "UPDATE_WEAPON_DAMAGE";
+export const ADD_WEAPON = "ADD_WEAPON";
+export const REMOVE_WEAPON = "REMOVE_WEAPON";
 
 //login actions
 export const REGISTER = "REGISTER";
@@ -92,9 +92,10 @@ export const TOGGLE_REGISTER_MODAL = "TOGGLE_REGISTER_MODAL";
 export const TOGGLE_SIDE_DRAWER = "TOGGLE_SIDE_DRAWER";
 
 //save/load actions
-
 export const LOAD_CHARACTER_SUCCESS = "LOAD_CHARACTER_SUCCESS";
 export const SAVE_CHARACTER_SUCCESS = "SAVE_CHARACTER_SUCCESS";
-
 export const LOAD_ENTIRE_CHARACTER = "LOAD_ENTIRE_CHARACTER"; 
 
+//languages actions
+export const UPDATE_CONDITIONAL_MODIFIERS = "UPDATE_CONDITIONAL_MODIFIERS";
+export const UPDATE_LANGUAGES = "UPDATE_LANGUAGES";

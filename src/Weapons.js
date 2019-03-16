@@ -2,12 +2,12 @@ import React, { Component } from "React";
 import { connect } from "react-redux";
 import Weapon from './Weapon';
 import {
-
+addWeapon
 } from "./js/actions/weaponActions";
 
 const mapDispatchToProps = dispatch => {
   return {
-  
+    addWeapon: weapon => dispatch(addWeapon(weapon))
   };
 };
 const mapStateToProps = state => {
@@ -25,7 +25,7 @@ class Weapons extends Component {
       weapons.push(
         <Weapon 
           key={i}
-          id={i}
+          id={weapon.id}
           name={weapon.name}
           attackBonus={weapon.attackBonus}
           critical={weapon.critical}
@@ -40,8 +40,9 @@ class Weapons extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="Weapons">
        {this.weapons()}
+       <button className="ui small button green addNewWeapon" onClick={this.props.addWeapon} > + </button>
       </div>
     );
   }

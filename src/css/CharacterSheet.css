@@ -600,6 +600,10 @@ margin-right:6px;
 
 
 /* Weapon css */
+.Weapons{   
+  width:430px;
+  padding-bottom:40px;
+}
 .Weapon{
   max-width:409px;
   min-width:408px;
@@ -640,7 +644,7 @@ margin-right:6px;
 .criticalHeader{
   margin-left:43px;
   display:inline-block;
-  margin-right:20px;
+  margin-right:12px;
   padding-left:10px;
   padding-right:10px;
   background-color:#000;
@@ -702,4 +706,23 @@ margin-right:6px;
 .weaponRowThree > .input > input{
   max-height:30px;
   text-align:center;
+}
+.addNewWeapon{
+  position:absolute;
+  /*right:0px;*/
+  left:383px;
+
+  visibility:hidden;
+}
+.Weapons:hover .addNewWeapon {
+  visibility: visible;
+}
+.Weapon:hover .deleteWeapon{
+  visibility:visible;
+}
+.deleteWeapon{
+  visibility:hidden;
+  border-radius:6px;
+  color:white;
+  background-color: #f44336;
 }
