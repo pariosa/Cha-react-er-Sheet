@@ -40,9 +40,11 @@ const mapStateToProps = state => {
   };
 };
 class ArmorClass extends Component {
+
   constructor(props) {
     super(props);
   }
+  
   getTotalArmor = () =>{
     return ( 10 + parseInt(this.props.armorBonus) + parseInt(this.props.shieldBonus) + parseInt(this.props.dexMod) + parseInt(this.props.sizeModifier)+ parseInt(this.props.naturalArmor)+ parseInt(this.props.deflectionModifier) + parseInt(this.props.armorMiscModifier))
   }
@@ -51,30 +53,25 @@ class ArmorClass extends Component {
   }
   getFlatFooted = () =>{
     return ( 10 + parseInt(this.props.armorBonus) + parseInt(this.props.shieldBonus) + parseInt(this.props.sizeModifier)+ parseInt(this.props.naturalArmor)+ parseInt(this.props.deflectionModifier) + parseInt(this.props.armorMiscModifier))
-
   }
-
 
   render() {
     return (
       <div className="Armor ui ten wide stackable grid row">
        <div className="ui black button small ArmorDescriptor">
-       AC
-       <div className="subscript">Armor Class</div>
+         AC
+         <div className="subscript">Armor Class</div>
        </div> 
        <div className="ArmorFirstRow">
         <input size="2" value={this.getTotalArmor()} readOnly />
           <span className="plus"> = </span>
-
           <span className="plus"> 10 </span>
           <span className="plus"> + </span>
         <input size="2" value={this.props.armorBonus} onChange={this.props.updateArmorBonus} />
-
           <span className="plus"> + </span>
         <input size="2" value={this.props.shieldBonus} onChange={this.props.updateShieldBonus}  />
           <span className="plus"> + </span>
         <input size="2" className="dexterity" value={this.props.dexMod} readOnly  />
-
           <span className="plus"> + </span>
         <input size="2" value={this.props.sizeModifier} onChange={this.props.updateSizeModifier}  />
           <span className="plus"> + </span>
@@ -86,7 +83,6 @@ class ArmorClass extends Component {
         </div>
         <div className="ArmorSecondRow">
           <div className="armorLabel">Total</div>
-
           <div className="armorLabelBlank"/>
           <div className="armorLabel">Armor Bonus</div>
           <div className="armorLabel">Shield Bonus</div>
@@ -97,12 +93,12 @@ class ArmorClass extends Component {
           <div className="armorLabel">Misc. Modifier</div>
         </div>
         <div className="ArmorThirdRow">
-          <div className="ui black   button small TouchDescriptor">
+          <div className="ui black button small TouchDescriptor">
              Touch
             <div className="subscript">Armor Class</div>
           </div>
           <input size="2" readOnly value={this.getTouchAc()} />
-            <div className="ui black   button small FlatDescriptor">
+            <div className="ui black button small FlatDescriptor">
              Flat Footed
             <div className="subscript">Armor Class</div>
           </div>
@@ -110,9 +106,6 @@ class ArmorClass extends Component {
           <textarea rows="1" cols="18" value={this.props.acModifiersField} onChange={this.props.updateAcModifiersField} />
           <span className="modifierText">modifier</span>
         </div>
-
-
-
       </div>
     );
   }

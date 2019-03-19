@@ -14,6 +14,7 @@ import RegisterModal from './RegisterModal'
 import HealthPoints from "./HealthPoints";
 import css from "./css/CharacterSheet.css"; 
 import SideDrawer from './SideDrawer';
+import AcItems from './AcItems';
 
 const mapStateToProps = state => {
   return {
@@ -40,8 +41,8 @@ class CharacterSheet extends Component {
     return (
       <div className="CharacterSheet"> 
         <div className="ui stackable grid column twelve wide">
-        <LoginModal show={this.props.loginModalVisible} />
-        <RegisterModal show={this.props.registerModalVisible} />
+            <LoginModal show={this.props.loginModalVisible} />
+            <RegisterModal show={this.props.registerModalVisible} />
             <h2 className="characterTitle">
               {this.props.name} of {this.props.homeland}
             </h2>
@@ -66,7 +67,10 @@ class CharacterSheet extends Component {
               <Skills /> 
               <Languages />
             </div> 
-        </div> 
+        </div>
+        <div className="ui stackable grid row twelve wide">
+          <AcItems />
+        </div>
         { sideDrawer }   
       </div>
     );

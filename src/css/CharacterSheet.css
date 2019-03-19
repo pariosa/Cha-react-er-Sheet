@@ -690,7 +690,6 @@ margin-right:6px;
   padding-left:10px;
   padding-right:10px;
   background-color:#000;
-
 }
 .damageHeader{
   display:inline-block;
@@ -725,4 +724,102 @@ margin-right:6px;
   border-radius:6px;
   color:white;
   background-color: #f44336;
+}
+
+
+/* AC items css */
+.AcItems{
+  min-width:630px;
+}
+.acHeader1{
+  background-color:#000;
+  color:#fff;
+  font-size:20px;
+  padding-left:30px;
+  padding-right:40px;
+}
+.acHeader2{
+  background-color:#000;
+  color:#fff;
+  padding-top:10px;
+  padding-bottom:2px;
+  margin-left:0px;
+  font-size:10px;
+}
+.acItemsHeader{
+ border-top-left-radius:8px;
+ display:inline;
+ margin-left:0px;
+}
+.acBonusheader{
+ display:inline;
+ padding-left:15px;
+} 
+.acTypeHeader{
+ display:inline;
+ padding-left:33px;
+}
+.acCheckHeader{
+ display:inline;
+ padding-left:27px;
+}
+.acSpellHeader{
+ display:inline; 
+ padding-left:23px;
+}
+.acWeightheader{
+ display:inline;
+ padding-left:23px;
+}  
+.acPropertiesheader{
+ display:inline;
+ padding-left:36px;
+ padding-right:24px;
+ border-top-right-radius:8px;
+}
+.deleteAcItem{
+  background-color:#f44336;
+  border:1px solid #fff;
+  border-radius:6px;
+  color:#fff;
+}
+.totals{
+  max-height:30px;
+  padding-top:5px;
+  display:inline;
+  font-size:20px; 
+  border-bottom-left-radius:6px;
+  text-align:center;
+  padding-right:48px;
+  padding-left:50px;
+  color:#fff;
+  background-color:#000;
+}
+.acTotals > input {
+  max-height:30px;
+  text-align: center;
+}
+.bonusTotal{
+  display:inline;
+  text-align:center!important;
+}
+.typeTotal{
+  display:inline;
+  text-align:center!important;
+}
+.checkTotal{
+  display:inline;
+  text-align:center!important;
+}
+.spellTotal{
+  display:inline;
+  text-align:center!important;
+}
+.weightTotal{
+  display:inline;
+  text-align:center!important;
+}
+.propertiesTotal{
+  display:inline;
+  text-align:center!important;
 }

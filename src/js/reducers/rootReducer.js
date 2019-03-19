@@ -7,6 +7,7 @@ import speedReducer from "./speedReducer";
 import healthReducer from "./healthReducer";
 import characterReducer from "./characterReducer";
 import statReducer from "./statReducer";
+import acItemsReducer from './acItemsReducer';
 import savesReducer from "./savesReducer";
 import languagesReducer from "./languagesReducer";
 import uiReducer from "./uiReducer";
@@ -16,6 +17,7 @@ import { firebaseReducer } from 'react-redux-firebase';
 import loadCharacterReducer from './loadCharacterReducer';
 
 const reducers = {
+  acItems:acItemsReducer,
   loadCharacter: loadCharacterReducer,
   character: characterReducer, 
   skills: skillReducer,

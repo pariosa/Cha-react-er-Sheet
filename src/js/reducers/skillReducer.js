@@ -379,6 +379,7 @@ const skillReducer = (state = initialState, action) => {
       for(keys in skillInStateIsClass){ 
         skillInStateIsClassObj[keys] = skillInStateIsClass[keys];
       }
+      skillInStateIsClassObj.isClass = action.payload.target.checked;
       return [
         ...state.map((item, index) =>
             index === skillIndexIsClass

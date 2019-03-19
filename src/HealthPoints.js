@@ -24,8 +24,7 @@ const MapDispatchToProps = dispatch => {
     updateMaxHp: maxHp => dispatch(updateMaxHp(maxHp)),
     updateCurrentHp: currentHp => dispatch(updateCurrentHp(currentHp)),
     updateNonLethal: nonLethal => dispatch(updateNonLethal(nonLethal)),
-    updateInitiativeMod: initiativeModifier =>
-      dispatch(updateInitiativeMod(initiativeModifier)),
+    updateInitiativeMod: initiativeModifier => dispatch(updateInitiativeMod(initiativeModifier)),
     updateDr: dr => dispatch(updateDr(dr))
   };
 };
