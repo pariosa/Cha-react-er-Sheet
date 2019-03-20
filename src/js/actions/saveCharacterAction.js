@@ -15,10 +15,9 @@ export const saveCharacter = (character) => {
 			speed:getState().speed,
 			stats:getState().stat,
 			weapons:getState().weapons,
+			gear:getState().gear,
 			languages:getState().languages
 		});
-		dispatch({type: 'SAVE_CHARACTER_SUCCESS'});
+		dispatch({type:SAVE_CHARACTER_SUCCESS});
 	}
-}
-
-
+} 

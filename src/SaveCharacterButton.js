@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class RegisterButton extends Component{ 
+class SaveCharacterButton extends Component{ 
 	render(){ 
 		return( 
 			<div className="registerButton" > 
@@ -26,4 +26,4 @@ class RegisterButton extends Component{
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (RegisterButton);
+export default connect(mapStateToProps, mapDispatchToProps) (SaveCharacterButton);

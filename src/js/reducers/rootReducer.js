@@ -1,4 +1,6 @@
-import { createStore, combineReducers } from "redux";
+import { combineReducers } from "redux";
+import { firestoreReducer } from "redux-firestore"; 
+import { firebaseReducer } from "react-redux-firebase";
 import { reducer as formReducer } from "redux-form"; 
 import skillReducer from "./skillReducer";
 import weaponReducer from "./weaponReducer";
@@ -8,13 +10,12 @@ import healthReducer from "./healthReducer";
 import characterReducer from "./characterReducer";
 import statReducer from "./statReducer";
 import acItemsReducer from './acItemsReducer';
-import savesReducer from "./savesReducer";
+import savesReducer from "./savesReducer"; 
 import languagesReducer from "./languagesReducer";
 import uiReducer from "./uiReducer";
+import gearReducer from "./gearReducer";
 import authReducer from './authReducer';
-import { firestoreReducer } from 'redux-firestore'; 
-import { firebaseReducer } from 'react-redux-firebase';
-import loadCharacterReducer from './loadCharacterReducer';
+import loadCharacterReducer from "./loadCharacterReducer";
 
 const reducers = {
   acItems:acItemsReducer,
@@ -26,7 +27,7 @@ const reducers = {
   speed: speedReducer,
   auth: authReducer,
   armor: armorReducer,
-  speed: speedReducer,
+  gear: gearReducer, 
   health: healthReducer, 
   saves: savesReducer,
   stat: statReducer, 

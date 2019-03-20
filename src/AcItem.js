@@ -35,7 +35,7 @@ const mapStateToProps = (state, ownProps) => {
       properties:ownProps.properties
   };
 };
-class Weapon extends Component {
+class AcItem extends Component {
   constructor(props) {
     super(props);
   }
@@ -43,7 +43,7 @@ class Weapon extends Component {
   render() {
     return (
       <div className="acItem" id={this.props.id} > 
-        <div className="ui weaponRowOne"> 
+        <div className="ui acItemRowOne"> 
           <div className="ui input acItemName">
             <input type="text" size="16" value={this.props.name} onChange={this.props.updateAcItemName} />
           </div>
@@ -66,8 +66,7 @@ class Weapon extends Component {
  		  <div className="ui input acItemProperties">
             <input type="text" size="8" value={this.props.properties} onChange={this.props.updateAcItemProperties} />
  		  </div>
- 		  <button className="red deleteAcItem" onClick={this.props.removeAcItem} >x</button>
-
+ 		  <button className="red deleteAcItem" onClick={this.props.removeAcItem} >x</button> 
        </div>
      </div>
     );
@@ -78,4 +77,4 @@ class Weapon extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Weapon);
+)(AcItem);

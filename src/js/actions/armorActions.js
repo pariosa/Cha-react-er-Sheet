@@ -11,38 +11,38 @@ import {
 } from "../constants/actionTypes"; 
 
 export const updateArmorBonus = armorBonus => ({
-  type: "UPDATE_ARMOR_BONUS",
+  type: UPDATE_ARMOR_BONUS,
   payload: armorBonus
 });
 export const updateShieldBonus = shieldBonus => ({
-  type: "UPDATE_SHIELD_BONUS",
+  type: UPDATE_SHIELD_BONUS,
   payload: shieldBonus
 });
 export const updateSizeModifier = sizeMod => ({
-  type: "UPDATE_SIZE_MODIFIER",
+  type: UPDATE_SIZE_MODIFIER,
   payload: sizeMod
 });
 export const updateNaturalArmor = naturalArmor => ({
-  type: "UPDATE_NATURAL_ARMOR",
+  type: UPDATE_NATURAL_ARMOR,
   payload: naturalArmor
 });
 export const updateDeflectionModifier = deflectionModifier => ({
-  type: "UPDATE_DEFLECTION_MODIFIER",
+  type: UPDATE_DEFLECTION_MODIFIER,
   payload: deflectionModifier
 });
 export const updateArmorMiscModifier = armorMiscMofidier => ({
-  type: "UPDATE_ARMOR_MISC_MODIFIER",
+  type: UPDATE_ARMOR_MISC_MODIFIER,
   payload: armorMiscMofidier
 });
 export const updateTouchArmorClass = touchArmorClass => ({
-  type: "UPDATE_TOUCH_ARMOR_CLASS",
+  type: UPDATE_TOUCH_ARMOR_CLASS,
   payload: touchArmorClass
 });
 export const updateFlatFootedArmorClass = flatFootedArmorClass => ({
-  type: "UPDATE_FLAT_FOOTED_ARMOR_CLASS",
+  type: UPDATE_FLAT_FOOTED_ARMOR_CLASS,
   payload: flatFootedArmorClass
 });
 export const updateAcModifiersField = acModifiersField =>({
-  type: "UPDATE_AC_MODIFIERS_FIELD",
+  type: UPDATE_AC_MODIFIERS_FIELD,
   payload: acModifiersField
 })

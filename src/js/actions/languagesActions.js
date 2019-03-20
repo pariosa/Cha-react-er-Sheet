@@ -4,10 +4,10 @@ UPDATE_CONDITIONAL_MODIFIERS
 } from "../constants/actionTypes"; 
 
 export const updateLanguages = languages => ({
-  type: "UPDATE_LANGUAGES",
+  type: UPDATE_LANGUAGES,
   payload: languages
 });
 export const updateConditionalModifiers = conditionalModifiers => ({
-  type: "UPDATE_CONDITIONAL_MODIFIERS",
+  type: UPDATE_CONDITIONAL_MODIFIERS,
   payload: conditionalModifiers
 });

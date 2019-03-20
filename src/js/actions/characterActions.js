@@ -2,7 +2,7 @@ import {
   UPDATE_NAME,
   UPDATE_ALIGNMENT,
   UPDATE_CLASS,
-  UPDATE_PLAYERNAME,
+  UPDATE_PLAYER_NAME,
   UPDATE_LEVEL,
   UPDATE_DIETY,
   UPDATE_HOMELAND,
@@ -12,79 +12,80 @@ import {
   UPDATE_AGE,
   UPDATE_HEIGHT,
   UPDATE_HAIR,
-  UPDATE_EYES
+  UPDATE_EYES,
+  UPDATE_WEIGHT
 } from "../constants/actionTypes";
 
 export const updateName = name => ({
-  type: "UPDATE_NAME",
+  type: UPDATE_NAME,
   payload: name
 });
 
 export const updatePlayerName = playerName => ({
-  type: "UPDATE_PLAYER_NAME",
+  type: UPDATE_PLAYER_NAME,
   payload: playerName
 });
 
 export const updateAlignment = alignment => ({
-  type: "UPDATE_ALIGNMENT",
+  type: UPDATE_ALIGNMENT,
   payload: alignment
 });
 
 export const updatePlayerClass = playerClass => ({
-  type: "UPDATE_CLASS",
+  type: UPDATE_CLASS,
   payload: playerClass
 });
 
 export const updateLevel = level => ({
-  type: "UPDATE_LEVEL",
+  type: UPDATE_LEVEL,
   payload: level
 });
 
 export const updateDiety = diety => ({
-  type: "UPDATE_DIETY",
+  type: UPDATE_DIETY,
   payload: diety
 });
 
 export const updateHomeland = homeland => ({
-  type: "UPDATE_HOMELAND",
+  type: UPDATE_HOMELAND,
   payload: homeland
 });
 
 export const updateRace = race => ({
-  type: "UPDATE_RACE",
+  type: UPDATE_RACE,
   payload: race
 });
 
 export const updateSize = size => ({
-  type: "UPDATE_SIZE",
+  type: UPDATE_SIZE,
   payload: size
 });
 
 export const updateGender = gender => ({
-  type: "UPDATE_GENDER",
+  type: UPDATE_GENDER,
   payload: gender
 });
 
 export const updateAge = age => ({
-  type: "UPDATE_AGE",
+  type: UPDATE_AGE,
   payload: age
 });
 
 export const updateHeight = height => ({
-  type: "UPDATE_HEIGHT",
+  type: UPDATE_HEIGHT,
   payload: height
 });
 
 export const updateWeight = weight => ({
-  type: "UPDATE_WEIGHT",
+  type: UPDATE_WEIGHT,
   payload: weight
 });
 
 export const updateHair = hair => ({
-  type: "UPDATE_HAIR",
+  type: UPDATE_HAIR,
   payload: hair
 });
 export const updateEyes = eyes => ({
-  type: "UPDATE_EYES",
+  type: UPDATE_EYES,
   payload: eyes
 });

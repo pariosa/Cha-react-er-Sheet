@@ -85,7 +85,7 @@ class AcItems extends Component {
           type={item.type}
           checkPenalty={item.range}
           spellFailure={item.ammunition}
-          weight={item.damage}
+          weight={item.weight}
           properties={item.properties}
         />
       );
@@ -107,12 +107,12 @@ class AcItems extends Component {
           <div className="totals">
           Totals
           </div>
-          <input classname="bonusTotal" size="3" value={this.bonusTotal()} />
-          <input classname="typeTotal" size="3" value={this.typeTotal()} />
-          <input classname="checkTotal" size="6" value={this.checkPenaltyTotal()} />
-          <input classname="spellTotal" size="6" value={this.spellFailureTotal()} />
-          <input classname="weightTotal" size="4" value={this.weightTotal()} />
-          <input classname="propertiesTotal" size="9"  value={this.propertiesTotal()} />
+          <input className="bonusTotal" size="3" value={this.bonusTotal()} readOnly />
+          <input className="typeTotal" size="3" value={this.typeTotal()} readOnly />
+          <input className="checkTotal" size="6" value={this.checkPenaltyTotal()} readOnly />
+          <input className="spellTotal" size="6" value={this.spellFailureTotal()} readOnly />
+          <input className="weightTotal" size="4" value={this.weightTotal()} readOnly />
+          <input className="propertiesTotal" size="9"  value={this.propertiesTotal()} readOnly />
         </div>
         <button className="ui small button green addNewAcItem" onClick={this.props.addAcItem} > + </button>
       </div>
