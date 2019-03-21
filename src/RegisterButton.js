@@ -17,11 +17,13 @@ const mapDispatchToProps = dispatch => {
 class RegisterButton extends Component{ 
 	render(){ 
 		return( 
-			<div className="registerButton" > 
-				<a className="ui item" onClick={this.props.toggleRegisterModal}>
+  <div className="registerButton"> 
+    <a className="ui item" onClick={this.props.toggleRegisterModal}>
+
 				    Register
-				</a>
-			</div> 
+				
+    </a>
+  </div> 
 		)
 	}
 }

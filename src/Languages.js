@@ -25,16 +25,17 @@ class Languages extends Component {
   render() {
     return (
       <div className="Languages stackable grid row">
-       <div className="conditionalModifiers Input">
-       <strong>Conditional Modifiers:</strong>
-          <textarea className="conditionalModifiersInput" rows="2"cols="50" value={this.props.conditionalModifiers} onChange={this.props.updateConditionalModifiers} />
+        <div className="conditionalModifiers Input">
+          <strong>Conditional Modifiers:</strong>
+          <textarea className="conditionalModifiersInput" rows="2" cols="50" value={this.props.conditionalModifiers} onChange={this.props.updateConditionalModifiers} />
 
-       </div>
+        </div>
         <div className="languages Input">
-          <strong>Languages:</strong><br/>
-          <textarea className="languagesInput" rows="3"cols="50" value={this.props.languages} onChange={this.props.updateLanguages} />
+          <strong>Languages:</strong>
+          <br />
+          <textarea className="languagesInput" rows="3" cols="50" value={this.props.languages} onChange={this.props.updateLanguages} />
         
-       </div>
+        </div>
       </div>
        )
   }

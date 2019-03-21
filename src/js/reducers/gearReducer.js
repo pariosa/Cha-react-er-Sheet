@@ -38,7 +38,7 @@ const gearReducer = (state = initialState, action) =>{
 	       gearNameState
 	      ); 
 	      let keys;
-	      let gearNameObj = new Object;
+	      const gearNameObj = new Object;
 	      for(keys in gearNameState){ 
 	        gearNameObj[keys] = gearNameState[keys];
 	      }
@@ -58,7 +58,7 @@ const gearReducer = (state = initialState, action) =>{
 	      const gearWeightIndex = state.gear.indexOf(
 	       gearWeightState
 	      ); 
-	      let gearWeightObj = new Object;
+	      const gearWeightObj = new Object;
 	      for(keys in gearWeightState){ 
 	        gearWeightObj[keys] = gearWeightState[keys];
 	      }

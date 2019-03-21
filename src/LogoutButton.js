@@ -19,11 +19,13 @@ const mapDispatchToProps = dispatch => {
 class LogoutButton extends Component{ 
 	render(){ 
 		return( 
-			<div className="logoutButton right menu" > 
-				<a className="ui item" onClick={this.props.logout}>
+  <div className="logoutButton right menu"> 
+    <a className="ui item" onClick={this.props.logout}>
+
 				    Logout~!
-				</a>
-			</div> 
+				
+    </a>
+  </div> 
 		)
 	}
 }

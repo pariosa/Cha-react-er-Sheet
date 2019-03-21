@@ -24,27 +24,33 @@ const mapDispatchtoProps = dispatch =>{
 class Currency extends Component{
 	render(){
 		return(
-			<div className="Currency">
-				<div className="currencyHeader">
+  <div className="Currency">
+    <div className="currencyHeader">
+
 					Money
-				</div>
-				<div className="CP">
+				
+    </div>
+    <div className="CP">
+
 					CP - 
-					<input className="CP" value={this.props.currency.CP} onChange={this.props.updateCp} />
-				</div>
-				<div className="SP">
+      <input className="CP" value={this.props.currency.CP} onChange={this.props.updateCp} />
+    </div>
+    <div className="SP">
+
 					SP - 
-					<input className="SP" value={this.props.currency.SP} onChange={this.props.updateSp} />
-				</div>
-				<div className="GP">
+      <input className="SP" value={this.props.currency.SP} onChange={this.props.updateSp} />
+    </div>
+    <div className="GP">
+
 					GP - 
-					<input className="GP" value={this.props.currency.GP} onChange={this.props.updateGp} />
-				</div>
-				<div className="PP">
+      <input className="GP" value={this.props.currency.GP} onChange={this.props.updateGp} />
+    </div>
+    <div className="PP">
+
 					PP - 
-					<input className="PP" value={this.props.currency.PP} onChange={this.props.updatePp} />
-				</div>
-			</div>
+      <input className="PP" value={this.props.currency.PP} onChange={this.props.updatePp} />
+    </div>
+  </div>
 		)
 	}
 }

@@ -49,37 +49,47 @@ class Speed extends Component {
   render() {
     return (
       <div className="Speed stackable grid row">
-       <div className="ui black two wide button small speedDescriptor">
+        <div className="ui black two wide button small speedDescriptor">
           <strong>Speed</strong>
           <div className="subscript">land</div>
         </div>
         <div className="speedGroup">
-          <input className="speedFieldFt" size="1" value={this.props.baseSpeed} onChange={this.props.updateBaseSpeed} /><span className="subtext">ft.</span>
-          <input className="speedFieldSq" size="1" value={this.props.baseSpeedSq} onChange={this.props.updateBaseSpeedSq}  /><span className="subtext">sq.</span> 
+          <input className="speedFieldFt" size="1" value={this.props.baseSpeed} onChange={this.props.updateBaseSpeed} />
+          <span className="subtext">ft.</span>
+          <input className="speedFieldSq" size="1" value={this.props.baseSpeedSq} onChange={this.props.updateBaseSpeedSq}  />
+          <span className="subtext">sq.</span> 
         </div>
 
         <div className="speedGroup">
-          <input size="1" className="speedFieldFt" value={this.props.baseSpeedArmored} onChange={this.props.updateBaseSpeedArmored} /><span className="subtext">ft.</span>
-          <input size="1" className="speedFieldSq" value={this.props.baseSpeedArmoredSq} onChange={this.props.updateBaseSpeedArmoredSq} /><span className="subtext">sq.</span>
+          <input size="1" className="speedFieldFt" value={this.props.baseSpeedArmored} onChange={this.props.updateBaseSpeedArmored} />
+          <span className="subtext">ft.</span>
+          <input size="1" className="speedFieldSq" value={this.props.baseSpeedArmoredSq} onChange={this.props.updateBaseSpeedArmoredSq} />
+          <span className="subtext">sq.</span>
         </div>
          
-          <div className="inline-block subscript baseSpeed">
-            base speed
-          </div>
-          <div  className="inline-block subscript withArmor">
-            with armor
-          </div> 
-          <div className="speedSecondRow">
-            <div className="speedGroupFly">
-              <input size="1" className="speedFieldFt" value={this.props.flySpeed} onChange={this.props.updateFlySpeed} /><span className="subtext">ft.</span>
-              <input size="4" className="speedFieldSq" value={this.props.flyManeuverability} onChange={this.props.updateFlyManeuverability} /> 
-            </div>
-            <div className="speedGroupThree">
-              <input size="1"  value={this.props.swimSpeed} onChange={this.props.updateSwimSpeed} /><span className="subtext3">ft.</span>
-              <input size="1"  value={this.props.climbSpeed} onChange={this.props.updateClimbSpeed} /><span className="subtext3">ft.</span>
-              <input size="1"  value={this.props.burrowSpeed} onChange={this.props.updateBurrowSpeed} /><span className="subtext3">ft.</span>
+        <div className="inline-block subscript baseSpeed">
 
-            </div>
+            base speed
+        </div>
+        <div className="inline-block subscript withArmor">
+
+            with armor
+        </div> 
+        <div className="speedSecondRow">
+          <div className="speedGroupFly">
+            <input size="1" className="speedFieldFt" value={this.props.flySpeed} onChange={this.props.updateFlySpeed} />
+            <span className="subtext">ft.</span>
+            <input size="4" className="speedFieldSq" value={this.props.flyManeuverability} onChange={this.props.updateFlyManeuverability} /> 
+          </div>
+          <div className="speedGroupThree">
+            <input size="1" value={this.props.swimSpeed} onChange={this.props.updateSwimSpeed} />
+            <span className="subtext3">ft.</span>
+            <input size="1" value={this.props.climbSpeed} onChange={this.props.updateClimbSpeed} />
+            <span className="subtext3">ft.</span>
+            <input size="1" value={this.props.burrowSpeed} onChange={this.props.updateBurrowSpeed} />
+            <span className="subtext3">ft.</span>
+
+          </div>
           <div className="speedGroupTemp inline-block">
             <div className="speedTempModifierHeadline">Temp Modifiers</div>
             <textarea cols="5" rows="2" value={this.props.tempMod} onChange={this.props.updateSpeedTempMod} />
@@ -87,18 +97,23 @@ class Speed extends Component {
           </div>
           <div>
             <div className="inline-block subscript fly">
+
               Fly
             </div>
-            <div  className="inline-block subscript maneuverability">
+            <div className="inline-block subscript maneuverability">
+
               Maneuverability
             </div>  
             <div className="inline-block subscript swim">
+
               Swim
             </div>
-            <div  className="inline-block subscript climb">
+            <div className="inline-block subscript climb">
+
               Climb
             </div> 
-            <div  className="inline-block subscript burrow">
+            <div className="inline-block subscript burrow">
+
               Burrow
             </div>
           </div>  

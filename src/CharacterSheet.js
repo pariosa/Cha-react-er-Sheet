@@ -40,40 +40,44 @@ const mapDispatchToProps = dispatch => {
 class CharacterSheet extends Component {
   constructor(props) {
     super(props);
-  } 
+  }
+ 
   render() {
     const sideDrawer = this.props.auth.uid ? null : <SideDrawer />;
     return (
       <div className="CharacterSheet"> 
         <div className="ui stackable grid column twelve wide">
-            <LoginModal show={this.props.loginModalVisible} />
-            <RegisterModal show={this.props.registerModalVisible} />
-            <h2 className="characterTitle">
-              {this.props.name} of {this.props.homeland}
-            </h2>
-            <CharacterInfo />   
+          <LoginModal show={this.props.loginModalVisible} />
+          <RegisterModal show={this.props.registerModalVisible} />
+          <h2 className="characterTitle">
+            {this.props.name}
+            {' '}
+of
+            {this.props.homeland}
+          </h2>
+          <CharacterInfo />   
 
 
-            <div className="ui stackable grid column eight wide">
+          <div className="ui stackable grid column eight wide">
               
             <Stats />  
-              <div className="ui stackable grid column nine wide">
-                <HealthPoints />
-              </div>
-              <ArmorClass />
-              <Saves />  
-              <Bab />
-              <Cmb />
-              <Cmd />
-              <Weapons />
-
+            <div className="ui stackable grid column nine wide">
+              <HealthPoints />
             </div>
+            <ArmorClass />
+            <Saves />  
+            <Bab />
+            <Cmb />
+            <Cmd />
+            <Weapons />
 
-            <div className="ui stackable grid column six wide">
-              <Speed />
-              <Skills /> 
-              <Languages />
-            </div> 
+          </div>
+
+          <div className="ui stackable grid column six wide">
+            <Speed />
+            <Skills /> 
+            <Languages />
+          </div> 
         </div>
         <div className="ui stackable grid row twelve wide">
           <AcItems />

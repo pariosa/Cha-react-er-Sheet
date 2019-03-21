@@ -27,17 +27,17 @@ class Gear extends Component {
 
   render() {
     return (
-      <div className="GearItem" id={this.props.id} > 
+      <div className="GearItem" id={this.props.id}> 
         <div className="ui weaponRowOne"> 
           <div className="ui input gearName">
             <input type="text" size="16" value={this.props.name} onChange={this.props.updateGearName} />
           </div> 
           <div className="ui input gearWeight">
             <input type="text" size="3" value={this.props.weight} onChange={this.props.updateGearWeight} />
- 		       </div> 
-           <button className="red deleteGear" onClick={this.props.removeGear} >x</button>
-       </div>
-     </div>
+          </div> 
+          <button className="red deleteGear" onClick={this.props.removeGear}>x</button>
+        </div>
+      </div>
     );
   }
 }

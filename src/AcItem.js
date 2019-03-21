@@ -42,7 +42,7 @@ class AcItem extends Component {
 
   render() {
     return (
-      <div className="acItem" id={this.props.id} > 
+      <div className="acItem" id={this.props.id}> 
         <div className="ui acItemRowOne"> 
           <div className="ui input acItemName">
             <input type="text" size="16" value={this.props.name} onChange={this.props.updateAcItemName} />
@@ -62,13 +62,13 @@ class AcItem extends Component {
           </div>
           <div className="ui input acItemWeight">
             <input type="text" size="3" value={this.props.weight} onChange={this.props.updateAcItemWeight} />
- 		  </div>
- 		  <div className="ui input acItemProperties">
+          </div>
+          <div className="ui input acItemProperties">
             <input type="text" size="8" value={this.props.properties} onChange={this.props.updateAcItemProperties} />
- 		  </div>
- 		  <button className="red deleteAcItem" onClick={this.props.removeAcItem} >x</button> 
-       </div>
-     </div>
+          </div>
+          <button className="red deleteAcItem" onClick={this.props.removeAcItem}>x</button> 
+        </div>
+      </div>
     );
   }
 }

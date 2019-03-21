@@ -1,10 +1,10 @@
 import thunk from 'redux-thunk'; 
 import firebase from 'firebase'; 
-import config from '../firebase/config'
-import rootReducer from "../reducers/RootReducer"; 
 import { createStore, applyMiddleware, compose } from 'redux';
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
+import rootReducer from "../reducers/RootReducer"; 
+import config from '../firebase/config'
 
 const rrfConfig = {
 	attachAuthIsReady: true,

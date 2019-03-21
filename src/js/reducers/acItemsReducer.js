@@ -34,7 +34,7 @@ const acItemReducer = (state = initialState, action) => {
         acItemNameState
       );
       let keys;
-      let acItemNameObj = new Object;
+      const acItemNameObj = new Object;
       for(keys in acItemNameState){ 
         acItemNameObj[keys] = acItemNameState[keys];
       }
@@ -54,7 +54,7 @@ const acItemReducer = (state = initialState, action) => {
       const acItemBonusIndex = state.indexOf(
         acItemBonusState
       ); 
-      let acItemBonusObj = new Object;
+      const acItemBonusObj = new Object;
       for(keys in acItemBonusState){ 
         acItemBonusObj[keys] = acItemBonusState[keys];
       }
@@ -74,7 +74,7 @@ const acItemReducer = (state = initialState, action) => {
       const acItemTypeIndex = state.indexOf(
         acItemTypeState
       ); 
-      let acItemTypeObj = new Object;
+      const acItemTypeObj = new Object;
       for(keys in acItemTypeState){ 
         acItemTypeObj[keys] = acItemTypeState[keys];
       }
@@ -94,7 +94,7 @@ const acItemReducer = (state = initialState, action) => {
       const acItemCheckPenaltyIndex = state.indexOf(
         acItemCheckPenaltyState
       ); 
-      let acItemCheckPenaltyObj = new Object;
+      const acItemCheckPenaltyObj = new Object;
       for(keys in acItemCheckPenaltyState){ 
         acItemCheckPenaltyObj[keys] = acItemCheckPenaltyState[keys];
       }  
@@ -114,7 +114,7 @@ const acItemReducer = (state = initialState, action) => {
       const acItemSpellFailureIndex = state.indexOf(
         acItemSpellFailureState
       ); 
-      let acItemSpellFailureObj = new Object;
+      const acItemSpellFailureObj = new Object;
       for(keys in acItemSpellFailureState){ 
         acItemSpellFailureObj[keys] = acItemSpellFailureState[keys];
       }
@@ -134,7 +134,7 @@ const acItemReducer = (state = initialState, action) => {
       const acItemWeightIndex = state.indexOf(
         acItemWeightState
       ); 
-      let acItemWeightObj = new Object;
+      const acItemWeightObj = new Object;
       for(keys in acItemWeightState){ 
         acItemWeightObj[keys] = acItemWeightState[keys];
       }
@@ -154,7 +154,7 @@ const acItemReducer = (state = initialState, action) => {
       const acItemPropertiesIndex = state.indexOf(
         acItemPropertiesState
       ); 
-      let acItemPropertiesObj = new Object;
+      const acItemPropertiesObj = new Object;
       for(keys in acItemPropertiesState){ 
         acItemPropertiesObj[keys] = acItemPropertiesState[keys];
       }

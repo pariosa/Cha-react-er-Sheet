@@ -42,12 +42,12 @@ class Weapon extends Component {
 
   render() {
     return (
-      <div className="Weapon" id={this.props.id} >
+      <div className="Weapon" id={this.props.id}>
         <div className="weaponRowZero">
           <div className="weaponHeader inline">Weapon</div>
           <div className="attackBonusHeader inline">Attack Bonus</div>
           <div className="criticalHeader inline"> Critical</div>
-                  <button className="red deleteWeapon" onClick={this.props.removeWeapon} >x</button>
+          <button className="red deleteWeapon" onClick={this.props.removeWeapon}>x</button>
 
         </div>
 

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { compose } from 'redux';
-import Backdrop from './Backdrop'; 
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
+import Backdrop from './Backdrop'; 
 import CharacterList from './CharacterList';
-const Fragment = React.Fragment;
+
+const {Fragment} = React;
 const mapStateToProps = (state) =>{
     return{ 
         isVisible: state.ui.sideDrawerVisible,
@@ -18,12 +19,12 @@ class SideDrawer extends Component {
             return null;
         } 
         return (
-            <Fragment>
-                <Backdrop type="sideDrawer" />
-                <div className="SideDrawer"> 
-                    <CharacterList characters={characters} />
-                </div>
-            </Fragment> 
+          <Fragment>
+            <Backdrop type="sideDrawer" />
+            <div className="SideDrawer"> 
+              <CharacterList characters={characters} />
+            </div>
+          </Fragment> 
         );
     }   
 };

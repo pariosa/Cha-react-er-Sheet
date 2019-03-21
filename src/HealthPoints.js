@@ -95,6 +95,7 @@ class HealthPoints extends Component {
               }
             />
           </div>
+
           =
           <div className="ui three wide left labeled input">
             <div className="ui left corner label">Dex mod</div>
@@ -105,6 +106,7 @@ class HealthPoints extends Component {
               value={this.props.dexterityMod}
             />
           </div>
+
           +
           <div className="input ui three wide left labeled input">
             <div className="ui left corner label">Misc mod</div>

@@ -39,8 +39,8 @@ const initialState =
 const statReducer = (state = initialState, action) => { 
   switch (action.type) {
     case UPDATE_STAT:  
-      let stat, value, statName;
-      let returnObj = new Object;
+      let stat; let value; let statName;
+      const returnObj = new Object;
       stat = action.payload.currentTarget.attributes[0].value.split(" ")[0].substring(0,3);
       value = action.payload.currentTarget.attributes[0].value.split(" ")[0].substring(3,6);
       switch(stat){
@@ -67,11 +67,11 @@ const statReducer = (state = initialState, action) => {
       }
       if(value == "Pos"){
         returnObj[statName] = state.stats[statName] + 1;
-        returnObj[stat+'Mod'] =  Math.floor((state.stats[statName] - 9) / 2);
+        returnObj[`${stat}Mod`] =  Math.floor((state.stats[statName] - 9) / 2);
       }
       if(value == "Neg"){
         returnObj[statName] = state.stats[statName] - 1;
-        returnObj[stat+'Mod'] =  Math.floor((state.stats[statName] - 11) / 2);
+        returnObj[`${stat}Mod`] =  Math.floor((state.stats[statName] - 11) / 2);
       }
   
       switch(stat){
@@ -81,12 +81,12 @@ const statReducer = (state = initialState, action) => {
               stats: {
                 ...state.stats,
                   strength: returnObj[statName],
-                  strMod: returnObj[stat+"Mod"]
+                  strMod: returnObj[`${stat}Mod`]
               },
               statsTemporary:{
                 ...state.statsTemporary,
                   strength: returnObj[statName],
-                  strMod: returnObj[stat+"Mod"]
+                  strMod: returnObj[`${stat}Mod`]
               } 
           };
           break;
@@ -96,12 +96,12 @@ const statReducer = (state = initialState, action) => {
               stats: {
                 ...state.stats,
                   intelligence: returnObj[statName],
-                  intMod: returnObj[stat+"Mod"]
+                  intMod: returnObj[`${stat}Mod`]
               }, 
               statsTemporary:{
                 ...state.statsTemporary,
                   intelligence: returnObj[statName],
-                  intMod: returnObj[stat+"Mod"]
+                  intMod: returnObj[`${stat}Mod`]
               } 
           };
           break;
@@ -111,12 +111,12 @@ const statReducer = (state = initialState, action) => {
               stats: {
                 ...state.stats,
                   dexterity: returnObj[statName],
-                  dexMod: returnObj[stat+"Mod"]
+                  dexMod: returnObj[`${stat}Mod`]
               },
               statsTemporary:{
                 ...state.statsTemporary,
                   dexterity: returnObj[statName],
-                  dexMod: returnObj[stat+"Mod"]
+                  dexMod: returnObj[`${stat}Mod`]
               } 
 
           };
@@ -127,12 +127,12 @@ const statReducer = (state = initialState, action) => {
               stats: {
                 ...state.stats,
                   constitution: returnObj[statName],
-                  conMod: returnObj[stat+"Mod"]
+                  conMod: returnObj[`${stat}Mod`]
               },
                statsTemporary:{
                 ...state.statsTemporary,
                   constitution: returnObj[statName],
-                  conMod: returnObj[stat+"Mod"]
+                  conMod: returnObj[`${stat}Mod`]
               } 
           };
           break;
@@ -142,12 +142,12 @@ const statReducer = (state = initialState, action) => {
               stats: {
                 ...state.stats,
                   wisdom: returnObj[statName],
-                  wisMod: returnObj[stat+"Mod"]
+                  wisMod: returnObj[`${stat}Mod`]
               },
               statsTemporary:{
                 ...state.statsTemporary,
                   wisdom: returnObj[statName],
-                  wisMod: returnObj[stat+"Mod"]
+                  wisMod: returnObj[`${stat}Mod`]
               } 
           };
           break;
@@ -157,12 +157,12 @@ const statReducer = (state = initialState, action) => {
               stats: {
                 ...state.stats,
                   charisma: returnObj[statName],
-                  chaMod: returnObj[stat+"Mod"]
+                  chaMod: returnObj[`${stat}Mod`]
               },
               statsTemporary:{
                 ...state.statsTemporary,
                   charisma: returnObj[statName],
-                  chaMod: returnObj[stat+"Mod"]
+                  chaMod: returnObj[`${stat}Mod`]
               } 
           };
           break;
@@ -170,8 +170,8 @@ const statReducer = (state = initialState, action) => {
           break;
       }
     case UPDATE_TEMP_STAT:  
-      let statTemp, valueTemp; 
-      let returnObjTemp = new Object;
+      let statTemp; let valueTemp; 
+      const returnObjTemp = new Object;
       statTemp = action.payload.currentTarget.attributes[0].value.split(" ")[0].substring(0,3);
       valueTemp = action.payload.currentTarget.attributes[0].value.split(" ")[0].substring(3,6);
       switch(statTemp){
@@ -198,11 +198,11 @@ const statReducer = (state = initialState, action) => {
       }
       if(valueTemp == "Pos"){
         returnObjTemp[statName] = state.statsTemporary[statName] + 1;
-        returnObjTemp[statTemp+'Mod'] =  Math.floor((state.statsTemporary[statName] - 9) / 2);
+        returnObjTemp[`${statTemp}Mod`] =  Math.floor((state.statsTemporary[statName] - 9) / 2);
       }
       if(valueTemp == "Neg"){
         returnObjTemp[statName] = state.statsTemporary[statName] - 1;
-        returnObjTemp[statTemp+'Mod'] =  Math.floor((state.statsTemporary[statName] - 11) / 2);
+        returnObjTemp[`${statTemp}Mod`] =  Math.floor((state.statsTemporary[statName] - 11) / 2);
       }  
       switch(statTemp){
         case "str":
@@ -211,7 +211,7 @@ const statReducer = (state = initialState, action) => {
               statsTemporary: {
                 ...state.statsTemporary,
                   strength: returnObjTemp[statName],
-                  strMod: returnObjTemp[statTemp+"Mod"]
+                  strMod: returnObjTemp[`${statTemp}Mod`]
               } 
           };
           break;
@@ -221,7 +221,7 @@ const statReducer = (state = initialState, action) => {
               statsTemporary: {
                 ...state.statsTemporary,
                   intelligence: returnObjTemp[statName],
-                  intMod: returnObjTemp[statTemp+"Mod"]
+                  intMod: returnObjTemp[`${statTemp}Mod`]
               } 
           };
           break;
@@ -231,7 +231,7 @@ const statReducer = (state = initialState, action) => {
               statsTemporary: {
                 ...state.statsTemporary,
                   dexterity: returnObjTemp[statName],
-                  dexMod: returnObjTemp[statTemp+"Mod"]
+                  dexMod: returnObjTemp[`${statTemp}Mod`]
               } 
           };
           break;
@@ -241,7 +241,7 @@ const statReducer = (state = initialState, action) => {
               statsTemporary: {
                 ...state.statsTemporary,
                   constitution: returnObjTemp[statName],
-                  conMod: returnObjTemp[statTemp+"Mod"]
+                  conMod: returnObjTemp[`${statTemp}Mod`]
               } 
           };
           break;
@@ -251,7 +251,7 @@ const statReducer = (state = initialState, action) => {
               statsTemporary: {
                 ...state.statsTemporary,
                   wisdom: returnObjTemp[statName],
-                  wisMod: returnObjTemp[statTemp+"Mod"]
+                  wisMod: returnObjTemp[`${statTemp}Mod`]
               } 
           };
           break;
@@ -261,7 +261,7 @@ const statReducer = (state = initialState, action) => {
               statsTemporary: {
                 ...state.statsTemporary,
                   charisma: returnObjTemp[statName],
-                  chaMod: returnObjTemp[statTemp+"Mod"]
+                  chaMod: returnObjTemp[`${statTemp}Mod`]
               } 
           };
           break;

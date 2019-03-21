@@ -17,11 +17,13 @@ const mapDispatchToProps = dispatch => {
 class SaveCharacterButton extends Component{ 
 	render(){ 
 		return( 
-			<div className="registerButton" > 
-				<button className="ui item green" onClick={this.props.saveCharacter}>
+  <div className="registerButton"> 
+    <button className="ui item green" onClick={this.props.saveCharacter}>
+
 				    Save Character
-				</button>
-			</div> 
+				
+    </button>
+  </div> 
 		)
 	}
 }

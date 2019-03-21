@@ -4,7 +4,8 @@ import {
   UPDATE_SKILL_DESCRIPTION,
   UPDATE_SKILL_MISC_MOD,
   LOAD_ENTIRE_CHARACTER
-} from "../constants/actionTypes"; 
+} from "../constants/actionTypes";
+ 
 const initialState = 
   [
     {
@@ -314,12 +315,12 @@ const initialState =
 const skillReducer = (state = initialState, action) => { 
   switch (action.type) {  
     case UPDATE_SKILL_RANK: 
-      let skillInStateRank = state.find(
+      const skillInStateRank = state.find(
         skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id)
       );
       const skillIndex = state.indexOf(skillInStateRank); 
       let keys;
-      let skillInStateRankObj = new Object; 
+      const skillInStateRankObj = new Object; 
       for(keys in skillInStateRank){ 
         skillInStateRankObj[keys] = skillInStateRank[keys];
       }
@@ -335,7 +336,7 @@ const skillReducer = (state = initialState, action) => {
         skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id)
       );
       const skillIndexMiscMod = state.indexOf(skillInStateMiscMod);
-      let skillInStateMiscModObj = new Object; 
+      const skillInStateMiscModObj = new Object; 
       for(keys in skillInStateMiscMod){ 
         skillInStateMiscModObj[keys] = skillInStateMiscMod[keys];
       }
@@ -353,7 +354,7 @@ const skillReducer = (state = initialState, action) => {
       const skillIndexDescription = state.indexOf(
         skillInStateDescription
       );
-      let skillInStateDescriptionObj = new Object;
+      const skillInStateDescriptionObj = new Object;
 
       for(keys in skillInStateDescription){ 
         skillInStateDescriptionObj[keys] = skillInStateDescription[keys];
@@ -375,7 +376,7 @@ const skillReducer = (state = initialState, action) => {
       const skillIndexIsClass = state.indexOf(
         skillInStateIsClass
       ); 
-      let skillInStateIsClassObj = new Object; 
+      const skillInStateIsClassObj = new Object; 
       for(keys in skillInStateIsClass){ 
         skillInStateIsClassObj[keys] = skillInStateIsClass[keys];
       }

@@ -11,6 +11,7 @@ import {
   UPDATE_SPEED_TEMP_MOD,
   LOAD_ENTIRE_CHARACTER
 } from "../constants/actionTypes";
+
 const initialState = {
   baseSpeed:"25",
   baseSpeedArmored:"20",

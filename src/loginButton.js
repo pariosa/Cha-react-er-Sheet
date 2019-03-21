@@ -17,11 +17,13 @@ const mapDispatchToProps = dispatch => {
 class LoginButton extends Component{ 
 	render(){ 
 		return( 
-			<div className="loginButton right menu" > 
-				<a className="ui item" onClick={this.props.toggleLoginModal}>
+  <div className="loginButton right menu"> 
+    <a className="ui item" onClick={this.props.toggleLoginModal}>
+
 				    Login~!
-				</a>
-			</div> 
+				
+    </a>
+  </div> 
 		)
 	}
 }

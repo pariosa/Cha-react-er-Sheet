@@ -46,7 +46,7 @@ const savesReducer = (state = initialState, action) => {
         saveInStateBase
       ); 
       let keys;
-      let saveInStateBaseObj = new Object;
+      const saveInStateBaseObj = new Object;
       for(keys in saveInStateBase){
         saveInStateBaseObj[keys] = saveInStateBase[keys];
       }
@@ -66,7 +66,7 @@ const savesReducer = (state = initialState, action) => {
       const saveIndexMagicMod = state.indexOf(
         saveInStateMagicMod
       );
-      let saveInStateMagicModObj = new Object;
+      const saveInStateMagicModObj = new Object;
       for(keys in saveInStateMagicMod){
         saveInStateMagicModObj[keys] = saveInStateMagicMod[keys];
       }
@@ -86,7 +86,7 @@ const savesReducer = (state = initialState, action) => {
       const saveIndexMiscMod = state.indexOf(
         saveInStateMiscMod
       );   
-      let saveInStateMiscModObj = new Object;
+      const saveInStateMiscModObj = new Object;
       for(keys in saveInStateMiscMod){
         saveInStateMiscModObj[keys] = saveInStateMiscMod[keys];
       }
@@ -106,7 +106,7 @@ const savesReducer = (state = initialState, action) => {
       const saveIndexTempMod = state.indexOf(
         saveInStateTempMod
       );
-      let saveInStateTempModObj = new Object;
+      const saveInStateTempModObj = new Object;
       for(keys in saveInStateTempMod){
         saveInStateTempModObj[keys] = saveInStateTempMod[keys];
       }

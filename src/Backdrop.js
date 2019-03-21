@@ -21,18 +21,15 @@ class Backdrop extends Component{
 	render(){
 		if(this.props.type === "registerModal"){
 			return( 
-				<div className="Backdrop" onClick={this.props.toggleRegisterModal}>
-				</div>
+  <div className="Backdrop" onClick={this.props.toggleRegisterModal} />
 			)
-		}else if(this.props.type === "loginModal"){
+		}if(this.props.type === "loginModal"){
 			return( 
-				<div className="Backdrop" onClick={this.props.toggleLoginModal}>
-				</div>	
+  <div className="Backdrop" onClick={this.props.toggleLoginModal} />	
 			)
-		}else if(this.props.type === "sideDrawer"){
+		}if(this.props.type === "sideDrawer"){
 			return( 
-				<div className="Backdrop" onClick={this.props.toggleSideDrawer}>
-				</div>	
+  <div className="Backdrop" onClick={this.props.toggleSideDrawer} />	
 			)
 		}
 	}

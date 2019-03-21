@@ -44,7 +44,7 @@ const weaponReducer = (state = initialState, action) => {
         weaponNameState
       );
       let keys;
-      let weaponNameObj = new Object;
+      const weaponNameObj = new Object;
       for(keys in weaponNameState){ 
         weaponNameObj[keys] = weaponNameState[keys];
       }
@@ -64,7 +64,7 @@ const weaponReducer = (state = initialState, action) => {
       const weaponAbIndex = state.indexOf(
         weaponAbState
       ); 
-      let weaponAbObj = new Object;
+      const weaponAbObj = new Object;
       for(keys in weaponAbState){ 
         weaponAbObj[keys] = weaponAbState[keys];
       }
@@ -84,7 +84,7 @@ const weaponReducer = (state = initialState, action) => {
       const weaponCritIndex = state.indexOf(
         weaponCritState
       ); 
-      let weaponCritObj = new Object;
+      const weaponCritObj = new Object;
       for(keys in weaponCritState){ 
         weaponCritObj[keys] = weaponCritState[keys];
       }
@@ -104,7 +104,7 @@ const weaponReducer = (state = initialState, action) => {
       const weaponTypeIndex = state.indexOf(
         weaponTypeState
       ); 
-      let weaponTypeObj = new Object;
+      const weaponTypeObj = new Object;
       for(keys in weaponTypeState){ 
         weaponTypeObj[keys] = weaponTypeState[keys];
       }
@@ -125,7 +125,7 @@ const weaponReducer = (state = initialState, action) => {
       const weaponRangeIndex = state.indexOf(
         weaponRangeState
       ); 
-      let weaponRangeObj = new Object;
+      const weaponRangeObj = new Object;
       for(keys in weaponRangeState){ 
         weaponRangeObj[keys] = weaponRangeState[keys];
       }
@@ -145,7 +145,7 @@ const weaponReducer = (state = initialState, action) => {
       const weaponAmmoIndex = state.indexOf(
         weaponAmmoState
       ); 
-      let weaponAmmoObj = new Object;
+      const weaponAmmoObj = new Object;
       for(keys in weaponAmmoState){ 
         weaponAmmoObj[keys] = weaponAmmoState[keys];
       }
@@ -165,7 +165,7 @@ const weaponReducer = (state = initialState, action) => {
       const weaponDamageIndex = state.indexOf(
         weaponDamageState
       ); 
-      let weaponDamageObj = new Object;
+      const weaponDamageObj = new Object;
       for(keys in weaponDamageState){ 
         weaponDamageObj[keys] = weaponDamageState[keys];
       }
