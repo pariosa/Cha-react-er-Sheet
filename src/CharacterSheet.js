@@ -7,6 +7,8 @@ import Saves from "./Saves";
 import Speed from './Speed';
 import Bab from "./Bab";
 import Gears from "./Gears";
+import Cmb from './Cmb';
+import Cmd from './Cmd';
 import Languages from "./Languages"
 import ArmorClass from "./ArmorClass";
 import Weapons from "./Weapons";
@@ -59,6 +61,8 @@ class CharacterSheet extends Component {
               <ArmorClass />
               <Saves />  
               <Bab />
+              <Cmb />
+              <Cmd />
               <Weapons />
 
             </div>

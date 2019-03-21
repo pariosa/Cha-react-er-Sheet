@@ -13,7 +13,10 @@ import {
   UPDATE_HEIGHT,
   UPDATE_HAIR,
   UPDATE_EYES,
-  UPDATE_WEIGHT
+  UPDATE_WEIGHT,
+  UPDATE_CMB_MODIFIERS_FIELD,
+  UPDATE_CMB_SIZE_MODIFIER,
+  UPDATE_CMD_SIZE_MODIFIER,
 } from "../constants/actionTypes";
 
 export const updateName = name => ({
@@ -89,3 +92,16 @@ export const updateEyes = eyes => ({
   type: UPDATE_EYES,
   payload: eyes
 });
+export const updateCmbModifiersField = modifier => ({
+  type:UPDATE_CMB_MODIFIERS_FIELD,
+  payload:modifier
+});
+export const updateCmbSizeModifier = modifier => ({
+  type:UPDATE_CMB_SIZE_MODIFIER,
+  payload:modifier
+})
+export const updateCmdSizeModifier = modifier => ({
+  type:UPDATE_CMD_SIZE_MODIFIER,
+  payload:modifier
+})
+

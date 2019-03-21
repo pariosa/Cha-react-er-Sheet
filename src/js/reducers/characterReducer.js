@@ -41,12 +41,12 @@ export const initialState = {
     hair: "eggshell",
     eyes: "eggshell",
     cmbSizeModifier:'0',
-    cmbModifiersField:'0',
+    cmbModifiersField:'',
     cmdSizeModifier:'0',
 };
 
 const characterReducer = (state = initialState, action) => {  
-  switch (action.type) {   
+  switch (action.type) {  
     case UPDATE_NAME:
       return {...state, name: action.payload.target.value};
     case UPDATE_ALIGNMENT:
