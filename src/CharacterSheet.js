@@ -18,6 +18,8 @@ import HealthPoints from "./HealthPoints";
 import css from "./css/CharacterSheet.css"; 
 import SideDrawer from './SideDrawer';
 import AcItems from './AcItems';
+import Currency from './Currency';
+
 
 const mapStateToProps = state => {
   return {
@@ -76,6 +78,7 @@ class CharacterSheet extends Component {
         <div className="ui stackable grid row twelve wide">
           <AcItems />
           <Gears />
+          <Currency />
         </div>
         { sideDrawer }   
       </div>

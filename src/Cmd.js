@@ -19,14 +19,12 @@ const mapStateToProps = state => {
 }
 
 class Cmd extends Component {
-	calcTotal = () =>{ 
-		debugger;
+	calcTotal = () =>{  
 		return ((10) + parseInt(this.props.bab) + parseInt(this.props.strengthMod) + parseInt(this.props.dexterityMod) + parseInt(this.props.sizeModifier))
 	}
 	render(){
 		return(
 			<div className="Cmd">
-
 				<div className="CmdRow1 ui small input">
 				<div className="CmdLabel ui small black button">CMD</div>
 					<input className="CmdTotal" size="2" value={this.calcTotal()} readOnly />

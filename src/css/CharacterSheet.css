@@ -1009,3 +1009,27 @@ margin-right:6px;
 .CmdRow1{
   line-height:30px;
 }
+
+
+/* Money Css */
+
+.Currency{
+  margins:5px 5px 5px 5px;
+  border:1px solid black;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.currencyHeader{
+  text-align:center;
+  color:#fff;
+  font-size:18px;
+  background-color:#000;
+}
+.Currency >div>input{
+  border:0px solid #fff;
+  padding:14px;
+  max-height:50px;
+  min-width:150px;
+  max-width:150px;
+}
+

@@ -11,6 +11,7 @@ import characterReducer from "./characterReducer";
 import statReducer from "./statReducer";
 import acItemsReducer from './acItemsReducer';
 import savesReducer from "./savesReducer"; 
+import currencyReducer from './currencyReducer';
 import languagesReducer from "./languagesReducer";
 import uiReducer from "./uiReducer";
 import gearReducer from "./gearReducer";
@@ -31,6 +32,7 @@ const reducers = {
   health: healthReducer, 
   saves: savesReducer,
   stat: statReducer, 
+  currency:currencyReducer,
   form: formReducer,
   ui: uiReducer,
   firebase: firebaseReducer,

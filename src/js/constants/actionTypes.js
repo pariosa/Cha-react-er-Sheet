@@ -125,3 +125,9 @@ export const REMOVE_GEAR = "REMOVE_GEAR";
 
 // Feats actions 
 export const UPDATE_FEAT = "UPDATE_FEAT";
+
+// Currency actions
+export const UPDATE_CP = "UPDATE_CP";
+export const UPDATE_SP = "UPDATE_SP";
+export const UPDATE_GP = "UPDATE_GP";
+export const UPDATE_PP = "UPDATE_PP";
