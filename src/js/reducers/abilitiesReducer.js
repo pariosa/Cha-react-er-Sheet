@@ -1,7 +1,7 @@
 import{
-	ADD_FEAT,
-	REMOVE_FEAT,
-	UPDATE_FEAT,
+	ADD_ABILITY,
+	REMOVE_ABILITY,
+	UPDATE_ABILITY,
 	LOAD_ENTIRE_CHARACTER
 }from "../constants/actionTypes";
 
@@ -9,19 +9,19 @@ const initialState = [
 
 ];
 
-const featsReducer = (state = initialState, action) => { 
+const abilitiesReducer = (state = initialState, action) => { 
   switch (action.type) {  
-	case ADD_FEAT:
+	case ADD_ABILITY:
       return [...state, action.payload.target.value];
-    case REMOVE_FEAT:
+    case REMOVE_ABILITY:
       return {state};
-    case UPDATE_FEAT:
+    case UPDATE_ABILITY:
       return [...state, action.payload.target.value];
     case LOAD_ENTIRE_CHARACTER:
-     return [...action.payload.feats]
+     return [...action.payload.abilities]
     default:
     	return state;
   	}
 }
 
-export default featsReducer;
+export default abilitiesReducer;

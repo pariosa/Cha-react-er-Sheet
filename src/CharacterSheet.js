@@ -9,6 +9,8 @@ import Bab from "./Bab";
 import Gears from "./Gears";
 import Cmb from './Cmb';
 import Cmd from './Cmd';
+import Abilities from "./Abilities";
+import Feats from "./Feats";
 import Languages from "./Languages"
 import ArmorClass from "./ArmorClass";
 import Weapons from "./Weapons";
@@ -83,6 +85,8 @@ of
           <AcItems />
           <Gears />
           <Currency />
+          <Abilities />
+          <Feats />
         </div>
         { sideDrawer }   
       </div>

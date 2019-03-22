@@ -16,7 +16,14 @@ export const saveCharacter = (character) => {
 			stats:getState().stat,
 			weapons:getState().weapons,
 			gear:getState().gear,
-			languages:getState().languages
+			languages:getState().languages,
+			feats:getState().feats,
+			abilities:getState().abilities,
+			currency:getState().currency,
+			experience:getState().experience,
+			spells:getState().spells,
+			spellslots:getState().spellslots,
+			acItems:getState().acItems
 		});
 		dispatch({type:SAVE_CHARACTER_SUCCESS});
 	}

@@ -125,9 +125,31 @@ export const REMOVE_GEAR = "REMOVE_GEAR";
 
 // Feats actions 
 export const UPDATE_FEAT = "UPDATE_FEAT";
+export const ADD_FEAT = "ADD_FEAT";
+export const REMOVE_FEAT = "REMOVE_FEAT";
 
 // Currency actions
 export const UPDATE_CP = "UPDATE_CP";
 export const UPDATE_SP = "UPDATE_SP";
 export const UPDATE_GP = "UPDATE_GP";
 export const UPDATE_PP = "UPDATE_PP";
+
+// Ability actions
+export const UPDATE_ABILITY = "UPDATE_ABILITY";
+export const ADD_ABILITY = "ADD_ABILITY";
+export const REMOVE_ABILITY = "REMOVE_ABILITY";
+
+// Exp actions
+export const UPDATE_EXP = "UPDATE_EXP";
+export const UPDATE_MAX_EXP = "UPDATE_MAX_EXP";
+
+// Spells actions
+export const ADD_SPELL = "ADD_SPELL";
+export const UPDATE_SPELL = "UPDATE_SPELL";
+export const REMOVE_SPELL = "REMOVE_SPELL";
+
+// Spellslots Actions = 
+export const UPDATE_SPELLS_KNOWN = "UPDATE_SPELLS_KNOWN";
+export const UPDATE_SPELL_SAVE_DC = "UPDATE_SPELL_SAVE_DC";
+export const UPDATE_SPELLS_PER_DAY = "UPDATE_SPELLS_PER_DAY";
+export const UPDATE_BONUS_SPELLS = "UPDATE_BONUS_SPELLS";

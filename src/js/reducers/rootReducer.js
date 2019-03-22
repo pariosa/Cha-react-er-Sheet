@@ -17,6 +17,11 @@ import uiReducer from "./uiReducer";
 import gearReducer from "./gearReducer";
 import authReducer from './authReducer';
 import loadCharacterReducer from "./loadCharacterReducer";
+import experienceReducer from "./experienceReducer";
+import featsReducer from "./featsReducer";
+import abilitiesReducer from "./abilitiesReducer";
+import spellsReducer from "./spellsReducer";
+import spellslotsReducer from "./spellslotReducer";
 
 const reducers = {
   acItems:acItemsReducer,
@@ -33,6 +38,11 @@ const reducers = {
   saves: savesReducer,
   stat: statReducer, 
   currency:currencyReducer,
+  spells:spellsReducer,
+  spellslots:spellslotsReducer,
+  feats:featsReducer,
+  abilities:abilitiesReducer,
+  experience:experienceReducer,
   form: formReducer,
   ui: uiReducer,
   firebase: firebaseReducer,
