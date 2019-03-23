@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux"
 import Ability from "./Ability"
 import {
-	updateAbility,
 	addAbility
 } from "./js/actions/abilitiesActions"
 
@@ -22,16 +21,18 @@ const mapDispatchToProps = dispatch => {
 class Abilities extends Component {
   getAbilities = () => {
     let abilities = [];
-    this.props.abilities.forEach((ability, i) => {
-      abilities.push(
-        <Ability 
-          key={i}
-          id={i}
-          ability={ability}
-          
-        />
-      );
-    });
+    if(this.props.abilities.length > 0){
+	    this.props.abilities.forEach((ability, i) => {
+	      abilities.push(
+	        <Ability 
+	          key={i}
+	          id={ability.id}
+	          ability={ability.ability}
+	          
+	        />
+	      );
+	    });
+	}
     return <div>{abilities}</div>;
   };
 	render(){

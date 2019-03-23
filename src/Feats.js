@@ -26,8 +26,8 @@ class Feats extends Component {
       feats.push(
         <Feat 
           key={i}
-          id={i}
-          feat={feat}
+          id={feat.id}
+          feat={feat.feat}
           
         />
       );

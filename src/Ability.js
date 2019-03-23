@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
+	updateAbility,
 	removeAbility
 } from "./js/actions/abilitiesActions"
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-
+		ability:ownProps.ability,
+		id: ownProps.id
 	}
 }
 
 const mapDispatchToProps = dispatch => {
 	return{
-		removeAbility: ability => dispatch(removeAbility(ability))
+		removeAbility: ability => dispatch(removeAbility(ability)),
+		updateAbility: ability => dispatch(updateAbility(ability))
 	}
 }
 
@@ -20,9 +23,9 @@ class Ability extends Component {
 	render(){
 		return(
 
-			<div className="Abilities">
+			<div className="Abilities" id={this.props.id}>
 
-				Ability will go here!
+				<textarea value={this.props.ability}  onChange={this.props.updateAbility} />
 
          		<button className="red deleteWeapon" onClick={this.props.removeAbility}>x</button>
 

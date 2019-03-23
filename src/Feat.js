@@ -7,7 +7,8 @@ import {
 
 const mapStateToProps = ( state, ownProps ) => {
 	return {
-		feat:ownProps.feat
+		feat:ownProps.feat,
+		id:ownProps.id
 	}
 }
 
@@ -23,9 +24,10 @@ class Feat extends Component {
 	render(){
 		return(
 
-			<div className="Feats">
+			<div className="Feats" id={this.props.id}>
 
-				<textarea value={this.props.feat} />
+				<textarea value={this.props.feat} onChange={this.props.updateFeat} />
+         		<button className="red deleteWeapon" onClick={this.props.removeFeat}>x</button>
 
 			</div>
 
