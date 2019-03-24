@@ -1,7 +1,7 @@
 
 import {
   UPDATE_EXP,
-  UPDATE_MAX_EXP, 
+  UPDATE_EXP_MAX, 
   LOAD_ENTIRE_CHARACTER
 } from "../constants/actionTypes";
 
@@ -14,7 +14,7 @@ const experienceReducer = (state = initialState, action) => {
   switch (action.type) {  
     case UPDATE_EXP: 
       return {...state, experience: action.payload.target.value}
-    case UPDATE_MAX_EXP: 
+    case UPDATE_EXP_MAX: 
       return {...state, maxExperience: action.payload.target.value}
     case LOAD_ENTIRE_CHARACTER: 
       return {...action.payload.experience}

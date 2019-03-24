@@ -39,7 +39,9 @@ class Feats extends Component {
 		return(
 
 			<div className="Feats">
-
+			<div className="FeatsTitle">
+			Feats
+			</div>
 				{this.getFeats()}
 
 			 <button className="ui small button green addNewAcItem" onClick={this.props.addFeat} > + </button>

@@ -34,7 +34,7 @@ class Cmb extends Component {
 					&nbsp; = &nbsp;
 					<input className="cmbBaseAttackBonus" size="2" value={this.props.bab} readOnly />
 					&nbsp; + &nbsp;
-					<input className="strength" size="2" value={this.props.strengthMod} />
+					<input className="strength" size="2" value={this.props.strengthMod} readOnly />
 					&nbsp; + &nbsp;
 					<input className="cmbSizeModifier" size="2" value={this.props.sizeModifier} onChange={this.props.updateCmbSizeModifier} />
 					 &nbsp; &nbsp;

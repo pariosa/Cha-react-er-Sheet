@@ -141,7 +141,7 @@ export const REMOVE_ABILITY = "REMOVE_ABILITY";
 
 // Exp actions
 export const UPDATE_EXP = "UPDATE_EXP";
-export const UPDATE_MAX_EXP = "UPDATE_MAX_EXP";
+export const UPDATE_EXP_MAX = "UPDATE_EXP_MAX";
 
 // Spells actions
 export const ADD_SPELL = "ADD_SPELL";

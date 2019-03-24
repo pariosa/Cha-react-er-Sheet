@@ -1,6 +1,14 @@
-.CharacterSheet {
-  margin: 0 auto;
-  padding: 20px;
+.Header{
+position:fixed;
+width:100%;
+background-color:#fff!important;
+z-index:2;
+}
+
+.CharacterSheet { 
+  padding-top:50px;
+  padding:20px;
+  margin: 0 auto; 
 } 
 .total {
   border: none;
@@ -1033,3 +1041,108 @@ margin-right:6px;
   max-width:150px;
 }
 
+/* Feats css */
+.Feats{
+  min-width:400px;
+  border:1px solid black;
+  border-top-right-radius:6px;
+  border-top-left-radius:6px;
+}
+.FeatsTitle{
+  background-color:#000;
+  color:#fff;
+  font-size:20px;
+  text-align:center;
+  border-top-right-radius:6px;
+  border-top-left-radius:6px;
+}
+.Feat:hover .deleteFeat{
+  opacity:1;
+}
+.Feats:hover .addNewAcItem{
+  opacity:1; 
+}
+.Feat > textarea{
+  overflow:none;
+  border-top:white;
+  border-left:#000;
+  border-right:#000;
+  whitespace: nowrap; 
+  overflow-x: hidden; 
+}
+
+/* Abilities css */
+.Abilities{
+  min-width:400px;
+  border:1px solid black;
+  border-top-right-radius:6px;
+  border-top-left-radius:6px;
+}
+.AbilitiesTitle{
+  background-color:#000;
+  color:#fff;
+  font-size:20px;
+  text-align:center;
+  border-top-right-radius:6px;
+  border-top-left-radius:6px;
+}
+.Ability:hover .deleteAbility{
+  opacity:1;
+}
+.Abilities:hover .addNewAcItem{
+  opacity:1; 
+}
+.Ability > textarea{
+  overflow:none;
+  border-top:white;
+  border-left:#000;
+  border-right:#000;
+  whitespace: nowrap; 
+  overflow-x: hidden; 
+}
+
+/* Experience css */
+.Experience{
+  max-height:67px;
+  border-bottom:1px solid #000;
+  padding:0px;
+  font-size:30px;
+  border-left:1px solid #000;
+  border-right:1px solid #000;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+
+  width:334px;
+}
+.ExperienceTitle{
+  min-width:200px;
+  width:100%;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  text-align:center;
+  display:inline;
+  background-color:#000;
+  color:#fff;
+  font-size:18px;
+  padding-left:19px;
+  padding-right:19px;
+}
+
+.NextLevelTitle{
+  display:inline;
+  padding-bottom:1px;
+  border-top-right-radius:5px;
+  background-color:#000;
+  color:#fff;
+  font-size:15px;
+  padding-left:39px;
+  padding-right:46px;
+}
+.ExperienceInputs{
+  display:block!important;
+}
+.ExperienceInputs > input{
+  font-size:20px;
+  max-height:40px;
+    text-align:center!important;
+}

@@ -39,7 +39,9 @@ class Abilities extends Component {
 		return(
 
 			<div className="Abilities">
-
+			<div className="AbilitiesTitle">
+			Special Abilities
+			</div>
 				{this.getAbilities()}
 
 			 	<button className="ui small button green addNewAcItem" onClick={this.props.addAbility} > + </button>

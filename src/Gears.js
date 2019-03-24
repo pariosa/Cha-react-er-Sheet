@@ -63,7 +63,7 @@ class Gears extends Component {
          {this.gearItemsFn()}
          <div className="addAnotherItem"><span>Add another item?</span></div>
         <button className="ui small button green addNewGear" onClick={this.props.addGear} > + </button>
-        <span className="ui small input totalWeight"><input size="3" value={this.getTotalWeight()} /></span>
+        <span className="ui small input totalWeight"><input size="3" value={this.getTotalWeight()} readOnly /></span>
         <div className="loadCapacity">
           <div className="GearSubHeaders">
             <div className="GearSubHeader  ui small input">

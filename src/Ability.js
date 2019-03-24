@@ -23,11 +23,11 @@ class Ability extends Component {
 	render(){
 		return(
 
-			<div className="Abilities" id={this.props.id}>
+			<div className="Ability" id={this.props.id}>
 
-				<textarea value={this.props.ability}  onChange={this.props.updateAbility} />
+				<textarea value={this.props.ability} cols="50" onChange={this.props.updateAbility} />
 
-         		<button className="red deleteWeapon" onClick={this.props.removeAbility}>x</button>
+         		<button className="red deleteWeapon deleteAbility" onClick={this.props.removeAbility}>x</button>
 
 			</div>
 

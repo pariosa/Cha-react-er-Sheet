@@ -21,7 +21,9 @@ import css from "./css/CharacterSheet.css";
 import SideDrawer from './SideDrawer';
 import AcItems from './AcItems';
 import Currency from './Currency';
-
+import Experience from "./Experience";
+//import SpellSlots from "./SpellSlots";
+//import SpellList from "./SpellList";
 
 const mapStateToProps = state => {
   return {
@@ -87,6 +89,7 @@ of
           <Currency />
           <Abilities />
           <Feats />
+          <Experience />
         </div>
         { sideDrawer }   
       </div>

@@ -24,10 +24,11 @@ class Feat extends Component {
 	render(){
 		return(
 
-			<div className="Feats" id={this.props.id}>
+			<div className="Feat" id={this.props.id}>
 
-				<textarea value={this.props.feat} onChange={this.props.updateFeat} />
-         		<button className="red deleteWeapon" onClick={this.props.removeFeat}>x</button>
+				<textarea value={this.props.feat} cols="50" onChange={this.props.updateFeat} />
+	         
+	         	<button className="red deleteWeapon deleteFeat" onClick={this.props.removeFeat}>x</button>
 
 			</div>
 

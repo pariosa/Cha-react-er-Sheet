@@ -3,12 +3,12 @@ import {
 	UPDATE_EXP_MAX 
  } from "../constants/actionTypes";
 
-export const updateExperience = ability => ({
+export const updateExperience = exp => ({
 	type: UPDATE_EXP,
-	payload: ability
+	payload: exp
 });
 
-export const updateExperienceMax = ability => ({
+export const updateExperienceMax = exp => ({
 	type: UPDATE_EXP_MAX,
-	payload: ability
+	payload: exp
 });

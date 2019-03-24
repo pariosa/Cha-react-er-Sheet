@@ -17,11 +17,9 @@ const abilitiesReducer = (state = initialState, action) => {
     newAbility.id = state.length;
     for(let x=0;x<state.length;x++){
       if(state.find(node => node.id === x) === undefined){
-         debugger;
          newAbility.id = x;
       }
-    } 
-   
+    }   
     return [...state, newAbility]; 
     case REMOVE_ABILITY: 
       return  state.filter(ability => ability.id !== parseInt(action.payload.nativeEvent.path[1].id));

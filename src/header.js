@@ -20,7 +20,7 @@ class Header extends Component {
 	const drawerToggle = this.props.auth.uid ? <DrawerToggle /> : null;
 		return(
   <div>
-    <div className="ui secondary pointing menu">
+    <div className="ui Header secondary pointing menu">
       <a className="active item">
         <span className="gray">Cha</span>
 react
