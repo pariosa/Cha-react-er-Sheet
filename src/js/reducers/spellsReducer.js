@@ -6,7 +6,36 @@ import{
 } from "../constants/actionTypes";
 
 const initialState=[
-
+  { level:0,
+    spells:[]
+  },  
+  { level:1,
+    spells:[]
+  },  
+  { level:2,
+    spells:[]
+  },  
+  { level:3,
+    spells:[]
+  },  
+  { level:4,
+    spells:[]
+  },  
+  { level:5,
+    spells:[]
+  },  
+  { level:6,
+    spells:[]
+  },  
+  { level:7,
+    spells:[]
+  },  
+  { level:8,
+    spells:[]
+  },
+  { level:9,
+    spells:[]
+  },
 ];
 
 const spellsReducer = (state = initialState, action) => { 

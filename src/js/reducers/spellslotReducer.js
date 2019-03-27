@@ -6,68 +6,78 @@ import {
 	LOAD_ENTIRE_CHARACTER
 } from "../constants/actionTypes";
 
-const initialState = {
-	"0":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+const initialState = [
+	{
+		level:0,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},	
-	"1":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+	{	
+		level:1,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},
-	"2":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+	{
+		level:2,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},
-	"3":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+	{
+		level:3,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},
-	"4":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+	{
+		level:4,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},
-	"5":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+	{
+		level:5,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},
-	"6":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+	{
+		level:6,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},
-	"7":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+	{
+		level:7,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},
-	"8":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+	{
+		level:8,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},
-	"9":{
-		"spellsKnown":"",
-		"spellSaveDc":"",
-		"spellsPerDay":"",
-		"bonusSpells":""
+	{
+		level:9,
+		spellsKnown:"",
+		spellSaveDc:"",
+		spellsPerDay:"",
+		bonusSpells:""
 	},
-};
+];
 
 const spellSlotReducer = (state = initialState, action) => { 
   switch (action.type) {  
