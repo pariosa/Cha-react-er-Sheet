@@ -18,16 +18,25 @@ const mapDispatchToProps = {
 };
 
 class Stat extends Component { 
-  getAbbrev = () =>{
-  	return this.props.stat.substring(0,3);
+  constructor(props){
+    super(props);
+    this.props = props;
   }
-  getStatPos = () =>{
+
+  getAbbrev(){
+    const { stat } = this.props;
+  	return stat.substring(0,3);
+  }
+
+  getStatPos(){
   	return `${this.getAbbrev()}Pos statPos`;
   }
-  getStatNeg = () =>{
+
+  getStatNeg(){
   	return `${this.getAbbrev()}Neg statNeg`;
   }
-  getColor = () =>{
+
+  getColor(){
   	switch(this.getAbbrev()){
   		case "int":
   			return "blue";
@@ -41,56 +50,68 @@ class Stat extends Component {
   			return "red";
   		case "cha":
   			return "pink";
+      default:
+        return null;
   	}
   }
-  getTopClassName = () =>{ 
-    return `${this.props.stat} ui labeled button`;
+
+  getTopClassName (){ 
+    const { stat } = this.props;
+    return `${stat} ui labeled button`;
   }
-  getOverClassName = () =>{
+
+  getOverClassName(){
   	return `ui one wide ${this.getColor()} button`;
   }
-  getUnderClassName = () =>{
+
+  getUnderClassName(){
   	return `ui basic ${this.getColor()} button abilityScore`;
   }
-  getLastClassName = () =>{
+
+  getLastClassName(){
   	return `ui basic ${this.getColor()} label`
   }
 
   render(){
+    const{
+      mod,
+      score,
+      tempScore,
+      tempMod,
+      updateStat,
+      updateTempStat
+    } = this.props;
   	return( 
-	  <div className={this.getTopClassName()}>
-
-        <div className={this.getOverClassName()}>
-          <strong>{this.getAbbrev().toUpperCase()}</strong>
-        </div>
-
-        <div className={this.getUnderClassName()}>
-          {this.props.score}
-          <div className="statButtons">
-            <button className={this.getStatPos()} onClick={this.props.updateStat}>+</button>
-            <button className={this.getStatNeg()} onClick={this.props.updateStat}>-</button>
-          </div>
-        </div>
-
-        <a className={this.getLastClassName()}>
-          {(this.props.mod < 0) ? <span /> : <span>+</span>}
-          {this.props.mod}
-        </a>
-
-        <div className={this.getUnderClassName()}>
-          <strong>{this.props.tempScore}</strong>
-          <div className="statButtons"> 
-            <button className={this.getStatPos()} onClick={this.props.updateTempStat}>+</button>
-            <button className={this.getStatNeg()} onClick={this.props.updateTempStat}>-</button>
-          </div>
-        </div>
-
-        <a className={this.getLastClassName()}>
-          {(this.props.tempMod < 0) ? <span /> : <span>+</span>}
-          {this.props.tempMod}
-        </a>
-
+    <div className={this.getTopClassName()}>
+      <div className={this.getOverClassName()}>
+        <strong>{this.getAbbrev().toUpperCase()}</strong>
       </div>
+      <div className={this.getUnderClassName()}>
+        {score}
+        <div className="statButtons">
+          <button className={this.getStatPos()} type="button" onClick={updateStat}>+</button>
+          <button className={this.getStatNeg()} type="button" onClick={updateStat}>-</button>
+        </div>
+      </div>
+
+      <a className={this.getLastClassName()}>
+        {(mod < 0) ? <span /> : <span>+</span>}
+        {mod}
+      </a>
+
+      <div className={this.getUnderClassName()}>
+        <strong>{tempScore}</strong>
+        <div className="statButtons"> 
+          <button className={this.getStatPos()} type="button"  onClick={updateTempStat}>+</button>
+          <button className={this.getStatNeg()} type="button" onClick={updateTempStat}>-</button>
+        </div>
+      </div>
+
+      <a className={this.getLastClassName()}>
+        {(tempMod < 0) ? <span /> : <span>+</span>}
+        {tempMod}
+      </a>
+    </div>
   	)
   }
 } 

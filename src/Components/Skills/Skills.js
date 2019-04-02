@@ -1,38 +1,44 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateSkillRank } from "../../js/actions/skillActions";
 import Skill from "./SkillDetail";
+
 const mapStateToProps = state => {
   return {
-    skills: state.skills
+    skills: state.skills,
+    stats: state.stats
   };
 }; 
- 
 
 class Skills extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
-  classSkills = () => {
-    let skills = [];
-    this.props.skills.forEach((skill, i) => {
-      skills.push(
+
+  classSkills(){
+    const {
+      skills, 
+      stats
+    } = this.props;
+    const skillsArr = []; 
+    skills.forEach(skill  => {
+      skillsArr.push(
         <Skill 
-          key={i}
-          id={i}
+          key={skill.id}
+          id={skill.id}
           title={skill.title}
           stat={skill.stat}
           ranks={skill.ranks}
           miscMod={skill.miscMod}
-          stats={this.props.stats}
+          stats={stats}
           skillDescription={skill.skillDescription}
         />
       );
     });
-    return <div>{skills}</div>;
+    return <div>{skillsArr}</div>;
   };
-  render() {
-    console.log(this.props);
+
+  render() { 
     return (
       <div className="Skills">
         <div className="skillHeaders">

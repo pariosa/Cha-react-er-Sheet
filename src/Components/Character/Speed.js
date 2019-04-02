@@ -47,7 +47,6 @@ class Speed extends Component {
   }
 
   render() {
-
     const {
       baseSpeed,
       updateBaseSpeed,
@@ -82,20 +81,16 @@ class Speed extends Component {
           <input className="speedFieldSq" size="1" value={baseSpeedSq} onChange={updateBaseSpeedSq}  />
           <span className="subtext">sq.</span> 
         </div>
-
         <div className="speedGroup">
           <input size="1" className="speedFieldFt" value={baseSpeedArmored} onChange={updateBaseSpeedArmored} />
           <span className="subtext">ft.</span>
           <input size="1" className="speedFieldSq" value={baseSpeedArmoredSq} onChange={updateBaseSpeedArmoredSq} />
           <span className="subtext">sq.</span>
         </div>
-         
         <div className="inline-block subscript baseSpeed">
-
             base speed
         </div>
         <div className="inline-block subscript withArmor">
-
             with armor
         </div> 
         <div className="speedSecondRow">
@@ -111,32 +106,25 @@ class Speed extends Component {
             <span className="subtext3">ft.</span>
             <input size="1" value={burrowSpeed} onChange={updateBurrowSpeed} />
             <span className="subtext3">ft.</span>
-
           </div>
           <div className="speedGroupTemp inline-block">
             <div className="speedTempModifierHeadline">Temp Modifiers</div>
             <textarea cols="5" rows="2" value={tempMod} onChange={updateSpeedTempMod} />
-
           </div>
           <div>
             <div className="inline-block subscript fly">
-
               Fly
             </div>
             <div className="inline-block subscript maneuverability">
-
               Maneuverability
             </div>  
             <div className="inline-block subscript swim">
-
               Swim
             </div>
             <div className="inline-block subscript climb">
-
               Climb
             </div> 
             <div className="inline-block subscript burrow">
-
               Burrow
             </div>
           </div>  

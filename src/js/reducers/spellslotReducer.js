@@ -82,13 +82,15 @@ const initialState = [
 const spellSlotReducer = (state = initialState, action) => { 
   switch (action.type) {  
 	case  UPDATE_SPELLS_KNOWN:
-      return {state};
+      return [...state];
     case UPDATE_SPELLS_PER_DAY:
-      return {state};
+      return [...state];
+    case UPDATE_SPELL_SAVE_DC:
+      return [...state];
     case UPDATE_BONUS_SPELLS:
-      return {state};
+      return [...state];
     case LOAD_ENTIRE_CHARACTER:
-     return {...action.payload.spellslots}
+     return [...action.payload.spellslots]
     default:
     	return state;
   	}

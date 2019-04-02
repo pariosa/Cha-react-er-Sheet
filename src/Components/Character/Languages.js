@@ -22,15 +22,13 @@ class Languages extends Component {
     this.props = props;
   }
 
-  render() {
-    
+  render() { 
     const{
       conditionalModifiers,
       languages,
       updateLanguages,
       updateConditionalModifiers
-    } = this.props;
-
+    } = this.props; 
     return (
       <div className="Languages stackable grid row">
         <div className="conditionalModifiers Input">

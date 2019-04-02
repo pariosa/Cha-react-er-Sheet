@@ -13,10 +13,16 @@ const mapStateToProps = ( state ) => {
 }
 
 class Header extends Component {
+  constructor(props){
+    super(props);
+    this.props = props;
+  }
+
 	render(){
-	const link1 = this.props.auth.uid ?  <SaveCharacterButton /> : <LoginButton /> ;
-	const link2 = this.props.auth.uid ? <LogoutButton /> :  <RegisterButton />;
-	const drawerToggle = this.props.auth.uid ? <DrawerToggle /> : null;
+  const {auth} = this.props;
+	const link1 = auth.uid ?  <SaveCharacterButton /> : <LoginButton /> ;
+	const link2 = auth.uid ? <LogoutButton /> :  <RegisterButton />;
+	const drawerToggle = auth.uid ? <DrawerToggle /> : null;
 		return(
   <div>
     <div className="ui Header secondary pointing menu">

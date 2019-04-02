@@ -29,52 +29,82 @@ const mapStateToProps = (state, ownProps) => {
 class Save extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
-  statModifierOnly = () => {
-    let stat;
-    switch (this.props.stat) {
+
+  getTotalSave(){
+    const {
+      base,
+      magicMod,
+      miscMod,
+      tempMod
+    } = this.props;
+    return (parseInt(base,10) + parseInt(this.statModifierOnly(),10) + parseInt(magicMod,10) + parseInt(miscMod,10) + parseInt(tempMod,10))
+  }  
+
+  statModifierOnly(){
+    const {
+      stats,
+      stat
+    } = this.props 
+    let statVal;
+    switch (stat) {
       case "dexterity":
-        stat = this.props.stats.dexMod;
+        statVal = stats.dexMod;
         break;  
       case "wisdom":
-        stat = this.props.stats.wisMod;
+        statVal =  stats.wisMod;
         break;
       case "constitution":
-        stat = this.props.stats.conMod;
-        break;  
+        statVal =  stats.conMod;
+        break; 
+      default:
+        break; 
     }
-    return stat;
-  };
-  getTotalSave = () =>{
-    return (parseInt(this.props.base) + parseInt(this.statModifierOnly()) + parseInt(this.props.magicMod) + parseInt(this.props.miscMod) + parseInt(this.props.tempMod))
+    return statVal;
   }
+
   render() {
+    const {
+      title,
+      stats,
+      save,
+      stat,
+      base,
+      miscMod,
+      magicMod,
+      tempMod,
+      id,
+      updateBaseSave,
+      updateMagicSaveModifier,
+      updateMiscSaveMod,
+      updateTempSaveMod
+    } = this.props;
     return (
-      <div className="Save" id={this.props.id} >
-        <div  className="SaveTitle">
-          {this.props.title}
+      <div className="Save" id={id}>
+        <div className="SaveTitle">
+          {title}
           <div className="SaveSubtitle">
-            {this.props.stat}
+            {stat}
           </div>
         </div>
         <div className="SaveModifiers">
-          <input type="text" size="3" className="TotalSave" value={"+" + this.getTotalSave()} readOnly />
+          <input type="text" size="3" className="TotalSave" value={`+ ${this.getTotalSave()}`} readOnly />
            =&nbsp;  
-          <input type="text" size="2" className="BaseSave" value={this.props.base}  onChange={this.props.updateBaseSave} />
+          <input type="text" size="2" className="BaseSave" value={base} onChange={updateBaseSave} />
           &nbsp; + &nbsp;   
-          <input type="text" size="2" className={"SaveStat " + this.props.stat} value={this.statModifierOnly()} readOnly />
+          <input type="text" size="2" className={`SaveStat ${stat}`} value={this.statModifierOnly()} readOnly />
           + &nbsp;  
-          <input type="text" size="2" className="" value={this.props.magicMod}  onChange={this.props.updateMagicSaveModifier} />
+          <input type="text" size="2" className="" value={magicMod} onChange={updateMagicSaveModifier} />
           +              
-          <input type="text" size="2" className="MagicMod"  value={this.props.miscMod}  onChange={this.props.updateMiscSaveMod} />
+          <input type="text" size="2" className="MagicMod" value={miscMod} onChange={updateMiscSaveMod} />
             +    
-          <input type="text" size="2" className="tempMod" value={this.props.tempMod}  onChange={this.props.updateTempSaveMod} />
+          <input type="text" size="2" className="tempMod" value={tempMod} onChange={updateTempSaveMod} />
         </div>
       </div>
     );
   }
 }
-
 
 export default connect(
   mapStateToProps,

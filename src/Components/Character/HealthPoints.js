@@ -50,7 +50,7 @@ class HealthPoints extends Component {
     } = this.props;
     return (
       <div className="HealthPoints">
-        <div className="ui labeled button small " tabIndex="0">
+        <div className="ui labeled button small" tabIndex="0">
           <div className="ui black button small">
             <strong>Hit Points</strong>
           </div>

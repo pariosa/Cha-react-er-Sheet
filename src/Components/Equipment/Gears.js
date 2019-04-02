@@ -45,10 +45,9 @@ class Gears extends Component {
     return x;
   }
 
-  gearItemsFn(){
-    const gears = this;
+  gearItemsFn(gear){ 
     const gearItems = [];
-    gears.props.gear.forEach((item) => {
+    gear.forEach((item) => {
     gearItems.push(
       <Gear
         key={item.id}
@@ -63,43 +62,59 @@ class Gears extends Component {
 
 
   render() {
-    const gears = this;
+    const {
+      gear,
+      lightLoad,
+      mediumLoad,
+      heavyLoad,
+      liftOverHead,
+      liftOffGround,
+      dragOrPush,
+      addGear,
+      updateLightLoad,
+      updateMediumLoad,
+      updateHeavyLoad,
+      updateLiftOverHead,
+      updateLiftOffGround,
+      updateDragOrPush
+    } = this.props;
+
     return (
       <div className="GearItems">
         <div className="gearHeader">Gear</div>
         <div className="gearItemsHeader gearHeader1">Item name</div> 
         <div className="gearWeightHeader gearHeader2">Weight</div>
-        {this.gearItemsFn()}
+        {this.gearItemsFn(gear)}
         <div className="addAnotherItem"><span>Add another item?</span></div>
-        <button type="button" className="ui small button green addNewGear" onClick={gears.props.addGear}> + </button>
-        <span className="ui small input totalWeight"><input size="3" value={gears.getTotalWeight()} readOnly /></span>
+        <button type="button" className="ui small button green addNewGear" onClick={addGear}> + </button>
+        <span className="ui small input totalWeight"><input size="3" value={this.getTotalWeight()} readOnly /></span>
         <div className="loadCapacity">
           <div className="GearSubHeaders">
             <div className="GearSubHeader  ui small input">
               Light Load
-              <input className="lightLoad" size="3" value={gears.props.gear.lightLoad} onChange={gears.props.updateLightLoad} />
+              <input className="lightLoad" size="3" value={lightLoad} onChange={updateLightLoad} />
             </div>
             <div className="GearSubHeader ui small input">          
               Medium Load
-              <input className="mediumLoad" size="3" value={gears.props.gear.mediumLoad} onChange={gears.props.updateMediumLoad} />
+              <input className="mediumLoad" size="3" value={mediumLoad} onChange={updateMediumLoad} />
             </div>
             <div className="GearSubHeader ui small input">
               Heavy Load 
-              <input className="heavyLoad" size="3" value={gears.props.gear.heavyLoad} onChange={gears.props.updateHeavyLoad} />
+              <input className="heavyLoad" size="3" value={heavyLoad} onChange={updateHeavyLoad} />
             </div>
           </div>
           <div className="gearSubHeader2">
             <div className="GearSubHeader2 ui small input">
               Lift Over Head
-              <input className="liftOverHead" size="3" value={gears.props.gear.liftOverHead} onChange={gears.props.liftOverHead} />
+              <input className="liftOverHead" size="3" value={liftOverHead} onChange={liftOverHead} />
             </div>
             <div className="GearSubHeader2 ui small input">
               Lift Off Ground
-              <input className="liftOffGround" size="3" value={gears.props.gear.liftOffGround} onChange={gears.props.liftOffGround} />
+              <input className="liftOffGround" size="3" value={liftOffGround} onChange={liftOffGround} />
             </div>
             <div className="GearSubHeader2 ui small input">
                 Drag or Push
-              <input className="dragOrPush" size="3" value={gears.props.gear.dragOrPush} onChange={gears.props.dragOrPush} />
+              <input className="dragOrPush" size="3" value={dragOrPush} onChange={dragOrPush} />
             </div>
           </div>
         </div>

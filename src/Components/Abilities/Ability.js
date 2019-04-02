@@ -12,24 +12,30 @@ const mapStateToProps = (state, ownProps) => {
 	}
 }
 
-const mapDispatchToProps = dispatch => {
-	return{
-		removeAbility: ability => dispatch(removeAbility(ability)),
-		updateAbility: ability => dispatch(updateAbility(ability))
-	}
+const mapDispatchToProps = { 
+	removeAbility,
+	updateAbility
 }
 
 class Ability extends Component {
+	constructor(props){
+		super(props);
+		this.props = props;
+	}
+
 	render(){
+		const {
+			id,
+			ability,
+			updateAbility,
+			removeAbility
+		} = this.props;
 		return(
 
-			<div className="Ability" id={this.props.id}>
-
-				<textarea value={this.props.ability} cols="50" onChange={this.props.updateAbility} />
-
-         		<button className="red deleteWeapon deleteAbility" onClick={this.props.removeAbility}>x</button>
-
-			</div>
+  <div className="Ability" id={id}>
+    <textarea value={ability} cols="50" onChange={updateAbility} />
+    <button type="button" className="red deleteWeapon deleteAbility" onClick={removeAbility}>x</button>
+  </div>
 
 		)
 	}

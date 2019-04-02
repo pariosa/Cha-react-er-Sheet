@@ -20,29 +20,38 @@ const mapDispatchToProps = {
 };
 
 class LoginModal extends Component {  
+	
 	state = { 
 		email:'',
 		password:''
 	}
+
+	constructor(props){
+		super(props);
+		this.props = props;
+	}
+
 	handleChange = (e) =>{ 
 			this.setState({
 				[e.target.id]: e.target.value
-			});
-			console.log('input changed');
+			}); 
 		}
-		handleSubmit = (e) =>{
-			e.preventDefault(); 
-			this.props.login(this.state); 
-			console.log(this.state);
-			console.log('input submitted');
-		}
+	handleSubmit = (e) =>{
+		e.preventDefault(); 
+		this.props.login(this.state); 
+		console.log(this.state); 
+	}
 	render(){ 
-		const { authError, auth } = this.props;
+		const { 
+			authError, 
+			auth,
+			login,
+			toggleLoginModal
+		} = this.props;
 		if(!this.props.showLoginModal){
 			return null;
 		} 
 		return( 
-
 			<div >
 				<Backdrop type="loginModal" />
 				<div className="loginModal modal"  >  
@@ -60,7 +69,7 @@ class LoginModal extends Component {
 							</div>
 						</div>
 						<div className="field">
-							<div class="ui left icon input"> 
+							<div className="ui left icon input"> 
 								<input type="password" id="password" name="password" className="" onChange={this.handleChange} placeholder="Password" />
 								<i className="key icon"></i>
 							</div>

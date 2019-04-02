@@ -12,25 +12,32 @@ const mapStateToProps = state => {
 class SpellSlots extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
-  spellSlots = () => {
-    let spellSlots = []; 
-    this.props.spellslots.forEach((slot, i) => {
-      spellSlots.push(
+
+  spellSlots(){
+    const { spellslots } = this.props;
+    const spellSlotsArr = []; 
+    spellslots.forEach(slot => {
+      spellSlotsArr.push(
         <SpellSlot 
-          key={i}
-          id={i}
+          key={slot.level}
+          id={slot.level}
           level={slot.level} 
           spellsKnown={slot.spellsKnown}
-		  spellSaveDc={slot.spellSaveDc}
-		  spellsPerDay={slot.spellsPerDay}
-		  bonusSpells={slot.bonusSpells} 
+          spellSaveDc={slot.spellSaveDc}
+          spellsPerDay={slot.spellsPerDay}
+          bonusSpells={slot.bonusSpells} 
         />
       );
     });
-    return <div>{spellSlots}</div>;
+    return <div>{spellSlotsArr}</div>;
   };
+
   render() { 
+    const{
+      spellslots
+    } = this.props;
     return (
       <div className="SpellSlots">
         {this.spellSlots()}

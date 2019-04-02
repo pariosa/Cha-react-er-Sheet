@@ -13,8 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     stat: state.skills[ownProps.id].stat,
     ranks: state.skills[ownProps.id].ranks,
     miscMod: state.skills[ownProps.id].miscMod,
-    skillDescription:
-      state.skills[ownProps.id].skillDescription,
+    skillDescription: state.skills[ownProps.id].skillDescription,
     stats: state.stat.stats,
     id: state.skills[ownProps.id].id
   };
@@ -28,93 +27,127 @@ const mapDispatchToProps = {
 class Skill extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
-  statModifier = () => {
-    let stat;
-    switch (this.props.stat) {
+
+  statModifier(){
+    const {
+      stat,
+      stats
+    } = this.props;
+    let statAttr;
+    switch (stat) {
       case "dexterity":
-        stat = this.props.stats.dexMod;
+        statAttr = stats.dexMod;
         break;
       case "strength":
-        stat = this.props.stats.strMod;
+        statAttr = stats.strMod;
         break;
       case "intelligence":
-        stat = this.props.stats.intMod;
+        statAttr = stats.intMod;
         break;
       case "wisdom":
-        stat = this.props.stats.wisMod;
+        statAttr = stats.wisMod;
         break;
       case "constitution":
-        stat = this.props.stats.conMod;
+        statAttr = stats.conMod;
         break;
       case "charisma":
-        stat = this.props.stats.chaMod;
+        statAttr = stats.chaMod;
         break;
       default:
         break;
     }
-    return <input readOnly className={this.props.stat} size="2" value={stat} />;
+    return <input readOnly className={stat} size="2" value={statAttr} />;
   };
-  statModifierOnly = () => {
-    let stat;
-    switch (this.props.stat) {
+
+  statModifierOnly(){
+    let statAttr;
+    const { 
+      stat,
+      stats
+    } = this.props; 
+    switch (stat) {
       case "dexterity":
-        stat = this.props.stats.dexMod;
+        statAttr = stats.dexMod;
         break;
       case "strength":
-        stat = this.props.stats.strMod;
+        statAttr = stats.strMod;
         break;
       case "intelligence":
-        stat = this.props.stats.intMod;
+        statAttr = stats.intMod;
         break;
       case "wisdom":
-        stat = this.props.stats.wisMod;
+        statAttr = stats.wisMod;
         break;
       case "constitution":
-        stat = this.props.stats.conMod;
+        statAttr = stats.conMod;
         break;
       case "charisma":
-        stat = this.props.stats.chaMod;
+        statAttr = stats.chaMod;
         break;
       default:
         break;
     }
-    return stat;
+    return statAttr;
   };
-  skillDescription = () => {
-    if (this.props.skillDescription !== undefined) {
+
+  skillDescription(){
+    const{
+      skillDescription,
+      updateSkillDescription
+    } = this.props;
+    if (skillDescription !== undefined) {
       return (
         <input
           size="9"
           className="skillDescription"
-          value={this.props.skillDescription}
-          onChange={this.props.updateSkillDescription}
+          value={skillDescription}
+          onChange={updateSkillDescription}
         />
       );
     }
   };
-  skillIsClassCheck = () =>{
-    if(this.props.isClassSkill === true){  
+
+  skillIsClassCheck(){
+    const{
+      isClassSkill,
+      updateSkillIsClass
+    } = this.props;
+    if(isClassSkill === true)  {
       return (
-        <input type="checkbox"   
-          onChange={this.props.updateSkillIsClass} 
+        <input 
+          type="checkbox"   
+          onChange={updateSkillIsClass} 
           checked
         />
       );
-    }else{
+    }else{ 
       return (
-        <input type="checkbox"   
-          onChange={this.props.updateSkillIsClass}  
+        <input 
+          type="checkbox"   
+          onChange={updateSkillIsClass} 
         />
       );
     }
   }
+
   render() {
+    const {
+      id,
+      title,
+      ranks,
+      miscMod,
+      updateSkillRank,
+      updateSkillDescription,
+      updateSkillIsClass,
+      updateSkillMiscMod
+    } = this.props;
     return (
-      <div className="skillCapsule" id={this.props.id}>
+      <div className="skillCapsule" id={id}>
         {this.skillIsClassCheck()} 
         <div className="statName">
-          {this.props.title}
+          {title}
           {this.skillDescription()}
         </div>
         <input
@@ -123,10 +156,11 @@ class Skill extends Component {
           size="4"
           type="text"
           value={
-            "+" +
-            (parseInt(this.props.ranks) +
-              parseInt(this.props.miscMod) +
-              parseInt(this.statModifierOnly()))
+            `+ ${(
+              parseInt(ranks,10) +
+              parseInt(miscMod,10) +
+              parseInt(this.statModifierOnly(),10)
+            )}`
           }
         />
         {this.statModifier()}
@@ -134,15 +168,15 @@ class Skill extends Component {
           className="ranks"
           size="2"
           type="text"
-          value={this.props.ranks}
-          onChange={this.props.updateSkillRank}
+          value={ranks}
+          onChange={updateSkillRank}
         />
         <input
           className="miscMod"
           size="2"
           type="text"
-          value={this.props.miscMod}
-          onChange={this.props.updateSkillMiscMod}
+          value={miscMod}
+          onChange={updateSkillMiscMod}
         />
       </div>
     );

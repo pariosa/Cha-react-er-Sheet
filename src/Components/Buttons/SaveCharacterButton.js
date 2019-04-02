@@ -8,20 +8,23 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    saveCharacter: character => dispatch(saveCharacter(character))
-  };
+const mapDispatchToProps = {
+    saveCharacter
 };
 
-class SaveCharacterButton extends Component{ 
+class SaveCharacterButton extends Component{
+
+  constructor(props){
+    super(props)
+    this.props = props;
+  }
+
 	render(){ 
+    const { saveCharacter }  = this.props
 		return( 
   <div className="registerButton"> 
-    <button className="ui item green" onClick={this.props.saveCharacter}>
-
-				    Save Character
-				
+    <button type="button" className="ui item green" onClick={saveCharacter}>
+			Save Character
     </button>
   </div> 
 		)

@@ -38,28 +38,45 @@ const mapStateToProps = (state, ownProps) => {
 class Weapon extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
 
   render() {
+    const {
+      id,
+      name,
+      attackBonus,
+      critical,
+      type,
+      range,
+      ammunition,
+      damage,
+      updateWeaponName,
+      updateWeaponAttackBonus,
+      updateWeaponCritical,
+      updateWeaponType,
+      updateWeaponRange,
+      updateWeaponAmmunition,
+      updateWeaponDamage,
+      removeWeapon
+    } = this.props;
     return (
-      <div className="Weapon" id={this.props.id}>
+      <div className="Weapon" id={id}>
         <div className="weaponRowZero">
           <div className="weaponHeader inline">Weapon</div>
           <div className="attackBonusHeader inline">Attack Bonus</div>
           <div className="criticalHeader inline"> Critical</div>
-          <button className="red deleteWeapon" onClick={this.props.removeWeapon}>x</button>
-
+          <button type="button" className="red deleteWeapon" onClick={removeWeapon}>x</button>
         </div>
-
         <div className="ui weaponRowOne">
           <div className="ui input weaponName">
-            <input type="text" size="16" value={this.props.name} onChange={this.props.updateWeaponName} />
+            <input type="text" size="16" value={name} onChange={updateWeaponName} />
           </div>
           <div className="ui input weaponAttackBonus">
-            <input type="text" size="13" value={this.props.attackBonus} onChange={this.props.updateWeaponAttackBonus} />
+            <input type="text" size="13" value={attackBonus} onChange={updateWeaponAttackBonus} />
           </div>
           <div className="ui input weaponCritical">
-            <input type="text" size="13" value={this.props.critical} onChange={this.props.updateWeaponCritical} />
+            <input type="text" size="13" value={critical} onChange={updateWeaponCritical} />
           </div>
         </div>
         <div className="weaponRowTwo">
@@ -67,27 +84,25 @@ class Weapon extends Component {
           <div className="rangeHeader inline">Range</div>
           <div className="ammunitionHeader inline">Ammunition</div>
           <div className="damageHeader inline">Damage</div>
-
         </div>
         <div className="ui weaponRowThree">
           <div className="ui input weaponType">
-            <input type="text" size="12" value={this.props.type} onChange={this.props.updateWeaponType} />
+            <input type="text" size="12" value={type} onChange={updateWeaponType} />
           </div>
           <div className="ui input weaponRange">
-            <input type="text" size="6" value={this.props.range} onChange={this.props.updateWeaponRange} />
+            <input type="text" size="6" value={range} onChange={updateWeaponRange} />
           </div>
           <div className="ui input weaponAmmunition">
-            <input type="text" size="10" value={this.props.ammunition} onChange={this.props.updateWeaponAmmunition} />
+            <input type="text" size="10" value={ammunition} onChange={updateWeaponAmmunition} />
           </div>
           <div className="ui input weaponDamage">
-            <input type="text" size="9" value={this.props.damage} onChange={this.props.updateWeaponDamage} />
+            <input type="text" size="9" value={damage} onChange={updateWeaponDamage} />
           </div>
         </div>
       </div>
     );
   }
 }
-
 
 export default connect(
   mapStateToProps,

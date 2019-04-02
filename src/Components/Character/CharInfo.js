@@ -57,9 +57,43 @@ const mapStateToProps = state => {
 class CharacterInfo extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
 
   render() {
+    const {
+    name,
+    alignment,
+    playerName,
+    playerClass,
+    level,
+    diety,
+    homeland,
+    race,
+    size,
+    gender,
+    age,
+    height,
+    weight,
+    hair,
+    eyes,   
+    updateName,
+    updateAlignment,
+    updatePlayerName,
+    updatePlayerClass,
+    updateLevel,
+    updateDiety,
+    updateHomeland,
+    updateRace,
+    updateSize,
+    updateGender,
+    updateAge,
+    updateHeight,
+    updateWeight,
+    updateHair,
+    updateEyes
+    } =  this.props;
+
     return (
       <div className="charinfo ui ten wide stackable grid column">
         <div className="ui six wide left labeled input">
@@ -67,8 +101,8 @@ class CharacterInfo extends Component {
           <input
             size="26"
             type="text"
-            value={this.props.name}
-            onChange={this.props.updateName}
+            value={name}
+            onChange={updateName}
           />
         </div>
 
@@ -77,8 +111,8 @@ class CharacterInfo extends Component {
           <input
             size="10"
             type="text"
-            value={this.props.alignment}
-            onChange={this.props.updateAlignment}
+            value={alignment}
+            onChange={updateAlignment}
           />
         </div>
 
@@ -87,8 +121,8 @@ class CharacterInfo extends Component {
           <input
             size="26"
             type="text"
-            value={this.props.playerName}
-            onChange={this.props.updatePlayerName}
+            value={playerName}
+            onChange={updatePlayerName}
           />
         </div>
         <div className="ui left four wide  labeled input">
@@ -96,8 +130,8 @@ class CharacterInfo extends Component {
           <input
             size="18"
             type="text"
-            value={this.props.playerClass}
-            onChange={this.props.updatePlayerClass}
+            value={playerClass}
+            onChange={updatePlayerClass}
           />
         </div>
         <div className="ui left six wide  labeled input">
@@ -105,8 +139,8 @@ class CharacterInfo extends Component {
           <input
             size="1"
             type="text"
-            value={this.props.level}
-            onChange={this.props.updateLevel}
+            value={level}
+            onChange={updateLevel}
           />
         </div>
         <div className="ui left three wide labeled input">
@@ -114,8 +148,8 @@ class CharacterInfo extends Component {
           <input
             size="13"
             type="text"
-            value={this.props.diety}
-            onChange={this.props.updateDiety}
+            value={diety}
+            onChange={updateDiety}
           />
         </div>
         <div className="ui left eight wide labeled input">
@@ -123,8 +157,8 @@ class CharacterInfo extends Component {
           <input
             size="22"
             type="text"
-            value={this.props.homeland}
-            onChange={this.props.updateHomeland}
+            value={homeland}
+            onChange={updateHomeland}
           />
         </div>
         <div className="ui left three wide  labeled input">
@@ -132,8 +166,8 @@ class CharacterInfo extends Component {
           <input
             type="text"
             size="8"
-            value={this.props.race}
-            onChange={this.props.updateRace}
+            value={race}
+            onChange={updateRace}
           />
         </div>
         <div className="ui left two wide labeled input">
@@ -141,8 +175,8 @@ class CharacterInfo extends Component {
           <input
             type="text"
             size="4"
-            value={this.props.size}
-            onChange={this.props.updateSize}
+            value={size}
+            onChange={updateSize}
           />
         </div>
         <div className="ui left two wide labeled input">
@@ -150,8 +184,8 @@ class CharacterInfo extends Component {
           <input
             type="text"
             size="4"
-            value={this.props.gender}
-            onChange={this.props.updateGender}
+            value={gender}
+            onChange={updateGender}
           />
         </div>
         <div className="ui left two wide labeled input">
@@ -159,8 +193,8 @@ class CharacterInfo extends Component {
           <input
             type="text"
             size="4"
-            value={this.props.age}
-            onChange={this.props.updateAge}
+            value={age}
+            onChange={updateAge}
           />
         </div>
         <div className="ui left two wide labeled input">
@@ -168,8 +202,8 @@ class CharacterInfo extends Component {
           <input
             type="text"
             size="6"
-            value={this.props.height}
-            onChange={this.props.updateHeight}
+            value={height}
+            onChange={updateHeight}
           />
         </div>
         <div className="ui left two wide labeled input">
@@ -177,8 +211,8 @@ class CharacterInfo extends Component {
           <input
             type="text"
             size="6"
-            value={this.props.weight}
-            onChange={this.props.updateWeight}
+            value={weight}
+            onChange={updateWeight}
           />
         </div>
         <div className="ui left one wide labeled input">
@@ -186,16 +220,16 @@ class CharacterInfo extends Component {
           <input
             type="text"
             size="6"
-            value={this.props.hair}
-            onChange={this.props.updateHair}
+            value={hair}
+            onChange={updateHair}
           />
         </div>
         <div className="ui left one wide labeled input">
           <input
             type="text"
             size="6"
-            value={this.props.eyes}
-            onChange={this.props.updateEyes}
+            value={eyes}
+            onChange={updateEyes}
           />
           <div className="ui left corner label">eyes </div>
         </div>

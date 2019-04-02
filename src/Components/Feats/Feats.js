@@ -18,36 +18,40 @@ const mapDispatchToProps = {
 }
 
 class Feats extends Component {
-	getFeats = () => {
-    let feats = [];
-    this.props.feats.forEach((feat, i) => {
-      feats.push(
-        <Feat 
-          key={i}
-          id={feat.id}
-          feat={feat.feat}
-          
-        />
-      );
+	getFeats(){
+	  const {
+		feats
+      } = this.props; 
+	  const featsArr = [];
+	  feats.forEach(feat => {
+	  featsArr.push(
+  <Feat 
+    key={feat.id}
+    id={feat.id}
+    feat={feat.feat}    
+  />
+	   );
     });
-    return <div>{feats}</div>;
+    return <div>{featsArr}</div>;
   };
+
 	render(){
+	const { 
+	  addFeat,
+	  feats	
+	} = this.props
 
-		return(
+	return(
+  <div className="Feats">
+    <div className="FeatsTitle">
+	  Feats
+    </div>
+    {this.getFeats(feats)}
+    <button type="button" className="ui small button green addNewAcItem" onClick={addFeat}> + </button>
+  </div>
 
-			<div className="Feats">
-			<div className="FeatsTitle">
-			Feats
-			</div>
-				{this.getFeats()}
-
-			 <button className="ui small button green addNewAcItem" onClick={this.props.addFeat} > + </button>
-
-			</div>
-
-		)
-	}
+	)
+  }
 }
 
 export default connect(

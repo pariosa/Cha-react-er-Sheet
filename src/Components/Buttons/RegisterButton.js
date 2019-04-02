@@ -8,20 +8,22 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleRegisterModal: bool => dispatch(toggleRegisterModal(bool))
-  };
+const mapDispatchToProps = {
+    toggleRegisterModal
 };
 
-class RegisterButton extends Component{ 
-	render(){ 
-		return( 
+class RegisterButton extends Component{
+  constructor(props){
+    super(props)
+    this.props = props;
+  }
+	
+  render(){ 
+    const { toggleRegisterModal } = this.props
+		return(  
   <div className="registerButton"> 
-    <a className="ui item" onClick={this.props.toggleRegisterModal}>
-
-				    Register
-				
+    <a className="ui item" onClick={toggleRegisterModal}>
+		  Register
     </a>
   </div> 
 		)

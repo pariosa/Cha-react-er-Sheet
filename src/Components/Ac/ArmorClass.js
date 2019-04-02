@@ -12,18 +12,16 @@ updateFlatFootedArmorClass,
 updateAcModifiersField,
 } from "../../js/actions/armorActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateArmorBonus: armorBonus => dispatch(updateArmorBonus(armorBonus)),
-    updateShieldBonus: shieldBonus => dispatch(updateShieldBonus(shieldBonus)),
-    updateSizeModifier: sizeModifier => dispatch(updateSizeModifier(sizeModifier)),
-    updateNaturalArmor: naturalArmor => dispatch(updateNaturalArmor(naturalArmor)),
-    updateDeflectionModifier: deflectionModifier => dispatch(updateDeflectionModifier(deflectionModifier)),
-    updateArmorMiscModifier: armorMiscModifier => dispatch(updateArmorMiscModifier(armorMiscModifier)),
-    updateTouchArmorClass: touchArmorClass => dispatch(updateTouchArmorClass(touchArmorClass)),
-    updateFlatFootedArmorClass: flatFootedArmorClass => dispatch( updateFlatFootedArmorClass(flatFootedArmorClass)),
-    updateAcModifiersField: acModifiersField => dispatch(updateAcModifiersField(acModifiersField))
-  };
+const mapDispatchToProps = {
+    updateArmorBonus,
+    updateShieldBonus,
+    updateSizeModifier,
+    updateNaturalArmor,
+    updateDeflectionModifier,
+    updateArmorMiscModifier,
+    updateTouchArmorClass,
+    updateFlatFootedArmorClass,
+    updateAcModifiersField
 };
 const mapStateToProps = state => {
   return {
@@ -43,43 +41,72 @@ class ArmorClass extends Component {
 
   constructor(props) {
     super(props);
+    this.props = props;
   }
   
-  getTotalArmor = () =>{
-    return ( 10 + parseInt(this.props.armorBonus) + parseInt(this.props.shieldBonus) + parseInt(this.props.dexMod) + parseInt(this.props.sizeModifier)+ parseInt(this.props.naturalArmor)+ parseInt(this.props.deflectionModifier) + parseInt(this.props.armorMiscModifier))
+  getTotalArmor(){
+    const {dexMod,armorBonus,shieldBonus,sizeModifier,naturalArmor,deflectionModifier,armorMiscModifier,touchArmorClass,flatFootedArmorClass,acModifiersField} = this.props
+
+    return ( 10 + parseInt(armorBonus,10) + parseInt(shieldBonus,10) + parseInt(dexMod,10) + parseInt(sizeModifier,10)+ parseInt(naturalArmor,10)+ parseInt(deflectionModifier,10) + parseInt(armorMiscModifier,10))
   }
-  getTouchAc = () =>{
-    return 10 + parseInt(this.props.dexMod)
+
+  getTouchAc(){
+    const {dexMod,armorBonus,shieldBonus,sizeModifier,naturalArmor,deflectionModifier,armorMiscModifier,touchArmorClass,flatFootedArmorClass,acModifiersField} = this.props
+
+    return 10 + parseInt(dexMod,10)
   }
-  getFlatFooted = () =>{
-    return ( 10 + parseInt(this.props.armorBonus) + parseInt(this.props.shieldBonus) + parseInt(this.props.sizeModifier)+ parseInt(this.props.naturalArmor)+ parseInt(this.props.deflectionModifier) + parseInt(this.props.armorMiscModifier))
+
+  getFlatFooted(){
+    const {dexMod,armorBonus,shieldBonus,sizeModifier,naturalArmor,deflectionModifier,armorMiscModifier,touchArmorClass,flatFootedArmorClass,acModifiersField} = this.props
+    return ( 10 + parseInt(armorBonus,10) + parseInt(shieldBonus,10) + parseInt(sizeModifier,10)+ parseInt(naturalArmor,10)+ parseInt(deflectionModifier,10) + parseInt(armorMiscModifier,10))
   }
 
   render() {
+    const {
+      dexMod,
+      armorBonus,
+      shieldBonus,
+      sizeModifier,
+      naturalArmor,
+      deflectionModifier,
+      armorMiscModifier,
+      touchArmorClass,
+      flatFootedArmorClass,
+      acModifiersField,
+      updateArmorBonus,
+      updateShieldBonus,
+      updateSizeModifier,
+      updateNaturalArmor,
+      updateDeflectionModifier,
+      updateArmorMiscModifier,
+      updateTouchArmorClass,
+      updateFlatFootedArmorClass,
+      updateAcModifiersField
+    } = this.props
     return (
       <div className="Armor ui ten wide stackable grid row">
-       <div className="ui black button small ArmorDescriptor">
-         AC
-         <div className="subscript">Armor Class</div>
-       </div> 
-       <div className="ArmorFirstRow">
-        <input size="2" value={this.getTotalArmor()} readOnly />
+        <div className="ui black button small ArmorDescriptor">
+          AC
+          <div className="subscript">Armor Class</div>
+        </div> 
+        <div className="ArmorFirstRow">
+          <input size="2" value={this.getTotalArmor()} readOnly />
           <span className="plus"> = </span>
           <span className="plus"> 10 </span>
           <span className="plus"> + </span>
-        <input size="2" value={this.props.armorBonus} onChange={this.props.updateArmorBonus} />
+          <input size="2" value={armorBonus} onChange={updateArmorBonus} />
           <span className="plus"> + </span>
-        <input size="2" value={this.props.shieldBonus} onChange={this.props.updateShieldBonus}  />
+          <input size="2" value={shieldBonus} onChange={updateShieldBonus}  />
           <span className="plus"> + </span>
-        <input size="2" className="dexterity" value={this.props.dexMod} readOnly  />
+          <input size="2" className="dexterity" value={dexMod} readOnly  />
           <span className="plus"> + </span>
-        <input size="2" value={this.props.sizeModifier} onChange={this.props.updateSizeModifier}  />
+          <input size="2" value={sizeModifier} onChange={updateSizeModifier}  />
           <span className="plus"> + </span>
-        <input size="2" value={this.props.naturalArmor} onChange={this.props.updateNaturalArmor}  />
+          <input size="2" value={naturalArmor} onChange={updateNaturalArmor}  />
           <span className="plus"> + </span>
-        <input size="2" value={this.props.deflectionModifier} onChange={this.props.updateDeflectionModifier} />          
-            <span className="plus"> + </span>
-        <input size="2" value={this.props.armorMiscModifier} onChange={this.props.updateArmorMiscModifier}  />
+          <input size="2" value={deflectionModifier} onChange={updateDeflectionModifier} />          
+          <span className="plus"> + </span>
+          <input size="2" value={armorMiscModifier} onChange={updateArmorMiscModifier}  />
         </div>
         <div className="ArmorSecondRow">
           <div className="armorLabel">Total</div>
@@ -98,12 +125,12 @@ class ArmorClass extends Component {
             <div className="subscript">Armor Class</div>
           </div>
           <input size="2" readOnly value={this.getTouchAc()} />
-            <div className="ui black button small FlatDescriptor">
-             Flat Footed
+          <div className="ui black button small FlatDescriptor">
+            Flat Footed
             <div className="subscript">Armor Class</div>
           </div>
           <input size="2" readOnly value={this.getFlatFooted()} />
-          <textarea rows="1" cols="18" value={this.props.acModifiersField} onChange={this.props.updateAcModifiersField} />
+          <textarea rows="1" cols="18" value={acModifiersField} onChange={updateAcModifiersField} />
           <span className="modifierText">modifier</span>
         </div>
       </div>

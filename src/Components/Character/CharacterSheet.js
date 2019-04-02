@@ -23,8 +23,8 @@ import AcItems from '../Ac/AcItems';
 import Currency from '../Equipment/Currency';
 import Experience from "./Experience";
 import SpellSlots from "../Spells/SpellSlots";
-//import SpellList from "../Spells/SpellList";
 
+// import SpellList from "../Spells/SpellList"; 
 const mapStateToProps = state => {
   return {
     auth: state.auth,
@@ -34,31 +34,35 @@ const mapStateToProps = state => {
     registerModalVisible: state.ui.registerModalVisible
   };
 };
- 
 
 class CharacterSheet extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
  
   render() {
-    const sideDrawer = this.props.auth.uid ? null : <SideDrawer />;
+    const{
+      name,
+      homeland,
+      auth,
+      loginModalVisible,
+      registerModalVisible,
+    } = this.props;
+
+    const sideDrawer = auth.uid ? null : <SideDrawer />;
     return (
       <div className="CharacterSheet"> 
         <div className="ui stackable grid column twelve wide">
-          <LoginModal show={this.props.loginModalVisible} />
-          <RegisterModal show={this.props.registerModalVisible} />
+          <LoginModal show={loginModalVisible} />
+          <RegisterModal show={registerModalVisible} />
           <h2 className="characterTitle">
-            {this.props.name}
-            {' '}
-            of
-            {this.props.homeland}
+            {`
+              ${name} of ${homeland}
+            `}
           </h2>
           <CharacterInfo />   
-
-
-          <div className="ui stackable grid column eight wide">
-              
+          <div className="ui stackable grid column eight wide">  
             <Stats />  
             <div className="ui stackable grid column nine wide">
               <HealthPoints />
@@ -69,9 +73,7 @@ class CharacterSheet extends Component {
             <Cmb />
             <Cmd />
             <Weapons />
-
           </div>
-
           <div className="ui stackable grid column six wide">
             <Speed />
             <Skills /> 

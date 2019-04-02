@@ -8,22 +8,24 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleLoginModal: bool => dispatch(toggleLoginModal(bool))
-  };
+const mapDispatchToProps = {
+    toggleLoginModal
 }; 
 
 class LoginButton extends Component{ 
+  constructor(props){
+    super(props);
+    this.props = props;
+  }
+  
 	render(){ 
-		return( 
-  <div className="loginButton right menu"> 
-    <a className="ui item" onClick={this.props.toggleLoginModal}>
-
+	  const { toggleLoginModal } = this.props;
+  	return( 
+    <div className="loginButton right menu"> 
+      <a className="ui item" onClick={toggleLoginModal}>
 				    Login~!
-				
-    </a>
-  </div> 
+      </a>
+    </div> 
 		)
 	}
 }

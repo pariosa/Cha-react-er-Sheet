@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 import { 
 	updateSpellsKnown,
 	updateSpellDc,
@@ -27,43 +26,54 @@ const mapDispatchToProps = {
 class Skill extends Component {
   constructor(props) {
     super(props);
+    this.state = props;
   }
+
   render() {
+    const {
+      id,
+      spellsKnown,
+      spellSaveDc,
+      spellsPerDay,
+      bonusSpells,
+      updateSpellsKnown,
+      updateSpellDc,
+      updateSpellsPerDay,
+      updateBonusSpells
+  } = this.state;
     return (
-      <div className="spellSlotCapsule" id={this.props.id}> 
+      <div className="spellSlotCapsule" id={id}> 
         <div className="slotName">
-          level {this.props.id}
+          {`level ${id}`}
         </div>
         <input
           readOnly
           className="SpellsKnown"
           style={{maxWidth:'40px'}}
           type="number"
-          value={
-            this.props.spellsKnown
-          }
-          onChange={this.updateSpellsKnown}
+          value={spellsKnown}
+          onChange={updateSpellsKnown}
         /> 
         <input
           className="ranks"
           style={{maxWidth:'40px'}}
           type="number"
-          value={this.props.spellSaveDc}
-          onChange={this.props.updateSpellDc}
+          value={spellSaveDc}
+          onChange={updateSpellDc}
         />
         <input
           className="spellsPerDay"
           style={{maxWidth:'40px'}}
           type="number"
-          value={this.props.spellsPerDay}
-          onChange={this.props.updateSpellsPerDay}
+          value={spellsPerDay}
+          onChange={updateSpellsPerDay}
         />
-       	<input
+        <input
           className="BonusSpells"
           style={{maxWidth:'40px'}}
           type="number"
-          value={this.props.spellsPerDay}
-          onChange={this.props.updateSpellsPerDay}
+          value={spellsPerDay}
+          onChange={updateSpellsPerDay}
         />
       </div>
     );

@@ -12,7 +12,12 @@ const mapStateToProps = (state) =>{
         characters: state.firestore.ordered.characters
     }
 } 
+
 class SideDrawer extends Component {
+    constructor(props){
+        super(props);
+        this.props = props;
+    }
     render(){
         const { characters, auth } = this.props;
         if(!this.props.isVisible){

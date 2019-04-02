@@ -14,33 +14,38 @@ const mapStateToProps = state => {
 class Saves extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
-  Saves = () => {
-    let saves = []; 
-    this.props.saves.forEach((save, i) => {
-      saves.push(
+
+  Saves(){
+    const {
+      saves,
+      stats
+    } = this.props;
+    const savesArr = []; 
+    saves.forEach(save => {
+      savesArr.push(
         <Save
-          key={i}
-          id={i}
+          key={save.id}
+          id={save.id}
           title={save.title}
           stat={save.stat}
           miscMod={save.miscMod}
-          stats={this.props.stats} 
+          stats={stats} 
         />
       );
     });
-    return <div>{saves}</div>;
+    return <div>{savesArr}</div>;
   }
 
   render() {
     return (
       <div className="Saves ui stackable grid row">
-      {this.Saves()}
+        {this.Saves()}
       </div>
     );
   }
 }
-
 
 export default connect(
   mapStateToProps 

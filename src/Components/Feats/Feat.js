@@ -13,22 +13,28 @@ const mapStateToProps = ( state, ownProps ) => {
 }
 
 const mapDispatchToProps =  {
-		removeFeat,
-		updateFeat
+	removeFeat,
+	updateFeat
 }
 
 class Feat extends Component {
+	constructor(props){
+		super(props);
+		this.props = props;
+	}
+
 	render(){
+		const {
+			id,
+			feat,
+			updateFeat,
+			removeFeat
+		} = this.props;
 		return(
-
-			<div className="Feat" id={this.props.id}>
-
-				<textarea value={this.props.feat} cols="50" onChange={this.props.updateFeat} />
-	         
-	         	<button className="red deleteWeapon deleteFeat" onClick={this.props.removeFeat}>x</button>
-
-			</div>
-
+  <div className="Feat" id={id}>
+    <textarea value={feat} cols="50" onChange={updateFeat} />
+    <button type="button" className="red deleteWeapon deleteFeat" onClick={removeFeat}>x</button>
+  </div>
 		)
 	}
 }

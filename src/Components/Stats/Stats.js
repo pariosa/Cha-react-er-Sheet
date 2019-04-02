@@ -20,22 +20,28 @@ const mapDispatchToProps = {
 class Stats extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
-  Stats = () =>{
-    let statsDefs = ["intelligence", "dexterity", "constitution", "charisma", "wisdom", "strength"];
-    let stats = []; 
+
+  Stats(){
+    const {
+      stats,
+      statsTemp
+    } = this.props;
+    const statsDefs = ["intelligence", "dexterity", "constitution", "charisma", "wisdom", "strength"];
+    const statsArr = []; 
     let i = 0;
-    for(const key in this.props.stats){ 
+    for(const key in stats){ 
       if(statsDefs.indexOf(key)>-1 === true){
-        if(!this.props.stats.hasOwnProperty(key)) continue;
-        const property = this.props.stats[key];
-        const modifier = this.props.stats[key.substring(0,3)+"Mod"];
+        if(!stats.hasOwnProperty(key)) continue;
+        const property = stats[key];
+        const modifier = stats[key.substring(0,3)+"Mod"];
         const className = `${property} ui labeled button`;
-        const tempMod = this.props.statsTemp[key.substring(0,3)+"Mod"];
-        const tempScore = this.props.statsTemp[key];
-        stats.push(
+        const tempMod = statsTemp[key.substring(0,3)+"Mod"];
+        const tempScore = statsTemp[key];
+        statsArr.push(
           <Stat
-            key={i}
+            key={key}
             stat={key}
             value={property}
             modifier={modifier}
@@ -47,7 +53,7 @@ class Stats extends Component {
         i++;
       }
     }   
-    return <div>{stats}</div>;
+    return <div>{statsArr}</div>;
   }
   render() {
     return (

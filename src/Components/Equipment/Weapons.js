@@ -18,13 +18,15 @@ const mapStateToProps = state => {
 class Weapons extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
-  weapons = () => {
-    let weapons = [];
-    this.props.weapons.forEach((weapon, i) => {
-      weapons.push(
+
+  weapons (weapons){
+    let weaponsArr = [];
+    weapons.forEach(weapon => {
+      weaponsArr.push(
         <Weapon 
-          key={i}
+          key={weapon.id}
           id={weapon.id}
           name={weapon.name}
           attackBonus={weapon.attackBonus}
@@ -36,13 +38,18 @@ class Weapons extends Component {
         />
       );
     });
-    return <div>{weapons}</div>;
+    return <div>{weaponsArr}</div>;
   };
+
   render() {
+    const{ 
+      weapons,
+      addWeapon 
+    } = this.props
     return (
       <div className="Weapons">
-       {this.weapons()}
-       <button className="ui small button green addNewWeapon" onClick={this.props.addWeapon} > + </button>
+        {this.weapons(weapons)}
+        <button type="button" className="ui small button green addNewWeapon" onClick={addWeapon}> + </button>
       </div>
     );
   }
