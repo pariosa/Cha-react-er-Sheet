@@ -12,11 +12,9 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateStat: stat => dispatch(updateStat(stat)), 
-    updateTempStat: tempStat => dispatch(updateTempStat(tempStat)), 
-  };
+const mapDispatchToProps = {
+    updateStat, 
+    updateTempStat, 
 };
 
 class Stat extends Component { 

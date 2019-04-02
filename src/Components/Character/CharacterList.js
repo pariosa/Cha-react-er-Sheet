@@ -7,11 +7,10 @@ const mapStateToProps = dispatch =>{
 		test:null
 	}
 }
-const mapDispatchToProps = dispatch =>{
-	return{
-		loadCharacter: character => dispatch(loadCharacter(character)) 
-	}
+const mapDispatchToProps = {  
+	loadCharacter	 
 }
+
 
 class CharacterList extends Component{ 
 	render(){  

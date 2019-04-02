@@ -11,18 +11,17 @@ import {
   removeWeapon
 } from "../../js/actions/weaponActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateWeaponName: name => dispatch(updateWeaponName(name)),
-    updateWeaponAttackBonus:attackBonus => dispatch(updateWeaponAttackBonus(attackBonus)),
-    updateWeaponCritical: critical => dispatch(updateWeaponCritical(critical)),
-    updateWeaponType:type => dispatch(updateWeaponType(type)),
-    updateWeaponRange: range => dispatch(updateWeaponRange(range)),
-    updateWeaponAmmunition: ammunition => dispatch(updateWeaponAmmunition(ammunition)),
-    updateWeaponDamage: damage => dispatch(updateWeaponDamage(damage)),
-    removeWeapon: weapon => dispatch(removeWeapon(weapon)) 
-  };
+const mapDispatchToProps = {
+    updateWeaponName,
+    updateWeaponAttackBonus,
+    updateWeaponCritical,
+    updateWeaponType,
+    updateWeaponRange,
+    updateWeaponAmmunition,
+    updateWeaponDamage,
+    removeWeapon
 };
+
 const mapStateToProps = (state, ownProps) => {
   return {
       id: ownProps.id,
@@ -35,6 +34,7 @@ const mapStateToProps = (state, ownProps) => {
       damage:ownProps.damage
   };
 };
+
 class Weapon extends Component {
   constructor(props) {
     super(props);

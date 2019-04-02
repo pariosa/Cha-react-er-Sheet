@@ -1,16 +1,15 @@
-import React, { Component } from "React";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
   updateLanguages,
   updateConditionalModifiers, 
 } from "../../js/actions/languagesActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateLanguages: languages => dispatch(updateLanguages(languages)),
-    updateConditionalModifiers: conditionalModifiers => dispatch(updateConditionalModifiers(conditionalModifiers)), 
-  };
+const mapDispatchToProps = { 
+    updateLanguages,
+    updateConditionalModifiers 
 };
+
 const mapStateToProps = state => {
   return {
     languages: state.languages.languages,

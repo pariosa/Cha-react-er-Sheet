@@ -5,16 +5,16 @@ import {
 addWeapon
 } from "../../js/actions/weaponActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addWeapon: weapon => dispatch(addWeapon(weapon))
-  };
+const mapDispatchToProps = { 
+    addWeapon 
 };
+
 const mapStateToProps = state => {
   return {
     weapons: state.weapons
   };
 };
+
 class Weapons extends Component {
   constructor(props) {
     super(props);

@@ -12,13 +12,11 @@ const mapStateToProps = state =>{
 		currency:state.currency
 	}
 }
-const mapDispatchtoProps = dispatch =>{
-	return{
-		updateCp: count => dispatch(updateCp(count)),
-		updateSp: count => dispatch(updateSp(count)),
-		updateGp: count => dispatch(updateGp(count)),
-		updatePp: count => dispatch(updatePp(count)),
-	}
+const mapDispatchtoProps = {
+		updateCp,
+		updateSp,
+		updateGp,
+		updatePp
 }
 
 class Currency extends Component{

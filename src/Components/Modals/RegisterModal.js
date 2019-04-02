@@ -12,11 +12,9 @@ const mapStateToProps = state => {
 	auth: state.firebase.auth
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-  	register: creds => dispatch(register(creds)),
-    toggleRegisterModal: bool => dispatch(toggleRegisterModal(bool))
-  };
+const mapDispatchToProps = {
+  	register,
+    toggleRegisterModal
 }; 
 
 class RegisterModal extends Component { 

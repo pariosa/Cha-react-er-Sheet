@@ -12,11 +12,9 @@ const mapStateToProps = state => {
 	}
 }
 
-const mapDispatchToProps = dispatch => {
-	return{
-		updateExperience: exp => dispatch(updateExperience(exp)),
-		updateExperienceMax: exp => dispatch(updateExperienceMax(exp)) 
-	}
+const mapDispatchToProps = {
+		updateExperience,
+		updateExperienceMax 
 }
 
 class Experience extends Component {

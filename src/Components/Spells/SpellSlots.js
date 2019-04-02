@@ -6,13 +6,9 @@ const mapStateToProps = state => {
   return {
    spellslots: state.spellslots
   };
-};
-const mapDispatchToProps = dispatch => {
-  return {
-  
-  };
-};
-let skills = [];
+};  
+
+
 class SpellSlots extends Component {
   constructor(props) {
     super(props);
@@ -43,6 +39,5 @@ class SpellSlots extends Component {
   }
 }
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps 
 )(SpellSlots);

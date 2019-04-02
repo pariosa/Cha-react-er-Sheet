@@ -18,24 +18,22 @@ import {
   updateEyes
 } from "../../js/actions/characterActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateName: name => dispatch(updateName(name)),
-    updateAlignment: alignment => dispatch(updateAlignment(alignment)),
-    updatePlayerName: playerName => dispatch(updatePlayerName(playerName)),
-    updatePlayerClass: playerClass => dispatch(updatePlayerClass(playerClass)),
-    updateLevel: level => dispatch(updateLevel(level)),
-    updateDiety: diety => dispatch(updateDiety(diety)),
-    updateHomeland: homeland => dispatch(updateHomeland(homeland)),
-    updateRace: race => dispatch(updateRace(race)),
-    updateSize: size => dispatch(updateSize(size)),
-    updateGender: gender => dispatch(updateGender(gender)),
-    updateAge: age => dispatch(updateAge(age)),
-    updateHeight: height => dispatch(updateHeight(height)),
-    updateWeight: weight => dispatch(updateWeight(weight)),
-    updateHair: hair => dispatch(updateHair(hair)),
-    updateEyes: eyes => dispatch(updateEyes(eyes))
-  };
+const mapDispatchToProps = {
+    updateName,
+    updateAlignment,
+    updatePlayerName,
+    updatePlayerClass,
+    updateLevel,
+    updateDiety,
+    updateHomeland,
+    updateRace,
+    updateSize,
+    updateGender,
+    updateAge,
+    updateHeight,
+    updateWeight,
+    updateHair,
+    updateEyes
 };
 const mapStateToProps = state => {
   return {

@@ -4,11 +4,9 @@ import {
 	updateCmbModifiersField,
 	updateCmbSizeModifier
 } from "../../js/actions/characterActions";
-const mapDispatchtoProps = dispatch =>{
-	return{
-		updateCmbModifiersField : modifier => dispatch(updateCmbModifiersField(modifier)),
-		updateCmbSizeModifier: modifier => dispatch(updateCmbSizeModifier(modifier))
-	}
+const mapDispatchtoProps = { 
+	updateCmbModifiersField,
+	updateCmbSizeModifier 
 }
 
 const mapStateToProps = state => {

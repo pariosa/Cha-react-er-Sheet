@@ -1,4 +1,4 @@
-import React, { Component } from "React";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
   updateBaseSpeed,
@@ -13,19 +13,17 @@ import {
   updateSpeedTempMod,
 } from "../../js/actions/movementActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateBaseSpeed: baseSpeed => dispatch(updateBaseSpeed(baseSpeed)),
-    updateBaseSpeedArmored: baseSpeedArmored => dispatch(updateBaseSpeedArmored(baseSpeedArmored)),
-    updateBaseSpeedSq: baseSpeedSq => dispatch(updateBaseSpeedSq(baseSpeedSq)),
-    updateBaseSpeedArmoredSq: baseSpeedArmoredSq => dispatch(updateBaseSpeedArmoredSq(baseSpeedArmoredSq)),
-    updateFlySpeed: flySpeed => dispatch(updateFlySpeed(flySpeed)),
-    updateFlyManeuverability: flyManeuverability => dispatch(updateFlyManeuverability(flyManeuverability)),
-    updateSwimSpeed: swimSpeed => dispatch(updateSwimSpeed(swimSpeed)),
-    updateClimbSpeed: climbSpeed => dispatch(updateClimbSpeed(climbSpeed)),
-    updateBurrowSpeed: burrowSpeed => dispatch(updateBurrowSpeed(burrowSpeed)),
-    updateSpeedTempMod: speedTempMod => dispatch(updateSpeedTempMod(speedTempMod))
-  };
+const mapDispatchToProps = {
+    updateBaseSpeed,
+    updateBaseSpeedArmored,
+    updateBaseSpeedSq,
+    updateBaseSpeedArmoredSq,
+    updateFlySpeed,
+    updateFlyManeuverability,
+    updateSwimSpeed,
+    updateClimbSpeed,
+    updateBurrowSpeed,
+    updateSpeedTempMod
 };
 const mapStateToProps = state => {
   return {

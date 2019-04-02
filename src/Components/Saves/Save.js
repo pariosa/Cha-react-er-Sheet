@@ -7,14 +7,13 @@ updateMiscSaveMod,
 updateTempSaveMod,
 } from "../../js/actions/savesActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateBaseSave: baseSave=> dispatch(updateBaseSave(baseSave)),
-    updateMagicSaveModifier: magicMod => dispatch(updateMagicSaveModifier(magicMod)),
-    updateMiscSaveMod: miscSaveMod => dispatch(updateMiscSaveMod(miscSaveMod)),
-    updateTempSaveMod: tempMod => dispatch(updateTempSaveMod(tempMod)),
-  };
+const mapDispatchToProps = {
+    updateBaseSave,
+    updateMagicSaveModifier,
+    updateMiscSaveMod,
+    updateTempSaveMod,
 };
+
 const mapStateToProps = (state, ownProps) => {
   return {
     stats: state.stat.stats,

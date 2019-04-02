@@ -5,11 +5,9 @@ updateBaseAttackBonus,
 updateSpellResistance,
 } from "../../js/actions/babActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateBaseAttackBonus: bab => dispatch(updateBaseAttackBonus(bab)),
-    updateSpellResistance: spellResistance => dispatch(updateSpellResistance(spellResistance)),
-  };
+const mapDispatchToProps = { 
+    updateBaseAttackBonus,
+    updateSpellResistance 
 };
 const mapStateToProps = state => {
   return {

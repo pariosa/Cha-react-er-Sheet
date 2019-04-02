@@ -12,11 +12,9 @@ const mapStateToProps = state => {
 	}
 }
 
-const mapDispatchToProps = dispatch => {
-	return{
-		updateFeat: feat => dispatch(updateFeat(feat)),
-		addFeat: feat => dispatch(addFeat(feat)) 
-	}
+const mapDispatchToProps = { 
+	updateFeat,
+	addFeat 
 }
 
 class Feats extends Component {

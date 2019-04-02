@@ -14,11 +14,9 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-  	login: auth => dispatch(login(auth)),
-    toggleLoginModal: bool => dispatch(toggleLoginModal(bool))
-  };
+const mapDispatchToProps = { 
+  	login,
+    toggleLoginModal 
 };
 
 class LoginModal extends Component {  

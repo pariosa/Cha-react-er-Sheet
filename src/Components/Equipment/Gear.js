@@ -6,12 +6,10 @@ import {
   removeGear
 } from "../../js/actions/gearActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-	  updateGearName: name => dispatch(updateGearName(name)),
-	  updateGearWeight: weight => dispatch(updateGearWeight(weight)), 
-    removeGear: gear => dispatch(removeGear(gear)), 
-  };
+const mapDispatchToProps ={
+	  updateGearName,
+	  updateGearWeight, 
+    removeGear
 };
 const mapStateToProps = (state, ownProps) => {
   return {

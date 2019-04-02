@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { 
 	updateCmdSizeModifier
 } from "../../js/actions/characterActions";
-const mapDispatchtoProps = dispatch =>{
-	return{
-		updateCmdSizeModifier: modifier => dispatch(updateCmdSizeModifier(modifier))
-	}
+
+const mapDispatchtoProps = {
+	updateCmdSizeModifier
 }
 
 const mapStateToProps = state => {

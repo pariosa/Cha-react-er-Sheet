@@ -34,12 +34,7 @@ const mapStateToProps = state => {
     registerModalVisible: state.ui.registerModalVisible
   };
 };
-
-const mapDispatchToProps = dispatch => {
-  return {
-    updatePlayerName: playerName => dispatch(updatePlayerName(playerName))
-  };
-};
+ 
 
 class CharacterSheet extends Component {
   constructor(props) {
@@ -99,6 +94,5 @@ class CharacterSheet extends Component {
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps 
 )(CharacterSheet);

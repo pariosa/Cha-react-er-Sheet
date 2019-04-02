@@ -12,11 +12,9 @@ const mapStateToProps = state => {
     statsTemp: state.stat.statsTemporary
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    updateStat: stat => dispatch(updateStat(stat)), 
-    updateTempStat: tempStat => dispatch(updateTempStat(tempStat)), 
-  };
+const mapDispatchToProps = {
+    updateStat, 
+    updateTempStat, 
 };
 
 class Stats extends Component {

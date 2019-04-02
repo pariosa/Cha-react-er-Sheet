@@ -4,12 +4,7 @@ import Save from "./Save";
 import { 
 
 } from "../../js/actions/savesActions";
-
-const mapDispatchToProps = dispatch => {
-  return {
-   
-  };
-};
+ 
 const mapStateToProps = state => {
   return {
     skills: state.skills,
@@ -48,6 +43,5 @@ class Saves extends Component {
 
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps 
 )(Saves);

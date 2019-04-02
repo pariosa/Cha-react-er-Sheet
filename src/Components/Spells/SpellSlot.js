@@ -17,14 +17,13 @@ const mapStateToProps = (state, ownProps) => {
     id: state.spellslots[ownProps.id].level
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    updateSpellsKnown: count => dispatch(updateSpellsKnown(count)),
-    updateSpellDc: dc => dispatch(updateSpellDc(dc)),
-    updateSpellsPerDay: spellsPerDay => dispatch(updateSpellsPerDay(spellsPerDay)),
-    updateBonusSpells: bonus => dispatch(updateBonusSpells(bonus))
-  };
+const mapDispatchToProps = { 
+    updateSpellsKnown,
+    updateSpellDc,
+    updateSpellsPerDay,
+    updateBonusSpells
 };
+
 class Skill extends Component {
   constructor(props) {
     super(props);

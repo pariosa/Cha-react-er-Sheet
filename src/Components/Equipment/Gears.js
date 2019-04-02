@@ -11,22 +11,22 @@ updateLiftOffGround,
 updateDragOrPush
 } from "../../js/actions/gearActions";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addGear: item => dispatch(addGear(item)),
-    updateLightLoad: load => dispatch(updateLightLoad(load)),
-    updateMediumLoad: load => dispatch(updateMediumLoad(load)),
-    updateHeavyLoad: load => dispatch(updateHeavyLoad(load)),
-    updateLiftOverHead: load => dispatch(updateLiftOverHead(load)),
-    updateLiftOffGround: load => dispatch(updateLiftOffGround(load)),
-    updateDragOrPush: load => dispatch(updateDragOrPush(load))
-  };
+const mapDispatchToProps = {
+    addGear,
+    updateLightLoad,
+    updateMediumLoad,
+    updateHeavyLoad,
+    updateLiftOverHead,
+    updateLiftOffGround,
+    updateDragOrPush
 };
+
 const mapStateToProps = state => {
   return {
     gear: state.gear.gear,
   };
 };
+
 class Gears extends Component {
   constructor(props) {
     super(props);

@@ -6,13 +6,9 @@ const mapStateToProps = state => {
   return {
     skills: state.skills
   };
-};
-const mapDispatchToProps = dispatch => {
-  return {
-    updateSkillRank: skill => dispatch(updateSkillRank(skill, rank))
-  };
-};
-let skills = [];
+}; 
+ 
+
 class Skills extends Component {
   constructor(props) {
     super(props);
@@ -63,6 +59,5 @@ class Skills extends Component {
   }
 }
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps, 
 )(Skills);

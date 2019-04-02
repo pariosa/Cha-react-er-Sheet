@@ -19,15 +19,11 @@ const mapStateToProps = (state, ownProps) => {
     id: state.skills[ownProps.id].id
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    updateSkillRank: skill => dispatch(updateSkillRank(skill)),
-    updateSkillIsClass: isClass => dispatch(updateSkillIsClass(isClass)),
-    updateSkillDescription: skillDescription =>
-      dispatch(updateSkillDescription(skillDescription)),
-    updateSkillMiscMod: skillMiscMod =>
-      dispatch(updateSkillMiscMod(skillMiscMod))
-  };
+const mapDispatchToProps = {
+    updateSkillRank,
+    updateSkillIsClass,
+    updateSkillDescription,
+    updateSkillMiscMod
 };
 class Skill extends Component {
   constructor(props) {
