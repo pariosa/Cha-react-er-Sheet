@@ -13,24 +13,41 @@ const MapStateToProps = state => {
     max: state.health.max,
     current: state.health.current,
     nonLethal: state.health.nonLethal,
-    DR: state.health.DR,
+    dr: state.health.DR,
     initiativeModifier: state.health.initiativeModifier,
     dexterityMod: state.stat.stats.dexMod
   };
 };
 
-const MapDispatchToProps = dispatch => {
-  return {
+const MapDispatchToProps = { 
     updateMaxHp,
     updateCurrentHp,
     updateNonLethal,
     updateInitiativeMod,
-    updateDr
-  };
+    updateDr 
 };
 
 class HealthPoints extends Component {
+
+  constructor(props){
+    super(props);
+    this.props = props;
+  }
+
   render() {
+    const {
+      max,
+      updateMaxHp,
+      dr,
+      updateDr,
+      current,
+      updateCurrentHp,
+      nonLethal,
+      updateNonLethal,
+      dexterityMod,
+      initiativeModifier,
+      updateInitiativeMod
+    } = this.props;
     return (
       <div className="HealthPoints">
         <div className="ui labeled button small " tabIndex="0">
@@ -42,8 +59,8 @@ class HealthPoints extends Component {
             <input
               size="5"
               type="text"
-              value={this.props.max}
-              onChange={this.props.updateMaxHp}
+              value={max}
+              onChange={updateMaxHp}
             />
           </div>
           <div className="input ui three wide left labeled input">
@@ -51,8 +68,8 @@ class HealthPoints extends Component {
             <input
               size="13"
               type="text"
-              value={this.props.DR}
-              onChange={this.props.updateDr}
+              value={dr}
+              onChange={updateDr}
             />
           </div>
           <br />
@@ -63,8 +80,8 @@ class HealthPoints extends Component {
             <textarea
               rows="1"
               cols="6"
-              value={this.props.current}
-              onChange={this.props.updateCurrentHp}
+              value={current}
+              onChange={updateCurrentHp}
             />
           </div>
         </div>
@@ -72,8 +89,8 @@ class HealthPoints extends Component {
           <div className="">
             <label>Nonlethal Damage</label>
             <textarea
-              value={this.props.nonLethal}
-              onChange={this.props.updateNonLethal}
+              value={nonLethal}
+              onChange={updateNonLethal}
               rows="1" 
               cols="6"
             />
@@ -90,8 +107,8 @@ class HealthPoints extends Component {
               readOnly
               type="text"
               value={
-                parseInt(this.props.dexterityMod) +
-                parseInt(this.props.initiativeModifier)
+                parseInt(dexterityMod,10) +
+                parseInt(initiativeModifier,10)
               }
             />
           </div>
@@ -103,7 +120,7 @@ class HealthPoints extends Component {
               readOnly
               size="4"
               type="text"
-              value={this.props.dexterityMod}
+              value={dexterityMod}
             />
           </div>
 
@@ -113,8 +130,8 @@ class HealthPoints extends Component {
             <input
               size="4"
               type="text"
-              value={this.props.initiativeModifier}
-              onChange={this.props.updateInitiativeMod}
+              value={initiativeModifier}
+              onChange={updateInitiativeMod}
             />
           </div>
           <br />

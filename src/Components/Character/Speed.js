@@ -40,11 +40,36 @@ const mapStateToProps = state => {
   };
 };
 class Speed extends Component {
+
   constructor(props) {
     super(props);
+    this.props = props;
   }
 
   render() {
+
+    const {
+      baseSpeed,
+      updateBaseSpeed,
+      baseSpeedSq,
+      updateBaseSpeedSq,
+      baseSpeedArmored,
+      updateBaseSpeedArmored,
+      baseSpeedArmoredSq,
+      updateBaseSpeedArmoredSq,
+      flySpeed,
+      updateFlySpeed,
+      flyManeuverability,
+      swimSpeed,
+      updateSwimSpeed,
+      climbSpeed,
+      updateClimbSpeed,
+      burrowSpeed,
+      updateBurrowSpeed,
+      tempMod,
+      updateSpeedTempMod
+    } = this.props;
+
     return (
       <div className="Speed stackable grid row">
         <div className="ui black two wide button small speedDescriptor">
@@ -52,16 +77,16 @@ class Speed extends Component {
           <div className="subscript">land</div>
         </div>
         <div className="speedGroup">
-          <input className="speedFieldFt" size="1" value={this.props.baseSpeed} onChange={this.props.updateBaseSpeed} />
+          <input className="speedFieldFt" size="1" value={baseSpeed} onChange={updateBaseSpeed} />
           <span className="subtext">ft.</span>
-          <input className="speedFieldSq" size="1" value={this.props.baseSpeedSq} onChange={this.props.updateBaseSpeedSq}  />
+          <input className="speedFieldSq" size="1" value={baseSpeedSq} onChange={updateBaseSpeedSq}  />
           <span className="subtext">sq.</span> 
         </div>
 
         <div className="speedGroup">
-          <input size="1" className="speedFieldFt" value={this.props.baseSpeedArmored} onChange={this.props.updateBaseSpeedArmored} />
+          <input size="1" className="speedFieldFt" value={baseSpeedArmored} onChange={updateBaseSpeedArmored} />
           <span className="subtext">ft.</span>
-          <input size="1" className="speedFieldSq" value={this.props.baseSpeedArmoredSq} onChange={this.props.updateBaseSpeedArmoredSq} />
+          <input size="1" className="speedFieldSq" value={baseSpeedArmoredSq} onChange={updateBaseSpeedArmoredSq} />
           <span className="subtext">sq.</span>
         </div>
          
@@ -75,22 +100,22 @@ class Speed extends Component {
         </div> 
         <div className="speedSecondRow">
           <div className="speedGroupFly">
-            <input size="1" className="speedFieldFt" value={this.props.flySpeed} onChange={this.props.updateFlySpeed} />
+            <input size="1" className="speedFieldFt" value={flySpeed} onChange={updateFlySpeed} />
             <span className="subtext">ft.</span>
-            <input size="4" className="speedFieldSq" value={this.props.flyManeuverability} onChange={this.props.updateFlyManeuverability} /> 
+            <input size="4" className="speedFieldSq" value={flyManeuverability} onChange={updateFlyManeuverability} /> 
           </div>
           <div className="speedGroupThree">
-            <input size="1" value={this.props.swimSpeed} onChange={this.props.updateSwimSpeed} />
+            <input size="1" value={swimSpeed} onChange={updateSwimSpeed} />
             <span className="subtext3">ft.</span>
-            <input size="1" value={this.props.climbSpeed} onChange={this.props.updateClimbSpeed} />
+            <input size="1" value={climbSpeed} onChange={updateClimbSpeed} />
             <span className="subtext3">ft.</span>
-            <input size="1" value={this.props.burrowSpeed} onChange={this.props.updateBurrowSpeed} />
+            <input size="1" value={burrowSpeed} onChange={updateBurrowSpeed} />
             <span className="subtext3">ft.</span>
 
           </div>
           <div className="speedGroupTemp inline-block">
             <div className="speedTempModifierHeadline">Temp Modifiers</div>
-            <textarea cols="5" rows="2" value={this.props.tempMod} onChange={this.props.updateSpeedTempMod} />
+            <textarea cols="5" rows="2" value={tempMod} onChange={updateSpeedTempMod} />
 
           </div>
           <div>
@@ -120,7 +145,6 @@ class Speed extends Component {
     );
   }
 }
-
 
 export default connect(
   mapStateToProps,

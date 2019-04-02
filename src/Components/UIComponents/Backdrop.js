@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleRegisterModal, toggleLoginModal, toggleSideDrawer } from '../../js/actions/uiActions';
 
-const mapDispatchToProps = dispatch => {
-  return { 
-    toggleLoginModal: bool => dispatch(toggleLoginModal(bool)),
-    toggleRegisterModal: bool => dispatch(toggleRegisterModal(bool)),
-    toggleSideDrawer: bool => dispatch(toggleSideDrawer(bool))
-
-  };
+const mapDispatchToProps = {
+    toggleLoginModal,
+    toggleRegisterModal,
+    toggleSideDrawer
 };
 
 const mapStateToProps = (state, initialState) =>{ 

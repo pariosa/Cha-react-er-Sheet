@@ -1,4 +1,4 @@
-import React, { Component } from "React";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import CharacterInfo from "./CharInfo";
 import Stats from "../Stats/Stats";

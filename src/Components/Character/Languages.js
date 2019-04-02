@@ -19,21 +19,28 @@ const mapStateToProps = state => {
 class Languages extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
 
   render() {
+    
+    const{
+      conditionalModifiers,
+      languages,
+      updateLanguages,
+      updateConditionalModifiers
+    } = this.props;
+
     return (
       <div className="Languages stackable grid row">
         <div className="conditionalModifiers Input">
           <strong>Conditional Modifiers:</strong>
-          <textarea className="conditionalModifiersInput" rows="2" cols="50" value={this.props.conditionalModifiers} onChange={this.props.updateConditionalModifiers} />
-
+          <textarea className="conditionalModifiersInput" rows="2" cols="50" value={conditionalModifiers} onChange={updateConditionalModifiers} />
         </div>
         <div className="languages Input">
           <strong>Languages:</strong>
           <br />
-          <textarea className="languagesInput" rows="3" cols="50" value={this.props.languages} onChange={this.props.updateLanguages} />
-        
+          <textarea className="languagesInput" rows="3" cols="50" value={languages} onChange={updateLanguages} />
         </div>
       </div>
        )

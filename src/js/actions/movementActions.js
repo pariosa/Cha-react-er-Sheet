@@ -7,7 +7,8 @@ import{
   UPDATE_FLY_MANEUVERABILITY,
   UPDATE_SWIM_SPEED,
   UPDATE_CLIMB_SPEED,
-  UPDATE_BURROW_SPEED
+  UPDATE_BURROW_SPEED,
+  UPDATE_SPEED_TEMP_MOD
 } from "../constants/actionTypes"; 
 
 export const updateBaseSpeed = baseSpeed =>({

@@ -11,43 +11,42 @@ const mapStateToProps = state => {
 	}
 }
 
-const mapDispatchToProps = dispatch => {
-	return{
-		updateAbility: ability => dispatch(updateAbility(ability)),
-		addAbility: ability => dispatch(addAbility(ability))
-	}
+const mapDispatchToProps = { 
+	addAbility 
 }
 
 class Abilities extends Component {
-  getAbilities = () => {
-    let abilities = [];
-    if(this.props.abilities.length > 0){
-	    this.props.abilities.forEach((ability, i) => {
-	      abilities.push(
-	        <Ability 
-	          key={i}
-	          id={ability.id}
-	          ability={ability.ability}
-	          
-	        />
-	      );
-	    });
+
+	constructor(props){
+	  super(props);
+	  this.props = props;
 	}
-    return <div>{abilities}</div>;
-  };
-	render(){
-		return(
 
-			<div className="Abilities">
-			<div className="AbilitiesTitle">
-			Special Abilities
-			</div>
-				{this.getAbilities()}
+	getAbilities() {
+	  const abilities = [];
+	    if(this.props.abilities.length > 0){
+	      this.props.abilities.forEach(ability => {
+	        abilities.push(
+	    	    <Ability 
+			      key={ability.id}
+			      id={ability.id}
+			      ability={ability.ability}    
+			    />
+		    );
+		  });
+		}
+	    return <div>{abilities}</div>;
+	  };
 
-			 	<button className="ui small button green addNewAcItem" onClick={this.props.addAbility} > + </button>
-
-			</div>
-
+	render(){ 
+		return( 
+          <div className="Abilities">
+            <div className="AbilitiesTitle">
+		      Special Abilities
+            </div>
+            { this.getAbilities() }
+            <button type="button" className="ui small button green addNewAcItem" onClick={this.props.addAbility}> + </button>
+          </div>
 		)
 	}
 }
