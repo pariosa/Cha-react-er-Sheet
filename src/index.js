@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import "semantic-ui-css/semantic.min.css";
 import { Provider } from "react-redux";
-import CharacterSheet from "./CharacterSheet";
+import CharacterSheet from "./Components/Character/CharacterSheet";
 import store from "./js/store/index";
-import Header from './Header'; 
+import Header from './Components/UIComponents/Header'; 
 
 
 window.store = store;
