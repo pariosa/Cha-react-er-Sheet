@@ -39,13 +39,19 @@ const initialState=[
 ];
 
 const spellsReducer = (state = initialState, action) => { 
-  switch (action.type) {  
+  let updateType
+  let spellId;
+  let level;
+  let spellLevel;
+  let newSpell;
+  let payloadValue;
+  switch (action.type) { 
 	  case ADD_SPELL:
-      const level = parseInt(action.payload.nativeEvent.path[1].getAttribute('level'));
-      const spellLevel = state.find(x=> x.level === level);
-      let newSpell = new Object;
+      level = parseInt(action.payload.nativeEvent.path[1].getAttribute('level'),10);
+      spellLevel = state.find(x=> x.level === level);
+      newSpell = {};
       newSpell = {
-        level:level,
+        level,
         title:"",
         descripton:"",
         pageReference:"",
@@ -62,38 +68,47 @@ const spellsReducer = (state = initialState, action) => {
         usedSlot8:false
       };
       newSpell.id = spellLevel.spells.length;
-      for(let x=0;x<spellLevel.spells;x++){
+      for(let x=0;x<spellLevel.spells.length ;x+=1){
         if(spellLevel.spells.find(node => node.id === x) === undefined){
            newSpell.id = x;
         }
-      } 
-
-
-   return[ ...state.map(
-        (item, index) =>
-          index !== level ? item : {...item, spells:[ ...item.spells, newSpell
-        ]}) 
-      ]
-
-      /*
+      }   
       return[ ...state.map(
         (item, index) =>
-          index === level ? item : {...item, spells:[ ...item.spells.map(
-            (item2, index2) => 
-              index2 === newSpell.id ? newspell : newSpell
-          )
-        ]}) 
-      ]*/
-      //return [...state[index]), [state[index].spells, newSpell])]
-      /*
-      return [ ...state.map((item, index) =>
-        index === level ? [...state[index], state[index].spells, newSpell] : item
-        )
-      ];*/
+          index !== level ? item : {...item, 
+            spells:[ ...item.spells, newSpell]
+          }
+        ) 
+      ];
+ 
     case REMOVE_SPELL:
-      return {state};
+      level = parseInt(action.payload.nativeEvent.path[3].getAttribute('level'),10);
+      spellId = parseInt(action.payload.nativeEvent.path[1].id,10); 
+
+      return  [...state.map(
+        (item, index) =>
+          index !== level ? item : {...item, 
+            spells:[...item.spells.filter(spell => 
+              spell.id !== spellId
+            )]
+          }
+      )]
     case UPDATE_SPELL:
-      return [...state, action.payload.target.value];
+      level = parseInt(action.payload.nativeEvent.path[3].getAttribute('level'),10);
+      spellLevel = state.find(x=> x.level === level);
+      updateType = action.payload.nativeEvent.path[0].getAttribute('target');
+      spellId = parseInt(action.payload.nativeEvent.path[1].id,10); 
+      payloadValue = (action.payload.target.type === "checkbox") ? action.payload.target.checked : action.payload.target.value;
+
+      return[...state.map(
+        (item, index) =>
+          index !== level ? item : {...item, 
+            spells:[...item.spells.map(spell =>(
+              spell.id === spellId ? {...spell, [updateType]:payloadValue} : spell
+            ))]
+          }
+        ) 
+      ]; 
     case LOAD_ENTIRE_CHARACTER:
      return [...action.payload.spells]
     default:
