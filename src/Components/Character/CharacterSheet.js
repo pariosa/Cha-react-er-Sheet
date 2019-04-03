@@ -23,6 +23,7 @@ import AcItems from '../Ac/AcItems';
 import Currency from '../Equipment/Currency';
 import Experience from "./Experience";
 import SpellSlots from "../Spells/SpellSlots";
+import SpellList from "../Spells/SpellList";
 
 // import SpellList from "../Spells/SpellList"; 
 const mapStateToProps = state => {
@@ -88,6 +89,7 @@ class CharacterSheet extends Component {
           <Feats />
           <Experience />
           <SpellSlots />
+          <SpellList />
         </div>
         { sideDrawer }   
       </div>

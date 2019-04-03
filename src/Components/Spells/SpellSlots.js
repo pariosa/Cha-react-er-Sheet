@@ -17,7 +17,7 @@ class SpellSlots extends Component {
 
   spellSlots(){
     const { spellslots } = this.props;
-    const spellSlotsArr = []; 
+    const spellSlotsArr = [];  
     spellslots.forEach(slot => {
       spellSlotsArr.push(
         <SpellSlot 
@@ -40,6 +40,21 @@ class SpellSlots extends Component {
     } = this.props;
     return (
       <div className="SpellSlots">
+        <div className="SpellSlotTitle">
+          Spell Slots
+        </div>
+        <div className="SpellSlotHeader">
+          Spells Known
+        </div>
+        <div className="SpellSlotHeader">
+          Spell Save DC
+        </div>
+        <div className="SpellSlotHeader">
+          Spells Per Day
+        </div>
+        <div className="SpellSlotHeader">
+          Bonus Spells
+        </div>
         {this.spellSlots()}
       </div>
     );

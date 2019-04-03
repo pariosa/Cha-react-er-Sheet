@@ -107,34 +107,12 @@ class Skill extends Component {
         />
       );
     }
-  };
-
-  skillIsClassCheck(){
-    const{
-      isClassSkill,
-      updateSkillIsClass
-    } = this.props;
-    if(isClassSkill === true)  {
-      return (
-        <input 
-          type="checkbox"   
-          onChange={updateSkillIsClass} 
-          checked
-        />
-      );
-    }else{ 
-      return (
-        <input 
-          type="checkbox"   
-          onChange={updateSkillIsClass} 
-        />
-      );
-    }
-  }
+  }; 
 
   render() {
     const {
       id,
+      isClassSkill,
       title,
       ranks,
       miscMod,
@@ -145,7 +123,12 @@ class Skill extends Component {
     } = this.props;
     return (
       <div className="skillCapsule" id={id}>
-        {this.skillIsClassCheck()} 
+        
+        <input 
+          type="checkbox"   
+          onChange={updateSkillIsClass} 
+          checked={isClassSkill}
+        />
         <div className="statName">
           {title}
           {this.skillDescription()}

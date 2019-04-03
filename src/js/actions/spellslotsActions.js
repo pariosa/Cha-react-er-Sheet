@@ -6,17 +6,21 @@ import {
 } from "../constants/actionTypes";
 
 export const updateSpellsKnown = count => ({
-	type:UPDATE_SPELLS_KNOWN
+	type:UPDATE_SPELLS_KNOWN,
+	payload:count
 })
 
 export const updateSpellDc = count => ({
-	type:UPDATE_SPELL_SAVE_DC
+	type:UPDATE_SPELL_SAVE_DC,
+	payload:count
 })
 
 export const updateSpellsPerDay = count => ({
-	type:UPDATE_SPELLS_PER_DAY
+	type:UPDATE_SPELLS_PER_DAY,
+	payload:count
 })
 
 export const updateBonusSpells = count => ({
-	type:UPDATE_BONUS_SPELLS
+	type:UPDATE_BONUS_SPELLS,
+	payload:count
 })

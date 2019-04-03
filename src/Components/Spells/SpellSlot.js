@@ -7,13 +7,14 @@ import {
 	updateBonusSpells 
 } from "../../js/actions/spellSlotsActions";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => { 
   return {
-   	spellsKnown: state.spellslots[ownProps.id].spellsKnown,
-   	spellSaveDc: state.spellslots[ownProps.id].spellSaveDc,
-    spellsPerDay: state.spellslots[ownProps.id].spellsPerDay,
-    bonusSpells: state.spellslots[ownProps.id].bonusSpells,
-    id: state.spellslots[ownProps.id].level
+    id:state.spellslots[ownProps.level].id,
+    level:state.spellslots[ownProps.level].level,
+   	spellsKnown: state.spellslots[ownProps.level].spellsKnown,
+   	spellSaveDc: state.spellslots[ownProps.level].spellSaveDc,
+    spellsPerDay: state.spellslots[ownProps.level].spellsPerDay,
+    bonusSpells: state.spellslots[ownProps.level].bonusSpells,
   };
 };
 const mapDispatchToProps = { 
@@ -23,15 +24,14 @@ const mapDispatchToProps = {
     updateBonusSpells
 };
 
-class Skill extends Component {
-  constructor(props) {
+class SpellSlot extends Component {
+  constructor(props){
     super(props);
-    this.state = props;
+    this.props = props;
   }
-
-  render() {
-    const {
-      id,
+  render() { 
+    const { 
+      level,
       spellsKnown,
       spellSaveDc,
       spellsPerDay,
@@ -40,40 +40,43 @@ class Skill extends Component {
       updateSpellDc,
       updateSpellsPerDay,
       updateBonusSpells
-  } = this.state;
+    } = this.props;
     return (
-      <div className="spellSlotCapsule" id={id}> 
+      <div className="spellSlotCapsule" id={level}> 
         <div className="slotName">
-          {`level ${id}`}
+          {`level ${level}`}
         </div>
-        <input
-          readOnly
+        <input 
           className="SpellsKnown"
           style={{maxWidth:'40px'}}
           type="number"
+          min="0"
           value={spellsKnown}
           onChange={updateSpellsKnown}
         /> 
         <input
-          className="ranks"
-          style={{maxWidth:'40px'}}
+          className="spellSaveDc"
+          style={{maxWidth:'40px'}}          
           type="number"
-          value={spellSaveDc}
+          min="0"
+          value={this.props.spellSaveDc}
           onChange={updateSpellDc}
         />
         <input
           className="spellsPerDay"
-          style={{maxWidth:'40px'}}
+          style={{maxWidth:'40px'}}          
           type="number"
-          value={spellsPerDay}
+          min="0"
+          value={this.props.spellsPerDay}
           onChange={updateSpellsPerDay}
         />
         <input
           className="BonusSpells"
-          style={{maxWidth:'40px'}}
+          style={{maxWidth:'40px'}}          
           type="number"
-          value={spellsPerDay}
-          onChange={updateSpellsPerDay}
+          min="0"
+          value={this.props.bonusSpells}
+          onChange={updateBonusSpells}
         />
       </div>
     );
@@ -82,4 +85,4 @@ class Skill extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Skill);
+)(SpellSlot);

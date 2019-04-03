@@ -9,86 +9,155 @@ import {
 const initialState = [
 	{
 		level:0,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},	
 	{	
 		level:1,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},
 	{
 		level:2,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},
 	{
 		level:3,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},
 	{
 		level:4,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},
 	{
 		level:5,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},
 	{
 		level:6,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},
 	{
 		level:7,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},
 	{
 		level:8,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},
 	{
 		level:9,
-		spellsKnown:"",
-		spellSaveDc:"",
-		spellsPerDay:"",
-		bonusSpells:""
+		spellsKnown:"0",
+		spellSaveDc:"0",
+		spellsPerDay:"0",
+		bonusSpells:"0"
 	},
 ];
 
 const spellSlotReducer = (state = initialState, action) => { 
   switch (action.type) {  
-	case  UPDATE_SPELLS_KNOWN:
-      return [...state];
+	case  UPDATE_SPELLS_KNOWN: 
+	  const slotKnownState = state.find(
+	   slot => slot.level === parseInt(action.payload.nativeEvent.path[1].id)
+	  );
+	  const slotKnownIndex = state.indexOf(
+	   slotKnownState
+	  ); 
+	  let keys;
+	  const slotKnownObj = new Object;
+	  for(keys in slotKnownState){ 
+	    slotKnownObj[keys] = slotKnownState[keys];
+	  } 
+	  slotKnownObj.spellsKnown = action.payload.target.value;
+	  return [
+	        ...state.map((item, index) =>
+	            index === slotKnownIndex
+	              ? slotKnownObj
+	              : item
+	        ) 
+	  ]; 
     case UPDATE_SPELLS_PER_DAY:
-      return [...state];
+	  const slotPerDayState = state.find(
+	   slot => slot.level === parseInt(action.payload.nativeEvent.path[1].id)
+	  );
+	  const slotPerDayIndex = state.indexOf(
+	    slotPerDayState
+	  );  
+	  const slotPerDayObj = new Object;
+	  for(keys in slotPerDayState){ 
+	    slotPerDayObj[keys] = slotPerDayState[keys];
+	  }
+	  slotPerDayObj.spellsPerDay = action.payload.target.value;
+	  return [
+		...state.map((item, index) =>
+		  index === slotPerDayIndex
+		    ? slotPerDayObj
+		    : item
+		) 
+	  ];
     case UPDATE_SPELL_SAVE_DC:
-      return [...state];
+	  const slotSaveDcState = state.find(
+       slot => slot.level === parseInt(action.payload.nativeEvent.path[1].id)
+      );
+      const slotSaveDcIndex = state.indexOf(
+       slotSaveDcState
+      );  
+      const slotSaveDcObj = new Object;
+      for(keys in slotSaveDcState){ 
+        slotSaveDcObj[keys] = slotSaveDcState[keys];
+      }
+      slotSaveDcObj.spellSaveDc = action.payload.target.value;
+      return [
+        ...state.map((item, index) =>
+            index === slotSaveDcIndex
+              ? slotSaveDcObj
+              : item
+        )
+	  ];
     case UPDATE_BONUS_SPELLS:
-      return [...state];
+	  const slotBonusSpellsState = state.find(
+       slot => slot.level === parseInt(action.payload.nativeEvent.path[1].id)
+      );
+      const slotBonusSpellsIndex = state.indexOf(
+       slotBonusSpellsState
+      );  
+      const slotBonusSpellsObj = new Object;
+      for(keys in slotBonusSpellsState){ 
+        slotBonusSpellsObj[keys] = slotBonusSpellsState[keys];
+      }
+      slotBonusSpellsObj.bonusSpells = action.payload.target.value;
+      return [
+        ...state.map((item, index) =>
+            index === slotBonusSpellsIndex
+              ? slotBonusSpellsObj
+              : item
+        )
+	  ];
     case LOAD_ENTIRE_CHARACTER:
      return [...action.payload.spellslots]
     default:

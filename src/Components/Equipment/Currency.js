@@ -27,43 +27,32 @@ class Currency extends Component{
 	
 	render(){
 		const {
-			currency: {
-				CP: {CP},
-				SP: {SP},
-				GP: {GP},
-				PP: {PP}
-			},
+			currency,
 			updateCp,
 			updateSp,
 			updateGp,
 			updatePp
-		} = this.props
+		} = this.props; 
 		return(
   <div className="Currency">
     <div className="currencyHeader">
-
-					Money
-				
+		Money
     </div>
     <div className="CP">
-
-					CP - 
-      <input className="CP" value={CP} onChange={updateCp} />
+		CP - 
+      <input className="CP" value={currency.CP} onChange={updateCp} />
     </div>
     <div className="SP">
-
-					SP - 
-      <input className="SP" value={SP} onChange={updateSp} />
+		SP - 
+      <input className="SP" value={currency.SP} onChange={updateSp} />
     </div>
     <div className="GP">
-
-					GP - 
-      <input className="GP" value={GP} onChange={updateGp} />
+		GP - 
+      <input className="GP" value={currency.GP} onChange={updateGp} />
     </div>
     <div className="PP">
-
-					PP - 
-      <input className="PP" value={PP} onChange={updatePp} />
+		PP - 
+      <input className="PP" value={currency.PP} onChange={updatePp} />
     </div>
   </div>
 		)

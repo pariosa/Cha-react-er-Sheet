@@ -6,7 +6,7 @@ z-index:2;
 }
 
 .CharacterSheet { 
-  padding-top:50px;
+  padding-top:60px!important;
   padding:20px;
   margin: 0 auto; 
 } 
@@ -1111,8 +1111,7 @@ margin-right:6px;
   border-right:1px solid #000;
   border-top-left-radius:5px;
   border-top-right-radius:5px;
-
-  width:334px;
+  width:344px;
 }
 .ExperienceTitle{
   min-width:200px;
@@ -1144,5 +1143,62 @@ margin-right:6px;
 .ExperienceInputs > input{
   font-size:20px;
   max-height:40px;
-    text-align:center!important;
+  text-align:center!important;
+}
+
+/* Spell Slot Css */
+.SpellSlots{  
+  width:210px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  text-align:center;
+  border:1px solid #000;
+  display:inline;
+  background-color:#fff;
+  color:#000;
+  font-size:14px;
+  margin-left:10px; 
+  margin-right:5px; 
+}
+.SpellSlotTitle{
+  background-color:#000;
+  color:#fff;
+  font-weight:bold;
+}
+.spellSlotCapsule{
+  font-size:9px;
+  margin-left:-6px;
+}
+.spellSlotCapsule > input{
+  font-size:16px;
+  margin-left:6px;
+}
+.SpellSlotHeader{
+  padding-top:0px;
+  padding-bottom:0px;
+  border-radius:3px;
+  border:1px solid black;
+  margin-left:1px;
+  margin-right:1px;
+  padding-right:3px;
+  padding-left:3px;
+  font-size:9px;
+  max-width:50px;
+  display:inline-block;
+}
+
+
+/* Spell Css */
+.SpellList{
+  width:400px;
+}
+.SpellLevel:hover .addSpellButton{
+  opacity:1;
+}
+.addSpellButton{
+  padding-top:7px!important;
+  padding-left:13px!important;
+  max-height:25px;
+  max-width:25px;
+  opacity:0.3;
 }
