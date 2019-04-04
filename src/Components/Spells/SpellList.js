@@ -37,7 +37,7 @@ class SpellList extends Component {
     } = this.props;
     return (
       <div className="SpellList">
-      Spells 
+        <div className="SpellListHeader">Spells </div>
         {this.spellLevels()}
       </div>
     );

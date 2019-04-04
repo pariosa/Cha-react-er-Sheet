@@ -62,7 +62,7 @@ class SpellLevel extends Component {
     } = this.props;
     return (
       <div className="SpellLevel" level={level}> 
-        {`level -  ${level}`}
+        <div className="LevelHeader">{`level -  ${level}`}</div>
         {this.spells()}
         <button type="button" className="ui small button green addSpellButton" onClick={addSpell}> + </button>
       </div>

@@ -62,8 +62,8 @@ class Spell extends Component {
     return (
       <div className="ui input small Spell" id={id}> 
         <input type="checkbox" checked={isPrepared} onChange={updateSpell} target="isPrepared" />
-        <input type="text" size="30" placeholder="Spell Name" value={title} onChange={updateSpell} target="title" />
-        <textarea type="text" placeholder="Description" value={description} onChange={updateSpell} target="description" /> 
+        <input type="text" size="20" placeholder="Spell Name" value={title} onChange={updateSpell} target="title" />
+        <textarea rows="2" cols="80" type="text" placeholder="Description" value={description} onChange={updateSpell} target="description" /> 
         <input type="text" size="8" placeholder="page #" value={pageReference} onChange={updateSpell} target="pageReference" />
         <input type="school" size="15" placeholder="School" value={school} onChange={updateSpell} target="school"  /> 
         <input type="checkbox" checked={usedSlot0} onChange={updateSpell} target="usedSlot0" />
@@ -75,7 +75,7 @@ class Spell extends Component {
         <input type="checkbox" checked={usedSlot6} onChange={updateSpell} target="usedSlot6" />
         <input type="checkbox" checked={usedSlot7} onChange={updateSpell} target="usedSlot7" />
         <input type="checkbox" checked={usedSlot8} onChange={updateSpell} target="usedSlot8" /> 
-        <button type="button" onClick={removeSpell} className="deleteSpell">x</button>
+        <button type="button" onClick={removeSpell} className="removeSpell">x</button>
       </div>
     );
   }

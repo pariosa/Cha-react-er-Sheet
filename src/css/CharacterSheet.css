@@ -1190,7 +1190,6 @@ margin-right:6px;
 
 /* Spell Css */
 .SpellList{
-  width:400px;
 }
 .SpellLevel:hover .addSpellButton{
   opacity:1;
@@ -1201,4 +1200,38 @@ margin-right:6px;
   max-height:25px;
   max-width:25px;
   opacity:0.3;
+}
+.SpellList{
+  border:1px solid #000;
+  width:850px;
+  max-width:850px;
+  min-width:850px;
+}
+.Spell > input[type='checkbox']{
+  display:block;
+}
+.Spell{
+  max-width:840px;
+}
+.SpellListHeader{
+  text-align:center;
+  background-color:#000;
+  color:#fff;
+  font-size:16px;
+}
+.LevelHeader{
+  text-align:center;
+  color:#999;
+}
+.Spell:hover .removeSpell{
+  opacity:1;
+}
+.removeSpell{
+  opacity:0.3;
+  padding-left:6px;
+  border-radius:6px;
+  color:white;
+  background-color: #f44336;
+  max-height:20px;
+  max-width:20px;
 }
