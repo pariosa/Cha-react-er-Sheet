@@ -24,6 +24,12 @@ const mapDispatchToProps = {
 const mapStateToProps = state => {
   return {
     gear: state.gear.gear,
+    lightLoad: state.gear.lightLoad,
+    mediumLoad: state.gear.mediumLoad,
+    heavyLoad: state.gear.heavyLoad,
+    liftOverHead: state.gear.liftOverHead,
+    liftOffGround: state.gear.liftOffGround,
+    dragOrPush: state.gear.dragOrPush
   };
 };
 
@@ -106,15 +112,15 @@ class Gears extends Component {
           <div className="gearSubHeader2">
             <div className="GearSubHeader2 ui small input">
               Lift Over Head
-              <input className="liftOverHead" size="3" value={liftOverHead} onChange={liftOverHead} />
+              <input className="liftOverHead" size="3" value={liftOverHead} onChange={updateLiftOverHead} />
             </div>
             <div className="GearSubHeader2 ui small input">
               Lift Off Ground
-              <input className="liftOffGround" size="3" value={liftOffGround} onChange={liftOffGround} />
+              <input className="liftOffGround" size="3" value={liftOffGround} onChange={updateLiftOffGround} />
             </div>
             <div className="GearSubHeader2 ui small input">
                 Drag or Push
-              <input className="dragOrPush" size="3" value={dragOrPush} onChange={dragOrPush} />
+              <input className="dragOrPush" size="3" value={dragOrPush} onChange={updateDragOrPush} />
             </div>
           </div>
         </div>

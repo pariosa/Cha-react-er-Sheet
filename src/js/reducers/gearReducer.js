@@ -20,12 +20,12 @@ const initialState = {
 			weight:1
 		}
 	],
-	lightLoad:0,
-	mediumLoad:0,
-	heavyLoad:0,
-	liftOverHead:0,
-	liftOffGround:0,
-	dragOrPush:0
+	lightLoad:"0",
+	mediumLoad:"0",
+	heavyLoad:"0",
+	liftOverHead:"0",
+	liftOffGround:"0",
+	dragOrPush:"0"
 }
 
 const gearReducer = (state = initialState, action) =>{
@@ -100,8 +100,8 @@ const gearReducer = (state = initialState, action) =>{
 	    	state.gear.filter(gear => gear.id !== parseInt(action.payload.nativeEvent.path[2].id))
 	    	 
 	    } 
-	case  LOAD_ENTIRE_CHARACTER: 
-      return {... action.payload.gear}
+	case  LOAD_ENTIRE_CHARACTER:  
+        return {... action.payload.gear}
 	default:
 		return state;
 	}

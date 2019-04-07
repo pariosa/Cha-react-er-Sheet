@@ -79,6 +79,7 @@ class CharacterSheet extends Component {
             <Speed />
             <Skills /> 
             <Languages />
+            <Experience />
           </div> 
         </div>
         <div className="ui stackable grid row twelve wide">
@@ -87,9 +88,9 @@ class CharacterSheet extends Component {
           <Currency />
           <Abilities />
           <Feats />
-          <Experience />
           <SpellSlots />
           <SpellList />
+
         </div>
         { sideDrawer }   
       </div>

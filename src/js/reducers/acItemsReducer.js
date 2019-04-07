@@ -186,6 +186,8 @@ const acItemReducer = (state = initialState, action) => {
     case REMOVE_ACITEM: 
     return state.filter(weapon => weapon.id !== parseInt(action.payload.nativeEvent.path[2].id))
       break;
+    case LOAD_ENTIRE_CHARACTER:
+      return [... action.payload.acItems]
   	default:
   	 return state;
   }
