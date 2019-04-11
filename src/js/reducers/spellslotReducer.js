@@ -3,7 +3,8 @@ import {
  	UPDATE_SPELL_SAVE_DC,
 	UPDATE_SPELLS_PER_DAY,
 	UPDATE_BONUS_SPELLS,
-	LOAD_ENTIRE_CHARACTER
+	LOAD_ENTIRE_CHARACTER,
+	NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = [
@@ -158,6 +159,9 @@ const spellSlotReducer = (state = initialState, action) => {
               : item
         )
 	  ];
+	  
+    case NEW_CHARACTER:
+      return initialState;
     case LOAD_ENTIRE_CHARACTER:
      return [...action.payload.spellslots]
     default:

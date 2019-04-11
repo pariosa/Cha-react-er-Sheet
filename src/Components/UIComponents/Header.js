@@ -5,7 +5,7 @@ import LogoutButton from '../Buttons/LogoutButton';
 import RegisterButton from '../Buttons/RegisterButton';
 import DrawerToggle from './DrawerToggle';
 import SaveCharacterButton from '../Buttons/SaveCharacterButton';
-
+import NewCharacterButton from "../Buttons/NewCharacterButton";
 const mapStateToProps = ( state ) => {
 	return {
 		auth: state.firebase.auth
@@ -21,6 +21,7 @@ class Header extends Component {
 	render(){
   const {auth} = this.props;
 	const link1 = auth.uid ?  <SaveCharacterButton /> : <LoginButton /> ;
+  const linkNew = <NewCharacterButton />;
 	const link2 = auth.uid ? <LogoutButton /> :  <RegisterButton />;
 	const drawerToggle = auth.uid ? <DrawerToggle /> : null;
 		return(
@@ -35,6 +36,7 @@ react
 				  	
       </a> 
       {drawerToggle}
+      {linkNew}
       {link1}
       {link2}
     </div> 

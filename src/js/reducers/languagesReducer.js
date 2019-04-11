@@ -1,7 +1,8 @@
 import {
   UPDATE_CONDITIONAL_MODIFIERS,
   UPDATE_LANGUAGES,
-  LOAD_ENTIRE_CHARACTER
+  LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = {

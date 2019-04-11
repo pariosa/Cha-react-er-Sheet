@@ -1,3 +1,6 @@
+import {getCharactersThunk, getCharacters} from './getCharacterListActions';
+import { reduxFirestore, getFirestore } from 'redux-firestore';
+
 export const login = (credentials) => {
 	return (dispatch, getState, {getFirebase}) => { 
 		const firebase = getFirebase();
@@ -5,9 +8,21 @@ export const login = (credentials) => {
 			credentials.email,
 			credentials.password
 		).then(()=>{
-			dispatch({type: 'LOGIN_SUCCESS'});
+			const Characters = [];  
+			const uid = firebase.auth().currentUser ? firebase.auth().currentUser.uid : "";
+			if(uid !== ""){
+				getFirestore().collection(`characters`).where('owner_uid','==',uid).get().then((querySnapshot) => {
+				    querySnapshot.forEach((doc) => {
+				    	Characters.push(doc.data()); 
+				    }); 
+				    dispatch(getCharacters(Characters))
+				});
+			}
+			dispatch({type: 'LOGIN_SUCCESS',
+		    payload:Characters
+			});  
 			dispatch({type: 'TOGGLE_LOGIN_MODAL'});
-		}).catch((err)=>{
+		}).catch((err)=>{ 
 			dispatch({type: 'LOGIN_ERROR'}, err);
 		});
 	}
@@ -17,7 +32,8 @@ export const logout = () => {
 	return (dispatch, getState, {getFirebase}) => {
 		const firebase  = getFirebase();
 		firebase.auth().signOut().then(() => {
-			dispatch({type: 'LOGOUT_SUCCESS'});
+			dispatch({type: 'LOGOUT_SUCCESS'});	  
+
 
 		});
 	}

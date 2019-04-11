@@ -41,6 +41,16 @@ class CharacterSheet extends Component {
     super(props);
     this.props = props;
   }
+
+  getTitle(){
+    if(this.props.name !== "" && this.props.homeland === ""){
+      return this.props.name;
+    }else if(this.props.name !== "" && this.props.homeland !== ""){
+      return `${this.props.name} of ${this.props.homeland}`;
+    }else{
+      return `Enter your character's name!`;
+    }
+  }
  
   render() {
     const{
@@ -58,9 +68,7 @@ class CharacterSheet extends Component {
           <LoginModal show={loginModalVisible} />
           <RegisterModal show={registerModalVisible} />
           <h2 className="characterTitle">
-            {`
-              ${name} of ${homeland}
-            `}
+            {this.getTitle()}
           </h2>
           <CharacterInfo />   
           <div className="ui stackable grid column eight wide">  

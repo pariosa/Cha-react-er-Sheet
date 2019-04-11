@@ -8,11 +8,12 @@ import {
   UPDATE_TOUCH_ARMOR_CLASS,
   UPDATE_FLAT_FOOTED_ARMOR_CLASS,
   UPDATE_AC_MODIFIERS_FIELD,
-  LOAD_ENTIRE_CHARACTER
+  LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = {
-  armorBonus:"3",
+  armorBonus:"0",
   shieldBonus:"0",
   sizeModifier:"0",
   naturalArmor:"0",
@@ -44,6 +45,8 @@ const armorReducer = (state = initialState, action) => {
       return {...state, acModifiersField: action.payload.target.value} 
     case  LOAD_ENTIRE_CHARACTER:
       return {... action.payload.armor}
+    case NEW_CHARACTER:
+      return initialState;
     default:
       return state;
   }

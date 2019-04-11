@@ -21,15 +21,17 @@ import experienceReducer from "./experienceReducer";
 import featsReducer from "./featsReducer";
 import abilitiesReducer from "./abilitiesReducer";
 import spellsReducer from "./spellsReducer";
-import spellslotsReducer from "./spellslotReducer";
+import spellslotsReducer from "./spellslotReducer"; 
+import characterListReducer from "../actions/getCharacterListActions";
 
 const reducers = {
+  characterList: characterListReducer,
   acItems:acItemsReducer,
   loadCharacter: loadCharacterReducer,
   character: characterReducer, 
   skills: skillReducer,
   weapons: weaponReducer,
-  languages: languagesReducer,
+  languages: languagesReducer, 
   speed: speedReducer,
   auth: authReducer,
   armor: armorReducer,

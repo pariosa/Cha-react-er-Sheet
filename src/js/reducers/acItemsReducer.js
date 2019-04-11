@@ -8,7 +8,8 @@ import {
   UPDATE_ACITEM_PROPERTIES,
   LOAD_ENTIRE_CHARACTER,
   ADD_ACITEM,
-  REMOVE_ACITEM
+  REMOVE_ACITEM,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState =[
@@ -188,6 +189,8 @@ const acItemReducer = (state = initialState, action) => {
       break;
     case LOAD_ENTIRE_CHARACTER:
       return [... action.payload.acItems]
+    case NEW_CHARACTER:
+      return initialState;
   	default:
   	 return state;
   }

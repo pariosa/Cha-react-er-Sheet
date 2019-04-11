@@ -18,10 +18,14 @@ function Layout (){
     </Provider>
   ); 
 }
+store.firebaseAuthIsReady.then(()=>{
 
-ReactDOM.render(
-  React.createElement(Layout, null),
-  document.getElementById("app")
-);
+  ReactDOM.render(
+    React.createElement(Layout, null),
+    document.getElementById("app")
+  );
+    
+
+});
 
 module.hot.accept();

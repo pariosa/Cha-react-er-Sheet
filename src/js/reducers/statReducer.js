@@ -1,7 +1,8 @@
 import {
   UPDATE_STAT,
   UPDATE_TEMP_STAT,
-  LOAD_ENTIRE_CHARACTER
+  LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
  
 const initialState =  
@@ -285,6 +286,9 @@ const statReducer = (state = initialState, action) => {
                   chaMod: action.payload.stats.stats.chaMod
                 }
       , statsTemporary: action.payload.stats.statsTemporary}
+
+    case NEW_CHARACTER:
+      return initialState;
     default:
       return state;
      

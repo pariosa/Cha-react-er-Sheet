@@ -9,15 +9,16 @@ UPDATE_LIFT_OFF_GROUND,
 UPDATE_DRAG_OR_PUSH,
 ADD_GEAR,
 REMOVE_GEAR,
-LOAD_ENTIRE_CHARACTER
+LOAD_ENTIRE_CHARACTER,
+NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = {
 	gear:[
 		{	
 			id:0,
-			name:"torch x1",
-			weight:1
+			name:"",
+			weight:0
 		}
 	],
 	lightLoad:"0",
@@ -99,7 +100,9 @@ const gearReducer = (state = initialState, action) =>{
 	    return {...state, gear:  
 	    	state.gear.filter(gear => gear.id !== parseInt(action.payload.nativeEvent.path[2].id))
 	    	 
-	    } 
+	    }
+    case NEW_CHARACTER:
+      return initialState;
 	case  LOAD_ENTIRE_CHARACTER:  
         return {... action.payload.gear}
 	default:

@@ -3,7 +3,8 @@ import {
  UPDATE_SP,
  UPDATE_GP,
  UPDATE_PP,
- LOAD_ENTIRE_CHARACTER
+ LOAD_ENTIRE_CHARACTER,
+ NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = {
@@ -30,6 +31,8 @@ const currencyReducer = (state = initialState, action) => {
       CP:action.payload.currency.CP,
       SP:action.payload.currency.SP
     }
+  case NEW_CHARACTER:
+      return initialState;
   default:
   	return state;
 	}

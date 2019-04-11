@@ -8,29 +8,20 @@ import {
   UPDATE_WEAPON_DAMAGE,
   LOAD_ENTIRE_CHARACTER,
   ADD_WEAPON,
-  REMOVE_WEAPON
+  REMOVE_WEAPON,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState =[
     {
       id:0,
-      name:'short sword',
-      attackBonus:1,
-      critical:20,
-      type:'slashing',
-      range:'close',
-      ammunition:'none',
-      damage:'1d6'
-    },
-    {
-      id:1,
-      name:'short bow',
-      attackBonus:1,
-      critical:20,
-      type:'piercing',
-      range:'50ft',
-      ammunition:'24',
-      damage:'1d6'
+      name:'',
+      attackBonus:0,
+      critical:0,
+      type:'',
+      range:'',
+      ammunition:'',
+      damage:''
     }
 ]; 
 
@@ -199,6 +190,9 @@ const weaponReducer = (state = initialState, action) => {
     case REMOVE_WEAPON: 
     return state.filter(weapon => weapon.id !== parseInt(action.payload.nativeEvent.path[2].id))
       break;
+      
+    case NEW_CHARACTER:
+      return initialState;
   	default:
   	 return state;
   }

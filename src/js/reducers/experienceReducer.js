@@ -2,7 +2,8 @@
 import {
   UPDATE_EXP,
   UPDATE_EXP_MAX, 
-  LOAD_ENTIRE_CHARACTER
+  LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = {
@@ -18,6 +19,8 @@ const experienceReducer = (state = initialState, action) => {
       return {...state, maxExperience: action.payload.target.value}
     case LOAD_ENTIRE_CHARACTER: 
       return {...action.payload.experience}
+    case NEW_CHARACTER:
+      return initialState;
     default:
       return state;
   }

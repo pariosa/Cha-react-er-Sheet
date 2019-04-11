@@ -1,12 +1,18 @@
+import {getCharactersThunk, getCharacters} from './getCharacterListActions'; 
+
 import {
-	SAVE_CHARACTER_SUCCESS
+	SAVE_CHARACTER_SUCCESS,
+	NEW_CHARACTER
 } from '../constants/actionTypes';
 
 export const saveCharacter = (character) => {
 	return(dispatch, getState, {getFirebase, getFirestore}) => {
 		const firebase = getFirebase();
-		const firestore = getFirestore();
-		return firestore.collection('characters').doc(getState().character.name).set({
+		const firestore = getFirestore(); 
+		dispatch({type:SAVE_CHARACTER_SUCCESS});
+
+		return firestore.collection('characters').doc(`${firebase.auth().currentUser.uid}-${getState().character.name}`).set({
+			owner_uid:firebase.auth().currentUser.uid,
 			armor:getState().armor,
 			character:getState().character,
 			health:getState().health,
@@ -24,7 +30,22 @@ export const saveCharacter = (character) => {
 			spells:getState().spells,
 			spellslots:getState().spellslots,
 			acItems:getState().acItems
+		}).then(()=>{
+		const Characters = [];  
+			const uid = firebase.auth().currentUser ? firebase.auth().currentUser.uid : "";
+			if(uid !== ""){
+				getFirestore().collection(`characters`).where('owner_uid','==',uid).get().then((querySnapshot) => {
+				    querySnapshot.forEach((doc) => {
+				    	Characters.push(doc.data()); 
+				    }); 
+				    dispatch(getCharacters(Characters))
+				});
+			}
 		});
-		dispatch({type:SAVE_CHARACTER_SUCCESS});
 	}
 } 
+ 
+
+ export const newCharacter = (character) =>({
+ 		type:NEW_CHARACTER
+ })

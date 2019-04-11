@@ -4,6 +4,7 @@ import {
   UPDATE_MISC_SAVE_MODIFIER,
   UPDATE_TEMP_SAVE_MODIFIER,
   LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = [
@@ -11,7 +12,7 @@ const initialState = [
   	id:0,
   	save:"Fortitude",
   	stat:"constitution",
-  	base:"1",
+  	base:"0",
   	magicMod:"0",
   	miscMod:"0",
   	tempMod:"0",
@@ -20,7 +21,7 @@ const initialState = [
   	id:1,
   	save:"Reflex",
   	stat:"dexterity",
-  	base:1,
+  	base:0,
   	magicMod:"0",
   	miscMod:"0",
   	tempMod:"0",
@@ -29,7 +30,7 @@ const initialState = [
   	id:2,
   	save:"Will",
   	stat:"wisdom",
-  	base:1,
+  	base:0,
   	magicMod:"0",
   	miscMod:"0",
   	tempMod:"0",
@@ -119,6 +120,8 @@ const savesReducer = (state = initialState, action) => {
         ) 
       ]
       break;
+  case NEW_CHARACTER:
+      return initialState;
   case  LOAD_ENTIRE_CHARACTER:
       return [... action.payload.saves]
  	default:

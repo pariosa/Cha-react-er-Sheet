@@ -3,22 +3,23 @@ import {
   UPDATE_SKILL_RANK,
   UPDATE_SKILL_DESCRIPTION,
   UPDATE_SKILL_MISC_MOD,
-  LOAD_ENTIRE_CHARACTER
+  LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
  
 const initialState = 
   [
     {
       id: 0,
-      isClass: true,
+      isClass: false,
       title: "Acrobatics",
       stat: "dexterity",
-      ranks: 2,
-      miscMod: 1
+      ranks: 0,
+      miscMod: 0
     },
     {
       id: 1,
-      isClass: true,
+      isClass: false,
       title: "Appraise",
       stat: "intelligence",
       ranks: 0,
@@ -26,7 +27,7 @@ const initialState =
     },
     {
       id: 2,
-      isClass: true,
+      isClass: false,
       title: "Bluff",
       stat: "charisma",
       ranks: 0,
@@ -47,7 +48,7 @@ const initialState =
       stat: "intelligence",
       ranks: 0,
       miscMod: 0,
-      skillDescription: "weapon"
+      skillDescription: ""
     },
     {
       id: 5,
@@ -56,7 +57,7 @@ const initialState =
       stat: "intelligence",
       ranks: 0,
       miscMod: 0,
-      skillDescription: "ammunition"
+      skillDescription: ""
     },
     {
       id: 6,
@@ -236,7 +237,7 @@ const initialState =
       stat: "wisdom",
       ranks: 0,
       miscMod: 0,
-      skillDescription: "hunting"
+      skillDescription: ""
     },
     {
       id: 28,
@@ -245,7 +246,7 @@ const initialState =
       stat: "wisdom",
       ranks: 0,
       miscMod: 0,
-      skillDescription: "fishing"
+      skillDescription: ""
     },
     {
       id: 29,
@@ -388,6 +389,9 @@ const skillReducer = (state = initialState, action) => {
               : item
         )
       ];
+
+    case NEW_CHARACTER:
+      return initialState;
     case  LOAD_ENTIRE_CHARACTER:
       return [... action.payload.skills]
     default:

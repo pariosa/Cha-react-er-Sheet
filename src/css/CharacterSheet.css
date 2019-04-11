@@ -579,8 +579,9 @@ margin-right:6px;
     background-color: white;
     padding: 32px 16px;
     box-sizing: border-box;
+    border-right:3px solid #78ff;
     transition: transform 0.3s ease-out;
-    background-color:#f7e5ff;
+    background-color:#ffffff;
 }
 .NavigationDrawer > NavigationItems > NavigationItem {
     display:block;
@@ -1234,4 +1235,12 @@ margin-right:6px;
   background-color: #f44336;
   max-height:20px;
   max-width:20px;
+}
+
+
+.character-list{
+  cursor:pointer;
+  font-size:14px;
+  margin:10px;
+  padding:2px;
 }

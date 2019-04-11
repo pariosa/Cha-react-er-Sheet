@@ -4,7 +4,8 @@ import {
   UPDATE_NONLETHAL,
   UPDATE_DR,
   UPDATE_INITIATIVE_MOD,
-  LOAD_ENTIRE_CHARACTER
+  LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = {
@@ -29,6 +30,8 @@ const healthReducer = (state = initialState, action) => {
       return {...state, initiativeModifier: action.payload.target.value};
     case LOAD_ENTIRE_CHARACTER:
      return {...action.payload.health}
+    case NEW_CHARACTER:
+      return initialState;
     default:
     	return state;
   	}

@@ -9,19 +9,20 @@ import {
   UPDATE_CLIMB_SPEED,
   UPDATE_BURROW_SPEED,
   UPDATE_SPEED_TEMP_MOD,
-  LOAD_ENTIRE_CHARACTER
+  LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState = {
-  baseSpeed:"25",
-  baseSpeedArmored:"20",
-  baseSpeedSq:"10",
-  baseSpeedArmoredSq:"8",
-  flySpeed:"0",
-  flyManeuverability:"none",
-  swimSpeed:"15",
-  climbSpeed:"10",
-  burrowSpeed:"5",
+  baseSpeed:"",
+  baseSpeedArmored:"",
+  baseSpeedSq:"",
+  baseSpeedArmoredSq:"",
+  flySpeed:"",
+  flyManeuverability:"",
+  swimSpeed:"",
+  climbSpeed:"",
+  burrowSpeed:"",
   tempMod:"None"
 }
 const speedReducer = (state = initialState, action) => { 

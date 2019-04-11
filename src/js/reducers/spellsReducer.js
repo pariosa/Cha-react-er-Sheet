@@ -2,7 +2,8 @@ import{
 	ADD_SPELL,
 	REMOVE_SPELL,
 	UPDATE_SPELL,
-	LOAD_ENTIRE_CHARACTER
+	LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 const initialState=[
@@ -109,6 +110,9 @@ const spellsReducer = (state = initialState, action) => {
           }
         ) 
       ]; 
+      
+    case NEW_CHARACTER:
+      return initialState;
     case LOAD_ENTIRE_CHARACTER:
      return [...action.payload.spells]
     default:

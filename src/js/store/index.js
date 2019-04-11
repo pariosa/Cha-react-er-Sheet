@@ -22,6 +22,5 @@ const store = createStore(
 		reactReduxFirebase(firebase, rrfConfig)
 	)
 )
- 
 
 export default store;

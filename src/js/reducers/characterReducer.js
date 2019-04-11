@@ -19,29 +19,30 @@ import {
   UPDATE_CMB_SIZE_MODIFIER,
   UPDATE_CMB_MODIFIERS_FIELD,
   UPDATE_CMD_SIZE_MODIFIER,
-  LOAD_ENTIRE_CHARACTER
+  LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 } from "../constants/actionTypes";
 
 export const initialState = { 
-    baseAttackBonus:3,
+    baseAttackBonus:0,
     spellResistance:"none", 
-    name: "Eggy",
-    alignment: "N/E",
-    playerName: "Peter a.",
-    level: 7,
-    diety: "Nethys",
-    homeland: "the Skillet",
-    race: "egg",
-    playerClass: "cleric",
-    size: "s",
-    gender: "F",
-    age: 28, 
-    height: "2'1",
-    weight: "1lbs",
-    hair: "eggshell",
-    eyes: "eggshell",
+    name: "",
+    alignment: "",
+    playerName: "",
+    level: 1,
+    diety: "",
+    homeland: "",
+    race: "",
+    playerClass: "",
+    size: "",
+    gender: "",
+    age: "", 
+    height: "",
+    weight: "",
+    hair: "",
+    eyes: "",
     cmbSizeModifier:'0',
-    cmbModifiersField:'',
+    cmbModifiersField:'0',
     cmdSizeModifier:'0',
 };
 
@@ -88,7 +89,9 @@ const characterReducer = (state = initialState, action) => {
     case UPDATE_SPELL_RESISTANCE:
       return {...state, spellResistance: action.payload.target.value};  
     case  LOAD_ENTIRE_CHARACTER:
-      return {... action.payload.character}  
+      return {... action.payload.character}
+    case NEW_CHARACTER:
+      return initialState;
     default:
       return state;
   }

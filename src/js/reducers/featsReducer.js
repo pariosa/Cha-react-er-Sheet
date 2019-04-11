@@ -2,7 +2,8 @@ import{
 	ADD_FEAT,
 	REMOVE_FEAT,
 	UPDATE_FEAT,
-	LOAD_ENTIRE_CHARACTER
+	LOAD_ENTIRE_CHARACTER,
+  NEW_CHARACTER
 }from "../constants/actionTypes";
 
 const initialState = [ 
@@ -46,6 +47,8 @@ const featsReducer = (state = initialState, action) => {
       break;    
     case LOAD_ENTIRE_CHARACTER:
      return [...action.payload.feats]
+    case NEW_CHARACTER:
+      return initialState;
     default:
     	return state;
   	}
