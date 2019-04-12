@@ -49,6 +49,8 @@ const speedReducer = (state = initialState, action) => {
       return {...state, tempMod: action.payload.target.value};
     case  LOAD_ENTIRE_CHARACTER:
       return {... action.payload.speed}
+    case  NEW_CHARACTER:
+      return initialState;
   	default: 
   	 return state;
   }

@@ -9,10 +9,10 @@ import {
 } from "../constants/actionTypes";
 
 const initialState = {
-  current: 24,
-  max: 35,
-  DR: "4 - fire",
-  nonLethal: "none",
+  current: 0,
+  max: 0,
+  DR: "",
+  nonLethal: "",
   initiativeModifier:0
 }
 

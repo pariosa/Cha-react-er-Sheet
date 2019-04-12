@@ -96,7 +96,7 @@ class AcItems extends Component {
          key={item.id}
          id={item.id}
          name={item.name}
-         bonus={item.attackBonus} 
+         bonus={item.bonus} 
          type={item.type}
          checkPenalty={item.range}
          spellFailure={item.ammunition}
