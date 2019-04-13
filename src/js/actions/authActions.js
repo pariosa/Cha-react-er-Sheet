@@ -15,14 +15,15 @@ export const login = (credentials) => {
 				    querySnapshot.forEach((doc) => {
 				    	Characters.push(doc.data()); 
 				    }); 
-				    dispatch(getCharacters(Characters))
+				    dispatch(getCharacters(Characters)); 
 				});
 			}
 			dispatch({type: 'LOGIN_SUCCESS',
 		    payload:Characters
 			});  
-			dispatch({type: 'TOGGLE_LOGIN_MODAL'});
-		}).catch((err)=>{ 
+
+			dispatch({type: 'TOGGLE_LOGIN_MODAL'}); 
+		}).catch((err)=>{  
 			dispatch({type: 'LOGIN_ERROR'}, err);
 		});
 	}

@@ -22,7 +22,7 @@ import featsReducer from "./featsReducer";
 import abilitiesReducer from "./abilitiesReducer";
 import spellsReducer from "./spellsReducer";
 import spellslotsReducer from "./spellslotReducer"; 
-import characterListReducer from "../actions/getCharacterListActions";
+import characterListReducer from "./characterListReducer";
 
 const reducers = {
   characterList: characterListReducer,
