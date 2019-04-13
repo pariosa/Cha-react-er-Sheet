@@ -5,7 +5,7 @@ import {
 	updateSpellDc,
 	updateSpellsPerDay,
 	updateBonusSpells 
-} from "../../js/actions/spellSlotsActions";
+} from "../../js/actions/spellslotsActions";
 
 const mapStateToProps = (state, ownProps) => { 
   return {

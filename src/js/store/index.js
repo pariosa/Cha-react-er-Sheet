@@ -3,7 +3,7 @@ import firebase from 'firebase';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
-import rootReducer from "../reducers/RootReducer"; 
+import rootReducer from "../reducers/rootReducer"; 
 import config from '../firebase/config'
 
 const rrfConfig = {
