@@ -8,7 +8,7 @@ import {
 } from "../../js/actions/skillActions";
 const mapStateToProps = (state, ownProps) => {
   if(state.skills[ownProps.id] !== undefined){
-    console.table(state.skills[ownProps.id])
+    //console.table(state.skills[ownProps.id])
       return {
         isClassSkill: state.skills[ownProps.id].isClass,
         title: state.skills[ownProps.id].title,
