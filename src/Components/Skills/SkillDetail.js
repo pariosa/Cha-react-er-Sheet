@@ -6,20 +6,17 @@ import {
   updateSkillMiscMod,
   updateSkillIsClass
 } from "../../js/actions/skillActions";
-const mapStateToProps = (state, ownProps) => {
-  if(state.skills[ownProps.id] !== undefined){
-    //console.table(state.skills[ownProps.id])
-      return {
-        isClassSkill: state.skills[ownProps.id].isClass,
-        title: state.skills[ownProps.id].title,
-        stat: state.skills[ownProps.id].stat,
-        ranks: state.skills[ownProps.id].ranks,
-        miscMod: state.skills[ownProps.id].miscMod,
-        skillDescription: state.skills[ownProps.id].skillDescription,
-        stats: state.stat.stats,
-        id: state.skills[ownProps.id].id
-      };
-  }
+const mapStateToProps = (state, ownProps) => { 
+  return {
+    isClassSkill: state.skills[ownProps.id].isClass,
+    title: state.skills[ownProps.id].title,
+    stat: state.skills[ownProps.id].stat,
+    ranks: state.skills[ownProps.id].ranks,
+    miscMod: state.skills[ownProps.id].miscMod,
+    skillDescription: state.skills[ownProps.id].skillDescription,
+    stats: state.stat.stats,
+    id: state.skills[ownProps.id].id
+  }; 
 };
 const mapDispatchToProps = {
     updateSkillRank,
