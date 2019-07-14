@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Skill from "./SkillDetail";
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { 
   return {
     skills: state.skills,
     stats: state.stats
@@ -21,6 +21,7 @@ class Skills extends Component {
       stats
     } = this.props;
     const skillsArr = []; 
+
     skills.forEach(skill  => {
       skillsArr.push(
         <Skill 
@@ -35,6 +36,16 @@ class Skills extends Component {
         />
       );
     });
+    skillsArr.sort((a, b)=>{
+    var nameA=a.props.title.toLowerCase(), nameB=b.props.title.toLowerCase();
+    if (nameA < nameB){
+      return -1;
+    }
+    if (nameA > nameB){
+      return 1;
+    }
+    return 0; 
+    }); 
     return <div>{skillsArr}</div>;
   };
 

@@ -7,16 +7,19 @@ import {
   updateSkillIsClass
 } from "../../js/actions/skillActions";
 const mapStateToProps = (state, ownProps) => {
-  return {
-    isClassSkill: state.skills[ownProps.id].isClass,
-    title: state.skills[ownProps.id].title,
-    stat: state.skills[ownProps.id].stat,
-    ranks: state.skills[ownProps.id].ranks,
-    miscMod: state.skills[ownProps.id].miscMod,
-    skillDescription: state.skills[ownProps.id].skillDescription,
-    stats: state.stat.stats,
-    id: state.skills[ownProps.id].id
-  };
+  if(state.skills[ownProps.id] !== undefined){
+    console.table(state.skills[ownProps.id])
+      return {
+        isClassSkill: state.skills[ownProps.id].isClass,
+        title: state.skills[ownProps.id].title,
+        stat: state.skills[ownProps.id].stat,
+        ranks: state.skills[ownProps.id].ranks,
+        miscMod: state.skills[ownProps.id].miscMod,
+        skillDescription: state.skills[ownProps.id].skillDescription,
+        stats: state.stat.stats,
+        id: state.skills[ownProps.id].id
+      };
+  }
 };
 const mapDispatchToProps = {
     updateSkillRank,
@@ -38,22 +41,22 @@ class Skill extends Component {
     let statAttr;
     switch (stat) {
       case "dexterity":
-        statAttr = stats.dexMod;
+          statAttr = stats.dexMod;
         break;
       case "strength":
-        statAttr = stats.strMod;
+          statAttr = stats.strMod;
         break;
       case "intelligence":
-        statAttr = stats.intMod;
+          statAttr = stats.intMod;
         break;
-      case "wisdom":
-        statAttr = stats.wisMod;
+      case "wisdom": 
+          statAttr = stats.wisMod; 
         break;
       case "constitution":
-        statAttr = stats.conMod;
+          statAttr = stats.conMod;
         break;
-      case "charisma":
-        statAttr = stats.chaMod;
+      case "charisma": 
+          statAttr = stats.chaMod; 
         break;
       default:
         break;
@@ -83,8 +86,8 @@ class Skill extends Component {
       case "constitution":
         statAttr = stats.conMod;
         break;
-      case "charisma":
-        statAttr = stats.chaMod;
+      case "charisma": 
+          statAttr = stats.chaMod;
         break;
       default:
         break;

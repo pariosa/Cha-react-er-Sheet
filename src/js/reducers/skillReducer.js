@@ -111,7 +111,7 @@ const initialState =
     {
       id: 12,
       isClass: false,
-      title: "Intimidate",
+      title: "Handle Animal",
       stat: "charisma",
       ranks: 0,
       miscMod: 0
@@ -119,23 +119,23 @@ const initialState =
     {
       id: 13,
       isClass: false,
-      title: "Knowledge (Arcana)",
-      stat: "intelligence",
+      title: "Heal",
+      stat: "wisdom",
       ranks: 0,
       miscMod: 0
     },
     {
       id: 14,
       isClass: false,
-      title: "Knowledge (Dungeonerering)",
-      stat: "intelligence",
+      title: "Intimidate",
+      stat: "charisma",
       ranks: 0,
       miscMod: 0
     },
     {
       id: 15,
       isClass: false,
-      title: "Knowledge (Engineering)",
+      title: "Knowledge (Arcana)",
       stat: "intelligence",
       ranks: 0,
       miscMod: 0
@@ -143,7 +143,7 @@ const initialState =
     {
       id: 16,
       isClass: false,
-      title: "Knowledge (Geography)",
+      title: "Knowledge (Dungeonerering)",
       stat: "intelligence",
       ranks: 0,
       miscMod: 0
@@ -151,7 +151,7 @@ const initialState =
     {
       id: 17,
       isClass: false,
-      title: "Knowledge (History)",
+      title: "Knowledge (Engineering)",
       stat: "intelligence",
       ranks: 0,
       miscMod: 0
@@ -159,7 +159,7 @@ const initialState =
     {
       id: 18,
       isClass: false,
-      title: "Knowledge (Local)",
+      title: "Knowledge (Geography)",
       stat: "intelligence",
       ranks: 0,
       miscMod: 0
@@ -167,7 +167,7 @@ const initialState =
     {
       id: 19,
       isClass: false,
-      title: "Knowledge (Nature)",
+      title: "Knowledge (History)",
       stat: "intelligence",
       ranks: 0,
       miscMod: 0
@@ -175,7 +175,7 @@ const initialState =
     {
       id: 20,
       isClass: false,
-      title: "Knowledge (Nobility)",
+      title: "Knowledge (Local)",
       stat: "intelligence",
       ranks: 0,
       miscMod: 0
@@ -183,7 +183,7 @@ const initialState =
     {
       id: 21,
       isClass: false,
-      title: "Knowledge (Planes)",
+      title: "Knowledge (Nature)",
       stat: "intelligence",
       ranks: 0,
       miscMod: 0
@@ -191,7 +191,7 @@ const initialState =
     {
       id: 22,
       isClass: false,
-      title: "Knowledge (Religion)",
+      title: "Knowledge (Nobility)",
       stat: "intelligence",
       ranks: 0,
       miscMod: 0
@@ -199,7 +199,7 @@ const initialState =
     {
       id: 23,
       isClass: false,
-      title: "Linguistics",
+      title: "Knowledge (Planes)",
       stat: "intelligence",
       ranks: 0,
       miscMod: 0
@@ -207,34 +207,32 @@ const initialState =
     {
       id: 24,
       isClass: false,
-      title: "Perception",
-      stat: "wisdom",
+      title: "Knowledge (Religion)",
+      stat: "intelligence",
       ranks: 0,
       miscMod: 0
     },
     {
       id: 25,
       isClass: false,
-      title: "Perform",
-      stat: "charisma",
+      title: "Linguistics",
+      stat: "intelligence",
       ranks: 0,
-      miscMod: 0,
-      skillDescription: ""
+      miscMod: 0
     },
     {
       id: 26,
       isClass: false,
-      title: "Perform",
-      stat: "charisma",
+      title: "Perception",
+      stat: "wisdom",
       ranks: 0,
-      miscMod: 0,
-      skillDescription: ""
+      miscMod: 0
     },
     {
       id: 27,
       isClass: false,
-      title: "Profession",
-      stat: "wisdom",
+      title: "Perform",
+      stat: "charisma",
       ranks: 0,
       miscMod: 0,
       skillDescription: ""
@@ -242,8 +240,8 @@ const initialState =
     {
       id: 28,
       isClass: false,
-      title: "Profession",
-      stat: "wisdom",
+      title: "Perform",
+      stat: "charisma",
       ranks: 0,
       miscMod: 0,
       skillDescription: ""
@@ -251,23 +249,25 @@ const initialState =
     {
       id: 29,
       isClass: false,
-      title: "Ride",
-      stat: "dexterity",
+      title: "Profession",
+      stat: "wisdom",
       ranks: 0,
-      miscMod: 0
+      miscMod: 0,
+      skillDescription: ""
     },
     {
       id: 30,
       isClass: false,
-      title: "Sense Motive",
+      title: "Profession",
       stat: "wisdom",
       ranks: 0,
-      miscMod: 0
+      miscMod: 0,
+      skillDescription: ""
     },
     {
       id: 31,
       isClass: false,
-      title: "Sleight of Hand",
+      title: "Ride",
       stat: "dexterity",
       ranks: 0,
       miscMod: 0
@@ -275,15 +275,15 @@ const initialState =
     {
       id: 32,
       isClass: false,
-      title: "Spellcraft",
-      stat: "intelligence",
+      title: "Sense Motive",
+      stat: "wisdom",
       ranks: 0,
       miscMod: 0
     },
     {
       id: 33,
       isClass: false,
-      title: "Stealth",
+      title: "Sleight of Hand",
       stat: "dexterity",
       ranks: 0,
       miscMod: 0
@@ -291,13 +291,29 @@ const initialState =
     {
       id: 34,
       isClass: false,
+      title: "Spellcraft",
+      stat: "intelligence",
+      ranks: 0,
+      miscMod: 0
+    },
+    {
+      id: 35,
+      isClass: false,
+      title: "Stealth",
+      stat: "dexterity",
+      ranks: 0,
+      miscMod: 0
+    },
+    {
+      id: 36,
+      isClass: false,
       title: "Survival",
       stat: "wisdom",
       ranks: 0,
       miscMod: 0
     },
     {
-      id: 35,
+      id: 37,
       isClass: false,
       title: "Swim",
       stat: "strength",
@@ -305,7 +321,7 @@ const initialState =
       miscMod: 0
     },
     {
-      id: 36,
+      id: 38,
       isClass: false,
       title: "Use Magic Device",
       stat: "charisma",
