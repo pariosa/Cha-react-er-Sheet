@@ -1,6 +1,7 @@
 import{
 UPDATE_GEAR_NAME,
 UPDATE_GEAR_WEIGHT,
+UPDATE_GEAR_CHARGES,
 UPDATE_LIGHT_LOAD,
 UPDATE_MEDIUM_LOAD,
 UPDATE_HEAVY_LOAD,
@@ -18,7 +19,8 @@ const initialState = {
 		{	
 			id:0,
 			name:"",
-			weight:0
+			weight:0,
+			charges:""
 		}
 	],
 	lightLoad:"0",
@@ -71,6 +73,26 @@ const gearReducer = (state = initialState, action) =>{
 		              : item
 		        )
 		      ]
+			}
+		case UPDATE_GEAR_CHARGES:
+	   const gearChargesState = state.gear.find(
+	       gear => gear.id === parseInt(action.payload.nativeEvent.path[3].id)
+	      );
+	      const gearChargesIndex = state.gear.indexOf(
+	       gearChargesState
+	      ); 
+	      const gearChargesObj = new Object;
+	      for(keys in gearChargesState){ 
+	        gearChargesObj[keys] = gearChargesState[keys];
+	      }
+	      gearWeightObj.charges = action.payload.target.value;
+	      return {...state, gear: [
+		        ...state.gear.map((item, index) =>
+		            index === gearChargesIndex
+		              ? gearChargesObj
+		              : item
+		        )
+		      ]
 		  }
  	case UPDATE_LIGHT_LOAD:
 		return {...state, lightLoad:action.payload.target.value}
@@ -88,7 +110,8 @@ const gearReducer = (state = initialState, action) =>{
       const newGear = {
         id:state.gear.length+1,  
         name:'', 
-        weight:'' 
+				weight:'', 
+				charges:0
       }
       return{...state, gear:
       	[

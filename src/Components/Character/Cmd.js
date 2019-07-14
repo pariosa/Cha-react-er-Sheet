@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { 
-	updateCmdSizeModifier
+  updateCmdSizeModifier,
 } from "../../js/actions/characterActions";
-
+import {
+  updateDeflectionModifier
+} from "../../js/actions/acItemsActions"
 const mapDispatchtoProps = {
+  updateDeflectionModifier,
 	updateCmdSizeModifier
 }
 
@@ -12,7 +15,8 @@ const mapStateToProps = state => {
 	return{
 		bab: state.character.baseAttackBonus,
 		strengthMod: state.stat.stats.strMod,
-		dexterityMod: state.stat.stats.dexMod, 
+    dexterityMod: state.stat.stats.dexMod, 
+    deflectionModifier:state.armor.deflectionModifier,
 		sizeModifier: state.character.cmdSizeModifier
 	}
 }
@@ -28,17 +32,19 @@ class Cmd extends Component {
 	 	const {
 			bab,
 			strengthMod,
-			dexterityMod, 
+      dexterityMod, 
+      deflectionModifier,
 			sizeModifier
 		} = this.props;
-		return ((10) + parseInt(bab,10) + parseInt(strengthMod,10) + parseInt(dexterityMod,10) + parseInt(sizeModifier,10))
+		return ((10) + parseInt(bab,10) + parseInt(strengthMod,10) + parseInt(dexterityMod,10) + parseInt(sizeModifier,10) +  parseInt(deflectionModifier,10) )
 	}
 
 	render(){ 
 		const {
 			bab,
 			strengthMod,
-			dexterityMod, 
+      dexterityMod, 
+      deflectionModifier,
 			sizeModifier,
 			updateCmdSizeModifier
 		} = this.props;
@@ -56,6 +62,9 @@ class Cmd extends Component {
       &nbsp; + &nbsp;
       <input className="CmdSizeModifier" size="2" value={sizeModifier} onChange={updateCmdSizeModifier} />
       &nbsp; + &nbsp;
+      <input className="CmdDeflectionModifier" size="2" value={deflectionModifier} onChange={updateDeflectionModifier} />
+      &nbsp; + &nbsp;
+
       10
     </div>
     <div className="CmdRow2">
@@ -73,6 +82,9 @@ class Cmd extends Component {
       </div>					
       <div className="armorLabel MiscMod">
       Size Modifier
+      </div>
+      <div className="armorLabel MiscMod">
+      Deflection Mod
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import {
   updateGearName,  
+  updateGearCharges,
   updateGearWeight, 
   removeGear
 } from "../../js/actions/gearActions";
@@ -12,11 +13,21 @@ const mapDispatchToProps ={
     removeGear
 };
 const mapStateToProps = (state, ownProps) => {
-  return {
+  if(ownProps.charges !== undefined){
+    return {
       id: ownProps.id,
       name:ownProps.name, 
-      weight:ownProps.weight
-  };
+      weight:ownProps.weight,
+    };
+  }else{
+    return {
+      id: ownProps.id,
+      name:ownProps.name, 
+      weight:ownProps.weight,
+      charges:ownProps.charges
+    };
+  }
+
 };
 class Gear extends Component { 
   constructor(props){
@@ -29,7 +40,9 @@ class Gear extends Component {
       id,
       name,
       weight,
+      charges,
       updateGearName,
+      updateGearCharges,
       updateGearWeight, 
       removeGear
     } = this.props;
@@ -41,6 +54,9 @@ class Gear extends Component {
           </div> 
           <div className="ui input gearWeight">
             <input type="text" size="3" value={weight} onChange={updateGearWeight} />
+          </div> 
+          <div className="ui input gearCharges">
+            <input type="text" size="3" value={charges} onChange={updateGearCharges} />
           </div> 
           <button type="button" className="red deleteGear" onClick={removeGear}>x</button>
         </div>

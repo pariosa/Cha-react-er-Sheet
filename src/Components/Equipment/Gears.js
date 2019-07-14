@@ -89,6 +89,8 @@ class Gears extends Component {
       <div className="GearItems">
         <div className="gearHeader">Gear</div>
         <div className="gearItemsHeader gearHeader1">Item name</div> 
+        <div className="gearWeightHeader gearHeader2">Charges/Uses</div>
+
         <div className="gearWeightHeader gearHeader2">Weight</div>
         {this.gearItemsFn(gear)}
         <div className="addAnotherItem"><span>Add another item?</span></div>

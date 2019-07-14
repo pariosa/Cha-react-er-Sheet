@@ -53,12 +53,12 @@ class ArmorClass extends Component {
   getTouchAc(){
     const {dexMod,armorBonus,shieldBonus,sizeModifier,naturalArmor,deflectionModifier,armorMiscModifier,touchArmorClass,flatFootedArmorClass,acModifiersField} = this.props
 
-    return 10 + parseInt(dexMod,10)
+    return 10 + parseInt(dexMod,10) +  + parseInt(deflectionModifier,10) 
   }
 
   getFlatFooted(){
     const {dexMod,armorBonus,shieldBonus,sizeModifier,naturalArmor,deflectionModifier,armorMiscModifier,touchArmorClass,flatFootedArmorClass,acModifiersField} = this.props
-    return ( 10 + parseInt(armorBonus,10) + parseInt(shieldBonus,10) + parseInt(sizeModifier,10)+ parseInt(naturalArmor,10)+ parseInt(deflectionModifier,10) + parseInt(armorMiscModifier,10))
+    return ( 10 + parseInt(armorBonus,10) + parseInt(shieldBonus,10) + parseInt(sizeModifier,10)+ parseInt(naturalArmor,10) + parseInt(deflectionModifier,10) + parseInt(armorMiscModifier,10))
   }
 
   render() {
