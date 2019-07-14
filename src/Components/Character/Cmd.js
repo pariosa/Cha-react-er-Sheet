@@ -8,11 +8,11 @@ const mapDispatchtoProps = {
 	updateCmdSizeModifier
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { 
 	return{
 		bab: state.character.baseAttackBonus,
 		strengthMod: state.stat.stats.strMod,
-		dexterityMod: state.stat.stats.strMod, 
+		dexterityMod: state.stat.stats.dexMod, 
 		sizeModifier: state.character.cmdSizeModifier
 	}
 }
@@ -34,7 +34,7 @@ class Cmd extends Component {
 		return ((10) + parseInt(bab,10) + parseInt(strengthMod,10) + parseInt(dexterityMod,10) + parseInt(sizeModifier,10))
 	}
 
-	render(){
+	render(){ 
 		const {
 			bab,
 			strengthMod,
