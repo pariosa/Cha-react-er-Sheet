@@ -149,7 +149,7 @@ export const ADD_SPELL = "ADD_SPELL";
 export const UPDATE_SPELL = "UPDATE_SPELL";
 export const REMOVE_SPELL = "REMOVE_SPELL";
 
-// Spellslots Actions = 
+// Spellslots Actions 
 export const UPDATE_SPELLS_KNOWN = "UPDATE_SPELLS_KNOWN";
 export const UPDATE_SPELL_SAVE_DC = "UPDATE_SPELL_SAVE_DC";
 export const UPDATE_SPELLS_PER_DAY = "UPDATE_SPELLS_PER_DAY";
@@ -163,3 +163,6 @@ export const LOGIN_ERROR = "LOGIN_ERROR"
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const NEW_CHARACTER = "NEW_CHARACTER";
+
+//notes actions 
+export const UPDATE_NOTES = "UPDATE_NOTES";

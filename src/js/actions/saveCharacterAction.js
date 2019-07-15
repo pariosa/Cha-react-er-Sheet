@@ -29,7 +29,8 @@ export const saveCharacter = (character) => {
 			experience:getState().experience,
 			spells:getState().spells,
 			spellslots:getState().spellslots,
-			acItems:getState().acItems
+			acItems:getState().acItems,
+			notes:getState().notes
 		}).then(()=>{
 		const Characters = [];  
 			const uid = firebase.auth().currentUser ? firebase.auth().currentUser.uid : "";

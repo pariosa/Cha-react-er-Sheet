@@ -1,4 +1,5 @@
 import {
+  UPDATE_DEFLECTION_MODIFIER,
   UPDATE_ACITEM_NAME,
   UPDATE_ACITEM_BONUS,
   UPDATE_ACITEM_TYPE,
@@ -25,6 +26,10 @@ export const updateAcItemType = type => ({
 export const updateAcItemCheckPenalty = checkPenalty => ({
   type:UPDATE_ACITEM_CHECK_PENALTY,
   payload:checkPenalty
+})
+export const updateDeflectionModifier = deflectionModifier => ({
+  type:UPDATE_DEFLECTION_MODIFIER,
+  payload:deflectionModifier
 })
 export const updateAcItemSpellFailure = failure  => ({
   type:UPDATE_ACITEM_SPELL_FAILURE,

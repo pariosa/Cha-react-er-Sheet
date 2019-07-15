@@ -23,7 +23,7 @@ import abilitiesReducer from "./abilitiesReducer";
 import spellsReducer from "./spellsReducer";
 import spellslotsReducer from "./spellslotReducer"; 
 import characterListReducer from "./characterListReducer";
-
+import notesReducer from "./notesReducer";
 const reducers = {
   characterList: characterListReducer,
   acItems:acItemsReducer,
@@ -48,7 +48,8 @@ const reducers = {
   form: formReducer,
   ui: uiReducer,
   firebase: firebaseReducer,
-  firestore: firestoreReducer
+  firestore: firestoreReducer,
+  notes: notesReducer
 };
  
 const reducer = combineReducers(reducers);
