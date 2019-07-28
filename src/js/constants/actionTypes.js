@@ -166,3 +166,4 @@ export const NEW_CHARACTER = "NEW_CHARACTER";
 
 //notes actions 
 export const UPDATE_NOTES = "UPDATE_NOTES";
+export const RESET_SAVE_BUTTON = "RESET_SAVE_BUTTON";

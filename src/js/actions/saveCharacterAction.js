@@ -2,7 +2,8 @@ import {getCharactersThunk, getCharacters} from './getCharacterListActions';
 
 import {
 	SAVE_CHARACTER_SUCCESS,
-	NEW_CHARACTER
+	NEW_CHARACTER,
+	RESET_SAVE_BUTTON
 } from '../constants/actionTypes';
 
 export const saveCharacter = (character) => {
@@ -42,6 +43,8 @@ export const saveCharacter = (character) => {
 				    dispatch(getCharacters(Characters))
 				});
 			}
+			console.log('character save')
+			dispatch({type:RESET_SAVE_BUTTON, payload:true})
 		});
 	}
 } 

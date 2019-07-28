@@ -20,7 +20,8 @@ import {
   UPDATE_CMB_MODIFIERS_FIELD,
   UPDATE_CMD_SIZE_MODIFIER,
   LOAD_ENTIRE_CHARACTER,
-  NEW_CHARACTER
+  NEW_CHARACTER,
+  RESET_SAVE_BUTTON
 } from "../constants/actionTypes";
 
 export const initialState = { 
@@ -44,6 +45,7 @@ export const initialState = {
     cmbSizeModifier:'0',
     cmbModifiersField:'0',
     cmdSizeModifier:'0',
+    isSynched:true,
 };
 
 const characterReducer = (state = initialState, action) => {  
@@ -90,6 +92,8 @@ const characterReducer = (state = initialState, action) => {
       return {...state, spellResistance: action.payload.target.value};  
     case  LOAD_ENTIRE_CHARACTER:
       return {... action.payload.character}
+    case RESET_SAVE_BUTTON:
+      return {...state, isSynched:action.payload}
     case NEW_CHARACTER:
       return initialState;
     default:
