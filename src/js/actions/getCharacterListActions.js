@@ -1,6 +1,9 @@
 import thunkMiddleware from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+
+import 'firebase/firestore'; 
+import 'firebase/auth'
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import {
 GET_CHARACTERS

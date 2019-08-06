@@ -1,5 +1,8 @@
-const functions = require('firebase-functions');
-
+//const functions = require('firebase-functions');
+//import firebase from 'firebase/app'
+import 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //

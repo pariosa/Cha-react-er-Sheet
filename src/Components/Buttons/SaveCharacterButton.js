@@ -38,14 +38,14 @@ class SaveCharacterButton extends Component{
    savedCharacter = savedCharacters.filter(e=>{return e.character.name === character.character.name})
    if(savedCharacter.length > 0){
       //there is a saved character with a similar name (something that does not change much? right?)
-      //we shoudl return false if the character state differs in many common areas
+      //we should return false if the character state differs in many common areas
       let difference = false;
       let keys = ["abilities", "acItems", "armor", "character", "currency",  "experience", "feats", "gear", "health", "languages", "notes", 
       "saves", "skills", "speed", "spells", "spellslots", "weapons", "stat"];
       keys.forEach((key, index) =>{
         if(key !== "character" && key !== "currency" && key !== "stat"){
           if(JSON.stringify(character[key]) !== JSON.stringify(savedCharacter[0][key])){ 
-            console.log(`theres a difference in ${key}`)
+            //console.log(`theres a difference in ${key}`)
             difference = true; 
           } 
         }
@@ -109,8 +109,8 @@ class SaveCharacterButton extends Component{
       savedCharacters,
     }  = this.props 
       if((this.isCharacterTheSame(savedCharacters, character) === true)){
-        console.log(isSynched)
-        console.log(this.isCharacterTheSame(savedCharacters, character) === true)
+        //console.log(isSynched)
+        //console.log(this.isCharacterTheSame(savedCharacters, character) === true)
 
         return(
       <div className="registerButton"> 
@@ -120,11 +120,10 @@ class SaveCharacterButton extends Component{
       </div> 
         )
       }else if(this.isCharacterTheSame(savedCharacters, character) === false){
-                console.log('is synched')
-                console.log(isSynched)
-                //dispatch
-                console.log('is the character the same')
-                console.log(this.isCharacterTheSame(savedCharacters, character) === true)
+                //console.log('is synched')
+                //console.log(isSynched)
+                //console.log('is the character the same')
+                //console.log(this.isCharacterTheSame(savedCharacters, character) === true)
         return(
         <div className="registerButton"> 
         <button type="button" className="gloweyGreen"  onClick={saveCharacter}>

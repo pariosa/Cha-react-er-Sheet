@@ -11,7 +11,7 @@ const initialState = {
 const loadCharacterReducer = ( state = initialState, action) => {  
 	switch(action.type){
 		case LOAD_ENTIRE_CHARACTER:
-			console.log('character Load');  
+			//console.log('character Load');  
 			return {...state, characterId:action.payload.id}
 			break;
 		default:

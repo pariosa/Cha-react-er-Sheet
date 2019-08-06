@@ -1245,12 +1245,13 @@ margin-right:6px;
   margin:10px;
   padding:2px;
 }
+
 .gloweyGreen{
   -webkit-border-radius: 40px;
   margin-top:5px;
   border-radius: 20px;
   border:none;
-  color: #a0c5e8;
+  color: white;
   cursor: pointer;
   display: inline-block;
   font-family: Arial;

@@ -5,7 +5,9 @@ import { Provider } from "react-redux";
 import CharacterSheet from "./Components/Character/CharacterSheet";
 import store from "./js/store/index";
 import Header from './Components/UIComponents/Header'; 
-
+import 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
 
 window.store = store;
 function Layout (){  
