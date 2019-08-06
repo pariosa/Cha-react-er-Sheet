@@ -61,12 +61,13 @@ h2 {
 /* Skills CSS */
 .Skills{
   position:relative;
-  min-width:350px;
+  min-width:360px;
+  max-width:420px;
   right:0px;
 }
 .skillCapsule {
-  min-width:430px;
-  max-width:430px;
+  min-width:490px;
+  max-width:490px;
   border-bottom: 1px solid lightgrey;
   border-left: 1px solid lightgrey;
 }
@@ -82,7 +83,7 @@ h2 {
   margin-left:15px;
 }
 .secondSkillHeader {
-  width: 35px;
+  width: 55px;
 }
 .skillDescription {
   margin-left: 20px;
