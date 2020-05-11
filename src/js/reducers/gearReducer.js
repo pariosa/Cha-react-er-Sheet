@@ -85,7 +85,7 @@ const gearReducer = (state = initialState, action) =>{
 	      for(keys in gearChargesState){ 
 	        gearChargesObj[keys] = gearChargesState[keys];
 	      }
-	      gearWeightObj.charges = action.payload.target.value;
+	      gearChargesObj.charges = action.payload.target.value;
 	      return {...state, gear: [
 		        ...state.gear.map((item, index) =>
 		            index === gearChargesIndex
@@ -107,8 +107,16 @@ const gearReducer = (state = initialState, action) =>{
 	case UPDATE_DRAG_OR_PUSH:
 		return {...state, dragOrPush:action.payload.target.value}
 	case ADD_GEAR: 
+	  let id = state.gear.length+1; 
+	  if(state.gear.find( x => {return x.id == id}) !== undefined){
+		let gearIds = []
+ 		for (let i in state.gear){gearIds.push(state.gear[i].id)}
+		gearIds.sort();
+		const {length, [length-1]: last} = gearIds
+		id = last+1
+	  }
       const newGear = {
-        id:state.gear.length+1,  
+        id:id,  
         name:'', 
 				weight:'', 
 				charges:0

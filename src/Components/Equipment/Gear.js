@@ -10,23 +10,18 @@ import {
 const mapDispatchToProps ={
 	  updateGearName,
 	  updateGearWeight, 
-    removeGear
+    removeGear,
+    updateGearCharges
 };
 const mapStateToProps = (state, ownProps) => {
-  if(ownProps.charges !== undefined){
-    return {
-      id: ownProps.id,
-      name:ownProps.name, 
-      weight:ownProps.weight,
-    };
-  }else{
+  
     return {
       id: ownProps.id,
       name:ownProps.name, 
       weight:ownProps.weight,
       charges:ownProps.charges
     };
-  }
+  
 
 };
 class Gear extends Component { 
