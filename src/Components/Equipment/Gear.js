@@ -13,8 +13,7 @@ const mapDispatchToProps ={
     removeGear,
     updateGearCharges
 };
-const mapStateToProps = (state, ownProps) => {
-  
+const mapStateToProps = (state, ownProps) => { 
     return {
       id: ownProps.id,
       name:ownProps.name, 

@@ -85,7 +85,7 @@ const gearReducer = (state = initialState, action) =>{
 	      for(keys in gearChargesState){ 
 	        gearChargesObj[keys] = gearChargesState[keys];
 	      }
-	      gearChargesObj.charges = action.payload.target.value;
+		  gearChargesObj.charges = action.payload.target.value;
 	      return {...state, gear: [
 		        ...state.gear.map((item, index) =>
 		            index === gearChargesIndex
@@ -134,7 +134,7 @@ const gearReducer = (state = initialState, action) =>{
 	    }
     case NEW_CHARACTER:
       return initialState;
-	case  LOAD_ENTIRE_CHARACTER:  
+	case  LOAD_ENTIRE_CHARACTER:   
         return {... action.payload.gear}
 	default:
 		return state;

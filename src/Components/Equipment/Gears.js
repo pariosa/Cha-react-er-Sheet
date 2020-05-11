@@ -60,6 +60,7 @@ class Gears extends Component {
         id={item.id}
         name={item.name} 
         weight={item.weight} 
+        charges={item.charges}
       />
       );
     });
