@@ -32,7 +32,8 @@ const mapStateToProps = state => {
     name: state.character.name,
     homeland: state.character.homeland,
     loginModalVisible: state.ui.loginModalVisible,
-    registerModalVisible: state.ui.registerModalVisible
+    registerModalVisible: state.ui.registerModalVisible,
+    darkMode:state.ui.darkMode
   };
 };
 
@@ -51,7 +52,8 @@ class CharacterSheet extends Component {
       return `Enter your character's name!`;
     }
   }
- 
+
+  
   render() {
     const{
       name,
@@ -59,11 +61,14 @@ class CharacterSheet extends Component {
       auth,
       loginModalVisible,
       registerModalVisible,
+      darkMode
     } = this.props;
-
     const sideDrawer = auth.uid ? null : <SideDrawer />;
+    const darkModeFn = (dark) =>{ 
+      return dark ? "CharacterSheet dark" : "CharacterSheet";
+    }
     return (
-      <div className="CharacterSheet"> 
+      <div className={darkModeFn(darkMode)}> 
         <div className="ui stackable grid column twelve wide">
           <LoginModal show={loginModalVisible} />
           <RegisterModal show={registerModalVisible} />

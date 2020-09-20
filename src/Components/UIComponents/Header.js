@@ -6,9 +6,11 @@ import RegisterButton from '../Buttons/RegisterButton';
 import DrawerToggle from './DrawerToggle';
 import SaveCharacterButton from '../Buttons/SaveCharacterButton';
 import NewCharacterButton from "../Buttons/NewCharacterButton";
+import DarkModeToggle from "../Buttons/DarkModeToggle";
 const mapStateToProps = ( state ) => {
 	return {
-		auth: state.firebase.auth
+    auth: state.firebase.auth,
+    darkMode:state.ui.darkMode
 	}
 }
 
@@ -19,13 +21,18 @@ class Header extends Component {
   }
 
 	render(){
-  const {auth} = this.props;
+  const {auth, darkMode} = this.props;
 	const link1 = auth.uid ?  <SaveCharacterButton /> : <LoginButton /> ;
   const linkNew = <NewCharacterButton />;
+  const darkModeToggle = <DarkModeToggle />;
 	const link2 = auth.uid ? <LogoutButton /> :  <RegisterButton />;
-	const drawerToggle = auth.uid ? <DrawerToggle /> : null;
+  const drawerToggle = auth.uid ? <DrawerToggle /> : null;
+  const darkModeFn = (dark) =>{ 
+    return dark ? "Header dark" : "Header light";
+  }
+  
 		return(
-  <div>
+  <div className={darkModeFn(darkMode)}>
     <div className="ui Header secondary pointing menu">
       <a className="active item">
         <span className="gray">Cha</span>
@@ -38,6 +45,7 @@ react
       {drawerToggle}
       {linkNew}
       {link1}
+      {darkModeToggle}
       {link2}
     </div> 
   </div>

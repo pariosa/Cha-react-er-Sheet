@@ -1,10 +1,109 @@
-.Header{
+.Header.light{
 position:fixed;
 width:100%;
 background-color:#fff!important;
 z-index:2;
 }
+.Header.dark .item{
+  color: white;
+}
+.darkMode{
+  padding:10px;
+}
+.CharacterSheet.dark .SaveTitle{
+  color:white;
+}
+.Header.dark .gray{
+  color:orange;
+}
+.CharacterSheet.dark .dexterity{
+  color:rgb(82, 82, 82);
+}
+.CharacterSheet.dark .constitution{
+  color:rgb(82, 82, 82);
+}
+.Header.dark .active{
+  color:#74c100!important;
+}
+.CharacterSheet.dark{
+  color: rgba(186, 174, 174, 0.87);
+  background-color:#1d1d1d;
+}
+.Header.dark{
+  color: rgba(186, 174, 174, 0.87);
+  background-color:#262525!important;
+}
+.CharacterSheet.dark input{
+  color: white;
+  background-color:#262525; 
+}
+.CharacterSheet.dark .SideDrawer{
+  color: white;
+  background-color:#262525; 
+}
+.CharacterSheet .ui.basic.red.labels a.label, a.ui.basic.red.label{
+  background-color:white!important;
+}
+.CharacterSheet .ui.basic.red.labels a.label, a.ui.basic.teal.label{
+  background-color:white!important;
+}
+.CharacterSheet .ui.basic.red.labels a.label, a.ui.basic.orange.label{
+  background-color:white!important;
+}
+.CharacterSheet .ui.basic.red.labels a.label, a.ui.basic.blue.label{
+  background-color:white!important;
+}
+.CharacterSheet .ui.basic.red.labels a.label, a.ui.basic.purple.label{
+  background-color:white!important;
+}
+.CharacterSheet .ui.basic.red.labels a.label, a.ui.basic.pink.label{
+  background-color:white!important;
+}
+.CharacterSheet.dark .ui.basic.red.labels a.label, a.ui.basic.red.label{
+  background-color:black!important;
+}
+.CharacterSheet.dark .ui.basic.red.labels a.label, a.ui.basic.teal.label{
+  background-color:black!important;
+}
+.CharacterSheet.dark .ui.basic.red.labels a.label, a.ui.basic.orange.label{
+  background-color:black!important;
+}
+.CharacterSheet.dark .ui.basic.red.labels a.label, a.ui.basic.blue.label{
+  background-color:black!important;
+}
+.CharacterSheet.dark .ui.basic.red.labels a.label, a.ui.basic.purple.label{
+  background-color:black!important;
+}
+.CharacterSheet.dark .ui.basic.red.labels a.label, a.ui.basic.pink.label{
+  background-color:black!important;
+}
 
+.Header.dark {
+  color: white;
+  background-color:#262525!important;
+}
+.CharacterSheet.dark .ui.secondary.pointing.menu .item{
+  color:white;
+}
+.CharacterSheet.dark .characterTitle{
+  color:white;
+}
+.CharacterSheet.dark input:focus{
+  color: white;
+  background-color:#575656;
+}
+.CharacterSheet.dark .skillCapsule{
+  border-bottom: 1px solid rgb(120, 119, 119);
+  border-left: 1px solid rgb(120, 119, 119);;
+}
+.CharacterSheet.dark textarea{
+  color: rgba(186, 174, 174, 0.87);
+  background-color:#262525;
+}
+.CharacterSheet.dark .SpellSlots{
+  color: rgba(186, 174, 174, 0.87);
+  background-color:#262525;
+}
 .CharacterSheet { 
   padding-top:60px!important;
   padding:20px;
@@ -27,7 +126,8 @@ z-index:2;
 /* character Info Css */
 .characterTitle {
   min-width: 300px;
-  text-shadow: 10px 10px #fff;
+  /* 
+  text-shadow: 10px 10px #fff; */
 }
 .charinfo > .input > input {
   height: 37px;
@@ -40,9 +140,7 @@ z-index:2;
   padding-right: 0px;
 }
 h2 {
-  text-shadow: 1px 1px 0 #c0c0c0, 2px 2px 0 #c0c0c0, 3px 3px 0 #c0c0c0,
-    4px 4px 0 #c0c0c0, 5px 5px 0 #c0c0c0, 6px 6px 0 #c0c0c0,
-    3px 3px 10px #000000;
+  text-shadow:1px 1px 0 #c0c0c0, 1px 1px 0 #c0c0c0, 2px 3px 0 #c0c0c0, 1px 1px 0 #c0c0c0, 1px 5px 0 #c0c0c0, 0px 1px 0 #c0c0c0, 1px 5px 7px #000000;
   font-size: 28px;
   line-height: 138px;
   margin: 0;
