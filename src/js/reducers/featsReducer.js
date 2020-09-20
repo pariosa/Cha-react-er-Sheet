@@ -23,10 +23,10 @@ const featsReducer = (state = initialState, action) => {
       } 
       return [...state, newFeat];
     case REMOVE_FEAT: 
-      return  state.filter(feat => feat.id !== parseInt(action.payload.nativeEvent.path[1].id));
+      return  state.filter(feat => feat.id !== parseInt(action.payload.currentTarget.parentElement.id));
     case UPDATE_FEAT: 
       const featInState = state.find(
-        feat => feat.id === parseInt(action.payload.nativeEvent.path[1].id)
+        feat => feat.id === parseInt(action.payload.currentTarget.parentElement.id)
       );
       const featIndex = state.indexOf(
         featInState

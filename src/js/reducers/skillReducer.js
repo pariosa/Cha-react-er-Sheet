@@ -333,7 +333,7 @@ const skillReducer = (state = initialState, action) => {
   switch (action.type) {  
     case UPDATE_SKILL_RANK: 
       const skillInStateRank = state.find(
-        skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id)
+        skill => skill.id === parseInt(action.payload.currentTarget.parentElement.id)
       );
       const skillIndex = state.indexOf(skillInStateRank); 
       let keys;
@@ -350,7 +350,7 @@ const skillReducer = (state = initialState, action) => {
       break;
     case UPDATE_SKILL_MISC_MOD: 
       const skillInStateMiscMod = state.find(
-        skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id)
+        skill => skill.id === parseInt(action.payload.currentTarget.parentElement.id)
       );
       const skillIndexMiscMod = state.indexOf(skillInStateMiscMod);
       const skillInStateMiscModObj = new Object; 
@@ -366,7 +366,7 @@ const skillReducer = (state = initialState, action) => {
       break;
     case UPDATE_SKILL_DESCRIPTION: 
       const skillInStateDescription = state.find(
-        skill => skill.id === parseInt(action.payload.nativeEvent.path[2].id)
+        skill => skill.id === parseInt(action.payload.currentTarget.parentElement.parentElement.id)
       );
       const skillIndexDescription = state.indexOf(
         skillInStateDescription
@@ -388,7 +388,7 @@ const skillReducer = (state = initialState, action) => {
       break;
     case UPDATE_SKILL_IS_CLASS: 
       const skillInStateIsClass = state.find(
-        skill => skill.id === parseInt(action.payload.nativeEvent.path[1].id)
+        skill => skill.id === parseInt(action.payload.currentTarget.parentElement.id)
       );
       const skillIndexIsClass = state.indexOf(
         skillInStateIsClass

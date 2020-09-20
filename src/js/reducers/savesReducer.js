@@ -41,7 +41,7 @@ const savesReducer = (state = initialState, action) => {
   switch (action.type) {  
     case UPDATE_BASE_SAVE: 
       const saveInStateBase = state.find(
-        save => save.id === parseInt(action.payload.nativeEvent.path[2].id)
+        save => save.id === parseInt(action.payload.currentTarget.parentElement.parentElement.id)
       );
       const saveIndexBase = state.indexOf(
         saveInStateBase
@@ -62,7 +62,7 @@ const savesReducer = (state = initialState, action) => {
       break;
     case UPDATE_MAGIC_SAVE_MODIFIER:      
       const saveInStateMagicMod = state.find(
-        save => save.id === parseInt(action.payload.nativeEvent.path[2].id)
+        save => save.id === parseInt(action.payload.currentTarget.parentElement.parentElement.id)
       );
       const saveIndexMagicMod = state.indexOf(
         saveInStateMagicMod
@@ -82,7 +82,7 @@ const savesReducer = (state = initialState, action) => {
       break;
     case UPDATE_MISC_SAVE_MODIFIER:  
       const saveInStateMiscMod = state.find(
-        save => save.id === parseInt(action.payload.nativeEvent.path[2].id)
+        save => save.id === parseInt(action.payload.currentTarget.parentElement.parentElement.id)
       );
       const saveIndexMiscMod = state.indexOf(
         saveInStateMiscMod
@@ -102,7 +102,7 @@ const savesReducer = (state = initialState, action) => {
       break;
     case UPDATE_TEMP_SAVE_MODIFIER: 
       const saveInStateTempMod = state.find(
-        save => save.id === parseInt(action.payload.nativeEvent.path[2].id)
+        save => save.id === parseInt(action.payload.currentTarget.parentElement.parentElement.id)
       );
       const saveIndexTempMod = state.indexOf(
         saveInStateTempMod

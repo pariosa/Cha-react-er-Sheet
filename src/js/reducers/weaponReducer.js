@@ -29,7 +29,7 @@ const weaponReducer = (state = initialState, action) => {
   switch (action.type) { 
     case UPDATE_WEAPON_NAME: 
       const weaponNameState = state.find(
-        weapon => weapon.id === parseInt(action.payload.nativeEvent.path[3].id)
+        weapon => weapon.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const weaponNameIndex = state.indexOf(
         weaponNameState
@@ -50,7 +50,7 @@ const weaponReducer = (state = initialState, action) => {
       break; 
     case UPDATE_WEAPON_ATTACK_BONUS: 
       const weaponAbState = state.find(
-        weapon => weapon.id === parseInt(action.payload.nativeEvent.path[3].id)
+        weapon => weapon.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const weaponAbIndex = state.indexOf(
         weaponAbState
@@ -70,7 +70,7 @@ const weaponReducer = (state = initialState, action) => {
       break;  
     case UPDATE_WEAPON_CRITICAL:
       const weaponCritState = state.find(
-        weapon => weapon.id === parseInt(action.payload.nativeEvent.path[3].id)
+        weapon => weapon.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const weaponCritIndex = state.indexOf(
         weaponCritState
@@ -90,7 +90,7 @@ const weaponReducer = (state = initialState, action) => {
       break; 
     case UPDATE_WEAPON_TYPE:
       const weaponTypeState = state.find(
-        weapon => weapon.id === parseInt(action.payload.nativeEvent.path[3].id)
+        weapon => weapon.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const weaponTypeIndex = state.indexOf(
         weaponTypeState
@@ -111,7 +111,7 @@ const weaponReducer = (state = initialState, action) => {
     case UPDATE_WEAPON_RANGE:
 
       const weaponRangeState = state.find(
-        weapon => weapon.id === parseInt(action.payload.nativeEvent.path[3].id)
+        weapon => weapon.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const weaponRangeIndex = state.indexOf(
         weaponRangeState
@@ -131,7 +131,7 @@ const weaponReducer = (state = initialState, action) => {
       break; 
     case UPDATE_WEAPON_AMMUNITION:
       const weaponAmmoState = state.find(
-        weapon => weapon.id === parseInt(action.payload.nativeEvent.path[3].id)
+        weapon => weapon.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const weaponAmmoIndex = state.indexOf(
         weaponAmmoState
@@ -151,7 +151,7 @@ const weaponReducer = (state = initialState, action) => {
       break; 
     case UPDATE_WEAPON_DAMAGE:
       const weaponDamageState = state.find(
-        weapon => weapon.id === parseInt(action.payload.nativeEvent.path[3].id)
+        weapon => weapon.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const weaponDamageIndex = state.indexOf(
         weaponDamageState
@@ -188,7 +188,7 @@ const weaponReducer = (state = initialState, action) => {
       ];
       break; 
     case REMOVE_WEAPON: 
-    return state.filter(weapon => weapon.id !== parseInt(action.payload.nativeEvent.path[2].id))
+    return state.filter(weapon => weapon.id !== parseInt(action.payload.currentTarget.parentElement.parentElement.id))
       break;
       
     case NEW_CHARACTER:

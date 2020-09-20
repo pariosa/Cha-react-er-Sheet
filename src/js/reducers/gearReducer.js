@@ -35,7 +35,7 @@ const gearReducer = (state = initialState, action) =>{
 	switch (action.type){
 	case UPDATE_GEAR_NAME:
 	   const gearNameState = state.gear.find(
-	       gear => gear.id === parseInt(action.payload.nativeEvent.path[3].id)
+	       gear => gear.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
 	      );
 	      const gearNameIndex = state.gear.indexOf(
 	       gearNameState
@@ -56,7 +56,7 @@ const gearReducer = (state = initialState, action) =>{
 		  }
 	case UPDATE_GEAR_WEIGHT:
 	   const gearWeightState = state.gear.find(
-	       gear => gear.id === parseInt(action.payload.nativeEvent.path[3].id)
+	       gear => gear.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
 	      );
 	      const gearWeightIndex = state.gear.indexOf(
 	       gearWeightState
@@ -76,7 +76,7 @@ const gearReducer = (state = initialState, action) =>{
 			}
 		case UPDATE_GEAR_CHARGES:
 	   const gearChargesState = state.gear.find(
-	       gear => gear.id === parseInt(action.payload.nativeEvent.path[3].id)
+	       gear => gear.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
 	      );
 	      const gearChargesIndex = state.gear.indexOf(
 	       gearChargesState
@@ -129,7 +129,7 @@ const gearReducer = (state = initialState, action) =>{
       }  
     case REMOVE_GEAR: 
 	    return {...state, gear:  
-	    	state.gear.filter(gear => gear.id !== parseInt(action.payload.nativeEvent.path[2].id))
+	    	state.gear.filter(gear => gear.id !== parseInt(action.payload.currentTarget.parentElement.parentElement.id))
 	    	 
 	    }
     case NEW_CHARACTER:

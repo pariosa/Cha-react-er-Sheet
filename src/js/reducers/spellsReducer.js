@@ -48,7 +48,7 @@ const spellsReducer = (state = initialState, action) => {
   let payloadValue;
   switch (action.type) { 
 	  case ADD_SPELL:
-      level = parseInt(action.payload.nativeEvent.path[1].getAttribute('level'),10);
+      level = parseInt(action.payload.currentTarget.parentElement.getAttribute('level'),10);
       spellLevel = state.find(x=> x.level === level);
       newSpell = {};
       newSpell = {
@@ -83,8 +83,8 @@ const spellsReducer = (state = initialState, action) => {
       ];
  
     case REMOVE_SPELL:
-      level = parseInt(action.payload.nativeEvent.path[3].getAttribute('level'),10);
-      spellId = parseInt(action.payload.nativeEvent.path[1].id,10); 
+      level = parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.getAttribute('level'),10);
+      spellId = parseInt(action.payload.currentTarget.parentElement.id,10); 
 
       return  [...state.map(
         (item, index) =>
@@ -95,10 +95,10 @@ const spellsReducer = (state = initialState, action) => {
           }
       )]
     case UPDATE_SPELL:
-      level = parseInt(action.payload.nativeEvent.path[3].getAttribute('level'),10);
+      level = parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.getAttribute('level'),10);
       spellLevel = state.find(x=> x.level === level);
-      updateType = action.payload.nativeEvent.path[0].getAttribute('target');
-      spellId = parseInt(action.payload.nativeEvent.path[1].id,10); 
+      updateType = action.payload.currentTarget.getAttribute('target');
+      spellId = parseInt(action.payload.currentTarget.parentElement.id,10); 
       payloadValue = (action.payload.target.type === "checkbox") ? action.payload.target.checked : action.payload.target.value;
 
       return[...state.map(

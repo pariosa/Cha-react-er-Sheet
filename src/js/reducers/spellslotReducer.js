@@ -84,7 +84,7 @@ const spellSlotReducer = (state = initialState, action) => {
   switch (action.type) {  
 	case  UPDATE_SPELLS_KNOWN: 
 	  const slotKnownState = state.find(
-	   slot => slot.level === parseInt(action.payload.nativeEvent.path[1].id)
+	   slot => slot.level === parseInt(action.payload.currentTarget.parentElement.id)
 	  );
 	  const slotKnownIndex = state.indexOf(
 	   slotKnownState
@@ -104,7 +104,7 @@ const spellSlotReducer = (state = initialState, action) => {
 	  ]; 
     case UPDATE_SPELLS_PER_DAY:
 	  const slotPerDayState = state.find(
-	   slot => slot.level === parseInt(action.payload.nativeEvent.path[1].id)
+	   slot => slot.level === parseInt(action.payload.currentTarget.parentElement.id)
 	  );
 	  const slotPerDayIndex = state.indexOf(
 	    slotPerDayState
@@ -123,7 +123,7 @@ const spellSlotReducer = (state = initialState, action) => {
 	  ];
     case UPDATE_SPELL_SAVE_DC:
 	  const slotSaveDcState = state.find(
-       slot => slot.level === parseInt(action.payload.nativeEvent.path[1].id)
+       slot => slot.level === parseInt(action.payload.currentTarget.parentElement.id)
       );
       const slotSaveDcIndex = state.indexOf(
        slotSaveDcState
@@ -142,7 +142,7 @@ const spellSlotReducer = (state = initialState, action) => {
 	  ];
     case UPDATE_BONUS_SPELLS:
 	  const slotBonusSpellsState = state.find(
-       slot => slot.level === parseInt(action.payload.nativeEvent.path[1].id)
+       slot => slot.level === parseInt(action.payload.currentTarget.parentElement.id)
       );
       const slotBonusSpellsIndex = state.indexOf(
        slotBonusSpellsState

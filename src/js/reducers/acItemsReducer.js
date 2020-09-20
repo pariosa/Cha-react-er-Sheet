@@ -29,7 +29,7 @@ const acItemReducer = (state = initialState, action) => {
   switch (action.type) { 
     case UPDATE_ACITEM_NAME: 
       const acItemNameState = state.find(
-        acItem => acItem.id === parseInt(action.payload.nativeEvent.path[3].id)
+        acItem => acItem.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const acItemNameIndex = state.indexOf(
         acItemNameState
@@ -50,7 +50,7 @@ const acItemReducer = (state = initialState, action) => {
       break; 
     case UPDATE_ACITEM_BONUS: 
       const acItemBonusState = state.find(
-        acItem => acItem.id === parseInt(action.payload.nativeEvent.path[3].id)
+        acItem => acItem.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const acItemBonusIndex = state.indexOf(
         acItemBonusState
@@ -70,7 +70,7 @@ const acItemReducer = (state = initialState, action) => {
       break;
     case UPDATE_ACITEM_TYPE: 
       const acItemTypeState = state.find(
-        acItem => acItem.id === parseInt(action.payload.nativeEvent.path[3].id)
+        acItem => acItem.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       ); 
       const acItemTypeIndex = state.indexOf(
         acItemTypeState
@@ -90,7 +90,7 @@ const acItemReducer = (state = initialState, action) => {
     break;
     case UPDATE_ACITEM_CHECK_PENALTY: 
       const acItemCheckPenaltyState = state.find(
-        acItem => acItem.id === parseInt(action.payload.nativeEvent.path[3].id)
+        acItem => acItem.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const acItemCheckPenaltyIndex = state.indexOf(
         acItemCheckPenaltyState
@@ -110,7 +110,7 @@ const acItemReducer = (state = initialState, action) => {
     break;
     case UPDATE_ACITEM_SPELL_FAILURE: 
       const acItemSpellFailureState = state.find(
-        acItem => acItem.id === parseInt(action.payload.nativeEvent.path[3].id)
+        acItem => acItem.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const acItemSpellFailureIndex = state.indexOf(
         acItemSpellFailureState
@@ -130,7 +130,7 @@ const acItemReducer = (state = initialState, action) => {
     break;
     case UPDATE_ACITEM_WEIGHT: 
       const acItemWeightState = state.find(
-        acItem => acItem.id === parseInt(action.payload.nativeEvent.path[3].id)
+        acItem => acItem.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const acItemWeightIndex = state.indexOf(
         acItemWeightState
@@ -150,7 +150,7 @@ const acItemReducer = (state = initialState, action) => {
     break;
     case UPDATE_ACITEM_PROPERTIES: 
       const acItemPropertiesState = state.find(
-        acItem => acItem.id === parseInt(action.payload.nativeEvent.path[3].id)
+        acItem => acItem.id === parseInt(action.payload.currentTarget.parentElement.parentElement.parentElement.id)
       );
       const acItemPropertiesIndex = state.indexOf(
         acItemPropertiesState
@@ -185,7 +185,7 @@ const acItemReducer = (state = initialState, action) => {
       ];
       break; 
     case REMOVE_ACITEM: 
-    return state.filter(weapon => weapon.id !== parseInt(action.payload.nativeEvent.path[2].id))
+    return state.filter(weapon => weapon.id !== parseInt(action.payload.currentTarget.parentElement.parentElement.id))
       break;
     case LOAD_ENTIRE_CHARACTER:
       return [... action.payload.acItems]

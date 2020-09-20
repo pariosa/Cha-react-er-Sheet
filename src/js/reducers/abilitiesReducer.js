@@ -23,10 +23,10 @@ const abilitiesReducer = (state = initialState, action) => {
     }   
     return [...state, newAbility]; 
     case REMOVE_ABILITY: 
-      return  state.filter(ability => ability.id !== parseInt(action.payload.nativeEvent.path[1].id));
+      return  state.filter(ability => ability.id !== parseInt(action.payload.currentTarget.parentElement.id));
     case UPDATE_ABILITY:  
       const abilityInState = state.find(
-        ability => ability.id === parseInt(action.payload.nativeEvent.path[1].id)
+        ability => ability.id === parseInt(action.payload.currentTarget.parentElement.id)
       );
       const abilityIndex = state.indexOf(
         abilityInState

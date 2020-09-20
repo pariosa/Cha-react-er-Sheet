@@ -108,7 +108,9 @@ class Skill extends Component {
       );
     }
   }; 
-
+  classSkillModifier(isClassSkill){
+    return (isClassSkill) ? 3 : 0;
+  }
   render() {
     const {
       id,
@@ -140,9 +142,11 @@ class Skill extends Component {
           type="text"
           value={
             `+ ${(
+              
               parseInt(ranks,10) +
               parseInt(miscMod,10) +
-              parseInt(this.statModifierOnly(),10)
+              parseInt(this.statModifierOnly(),10) +
+              parseInt(this.classSkillModifier(isClassSkill))
             )}`
           }
         />
