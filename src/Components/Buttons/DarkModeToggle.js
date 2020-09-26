@@ -23,6 +23,7 @@ class DarkModeToggle extends Component{
   	return( 
     <div className="darkModeToggle right menu"> 
          <input 
+          className="darkMode"
           type="checkbox"   
           onChange={toggleDarkMode} 
           checked={darkMode}

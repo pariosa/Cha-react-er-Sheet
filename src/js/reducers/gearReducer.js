@@ -111,7 +111,7 @@ const gearReducer = (state = initialState, action) =>{
 	  if(state.gear.find( x => {return x.id == id}) !== undefined){
 		let gearIds = []
  		for (let i in state.gear){gearIds.push(state.gear[i].id)}
-		gearIds.sort();
+		gearIds.sort((a, b)=>{return a-b});
 		const {length, [length-1]: last} = gearIds
 		id = last+1
 	  }

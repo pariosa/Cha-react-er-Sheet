@@ -4,6 +4,9 @@ width:100%;
 background-color:#fff!important;
 z-index:2;
 }
+input.darkMode {
+  margin: auto;
+}
 .Header.dark .item{
   color: white;
 }
