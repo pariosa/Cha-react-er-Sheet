@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-import { toggleRegisterModal } from '../../js/actions/uiActions';
 import { register } from '../../js/actions/authActions';
+import { toggleRegisterModal } from '../../js/actions/uiActions';
 import Backdrop from '../UIComponents/Backdrop';
 
 const mapStateToProps = state => {

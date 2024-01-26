@@ -1,29 +1,29 @@
-import { combineReducers } from "redux";
-import { firestoreReducer } from "redux-firestore"; 
 import { firebaseReducer } from "react-redux-firebase";
-import { reducer as formReducer } from "redux-form"; 
-import skillReducer from "./skillReducer";
-import weaponReducer from "./weaponReducer";
-import armorReducer from "./armorReducer";
-import speedReducer from "./speedReducer";
-import healthReducer from "./healthReducer";
-import characterReducer from "./characterReducer";
-import statReducer from "./statReducer";
+import { combineReducers } from "redux";
+import { firestoreReducer } from "redux-firestore";
+import abilitiesReducer from "./abilitiesReducer";
 import acItemsReducer from './acItemsReducer';
-import savesReducer from "./savesReducer"; 
-import currencyReducer from './currencyReducer';
-import languagesReducer from "./languagesReducer";
-import uiReducer from "./uiReducer";
-import gearReducer from "./gearReducer";
+import armorReducer from "./armorReducer";
 import authReducer from './authReducer';
-import loadCharacterReducer from "./loadCharacterReducer";
+import characterListReducer from "./characterListReducer";
+import characterReducer from "./characterReducer";
+import currencyReducer from './currencyReducer';
 import experienceReducer from "./experienceReducer";
 import featsReducer from "./featsReducer";
-import abilitiesReducer from "./abilitiesReducer";
-import spellsReducer from "./spellsReducer";
-import spellslotsReducer from "./spellslotReducer"; 
-import characterListReducer from "./characterListReducer";
+import gearReducer from "./gearReducer";
+import healthReducer from "./healthReducer";
+import languagesReducer from "./languagesReducer";
+import loadCharacterReducer from "./loadCharacterReducer";
 import notesReducer from "./notesReducer";
+import savesReducer from "./savesReducer";
+import skillReducer from "./skillReducer";
+import speedReducer from "./speedReducer";
+import spellslotsReducer from "./spellslotReducer";
+import spellsReducer from "./spellsReducer";
+import statReducer from "./statReducer";
+import uiReducer from "./uiReducer";
+import weaponReducer from "./weaponReducer";
+
 const reducers = {
   characterList: characterListReducer,
   acItems:acItemsReducer,
@@ -45,13 +45,12 @@ const reducers = {
   feats:featsReducer,
   abilities:abilitiesReducer,
   experience:experienceReducer,
-  form: formReducer,
   ui: uiReducer,
   firebase: firebaseReducer,
   firestore: firestoreReducer,
   notes: notesReducer
 };
  
-const reducer = combineReducers(reducers);
+const rootReducer = combineReducers(reducers);
 
-export default reducer;
+export default rootReducer;

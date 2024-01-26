@@ -1,14 +1,8 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
 import { connect } from "react-redux";
 import {
-  updateAcItemName,
-  updateAcItemBonus,
-  updateAcItemCheckPenalty,
-  updateAcItemType,
-  updateAcItemSpellFailure,
-  updateAcItemWeight,
-  updateAcItemProperties, 
-  removeAcItem
+  removeAcItem, updateAcItemBonus,
+  updateAcItemCheckPenalty, updateAcItemName, updateAcItemProperties, updateAcItemSpellFailure, updateAcItemType, updateAcItemWeight
 } from "../../js/actions/acItemsActions";
 
 const mapDispatchToProps = {

@@ -1,12 +1,9 @@
-import thunkMiddleware from 'redux-thunk'
-import { createStore, applyMiddleware } from 'redux'
-import firebase from 'firebase/app';
-
-import 'firebase/firestore'; 
-import 'firebase/auth'
-import { reduxFirestore, getFirestore } from 'redux-firestore';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import { getFirestore } from 'redux-firestore';
 import {
-GET_CHARACTERS
+	GET_CHARACTERS
 } from "../constants/actionTypes";
 
 export const getCharacters = (characters) => ({type: GET_CHARACTERS, characters});

@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
-  updateSkillRank,
-  updateSkillDescription,
-  updateSkillMiscMod,
-  updateSkillIsClass
+  updateSkillDescription, updateSkillIsClass, updateSkillMiscMod, updateSkillRank
 } from "../../js/actions/skillActions";
 const mapStateToProps = (state, ownProps) => { 
   return {
@@ -108,8 +105,8 @@ class Skill extends Component {
       );
     }
   }; 
-  classSkillModifier(isClassSkill){
-    return (isClassSkill) ? 3 : 0;
+  classSkillModifier(isClassSkill,rank){
+    return (isClassSkill && (rank > 1) ) ? 3 : 0;
   }
   render() {
     const {
@@ -145,7 +142,7 @@ class Skill extends Component {
               parseInt(ranks,10) +
               parseInt(miscMod,10) +
               parseInt(this.statModifierOnly(),10) +
-              parseInt(this.classSkillModifier(isClassSkill))
+              parseInt(this.classSkillModifier(isClassSkill, parseInt(ranks,10)))
             )}`
           }
         />

@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+// const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -8,10 +9,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
-      },
+      }, 
       {
-          test: /\.css$/, 
-          use: ['style-loader', 'css-loader', 'resolve-url-loader'] 
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.scss$/,
@@ -24,16 +25,24 @@ module.exports = {
           }],
       },
       {
-          test: /\.(jpg|png|gif|jpeg|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(jpg|png|gif|jpeg|woff|woff2|eot|ttf|svg)$/,
+        use: {
           loader: 'url-loader?limit=100000'
-      }
+        }
+      
+      },
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
+      },
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
-  },
+    extensions: ['.*', '.js', '.jsx']
+  }, 
   output: {
-    path: __dirname + '/dist',
+    path: `${__dirname  }/dist`,
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -41,7 +50,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: './dist',
-    hot: true
+    static: './dist',
   }
 };

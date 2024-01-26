@@ -1,30 +1,30 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import CharacterInfo from "./CharInfo";
-import Stats from "../Stats/Stats";
-import Skills from "../Skills/Skills";
-import Saves from "../Saves/Saves";
-import Speed from './Speed';
-import Bab from "./Bab";
+import "../../css/CharacterSheet.css";
+import Abilities from "../Abilities/Abilities";
+import AcItems from '../Ac/AcItems';
+import ArmorClass from "../Ac/ArmorClass";
+import Currency from '../Equipment/Currency';
 import Gears from "../Equipment/Gears";
+import Weapons from "../Equipment/Weapons";
+import Feats from "../Feats/Feats";
+import LoginModal from '../Modals/LoginModal';
+import RegisterModal from '../Modals/RegisterModal';
+import Notes from "../Notes/Notes";
+import Saves from "../Saves/Saves";
+import Skills from "../Skills/Skills";
+import SpellList from "../Spells/SpellList";
+import SpellSlots from "../Spells/SpellSlots";
+import Stats from "../Stats/Stats";
+import SideDrawer from '../UIComponents/SideDrawer';
+import Bab from "./Bab";
+import CharacterInfo from "./CharInfo";
 import Cmb from './Cmb';
 import Cmd from './Cmd';
-import Abilities from "../Abilities/Abilities";
-import Feats from "../Feats/Feats";
-import Languages from "./Languages"
-import ArmorClass from "../Ac/ArmorClass";
-import Weapons from "../Equipment/Weapons";
-import LoginModal from '../Modals/LoginModal'
-import RegisterModal from '../Modals/RegisterModal'
-import HealthPoints from "./HealthPoints";
-import css from "../../css/CharacterSheet.css"; 
-import SideDrawer from '../UIComponents/SideDrawer';
-import AcItems from '../Ac/AcItems';
-import Currency from '../Equipment/Currency';
 import Experience from "./Experience";
-import SpellSlots from "../Spells/SpellSlots";
-import SpellList from "../Spells/SpellList";
-import Notes from "../Notes/Notes"
+import HealthPoints from "./HealthPoints";
+import Languages from "./Languages";
+import Speed from './Speed';
 // import SpellList from "../Spells/SpellList"; 
 const mapStateToProps = state => {
   return {
@@ -46,11 +46,11 @@ class CharacterSheet extends Component {
   getTitle(){
     if(this.props.name !== "" && this.props.homeland === ""){
       return this.props.name;
-    }else if(this.props.name !== "" && this.props.homeland !== ""){
+    }if(this.props.name !== "" && this.props.homeland !== ""){
       return `${this.props.name} of ${this.props.homeland}`;
-    }else{
-      return `Enter your character's name!`;
     }
+      return `Enter your character's name!`;
+    
   }
 
   

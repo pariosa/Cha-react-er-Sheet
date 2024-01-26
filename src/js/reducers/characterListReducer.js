@@ -2,7 +2,7 @@ import { GET_CHARACTERS, LOGIN_SUCCESS, LOGOUT_SUCCESS } from '../constants/acti
 
 const initialState = [];
 
-export const characterListReducer = (state = initialState, action) =>{
+const characterListReducer = (state = initialState, action) =>{
  switch (action.type) {
   case GET_CHARACTERS: 
    return action.characters;
